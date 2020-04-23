@@ -1,0 +1,32 @@
+{
+  "id": "http:\/\/wso2jsonschema.org",
+  "title": "root",
+  "$schema": "http:\/\/json-schema.org\/draft-04\/schema#",
+  "properties": {
+    "attachmentIDs": {
+      "id": "http:\/\/wso2jsonschema.org\/attachmentIDs",
+      "type": "string"
+    },
+    "textContent": {
+      "id": "http:\/\/wso2jsonschema.org\/textContent",
+      "type": "string"
+    },
+    "subject": {
+      "id": "http:\/\/wso2jsonschema.org\/subject",
+      "type": "string"
+    },
+    "ccRecipients": {
+      "id": "http:\/\/wso2jsonschema.org\/ccRecipients",
+      "type": "string"
+    },
+    "bccRecipients": {
+      "id": "http:\/\/wso2jsonschema.org\/bccRecipients",
+      "type": "string"
+    },
+    "toRecipients": {
+      "id": "http:\/\/wso2jsonschema.org\/toRecipients",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

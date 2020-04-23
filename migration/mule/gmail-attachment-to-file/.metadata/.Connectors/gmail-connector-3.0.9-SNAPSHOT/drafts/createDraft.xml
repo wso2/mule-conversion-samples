@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ ~  Copyright (c) 2016, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ ~
+ ~  WSO2 Inc. licenses this file to you under the Apache License,
+ ~  Version 2.0 (the "License"); you may not use this file except
+ ~  in compliance with the License.
+ ~  You may obtain a copy of the License at
+ ~
+ ~    http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~  Unless required by applicable law or agreed to in writing,
+ ~  software distributed under the License is distributed on an
+ ~  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ ~  KIND, either express or implied.  See the License for the
+ ~  specific language governing permissions and limitations
+ ~  under the License.
+-->
+<template name="createDraft" xmlns="http://ws.apache.org/ns/synapse">
+    <parameter name="to" description="Receiver mail ID "/>
+    <parameter name="subject" description="Subject of the message"/>
+    <parameter name="from" description="Sender mail ID"/>
+    <parameter name="messageBody" description="Entire message body"/>
+    <parameter name="cc" description="To whom sender need to cc the mail"/>
+    <parameter name="bcc" description="To whom sender need to bcc the mail"/>
+    <parameter name="id" description="Id of the message to reply"/>
+    <parameter name="threadId" description="To whom sender need to bcc the mail"/>
+    <parameter name="contentType" description="The Content type of the message Body"/>
+    <sequence>
+        <property name="uri.var.to" expression="$func:to"/>
+        <property name="uri.var.subject" expression="$func:subject"/>
+        <property name="uri.var.from" expression="$func:from"/>
+        <property name="uri.var.messageBody" expression="$func:messageBody"/>
+        <property name="uri.var.cc" expression="$func:cc"/>
+        <property name="uri.var.bcc" expression="$func:bcc"/>
+        <property name="uri.var.id" expression="$func:id"/>
+        <property name="uri.var.threadId" expression="$func:threadId"/>
+        <property name="uri.var.contentType" expression="$func:contentType"/>
+        <property name="gmailParameters" value=""/>
+        <filter
+                xpath="boolean($ctx:uri.var.to)">
+            <then>
+                <property name="gmailParameters" expression="fn:concat($ctx:gmailParameters,
+               'to:', $ctx:uri.var.to,'&#xA;')"/>
+            </then>
+        </filter>
+        <filter
+                xpath="boolean($ctx:uri.var.subject)">
+            <then>
+                <property name="gmailParameters" expression="fn:concat($ctx:gmailParameters,
+               'subject:', $ctx:uri.var.subject,'&#xA;')"/>
+            </then>
+        </filter>
+        <filter
+                xpath="boolean($ctx:uri.var.from)">
+            <then>
+                <property name="gmailParameters" expression="fn:concat($ctx:gmailParameters,
+               'from:', $ctx:uri.var.from,'&#xA;')"/>
+            </then>
+        </filter>
+        <filter
+                xpath="boolean($ctx:uri.var.cc)">
+            <then>
+                <property name="gmailParameters" expression="fn:concat($ctx:gmailParameters,
+               'cc:', $ctx:uri.var.cc,'&#xA;')"/>
+            </then>
+        </filter>
+        <filter
+                xpath="boolean($ctx:uri.var.bcc)">
+            <then>
+                <property name="gmailParameters" expression="fn:concat($ctx:gmailParameters,
+               'bcc:', $ctx:uri.var.bcc,'&#xA;')"/>
+            </then>
+        </filter>
+        <filter
+                xpath="boolean($ctx:uri.var.id)">
+            <then>
+                <property name="gmailParameters" expression="fn:concat($ctx:gmailParameters,
+               'id:', $ctx:uri.var.id,'&#xA;')"/>
+            </then>
+        </filter>
+        <filter
+                xpath="boolean($ctx:uri.var.threadId)">
+            <then>
+                <property name="gmailParameters" expression="fn:concat($ctx:gmailParameters,
+               'threadId:', $ctx:uri.var.threadId,'&#xA;')"/>
+            </then>
+        </filter>
+        <filter
+                xpath="boolean($ctx:uri.var.contentType)">
+            <then>
+                <property name="gmailParameters" expression="fn:concat($ctx:gmailParameters,
+               'content-Type:', $ctx:uri.var.contentType,'&#xA;')"/>
+            </then>
+        </filter>
+        <filter
+                xpath="boolean($ctx:uri.var.messageBody)">
+            <then>
+                <property name="gmailParameters" expression="fn:concat($ctx:gmailParameters,
+               '&#xA;', $ctx:uri.var.messageBody,'&#xA;')"/>
+            </then>
+        </filter>
+        <property name="parameters" expression="$ctx:gmailParameters"/>
+        <class name="org.wso2.carbon.connector.CreateMail"/>
+        <property name="encodedValue" expression="$ctx:uri.var.encoded"/>
+        <payloadFactory media-type="json">
+            <format>
+                {
+                "message":
+                {
+                "raw":"$1"
+                }
+                }
+            </format>
+            <args/>
+        </payloadFactory>
+        <script language="js">
+            <![CDATA[
+                var to = mc.getProperty('encodedValue');
+                var payload = mc.getPayloadJSON();
+                payload.message.raw=to;
+                mc.setPayloadJSON(payload);
+            ]]>
+        </script>
+        <property name="messageType" value="application/json"
+                  scope="axis2"/>
+        <header name="Content-Type" value="application/json" scope="transport"/>
+        <call>
+            <endpoint>
+                <http method="post"
+                      uri-template="{+uri.var.gmail.apiUrl}/{+uri.var.gmail.apiVersion}/users/{+uri.var.gmail.userId}/drafts"/>
+            </endpoint>
+        </call>
+    </sequence>
+</template>

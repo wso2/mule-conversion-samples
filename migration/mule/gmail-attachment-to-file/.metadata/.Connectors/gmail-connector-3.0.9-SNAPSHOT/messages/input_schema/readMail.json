@@ -1,0 +1,22 @@
+{
+  "id": "http:\/\/wso2jsonschema.org",
+  "title": "root",
+  "$schema": "http:\/\/json-schema.org\/draft-04\/schema#",
+  "properties": {
+    "id": {
+      "id": "http:\/\/wso2jsonschema.org\/id",
+      "type": "string"
+    },
+    "metadataHeaders": {
+      "id": "http:\/\/wso2jsonschema.org\/metadataHeaders",
+      "type": "string",
+      "nullable": "true"
+    },
+    "format": {
+      "id": "http:\/\/wso2jsonschema.org\/format",
+      "type": "string",
+      "nullable": "true"
+    }
+  },
+  "type": "object"
+}

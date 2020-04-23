@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="gmail-connector-3.0.9" groupId="com.example.GmailToCSVSample.lib" version="SNAPSHOT" type="synapse/lib" serverRole="EnterpriseServiceBus">
+        <file>gmail-connector-3.0.9-SNAPSHOT.zip</file>
+    </artifact>
+    <artifact name="fileconnector-connector" groupId="com.example.GmailToCSVSample.lib" version="2.0.21" type="synapse/lib" serverRole="EnterpriseServiceBus">
+        <file>fileconnector-connector-2.0.21.zip</file>
+    </artifact>
+</artifacts>

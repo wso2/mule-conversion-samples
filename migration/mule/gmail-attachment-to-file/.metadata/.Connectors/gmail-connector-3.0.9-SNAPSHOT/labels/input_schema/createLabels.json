@@ -1,0 +1,45 @@
+{
+  "id": "http:\/\/wso2jsonschema.org",
+  "title": "root",
+  "$schema": "http:\/\/json-schema.org\/draft-04\/schema#",
+  "properties": {
+    "messagesUnread": {
+      "id": "http:\/\/wso2jsonschema.org\/messagesUnread",
+      "type": "string",
+      "nullable": "true"
+    },
+    "labelListVisibility": {
+      "id": "http:\/\/wso2jsonschema.org\/labelListVisibility",
+      "type": "string"
+    },
+    "threadsUnread": {
+      "id": "http:\/\/wso2jsonschema.org\/threadsUnread",
+      "type": "string",
+      "nullable": "true"
+    },
+    "messagesTotal": {
+      "id": "http:\/\/wso2jsonschema.org\/messagesTotal",
+      "type": "string",
+      "nullable": "true"
+    },
+    "messageListVisibility": {
+      "id": "http:\/\/wso2jsonschema.org\/messageListVisibility",
+      "type": "string"
+    },
+    "name": {
+      "id": "http:\/\/wso2jsonschema.org\/name",
+      "type": "string"
+    },
+    "type": {
+      "id": "http:\/\/wso2jsonschema.org\/type",
+      "type": "string",
+      "nullable": "true"
+    },
+    "threadsTotal": {
+      "id": "http:\/\/wso2jsonschema.org\/threadsTotal",
+      "type": "string",
+      "nullable": "true"
+    }
+  },
+  "type": "object"
+}

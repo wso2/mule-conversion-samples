@@ -1,0 +1,40 @@
+{
+  "id": "http:\/\/wso2jsonschema.org",
+  "title": "root",
+  "$schema": "http:\/\/json-schema.org\/draft-04\/schema#",
+  "properties": {
+    "id": {
+      "id": "http:\/\/wso2jsonschema.org\/id",
+      "type": "string"
+    },
+    "messageBody": {
+      "id": "http:\/\/wso2jsonschema.org\/messageBody",
+      "type": "string"
+    },
+    "to": {
+      "id": "http:\/\/wso2jsonschema.org\/to",
+      "type": "string"
+    },
+    "threadId": {
+      "id": "http:\/\/wso2jsonschema.org\/threadId",
+      "type": "string"
+    },
+    "subject": {
+      "id": "http:\/\/wso2jsonschema.org\/subject",
+      "type": "string"
+    },
+    "bcc": {
+      "id": "http:\/\/wso2jsonschema.org\/bcc",
+      "type": "string"
+    },
+    "from": {
+      "id": "http:\/\/wso2jsonschema.org\/from",
+      "type": "string"
+    },
+    "cc": {
+      "id": "http:\/\/wso2jsonschema.org\/cc",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="fileconnector-connector" groupId="com.example.SalesforceSampleConnectorExporterProject.lib" version="2.0.21" type="synapse/lib" serverRole="EnterpriseServiceBus">
+        <file>fileconnector-connector-2.0.21.zip</file>
+    </artifact>
+</artifacts>

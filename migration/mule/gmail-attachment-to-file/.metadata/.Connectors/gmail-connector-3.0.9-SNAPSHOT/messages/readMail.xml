@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ ~  Copyright (c) 2016, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ ~
+ ~  WSO2 Inc. licenses this file to you under the Apache License,
+ ~  Version 2.0 (the "License"); you may not use this file except
+ ~  in compliance with the License.
+ ~  You may obtain a copy of the License at
+ ~
+ ~    http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~  Unless required by applicable law or agreed to in writing,
+ ~  software distributed under the License is distributed on an
+ ~  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ ~  KIND, either express or implied.  See the License for the
+ ~  specific language governing permissions and limitations
+ ~  under the License.
+-->
+<template name="readMail" xmlns="http://ws.apache.org/ns/synapse">
+
+    <parameter name="includeSpamTrash"
+               description="Include messages from SPAM and TRASH in the results. (Default: false)"/>
+    <parameter name="labelIds"
+               description="Only return messages with labels that match all of the specified label IDs"/>
+    <parameter name="maxResults" description="Maximum number of messages to return"/>
+    <parameter name="pageToken"
+               description="Page token to retrieve a specific page of results in the list"/>
+    <parameter name="q"
+               description="Only return messages matching the specified query. Supports the same query format as the Gmail search box"/>
+
+    <parameter name="format" description="The format to return the message"/>
+
+    <parameter name="metadataHeaders"
+               description="When given and format is METADATA, only include headers specified"/>
+
+
+    <sequence>
+        <header name="Authorization" expression="fn:concat('Bearer ', $ctx:uri.var.gmail.accessToken)"
+                scope="transport"/>
+        <property name="uri.var.includeSpamTrash" expression="$func:includeSpamTrash"/>
+        <property name="uri.var.labelIds" expression="$func:labelIds"/>
+        <property name="uri.var.maxResults" expression="$func:maxResults"/>
+        <property name="uri.var.pageToken" expression="$func:pageToken"/>
+        <property name="uri.var.q" expression="$func:q"/>
+
+        <gmail.listAllMails>
+            <labelIds>{$ctx:uri.var.labelIds}</labelIds>
+            <maxResults>{$ctx:uri.var.maxResults}</maxResults>
+            <q>{$ctx:uri.var.q}</q>
+        </gmail.listAllMails>
+        <property expression="json-eval($.messages[0].id)"
+                  name="email_id" scope="default" type="STRING" />
+
+        <header name="Authorization" expression="fn:concat('Bearer ', $ctx:uri.var.gmail.accessToken)"
+                scope="transport"/>
+        <property name="uri.var.id" expression="get-property('email_id')"/>
+        <property name="uri.var.format" expression="$func:format"/>
+        <property name="uri.var.metadataHeaders" expression="$func:metadataHeaders"/>
+        <property name="gmailParameters" value=""/>
+        <script language="js">
+            <![CDATA[
+                var query = mc.getProperty('uri.var.metadataHeaders');
+                var encodedQuery = encodeURIComponent(query);
+                mc.setProperty('uri.var.metadataHeaders', encodedQuery);
+            ]]>
+        </script>
+        <filter
+                xpath="boolean($ctx:uri.var.format)">
+            <then>
+                <property name="gmailParameters" expression="fn:concat($ctx:gmailParameters,
+               '&amp;format=', $ctx:uri.var.format)"/>
+            </then>
+        </filter>
+        <filter
+                xpath="boolean($ctx:uri.var.metaDataHeaders)">
+            <then>
+                <property name="gmailParameters" expression="fn:concat($ctx:gmailParameters,
+               '&amp;metadataHeaders=', $ctx:uri.var.metadataHeaders)"/>
+            </then>
+        </filter>
+        <property name="uri.var.parameters" expression="$ctx:gmailParameters"/>
+        <call>
+            <endpoint>
+                <http method="get"
+                      uri-template="legacy-encoding:{+uri.var.gmail.apiUrl}/{+uri.var.gmail.apiVersion}/users/{+uri.var.gmail.userId}/messages/{+uri.var.id}?{uri.var.parameters}"/>
+            </endpoint>
+        </call>
+
+
+
+        <!-- Remove response custom header information -->
+        <header name="x-li-format" scope="transport" action="remove"/>
+        <header name="X-LI-UUID" scope="transport" action="remove"/>
+        <header name="X-Li-Pop" scope="transport" action="remove"/>
+        <header name="X-Li-Fabric" scope="transport" action="remove"/>
+        <header name="x-li-request-id" scope="transport" action="remove"/>
+
+
+
+        <property expression="json-eval($)" name="read_body" scope="default" type="STRING"/>
+        <property expression="json-eval($.payload.parts[1].body.attachmentId)" name="attachment_id" scope="default" type="STRING"/>
+
+
+        <gmail.getAttachment>
+            <id>{$ctx:email_id}</id>
+            <attachmentId>{$ctx:attachment_id}</attachmentId>
+        </gmail.getAttachment>
+        <property expression="json-eval($.data)" name="encoded_data" scope="default" type="STRING"/>
+        <property expression="base64Decode(get-property('encoded_data'))" name="decoded_data" scope="default" type="STRING"/>
+
+        <payloadFactory media-type="json">
+            <format>{"data":"$1"}</format>
+            <args>
+                <arg evaluator="xml" expression="get-property('decoded_data')"/>
+            </args>
+        </payloadFactory>
+        <property expression="json-eval($.)" name="attachment_json" scope="default" type="STRING"/>
+        <enrich>
+            <source clone="false" property="read_body" type="property"/>
+            <target type="body"/>
+        </enrich>
+        <enrich>
+            <source clone="true" property="attachment_json" type="property"/>
+            <target action="child" xpath="json-eval($.payload.parts[1].body)"/>
+        </enrich>
+
+    </sequence>
+</template>

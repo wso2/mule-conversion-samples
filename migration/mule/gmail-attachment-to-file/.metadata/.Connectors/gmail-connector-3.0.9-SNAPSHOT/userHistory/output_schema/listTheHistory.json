@@ -1,0 +1,228 @@
+{
+  "id": "http:\/\/wso2jsonschema.org",
+  "title": "root",
+  "$schema": "http:\/\/json-schema.org\/draft-04\/schema#",
+  "properties": {
+    "history": {
+      "id": "http:\/\/wso2jsonschema.org\/history",
+      "items": [
+        {
+          "id": "http:\/\/wso2jsonschema.org\/history\/0",
+          "properties": {
+            "id": {
+              "id": "http:\/\/wso2jsonschema.org\/history\/0\/id",
+              "type": "number"
+            },
+            "labelsRemoved": {
+              "id": "http:\/\/wso2jsonschema.org\/history\/0\/labelsRemoved",
+              "items": [
+                {
+                  "id": "http:\/\/wso2jsonschema.org\/history\/0\/labelsRemoved\/0",
+                  "properties": {
+                    "message": {
+                      "id": "http:\/\/wso2jsonschema.org\/history\/0\/labelsRemoved\/0\/message",
+                      "properties": {
+                        "raw": {
+                          "id": "http:\/\/wso2jsonschema.org\/history\/0\/labelsRemoved\/0\/message\/raw",
+                          "type": "string"
+                        },
+                        "id": {
+                          "id": "http:\/\/wso2jsonschema.org\/history\/0\/labelsRemoved\/0\/message\/id",
+                          "type": "string"
+                        },
+                        "labelIds": {
+                          "id": "http:\/\/wso2jsonschema.org\/history\/0\/labelsRemoved\/0\/message\/labelIds",
+                          "items": [
+                            {
+                              "id": "http:\/\/wso2jsonschema.org\/history\/0\/labelsRemoved\/0\/message\/labelIds\/0",
+                              "type": "string"
+                            }
+                          ],
+                          "type": "array"
+                        },
+                        "threadId": {
+                          "id": "http:\/\/wso2jsonschema.org\/history\/0\/labelsRemoved\/0\/message\/threadId",
+                          "type": "string"
+                        },
+                        "historyId": {
+                          "id": "http:\/\/wso2jsonschema.org\/history\/0\/labelsRemoved\/0\/message\/historyId",
+                          "type": "string"
+                        },
+                        "payload": {
+                          "id": "http:\/\/wso2jsonschema.org\/history\/0\/labelsRemoved\/0\/message\/payload",
+                          "properties": {
+                            "headers": {
+                              "id": "http:\/\/wso2jsonschema.org\/history\/0\/labelsRemoved\/0\/message\/payload\/headers",
+                              "items": [
+                                {
+                                  "id": "http:\/\/wso2jsonschema.org\/history\/0\/labelsRemoved\/0\/message\/payload\/headers\/0",
+                                  "type": "object"
+                                }
+                              ],
+                              "type": "array"
+                            },
+                            "body": {
+                              "id": "http:\/\/wso2jsonschema.org\/history\/0\/labelsRemoved\/0\/message\/payload\/body",
+                              "properties": {
+                                "attachmentId": {
+                                  "id": "http:\/\/wso2jsonschema.org\/history\/0\/labelsRemoved\/0\/message\/payload\/body\/attachmentId",
+                                  "type": "string"
+                                },
+                                "data": {
+                                  "id": "http:\/\/wso2jsonschema.org\/history\/0\/labelsRemoved\/0\/message\/payload\/body\/data",
+                                  "type": "string"
+                                },
+                                "size": {
+                                  "id": "http:\/\/wso2jsonschema.org\/history\/0\/labelsRemoved\/0\/message\/payload\/body\/size",
+                                  "type": "string"
+                                }
+                              },
+                              "type": "object"
+                            },
+                            "filename": {
+                              "id": "http:\/\/wso2jsonschema.org\/history\/0\/labelsRemoved\/0\/message\/payload\/filename",
+                              "type": "string"
+                            },
+                            "parts": {
+                              "id": "http:\/\/wso2jsonschema.org\/history\/0\/labelsRemoved\/0\/message\/payload\/parts",
+                              "items": [
+                                {
+                                  "id": "http:\/\/wso2jsonschema.org\/history\/0\/labelsRemoved\/0\/message\/payload\/parts\/0",
+                                  "properties": {
+                                    "headers": {
+                                      "id": "http:\/\/wso2jsonschema.org\/history\/0\/labelsRemoved\/0\/message\/payload\/parts\/0\/headers",
+                                      "items": [
+                                        {
+                                          "id": "http:\/\/wso2jsonschema.org\/history\/0\/labelsRemoved\/0\/message\/payload\/parts\/0\/headers\/0",
+                                          "properties": {
+                                            "name": {
+                                              "id": "http:\/\/wso2jsonschema.org\/history\/0\/labelsRemoved\/0\/message\/payload\/parts\/0\/headers\/0\/name",
+                                              "type": "string"
+                                            },
+                                            "value": {
+                                              "id": "http:\/\/wso2jsonschema.org\/history\/0\/labelsRemoved\/0\/message\/payload\/parts\/0\/headers\/0\/value",
+                                              "type": "string"
+                                            }
+                                          },
+                                          "type": "object"
+                                        }
+                                      ],
+                                      "type": "array"
+                                    },
+                                    "filename": {
+                                      "id": "http:\/\/wso2jsonschema.org\/history\/0\/labelsRemoved\/0\/message\/payload\/parts\/0\/filename",
+                                      "type": "string"
+                                    },
+                                    "partId": {
+                                      "id": "http:\/\/wso2jsonschema.org\/history\/0\/labelsRemoved\/0\/message\/payload\/parts\/0\/partId",
+                                      "type": "string"
+                                    },
+                                    "mimeType": {
+                                      "id": "http:\/\/wso2jsonschema.org\/history\/0\/labelsRemoved\/0\/message\/payload\/parts\/0\/mimeType",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "type": "object"
+                                }
+                              ],
+                              "type": "array"
+                            },
+                            "partId": {
+                              "id": "http:\/\/wso2jsonschema.org\/history\/0\/labelsRemoved\/0\/message\/payload\/partId",
+                              "type": "string"
+                            },
+                            "mimeType": {
+                              "id": "http:\/\/wso2jsonschema.org\/history\/0\/labelsRemoved\/0\/message\/payload\/mimeType",
+                              "type": "string"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "sizeEstimate": {
+                          "id": "http:\/\/wso2jsonschema.org\/history\/0\/labelsRemoved\/0\/message\/sizeEstimate",
+                          "type": "number"
+                        },
+                        "snippet": {
+                          "id": "http:\/\/wso2jsonschema.org\/history\/0\/labelsRemoved\/0\/message\/snippet",
+                          "type": "string"
+                        },
+                        "internalDate": {
+                          "id": "http:\/\/wso2jsonschema.org\/history\/0\/labelsRemoved\/0\/message\/internalDate",
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "labelIds": {
+                      "id": "http:\/\/wso2jsonschema.org\/history\/0\/labelsRemoved\/0\/labelIds",
+                      "items": [
+                        {
+                          "id": "http:\/\/wso2jsonschema.org\/history\/0\/labelsRemoved\/0\/labelIds\/0",
+                          "type": "string"
+                        }
+                      ],
+                      "type": "array"
+                    }
+                  },
+                  "type": "object"
+                }
+              ],
+              "type": "array"
+            },
+            "messagesDeleted": {
+              "id": "http:\/\/wso2jsonschema.org\/history\/0\/messagesDeleted",
+              "items": [
+                {
+                  "id": "http:\/\/wso2jsonschema.org\/history\/0\/messagesDeleted\/0",
+                  "type": "object"
+                }
+              ],
+              "type": "array"
+            },
+            "messagesAdded": {
+              "id": "http:\/\/wso2jsonschema.org\/history\/0\/messagesAdded",
+              "items": [
+                {
+                  "id": "http:\/\/wso2jsonschema.org\/history\/0\/messagesAdded\/0",
+                  "type": "object"
+                }
+              ],
+              "type": "array"
+            },
+            "labelsAdded": {
+              "id": "http:\/\/wso2jsonschema.org\/history\/0\/labelsAdded",
+              "items": [
+                {
+                  "id": "http:\/\/wso2jsonschema.org\/history\/0\/labelsAdded\/0",
+                  "type": "object"
+                }
+              ],
+              "type": "array"
+            },
+            "messages": {
+              "id": "http:\/\/wso2jsonschema.org\/history\/0\/messages",
+              "items": [
+                {
+                  "id": "http:\/\/wso2jsonschema.org\/history\/0\/messages\/0",
+                  "type": "object"
+                }
+              ],
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      ],
+      "type": "array"
+    },
+    "historyId": {
+      "id": "http:\/\/wso2jsonschema.org\/historyId",
+      "type": "string"
+    },
+    "nextPageToken": {
+      "id": "http:\/\/wso2jsonschema.org\/nextPageToken",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

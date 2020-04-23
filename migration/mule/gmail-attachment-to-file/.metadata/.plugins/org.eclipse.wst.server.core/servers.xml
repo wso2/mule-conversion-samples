@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<servers>
+  <server hostname="localhost" id="org.wso2.micro.integrator.server11" id-set="true" name="Micro Integrator Server 1.1.0" runtime-id="org.wso2.micro.integrator.runtime11" server-type="org.wso2.developerstudio.eclipse.carbon.server44microei11" server-type-id="org.wso2.developerstudio.eclipse.carbon.server44microei11" start-timeout="600" stop-timeout="15" timestamp="0">
+    <map carbon.debug="5001" carbon.home="/Applications/IntegrationStudio.app/Contents/Eclipse/runtime/microesb" carbon.offset="10" key="generic_server_instance_properties" osgi.console="false" synapse.transport.http="8280" synapse.transport.https="8243"/>
+  </server>
+</servers>

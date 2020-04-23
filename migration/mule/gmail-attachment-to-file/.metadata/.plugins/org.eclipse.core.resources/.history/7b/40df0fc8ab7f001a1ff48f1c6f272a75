@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:datamapper="http:///org/wso2/developerstudio/eclipse/gmf/datamapper" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_KzIDgH-pEeqM991Qm5Wqnw" type="DataMapper" name="NewConfig.datamapper_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_K4aMIH-pEeqM991Qm5Wqnw" type="2002" fontName=".AppleSystemUIFont">
+    <children xmi:type="notation:Shape" xmi:id="_SxCVQH-pEeqM991Qm5Wqnw" type="3002" fontName=".AppleSystemUIFont">
+      <children xmi:type="notation:DecorationNode" xmi:id="_SxCVQn-pEeqM991Qm5Wqnw" type="5002"/>
+      <children xmi:type="notation:Shape" xmi:id="_SxK4IH-pEeqM991Qm5Wqnw" type="3003" fontName=".AppleSystemUIFont">
+        <children xmi:type="notation:DecorationNode" xmi:id="_SxK4In-pEeqM991Qm5Wqnw" type="5001"/>
+        <element xmi:type="datamapper:TreeNode" href="NewConfig.datamapper#//@input/@treeNode.0/@node.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SxK4IX-pEeqM991Qm5Wqnw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_SxLfMH-pEeqM991Qm5Wqnw" type="3003" fontName=".AppleSystemUIFont">
+        <children xmi:type="notation:DecorationNode" xmi:id="_SxLfMn-pEeqM991Qm5Wqnw" type="5001"/>
+        <element xmi:type="datamapper:TreeNode" href="NewConfig.datamapper#//@input/@treeNode.0/@node.1"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SxLfMX-pEeqM991Qm5Wqnw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_SxLfM3-pEeqM991Qm5Wqnw" type="3003" fontName=".AppleSystemUIFont">
+        <children xmi:type="notation:DecorationNode" xmi:id="_SxLfNX-pEeqM991Qm5Wqnw" type="5001"/>
+        <element xmi:type="datamapper:TreeNode" href="NewConfig.datamapper#//@input/@treeNode.0/@node.2"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SxLfNH-pEeqM991Qm5Wqnw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_SxLfNn-pEeqM991Qm5Wqnw" type="3003" fontName=".AppleSystemUIFont">
+        <children xmi:type="notation:DecorationNode" xmi:id="_SxLfOH-pEeqM991Qm5Wqnw" type="5001"/>
+        <element xmi:type="datamapper:TreeNode" href="NewConfig.datamapper#//@input/@treeNode.0/@node.3"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SxLfN3-pEeqM991Qm5Wqnw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_SxLfOX-pEeqM991Qm5Wqnw" type="3003" fontName=".AppleSystemUIFont">
+        <children xmi:type="notation:DecorationNode" xmi:id="_SxLfO3-pEeqM991Qm5Wqnw" type="5001"/>
+        <element xmi:type="datamapper:TreeNode" href="NewConfig.datamapper#//@input/@treeNode.0/@node.4"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SxLfOn-pEeqM991Qm5Wqnw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_SxLfPH-pEeqM991Qm5Wqnw" type="3003" fontName=".AppleSystemUIFont">
+        <children xmi:type="notation:DecorationNode" xmi:id="_SxLfPn-pEeqM991Qm5Wqnw" type="5001"/>
+        <element xmi:type="datamapper:TreeNode" href="NewConfig.datamapper#//@input/@treeNode.0/@node.5"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SxLfPX-pEeqM991Qm5Wqnw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_SxMGQH-pEeqM991Qm5Wqnw" type="3003" fontName=".AppleSystemUIFont">
+        <children xmi:type="notation:DecorationNode" xmi:id="_SxMGQn-pEeqM991Qm5Wqnw" type="5001"/>
+        <children xmi:type="notation:Shape" xmi:id="_SxqAUH-pEeqM991Qm5Wqnw" type="3003" fontName=".AppleSystemUIFont">
+          <children xmi:type="notation:DecorationNode" xmi:id="_SxqnYH-pEeqM991Qm5Wqnw" type="5001"/>
+          <element xmi:type="datamapper:TreeNode" href="NewConfig.datamapper#//@input/@treeNode.0/@node.6/@node.0"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SxqAUX-pEeqM991Qm5Wqnw"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_SxqnYX-pEeqM991Qm5Wqnw" type="3003" fontName=".AppleSystemUIFont">
+          <children xmi:type="notation:DecorationNode" xmi:id="_SxqnY3-pEeqM991Qm5Wqnw" type="5001"/>
+          <element xmi:type="datamapper:TreeNode" href="NewConfig.datamapper#//@input/@treeNode.0/@node.6/@node.1"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SxqnYn-pEeqM991Qm5Wqnw"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_SxqnZH-pEeqM991Qm5Wqnw" type="3003" fontName=".AppleSystemUIFont">
+          <children xmi:type="notation:DecorationNode" xmi:id="_SxqnZn-pEeqM991Qm5Wqnw" type="5001"/>
+          <element xmi:type="datamapper:TreeNode" href="NewConfig.datamapper#//@input/@treeNode.0/@node.6/@node.2"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SxqnZX-pEeqM991Qm5Wqnw"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_SxqnZ3-pEeqM991Qm5Wqnw" type="3003" fontName=".AppleSystemUIFont">
+          <children xmi:type="notation:DecorationNode" xmi:id="_SxqnaX-pEeqM991Qm5Wqnw" type="5001"/>
+          <element xmi:type="datamapper:TreeNode" href="NewConfig.datamapper#//@input/@treeNode.0/@node.6/@node.3"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SxqnaH-pEeqM991Qm5Wqnw"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_Sxqnan-pEeqM991Qm5Wqnw" type="3003" fontName=".AppleSystemUIFont">
+          <children xmi:type="notation:DecorationNode" xmi:id="_SxqnbH-pEeqM991Qm5Wqnw" type="5001"/>
+          <element xmi:type="datamapper:TreeNode" href="NewConfig.datamapper#//@input/@treeNode.0/@node.6/@node.4"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Sxqna3-pEeqM991Qm5Wqnw"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_SxqnbX-pEeqM991Qm5Wqnw" type="3003" fontName=".AppleSystemUIFont">
+          <children xmi:type="notation:DecorationNode" xmi:id="_Sxqnb3-pEeqM991Qm5Wqnw" type="5001"/>
+          <children xmi:type="notation:Shape" xmi:id="_SyEQAH-pEeqM991Qm5Wqnw" type="3003" fontName=".AppleSystemUIFont">
+            <children xmi:type="notation:DecorationNode" xmi:id="_SyEQAn-pEeqM991Qm5Wqnw" type="5001"/>
+            <element xmi:type="datamapper:TreeNode" href="NewConfig.datamapper#//@input/@treeNode.0/@node.6/@node.5/@node.0"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SyEQAX-pEeqM991Qm5Wqnw"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_SyEQA3-pEeqM991Qm5Wqnw" type="3003" fontName=".AppleSystemUIFont">
+            <children xmi:type="notation:DecorationNode" xmi:id="_SyEQBX-pEeqM991Qm5Wqnw" type="5001"/>
+            <element xmi:type="datamapper:TreeNode" href="NewConfig.datamapper#//@input/@treeNode.0/@node.6/@node.5/@node.1"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SyEQBH-pEeqM991Qm5Wqnw"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_SyEQBn-pEeqM991Qm5Wqnw" type="3003" fontName=".AppleSystemUIFont">
+            <children xmi:type="notation:DecorationNode" xmi:id="_SyE3EH-pEeqM991Qm5Wqnw" type="5001"/>
+            <element xmi:type="datamapper:TreeNode" href="NewConfig.datamapper#//@input/@treeNode.0/@node.6/@node.5/@node.2"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SyEQB3-pEeqM991Qm5Wqnw"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_SyE3EX-pEeqM991Qm5Wqnw" type="3003" fontName=".AppleSystemUIFont">
+            <children xmi:type="notation:DecorationNode" xmi:id="_SyE3E3-pEeqM991Qm5Wqnw" type="5001"/>
+            <element xmi:type="datamapper:TreeNode" href="NewConfig.datamapper#//@input/@treeNode.0/@node.6/@node.5/@node.3"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SyE3En-pEeqM991Qm5Wqnw"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_SyE3FH-pEeqM991Qm5Wqnw" type="3003" fontName=".AppleSystemUIFont">
+            <children xmi:type="notation:DecorationNode" xmi:id="_SyE3Fn-pEeqM991Qm5Wqnw" type="5001"/>
+            <children xmi:type="notation:Shape" xmi:id="_SyXyAH-pEeqM991Qm5Wqnw" type="3003" fontName=".AppleSystemUIFont">
+              <children xmi:type="notation:DecorationNode" xmi:id="_SyXyAn-pEeqM991Qm5Wqnw" type="5001"/>
+              <element xmi:type="datamapper:TreeNode" href="NewConfig.datamapper#//@input/@treeNode.0/@node.6/@node.5/@node.4/@node.0"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SyXyAX-pEeqM991Qm5Wqnw"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_SyXyA3-pEeqM991Qm5Wqnw" type="3003" fontName=".AppleSystemUIFont">
+              <children xmi:type="notation:DecorationNode" xmi:id="_SyXyBX-pEeqM991Qm5Wqnw" type="5001"/>
+              <element xmi:type="datamapper:TreeNode" href="NewConfig.datamapper#//@input/@treeNode.0/@node.6/@node.5/@node.4/@node.1"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SyXyBH-pEeqM991Qm5Wqnw"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_SyYZEH-pEeqM991Qm5Wqnw" type="3003" fontName=".AppleSystemUIFont">
+              <children xmi:type="notation:DecorationNode" xmi:id="_SyYZEn-pEeqM991Qm5Wqnw" type="5001"/>
+              <children xmi:type="notation:Shape" xmi:id="_SyfGwH-pEeqM991Qm5Wqnw" type="3020" fontName=".AppleSystemUIFont">
+                <element xmi:type="datamapper:InNode" href="NewConfig.datamapper#//@input/@treeNode.0/@node.6/@node.5/@node.4/@node.2/@inNode"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SyfGwX-pEeqM991Qm5Wqnw" x="-1" y="1"/>
+              </children>
+              <children xmi:type="notation:Shape" xmi:id="_Syft0H-pEeqM991Qm5Wqnw" type="3019" fontName=".AppleSystemUIFont">
+                <element xmi:type="datamapper:OutNode" href="NewConfig.datamapper#//@input/@treeNode.0/@node.6/@node.5/@node.4/@node.2/@outNode"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Syft0X-pEeqM991Qm5Wqnw"/>
+              </children>
+              <element xmi:type="datamapper:TreeNode" href="NewConfig.datamapper#//@input/@treeNode.0/@node.6/@node.5/@node.4/@node.2"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SyYZEX-pEeqM991Qm5Wqnw"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_SyYZE3-pEeqM991Qm5Wqnw" type="3020" fontName=".AppleSystemUIFont">
+              <element xmi:type="datamapper:InNode" href="NewConfig.datamapper#//@input/@treeNode.0/@node.6/@node.5/@node.4/@inNode"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SyYZFH-pEeqM991Qm5Wqnw" x="-1" y="-11"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_SyYZFX-pEeqM991Qm5Wqnw" type="3019" fontName=".AppleSystemUIFont">
+              <element xmi:type="datamapper:OutNode" href="NewConfig.datamapper#//@input/@treeNode.0/@node.6/@node.5/@node.4/@outNode"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SyYZFn-pEeqM991Qm5Wqnw"/>
+            </children>
+            <element xmi:type="datamapper:TreeNode" href="NewConfig.datamapper#//@input/@treeNode.0/@node.6/@node.5/@node.4"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SyE3FX-pEeqM991Qm5Wqnw"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_SyE3F3-pEeqM991Qm5Wqnw" type="3020" fontName=".AppleSystemUIFont">
+            <element xmi:type="datamapper:InNode" href="NewConfig.datamapper#//@input/@treeNode.0/@node.6/@node.5/@inNode"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SyE3GH-pEeqM991Qm5Wqnw" x="-1" y="-11"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_SyE3GX-pEeqM991Qm5Wqnw" type="3019" fontName=".AppleSystemUIFont">
+            <element xmi:type="datamapper:OutNode" href="NewConfig.datamapper#//@input/@treeNode.0/@node.6/@node.5/@outNode"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SyE3Gn-pEeqM991Qm5Wqnw"/>
+          </children>
+          <element xmi:type="datamapper:TreeNode" href="NewConfig.datamapper#//@input/@treeNode.0/@node.6/@node.5"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Sxqnbn-pEeqM991Qm5Wqnw"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_SxrOcH-pEeqM991Qm5Wqnw" type="3020" fontName=".AppleSystemUIFont">
+          <element xmi:type="datamapper:InNode" href="NewConfig.datamapper#//@input/@treeNode.0/@node.6/@inNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SxrOcX-pEeqM991Qm5Wqnw" x="-1" y="-11"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_SxrOcn-pEeqM991Qm5Wqnw" type="3019" fontName=".AppleSystemUIFont">
+          <element xmi:type="datamapper:OutNode" href="NewConfig.datamapper#//@input/@treeNode.0/@node.6/@outNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SxrOc3-pEeqM991Qm5Wqnw"/>
+        </children>
+        <element xmi:type="datamapper:TreeNode" href="NewConfig.datamapper#//@input/@treeNode.0/@node.6"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SxMGQX-pEeqM991Qm5Wqnw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_SxMGQ3-pEeqM991Qm5Wqnw" type="3003" fontName=".AppleSystemUIFont">
+        <children xmi:type="notation:DecorationNode" xmi:id="_SxMGRX-pEeqM991Qm5Wqnw" type="5001"/>
+        <element xmi:type="datamapper:TreeNode" href="NewConfig.datamapper#//@input/@treeNode.0/@node.7"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SxMGRH-pEeqM991Qm5Wqnw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_SxMGRn-pEeqM991Qm5Wqnw" type="3020" fontName=".AppleSystemUIFont">
+        <element xmi:type="datamapper:InNode" href="NewConfig.datamapper#//@input/@treeNode.0/@inNode"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SxMGR3-pEeqM991Qm5Wqnw" x="-1" y="-11"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_SxMGSH-pEeqM991Qm5Wqnw" type="3019" fontName=".AppleSystemUIFont">
+        <element xmi:type="datamapper:OutNode" href="NewConfig.datamapper#//@input/@treeNode.0/@outNode"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SxMGSX-pEeqM991Qm5Wqnw"/>
+      </children>
+      <element xmi:type="datamapper:TreeNode" href="NewConfig.datamapper#//@input/@treeNode.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SxCVQX-pEeqM991Qm5Wqnw"/>
+    </children>
+    <element xmi:type="datamapper:Input" href="NewConfig.datamapper#//@input"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_K4aMIX-pEeqM991Qm5Wqnw" x="185" y="-200" width="250" height="160"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_K4azMH-pEeqM991Qm5Wqnw" type="2003" fontName=".AppleSystemUIFont">
+    <children xmi:type="notation:Shape" xmi:id="_U836sH-pEeqM991Qm5Wqnw" type="3011" fontName=".AppleSystemUIFont">
+      <children xmi:type="notation:DecorationNode" xmi:id="_U836sn-pEeqM991Qm5Wqnw" type="5003"/>
+      <children xmi:type="notation:Shape" xmi:id="_U9AdkH-pEeqM991Qm5Wqnw" type="3003" fontName=".AppleSystemUIFont">
+        <children xmi:type="notation:DecorationNode" xmi:id="_U9Adkn-pEeqM991Qm5Wqnw" type="5001"/>
+        <children xmi:type="notation:Shape" xmi:id="_U9C50H-pEeqM991Qm5Wqnw" type="3020" fontName=".AppleSystemUIFont">
+          <element xmi:type="datamapper:InNode" href="NewConfig.datamapper#//@output/@treeNode.0/@node.0/@inNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U9C50X-pEeqM991Qm5Wqnw" x="-10" y="4"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_U9C50n-pEeqM991Qm5Wqnw" type="3019" fontName=".AppleSystemUIFont">
+          <element xmi:type="datamapper:OutNode" href="NewConfig.datamapper#//@output/@treeNode.0/@node.0/@outNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U9C503-pEeqM991Qm5Wqnw"/>
+        </children>
+        <element xmi:type="datamapper:TreeNode" href="NewConfig.datamapper#//@output/@treeNode.0/@node.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U9AdkX-pEeqM991Qm5Wqnw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_U9Adk3-pEeqM991Qm5Wqnw" type="3003" fontName=".AppleSystemUIFont">
+        <children xmi:type="notation:DecorationNode" xmi:id="_U9AdlX-pEeqM991Qm5Wqnw" type="5001"/>
+        <children xmi:type="notation:Shape" xmi:id="_U9FWEH-pEeqM991Qm5Wqnw" type="3020" fontName=".AppleSystemUIFont">
+          <element xmi:type="datamapper:InNode" href="NewConfig.datamapper#//@output/@treeNode.0/@node.1/@inNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U9FWEX-pEeqM991Qm5Wqnw" x="-10" y="4"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_U9F9IH-pEeqM991Qm5Wqnw" type="3019" fontName=".AppleSystemUIFont">
+          <element xmi:type="datamapper:OutNode" href="NewConfig.datamapper#//@output/@treeNode.0/@node.1/@outNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U9F9IX-pEeqM991Qm5Wqnw"/>
+        </children>
+        <element xmi:type="datamapper:TreeNode" href="NewConfig.datamapper#//@output/@treeNode.0/@node.1"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U9AdlH-pEeqM991Qm5Wqnw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_U9Adln-pEeqM991Qm5Wqnw" type="3003" fontName=".AppleSystemUIFont">
+        <children xmi:type="notation:DecorationNode" xmi:id="_U9AdmH-pEeqM991Qm5Wqnw" type="5001"/>
+        <element xmi:type="datamapper:TreeNode" href="NewConfig.datamapper#//@output/@treeNode.0/@node.2"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U9Adl3-pEeqM991Qm5Wqnw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_U9AdmX-pEeqM991Qm5Wqnw" type="3003" fontName=".AppleSystemUIFont">
+        <children xmi:type="notation:DecorationNode" xmi:id="_U9BEoH-pEeqM991Qm5Wqnw" type="5001"/>
+        <element xmi:type="datamapper:TreeNode" href="NewConfig.datamapper#//@output/@treeNode.0/@node.3"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U9Admn-pEeqM991Qm5Wqnw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_U9BEoX-pEeqM991Qm5Wqnw" type="3003" fontName=".AppleSystemUIFont">
+        <children xmi:type="notation:DecorationNode" xmi:id="_U9BEo3-pEeqM991Qm5Wqnw" type="5001"/>
+        <element xmi:type="datamapper:TreeNode" href="NewConfig.datamapper#//@output/@treeNode.0/@node.4"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U9BEon-pEeqM991Qm5Wqnw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_U9BEpH-pEeqM991Qm5Wqnw" type="3003" fontName=".AppleSystemUIFont">
+        <children xmi:type="notation:DecorationNode" xmi:id="_U9BEpn-pEeqM991Qm5Wqnw" type="5001"/>
+        <element xmi:type="datamapper:TreeNode" href="NewConfig.datamapper#//@output/@treeNode.0/@node.5"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U9BEpX-pEeqM991Qm5Wqnw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_U9BEp3-pEeqM991Qm5Wqnw" type="3003" fontName=".AppleSystemUIFont">
+        <children xmi:type="notation:DecorationNode" xmi:id="_U9BEqX-pEeqM991Qm5Wqnw" type="5001"/>
+        <element xmi:type="datamapper:TreeNode" href="NewConfig.datamapper#//@output/@treeNode.0/@node.6"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U9BEqH-pEeqM991Qm5Wqnw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_U9BEqn-pEeqM991Qm5Wqnw" type="3003" fontName=".AppleSystemUIFont">
+        <children xmi:type="notation:DecorationNode" xmi:id="_U9BErH-pEeqM991Qm5Wqnw" type="5001"/>
+        <element xmi:type="datamapper:TreeNode" href="NewConfig.datamapper#//@output/@treeNode.0/@node.7"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U9BEq3-pEeqM991Qm5Wqnw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_U9BErX-pEeqM991Qm5Wqnw" type="3003" fontName=".AppleSystemUIFont">
+        <children xmi:type="notation:DecorationNode" xmi:id="_U9BEr3-pEeqM991Qm5Wqnw" type="5001"/>
+        <element xmi:type="datamapper:TreeNode" href="NewConfig.datamapper#//@output/@treeNode.0/@node.8"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U9BErn-pEeqM991Qm5Wqnw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_U9BrsH-pEeqM991Qm5Wqnw" type="3020" fontName=".AppleSystemUIFont">
+        <element xmi:type="datamapper:InNode" href="NewConfig.datamapper#//@output/@treeNode.0/@inNode"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U9BrsX-pEeqM991Qm5Wqnw" x="-1" y="-11"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_U9Brsn-pEeqM991Qm5Wqnw" type="3019" fontName=".AppleSystemUIFont">
+        <element xmi:type="datamapper:OutNode" href="NewConfig.datamapper#//@output/@treeNode.0/@outNode"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U9Brs3-pEeqM991Qm5Wqnw"/>
+      </children>
+      <element xmi:type="datamapper:TreeNode" href="NewConfig.datamapper#//@output/@treeNode.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U836sX-pEeqM991Qm5Wqnw"/>
+    </children>
+    <element xmi:type="datamapper:Output" href="NewConfig.datamapper#//@output"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_K4azMX-pEeqM991Qm5Wqnw" x="780" y="-224" width="266" height="200"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_Xv6DAH-pEeqM991Qm5Wqnw" type="2008" fontName=".AppleSystemUIFont">
+    <children xmi:type="notation:Shape" xmi:id="_Xv-7gH-pEeqM991Qm5Wqnw" type="3012" fontName=".AppleSystemUIFont">
+      <children xmi:type="notation:Shape" xmi:id="_XwCl4H-pEeqM991Qm5Wqnw" type="3013" fontName=".AppleSystemUIFont">
+        <element xmi:type="datamapper:OperatorLeftContainer" href="NewConfig.datamapper#//@operators.0/@basicContainer/@leftContainer"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XwCl4X-pEeqM991Qm5Wqnw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_XwCl4n-pEeqM991Qm5Wqnw" type="3016" fontName=".AppleSystemUIFont">
+        <children xmi:type="notation:Shape" xmi:id="_XwyMwH-pEeqM991Qm5Wqnw" type="3017" fontName=".AppleSystemUIFont">
+          <children xmi:type="notation:Shape" xmi:id="_Xw1QEH-pEeqM991Qm5Wqnw" type="3018" fontName=".AppleSystemUIFont">
+            <element xmi:type="datamapper:OutNode" href="NewConfig.datamapper#//@operators.0/@basicContainer/@rightContainer/@rightConnectors.0/@outNode"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Xw1QEX-pEeqM991Qm5Wqnw"/>
+          </children>
+          <element xmi:type="datamapper:OperatorRightConnector" href="NewConfig.datamapper#//@operators.0/@basicContainer/@rightContainer/@rightConnectors.0"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XwyMwX-pEeqM991Qm5Wqnw"/>
+        </children>
+        <element xmi:type="datamapper:OperatorRightContainer" href="NewConfig.datamapper#//@operators.0/@basicContainer/@rightContainer"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XwCl43-pEeqM991Qm5Wqnw"/>
+      </children>
+      <element xmi:type="datamapper:OperatorBasicContainer" href="NewConfig.datamapper#//@operators.0/@basicContainer"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Xv-7gX-pEeqM991Qm5Wqnw"/>
+    </children>
+    <element xmi:type="datamapper:Constant" href="NewConfig.datamapper#//@operators.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Xv6DAX-pEeqM991Qm5Wqnw" x="392" y="-276"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_KzIDgX-pEeqM991Qm5Wqnw"/>
+  <element xmi:type="datamapper:DataMapperRoot" href="NewConfig.datamapper#/"/>
+  <edges xmi:type="notation:Connector" xmi:id="_W3w6EH-pEeqM991Qm5Wqnw" type="4001" source="_Syft0H-pEeqM991Qm5Wqnw" target="_U9FWEH-pEeqM991Qm5Wqnw">
+    <styles xmi:type="notation:FontStyle" xmi:id="_W3w6EX-pEeqM991Qm5Wqnw" fontName=".AppleSystemUIFont"/>
+    <element xmi:type="datamapper:DataMapperLink" href="NewConfig.datamapper#//@input/@treeNode.0/@node.6/@node.5/@node.4/@node.2/@outNode/@outgoingLink.0"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_W3w6En-pEeqM991Qm5Wqnw" points="[-2, 0, -331, 481]$[327, -481, -2, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_W36EAH-pEeqM991Qm5Wqnw" id="CENTER"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_W36EAX-pEeqM991Qm5Wqnw" id="CENTER"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_doj4cH-pEeqM991Qm5Wqnw" type="4001" source="_Xw1QEH-pEeqM991Qm5Wqnw" target="_U9C50H-pEeqM991Qm5Wqnw">
+    <styles xmi:type="notation:FontStyle" xmi:id="_doj4cX-pEeqM991Qm5Wqnw" fontName=".AppleSystemUIFont"/>
+    <element xmi:type="datamapper:DataMapperLink" href="NewConfig.datamapper#//@operators.0/@basicContainer/@rightContainer/@rightConnectors.0/@outNode/@outgoingLink.0"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_doj4cn-pEeqM991Qm5Wqnw" points="[-1, 0, -106, -69]$[103, 69, -2, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_doltoH-pEeqM991Qm5Wqnw" id="CENTER"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_doltoX-pEeqM991Qm5Wqnw" id="CENTER"/>
+  </edges>
+</notation:Diagram>

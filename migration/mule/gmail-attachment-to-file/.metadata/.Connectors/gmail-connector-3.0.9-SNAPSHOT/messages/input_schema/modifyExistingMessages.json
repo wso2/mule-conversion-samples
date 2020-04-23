@@ -1,0 +1,34 @@
+{
+  "id": "http:\/\/wso2jsonschema.org",
+  "title": "root",
+  "$schema": "http:\/\/json-schema.org\/draft-04\/schema#",
+  "properties": {
+    "id": {
+      "id": "http:\/\/wso2jsonschema.org\/id",
+      "type": "string"
+    },
+    "removeLabelIds": {
+      "id": "http:\/\/wso2jsonschema.org\/removeLabelIds",
+      "items": [
+        {
+          "id": "http:\/\/wso2jsonschema.org\/removeLabelIds\/0",
+          "type": "string"
+        }
+      ],
+      "type": "array",
+      "nullable": "true"
+    },
+    "addLabelIds": {
+      "id": "http:\/\/wso2jsonschema.org\/addLabelIds",
+      "items": [
+        {
+          "id": "http:\/\/wso2jsonschema.org\/addLabelIds\/0",
+          "type": "string"
+        }
+      ],
+      "type": "array",
+      "nullable": "true"
+    }
+  },
+  "type": "object"
+}

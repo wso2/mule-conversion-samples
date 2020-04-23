@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="ContentBasedRoutingAPI" groupId="com.example.ContentBasedRouting.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/ContentBasedRoutingAPI.xml</file>
+    </artifact>
+    <artifact name="reply-in-default-languageSub_Flow" groupId="com.example.ContentBasedRouting.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/reply-in-default-languageSub_Flow.xml</file>
+    </artifact>
+</artifacts>

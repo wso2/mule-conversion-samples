@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="ldap-connector" groupId="com.example.ExtractingDataFromLdapDirectory.lib" version="1.0.11" type="synapse/lib" serverRole="EnterpriseServiceBus">
+        <file>ldap-connector-1.0.11.zip</file>
+    </artifact>
+</artifacts>

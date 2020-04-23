@@ -1,0 +1,16 @@
+map_S_root_S_root = function(){ 
+var outputroot={};
+
+var count_i_parts_95e7e75b_40fa_438e_ab8f_dfb3b081be57 = 0;
+outputroot =  {};
+outputroot.source = '/Users/rosen/Desktop/mulesample/leads.csv';
+
+for(i_parts_95e7e75b_40fa_438e_ab8f_dfb3b081be57 in inputroot.payload.parts){
+outputroot.inputContent = inputroot.payload.parts[i_parts_95e7e75b_40fa_438e_ab8f_dfb3b081be57].body.data;
+
+count_i_parts_95e7e75b_40fa_438e_ab8f_dfb3b081be57++;
+}
+return outputroot;
+};
+
+

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<task class="org.apache.synapse.startup.tasks.MessageInjector" group="synapse.simple.quartz" name="PollGMAIL" xmlns="http://ws.apache.org/ns/synapse">
+    <trigger interval="10"/>
+    <property name="injectTo" value="sequence" xmlns:task="http://www.wso2.org/products/wso2commons/tasks"/>
+    <property name="sequenceName" value="GmailCSVSequence" xmlns:task="http://www.wso2.org/products/wso2commons/tasks"/>
+    <property name="message" xmlns:task="http://www.wso2.org/products/wso2commons/tasks">
+        <start xmlns="">Polling</start>
+    </property>
+</task>

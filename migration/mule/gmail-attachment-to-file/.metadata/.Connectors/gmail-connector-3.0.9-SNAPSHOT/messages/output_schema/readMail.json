@@ -1,0 +1,145 @@
+{
+  "$schema" : "http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#",
+  "inputType" : "JSON",
+  "id" : "http://wso2jsonschema.org",
+  "title" : "root",
+  "type" : "object",
+  "properties" : {
+    "id" : {
+      "id" : "http://wso2jsonschema.org/id",
+      "type" : "string"
+    },
+    "threadId" : {
+      "id" : "http://wso2jsonschema.org/threadId",
+      "type" : "string"
+    },
+    "labelIds" : {
+      "id" : "http://wso2jsonschema.org/labelIds",
+      "type" : "array",
+      "items" : [ {
+        "id" : "http://wso2jsonschema.org/labelIds/0",
+        "type" : "string"
+      } ]
+    },
+    "snippet" : {
+      "id" : "http://wso2jsonschema.org/snippet",
+      "type" : "string"
+    },
+    "historyId" : {
+      "id" : "http://wso2jsonschema.org/historyId",
+      "type" : "string"
+    },
+    "internalDate" : {
+      "id" : "http://wso2jsonschema.org/internalDate",
+      "type" : "string"
+    },
+    "payload" : {
+      "id" : "http://wso2jsonschema.org/payload",
+      "type" : "object",
+      "properties" : {
+        "partId" : {
+          "id" : "http://wso2jsonschema.org/payload/partId",
+          "type" : "null"
+        },
+        "mimeType" : {
+          "id" : "http://wso2jsonschema.org/payload/mimeType",
+          "type" : "string"
+        },
+        "filename" : {
+          "id" : "http://wso2jsonschema.org/payload/filename",
+          "type" : "null"
+        },
+        "headers" : {
+          "id" : "http://wso2jsonschema.org/payload/headers",
+          "type" : "array",
+          "items" : [ {
+            "id" : "http://wso2jsonschema.org/payload/headers/0",
+            "type" : "object",
+            "properties" : {
+              "name" : {
+                "id" : "http://wso2jsonschema.org/payload/headers/0/name",
+                "type" : "string"
+              },
+              "value" : {
+                "id" : "http://wso2jsonschema.org/payload/headers/0/value",
+                "type" : "string"
+              }
+            }
+          } ]
+        },
+        "body" : {
+          "id" : "http://wso2jsonschema.org/payload/body",
+          "type" : "object",
+          "properties" : {
+            "size" : {
+              "id" : "http://wso2jsonschema.org/payload/body/size",
+              "type" : "number"
+            }
+          }
+        },
+        "parts" : {
+          "id" : "http://wso2jsonschema.org/payload/parts",
+          "type" : "array",
+          "items" : [ {
+            "id" : "http://wso2jsonschema.org/payload/parts/0",
+            "type" : "object",
+            "properties" : {
+              "partId" : {
+                "id" : "http://wso2jsonschema.org/payload/parts/0/partId",
+                "type" : "string"
+              },
+              "mimeType" : {
+                "id" : "http://wso2jsonschema.org/payload/parts/0/mimeType",
+                "type" : "string"
+              },
+              "filename" : {
+                "id" : "http://wso2jsonschema.org/payload/parts/0/filename",
+                "type" : "string"
+              },
+              "headers" : {
+                "id" : "http://wso2jsonschema.org/payload/parts/0/headers",
+                "type" : "array",
+                "items" : [ {
+                  "id" : "http://wso2jsonschema.org/payload/parts/0/headers/0",
+                  "type" : "object",
+                  "properties" : {
+                    "name" : {
+                      "id" : "http://wso2jsonschema.org/payload/parts/0/headers/0/name",
+                      "type" : "string"
+                    },
+                    "value" : {
+                      "id" : "http://wso2jsonschema.org/payload/parts/0/headers/0/value",
+                      "type" : "string"
+                    }
+                  }
+                } ]
+              },
+              "body" : {
+                "id" : "http://wso2jsonschema.org/payload/parts/0/body",
+                "type" : "object",
+                "properties" : {
+                  "attachmentId" : {
+                    "id" : "http://wso2jsonschema.org/payload/parts/0/body/attachmentId",
+                    "type" : "string"
+                  },
+                  "size" : {
+                    "id" : "http://wso2jsonschema.org/payload/parts/0/body/size",
+                    "type" : "number"
+                  },
+                  "data" : {
+                    "id" : "http://wso2jsonschema.org/payload/parts/0/body/data",
+                    "type" : "string"
+                  }
+                }
+              }
+            }
+          } ]
+        }
+      }
+    },
+    "sizeEstimate" : {
+      "id" : "http://wso2jsonschema.org/sizeEstimate",
+      "type" : "number"
+    }
+  }
+}

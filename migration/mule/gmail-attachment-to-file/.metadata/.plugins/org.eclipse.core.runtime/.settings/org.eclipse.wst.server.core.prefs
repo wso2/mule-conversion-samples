@@ -1,0 +1,3 @@
+eclipse.preferences.version=1
+module-start-timeout=300000
+runtimes=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<runtimes>\n  <runtime id\="org.wso2.micro.integrator.runtime11" id-set\="true" location\="/Applications/IntegrationStudio.app/Contents/Eclipse/runtime/microesb" name\="Micro Integrator Runtime 1.0.0" runtime-type-id\="org.wso2.developerstudio.eclipse.carbon.runtime44microei11" timestamp\="0">\n    <map carbon.home\="runtime/microesb" esb.debug\="false" key\="generic_server_instance_properties" server.name\="WSO2 Micro Integrator Server"/>\n  </runtime>\n</runtimes>\n

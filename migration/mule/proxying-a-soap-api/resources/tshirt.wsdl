@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://ws.apache.org/axis2" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://ws.apache.org/axis2">
+   <wsdl:types/>
+   <wsdl:message name="in"/>
+   <wsdl:message name="out"/>
+   <wsdl:portType name="tshirt-servicePortType">
+      <wsdl:operation name="ListInventory">
+         <wsdl:input message="tns:in" wsaw:Action="urn:ListInventory"/>
+         <wsdl:output message="tns:out" wsaw:Action="urn:ListInventoryResponse"/>
+      </wsdl:operation>
+   </wsdl:portType>
+   <wsdl:binding name="tshirt-serviceSoap11Binding" type="tns:tshirt-servicePortType">
+      <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+      <wsdl:operation name="ListInventory">
+         <soap:operation soapAction="urn:ListInventory" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:binding name="tshirt-serviceSoap12Binding" type="tns:tshirt-servicePortType">
+      <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+      <wsdl:operation name="ListInventory">
+         <soap12:operation soapAction="urn:ListInventory" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:binding name="tshirt-serviceHttpBinding" type="tns:tshirt-servicePortType">
+      <http:binding verb="POST"/>
+      <wsdl:operation name="ListInventory">
+         <http:operation location="ListInventory"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:service name="tshirt-service">
+      <wsdl:port name="tshirt-serviceHttpsSoap11Endpoint" binding="tns:tshirt-serviceSoap11Binding">
+         <soap:address location="https://localhost:8253/services/tshirt-service.tshirt-serviceHttpsSoap11Endpoint"/>
+      </wsdl:port>
+      <wsdl:port name="tshirt-serviceHttpSoap11Endpoint" binding="tns:tshirt-serviceSoap11Binding">
+         <soap:address location="http://localhost:8290/services/tshirt-service.tshirt-serviceHttpSoap11Endpoint"/>
+      </wsdl:port>
+      <wsdl:port name="tshirt-serviceHttpsSoap12Endpoint" binding="tns:tshirt-serviceSoap12Binding">
+         <soap12:address location="https://localhost:8253/services/tshirt-service.tshirt-serviceHttpsSoap12Endpoint"/>
+      </wsdl:port>
+      <wsdl:port name="tshirt-serviceHttpSoap12Endpoint" binding="tns:tshirt-serviceSoap12Binding">
+         <soap12:address location="http://localhost:8290/services/tshirt-service.tshirt-serviceHttpSoap12Endpoint"/>
+      </wsdl:port>
+      <wsdl:port name="tshirt-serviceHttpEndpoint" binding="tns:tshirt-serviceHttpBinding">
+         <http:address location="http://localhost:8290/services/tshirt-service.tshirt-serviceHttpEndpoint"/>
+      </wsdl:port>
+      <wsdl:port name="tshirt-serviceHttpsEndpoint" binding="tns:tshirt-serviceHttpBinding">
+         <http:address location="https://localhost:8253/services/tshirt-service.tshirt-serviceHttpsEndpoint"/>
+      </wsdl:port>
+   </wsdl:service>
+</wsdl:definitions>

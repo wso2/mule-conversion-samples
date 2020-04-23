@@ -1,0 +1,3 @@
+<task xmlns="http://ws.apache.org/ns/synapse" name="PollGMAIL" class="org.apache.synapse.startup.tasks.MessageInjector" group="synapse.simple.quartz">
+<trigger once="true"/>
+</task>

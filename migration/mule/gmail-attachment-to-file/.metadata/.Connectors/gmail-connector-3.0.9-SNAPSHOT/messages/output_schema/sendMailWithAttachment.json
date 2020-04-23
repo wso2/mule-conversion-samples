@@ -1,0 +1,30 @@
+{
+  "id": "http:\/\/wso2jsonschema.org",
+  "title": "sendMailResponse",
+  "$schema": "http:\/\/json-schema.org\/draft-04\/schema#",
+  "properties": {
+    "message": {
+      "id": "http:\/\/wso2jsonschema.org\/message",
+      "properties": {
+        "content": {
+          "id": "http:\/\/wso2jsonschema.org\/message\/content",
+          "type": "string"
+        },
+        "recipients": {
+          "id": "http:\/\/wso2jsonschema.org\/message\/recipients",
+          "type": "string"
+        },
+        "subject": {
+          "id": "http:\/\/wso2jsonschema.org\/message\/subject",
+          "type": "string"
+        },
+        "attachments": {
+          "id": "http:\/\/wso2jsonschema.org\/message\/attachments",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "type": "object"
+}
