@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy name="tshirt-service" startOnLoad="true" transports="http https" xmlns="http://ws.apache.org/ns/synapse">
+    <target>
+        <inSequence>
+            <payloadFactory media-type="xml">
+                <format>
+                    <soap:Envelope xmlns:ns="http://www.viewstar.com/webservices/2002/11" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope">
+                        <soap:Header/>
+                        <soap:Body>
+                            <ns:InventoryList>
+                                <ns:inventory>
+                                    <ns:code>TS001</ns:code>
+                                    <ns:colorCode>CTS024</ns:colorCode>
+                                </ns:inventory>
+                                <ns:inventory>
+                                    <ns:code>TS006</ns:code>
+                                    <ns:colorCode>CTS024</ns:colorCode>
+                                </ns:inventory>
+                                <ns:inventory>
+                                    <ns:code>TS005</ns:code>
+                                    <ns:colorCode>CTS024</ns:colorCode>
+                                </ns:inventory>
+                            </ns:InventoryList>
+                        </soap:Body>
+                    </soap:Envelope>
+                </format>
+                <args/>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </target>
+    <publishWSDL key="conf:resourcefiles/tshirt.wsdl" preservePolicy="true"/>
+</proxy>

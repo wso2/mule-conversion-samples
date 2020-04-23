@@ -1,0 +1,24 @@
+{
+  "$schema":"http:\/\/wso2.org\/json-schema\/wso2-data-mapper-v5.0.0\/schema#",
+  "id":"http:\/\/wso2jsonschema.org",
+  "title":"ns:result",
+  "type":"object",
+  "properties":{
+    "ns:file":{
+      "id":"http:\/\/wso2jsonschema.org\/ns:file",
+      "type":"array",
+      "items":[
+        {
+          "id":"http:\/\/wso2jsonschema.org\/ns:file\/0",
+          "type":"string"
+        }
+      ]
+    }
+  },
+  "namespaces":[
+    {
+      "prefix":"ns",
+      "url":"http:\/\/org.wso2.esbconnectors.FileConnector"
+    }
+  ]
+}

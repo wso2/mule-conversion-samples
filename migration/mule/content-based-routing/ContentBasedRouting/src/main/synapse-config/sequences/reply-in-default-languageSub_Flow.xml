@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="reply-in-default-languageSub_Flow" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log description="Logger">
+        <property name="message" value="No language specified. Using English as a default."/>
+    </log>
+    <property description="Set Language to English" name="language" scope="default" type="STRING" value="English"/>
+    <payloadFactory description="Reply in English" media-type="text">
+        <format>Hello!</format>
+        <args/>
+    </payloadFactory>
+</sequence>

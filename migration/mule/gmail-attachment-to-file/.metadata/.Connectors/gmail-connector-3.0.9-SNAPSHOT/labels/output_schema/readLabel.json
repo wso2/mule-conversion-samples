@@ -1,0 +1,44 @@
+{
+  "id": "http:\/\/wso2jsonschema.org",
+  "title": "root",
+  "$schema": "http:\/\/json-schema.org\/draft-04\/schema#",
+  "properties": {
+    "id": {
+      "id": "http:\/\/wso2jsonschema.org\/id",
+      "type": "string"
+    },
+    "messagesUnread": {
+      "id": "http:\/\/wso2jsonschema.org\/messagesUnread",
+      "type": "number"
+    },
+    "labelListVisibility": {
+      "id": "http:\/\/wso2jsonschema.org\/labelListVisibility",
+      "type": "string"
+    },
+    "threadsUnread": {
+      "id": "http:\/\/wso2jsonschema.org\/threadsUnread",
+      "type": "number"
+    },
+    "messagesTotal": {
+      "id": "http:\/\/wso2jsonschema.org\/messagesTotal",
+      "type": "number"
+    },
+    "messageListVisibility": {
+      "id": "http:\/\/wso2jsonschema.org\/messageListVisibility",
+      "type": "string"
+    },
+    "name": {
+      "id": "http:\/\/wso2jsonschema.org\/name",
+      "type": "string"
+    },
+    "type": {
+      "id": "http:\/\/wso2jsonschema.org\/type",
+      "type": "string"
+    },
+    "threadsTotal": {
+      "id": "http:\/\/wso2jsonschema.org\/threadsTotal",
+      "type": "number"
+    }
+  },
+  "type": "object"
+}

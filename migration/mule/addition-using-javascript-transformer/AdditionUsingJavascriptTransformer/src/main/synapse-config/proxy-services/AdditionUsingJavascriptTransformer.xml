@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy name="AdditionUsingJavascriptTransformer" startOnLoad="true" transports="http https" xmlns="http://ws.apache.org/ns/synapse">
+    <target>
+        <inSequence>
+            <script description="Perform calculation" language="js"><![CDATA[{
+            var list = eval(mc.getPayloadJSON());
+var sum = 0;
+for (var i in list){
+ sum += list[i];
+}
+
+ mc.setProperty('result_str', sum);
+}]]></script>
+            <log description="Log the result" level="custom">
+                <property expression="fn:concat('Sum is: ',get-property('result_str'))" name="result_str"/>
+            </log>
+            <payloadFactory description="Set payload to respond" media-type="text">
+                <format>$1</format>
+                <args>
+                    <arg evaluator="xml" expression="fn:concat('Sum is: ',get-property('result_str'))" literal="true"/>
+                </args>
+            </payloadFactory>
+            <respond description="Respond result"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </target>
+</proxy>

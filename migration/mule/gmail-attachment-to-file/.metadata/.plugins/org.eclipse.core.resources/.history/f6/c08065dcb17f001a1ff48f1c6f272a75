@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="GmailCSVSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <gmail.init>
+        <userId>rosensuresh@gmail.com</userId>
+        <accessToken>ya29.a0Ae4lvC0TLXjVTnQ_sfI2wz5iwmpbcC6xy50GjgoqT_n4N4LrHQ2INga72Y53_x6s1Gr_SHEYgO0YZNytTPNPkLVdpMBFYqj6hv1VpjHnMI_hMPICo0vvxabbteuwy1GSieBu39aOJ4-1uSULcRhpiSNHVvxhhsZm6m8</accessToken>
+        <apiUrl>https://www.googleapis.com/gmail</apiUrl>
+    </gmail.init>
+    <gmail.readMail>
+        <labelIds>UNREAD</labelIds>
+        <maxResults>1</maxResults>
+        <q>WSO2_CSV_SAMPLE</q>
+        <format>full</format>
+    </gmail.readMail>
+    <datamapper config="gov:datamapper/NewConfig.dmc" inputSchema="gov:datamapper/NewConfig_inputSchema.json" inputType="JSON" outputSchema="gov:datamapper/NewConfig_outputSchema.json" outputType="JSON" xsltStyleSheet="gov:datamapper/NewConfig_xsltStyleSheet.xml"/>
+    <fileconnector.create/>
+</sequence>

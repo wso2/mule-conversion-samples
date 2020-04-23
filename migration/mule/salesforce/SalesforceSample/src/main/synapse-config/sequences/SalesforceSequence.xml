@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="SalesforceSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log>
+        <property name="Hello" value="World"/>
+    </log>
+    <fileconnector.read>
+        <source>file:///Users/rosen/Desktop/mulesample/leads.csv</source>
+        <contentType>text/plain</contentType>
+    </fileconnector.read>
+    <log level="full">
+        <property name="AFTER" value="HELLO"/>
+    </log>
+    <salesforcerest.init/>
+</sequence>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2016, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+  ~
+  ~ WSO2 Inc. licenses this file to you under the Apache License,
+  ~ Version 2.0 (the "License"); you may not use this file except
+  ~ in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~    http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing,
+  ~ software distributed under the License is distributed on an
+  ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  ~ KIND, either express or implied.  See the License for the
+  ~ specific language governing permissions and limitations
+  ~ under the License.
+-->
+<template name="init" xmlns="http://ws.apache.org/ns/synapse">
+    <parameter name="userId" description="Email ID of the user."/>
+    <parameter name="accessToken" description="Access Token if a client account is being used"/>
+    <parameter name="apiUrl" description="API Url to access the endpoint."/>
+    <parameter name="clientId"
+               description="clientId of your App, given by google console when you registered your application"/>
+    <parameter name="clientSecret"
+               description="clientSecret of your App, given by google console when you registered your application"/>
+    <parameter name="refreshToken" description="Refresh token to exchange with an access token."/>
+    <parameter name="accessTokenRegistryPath"
+               description="Registry Path of the Connector where the values are stored."/>
+    <sequence>
+        <property name="uri.var.gmail.apiUrl" expression="$func:apiUrl"/>
+        <property name="uri.var.gmail.apiVersion" value="v1"/>
+        <property name="uri.var.gmail.userId" expression="$func:userId"/>
+        <property name="uri.var.gmail.accessToken" expression="$func:accessToken"/>
+        <property name="uri.var.gmail.refreshToken" expression="$func:refreshToken"/>
+        <property name="uri.var.gmail.clientId" expression="$func:clientId"/>
+        <property name="uri.var.gmail.clientSecret" expression="$func:clientSecret"/>
+        <property name="uri.var.gmail.accessTokenRegistryPath"
+                  expression="$func:accessTokenRegistryPath"/>
+        <filter source="boolean($ctx:uri.var.gmail.refreshToken) and boolean($ctx:uri.var.gmail.clientSecret) and boolean($ctx:uri.var.gmail.clientId) and boolean($ctx:uri.var.gmail.accessToken)"
+                regex="true">
+            <then>
+                <filter source="boolean($ctx:uri.var.gmail.accessTokenRegistryPath)" regex="false">
+                    <then>
+                        <property name="uri.var.gmail.accessTokenRegistryPath"
+                                  value="connectors/Gmail/accessToken"/>
+                    </then>
+                    <else>
+                        <property name="uri.var.gmail.accessTokenRegistryPath"
+                                  expression="$ctx:uri.var.gmail.accessTokenRegistryPath"/>
+                    </else>
+                </filter>
+                <property name="uri.var.gmail.accessToken.reg"
+                          expression="get-property('registry', $ctx:uri.var.gmail.accessTokenRegistryPath)"/>
+                <filter source="$ctx:uri.var.gmail.accessToken.reg=''" regex="true">
+                    <then>
+                        <script language="js">
+                            <![CDATA[
+                           importPackage(Packages.org.apache.synapse.config);
+                           var newAccess = mc.getProperty('uri.var.gmail.accessToken');
+                           var newAccessRegistryPath = mc.getProperty('uri.var.gmail.accessTokenRegistryPath');
+                           if(newAccess != null && newAccess != ''){
+                               //Create the registry entry if no such entry exists.
+                               mc.getConfiguration().getRegistry().newResource(newAccessRegistryPath,false);
+                               mc.getConfiguration().getRegistry().updateResource(newAccessRegistryPath,newAccess);
+                           }
+                           ]]>
+                        </script>
+                    </then>
+                    <else>
+                        <property name="uri.var.gmail.accessToken"
+                                  expression="$ctx:uri.var.gmail.accessToken.reg"/>
+                    </else>
+                </filter>
+                <header name="Transfer-Encoding" action="remove" scope="transport"/>
+                <call>
+                    <endpoint>
+                        <http method="get"
+                              uri-template="https://www.googleapis.com/oauth2/v1/tokeninfo?access_token={+uri.var.gmail.accessToken}"/>
+                    </endpoint>
+                </call>
+                <property name="uri.var.gmail.error" expression="json-eval($.error)"/>
+                <filter source="$ctx:uri.var.gmail.error='invalid_token'"
+                        regex="true">
+                    <gmail.getAccessTokenFromRefreshToken/>
+                    <property name="uri.var.gmail.accessToken"
+                              expression="json-eval($.access_token)"/>
+                </filter>
+            </then>
+        </filter>
+        <header name="Authorization" expression="fn:concat('Bearer ', $ctx:uri.var.gmail.accessToken)"
+                scope="transport"/>
+        <class name="org.wso2.carbon.connector.GmailConfig"/>
+    </sequence>
+</template>

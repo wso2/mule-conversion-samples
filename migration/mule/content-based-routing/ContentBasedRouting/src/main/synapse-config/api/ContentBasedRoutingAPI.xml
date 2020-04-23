@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/hello" name="ContentBasedRoutingAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <property description="Set Language" expression="get-property('query.param.language')" name="language" scope="default" type="STRING"/>
+            <switch source="get-property('language')">
+                <case regex="Spanish">
+                    <payloadFactory description="Reply in Spanish" media-type="text">
+                        <format>Hola!</format>
+                        <args/>
+                    </payloadFactory>
+                </case>
+                <case regex="French">
+                    <payloadFactory description="Reply in French" media-type="text">
+                        <format>Bonjour!</format>
+                        <args/>
+                    </payloadFactory>
+                </case>
+                <default>
+                    <sequence key="reply-in-default-languageSub_Flow"/>
+                </default>
+            </switch>
+            <log description="Log the reply">
+                <property expression="fn:concat(&quot;The reply &quot; , $body , &quot; means hello in &quot;, get-property('language'))" name="message"/>
+            </log>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

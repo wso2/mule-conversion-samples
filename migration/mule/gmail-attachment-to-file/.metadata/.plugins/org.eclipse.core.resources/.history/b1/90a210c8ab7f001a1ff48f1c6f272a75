@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datamapper:DataMapperRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:datamapper="http:///org/wso2/developerstudio/eclipse/gmf/datamapper">
+  <input>
+    <treeNode name="root" schemaDataType="OBJECT" level="1">
+      <node name="id" schemaDataType="STRING" level="2">
+        <properties key="type" value="string"/>
+        <properties key="id" value="http://wso2jsonschema.org/id"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode/>
+      </node>
+      <node name="threadId" schemaDataType="STRING" level="2">
+        <properties key="type" value="string"/>
+        <properties key="id" value="http://wso2jsonschema.org/threadId"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode/>
+      </node>
+      <node name="labelIds" level="2">
+        <properties key="type" value="array"/>
+        <properties key="id" value="http://wso2jsonschema.org/labelIds"/>
+        <properties key="items_id" value="http://wso2jsonschema.org/labelIds/0"/>
+        <properties key="items_type" value="string"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode/>
+      </node>
+      <node name="snippet" schemaDataType="STRING" level="2">
+        <properties key="type" value="string"/>
+        <properties key="id" value="http://wso2jsonschema.org/snippet"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode/>
+      </node>
+      <node name="historyId" schemaDataType="STRING" level="2">
+        <properties key="type" value="string"/>
+        <properties key="id" value="http://wso2jsonschema.org/historyId"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode/>
+      </node>
+      <node name="internalDate" schemaDataType="STRING" level="2">
+        <properties key="type" value="string"/>
+        <properties key="id" value="http://wso2jsonschema.org/internalDate"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode/>
+      </node>
+      <node name="payload" schemaDataType="OBJECT" level="2">
+        <node name="partId" schemaDataType="NULL" level="3">
+          <properties key="type" value="null"/>
+          <properties key="id" value="http://wso2jsonschema.org/payload/partId"/>
+          <properties key="nullable" value="false"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <node name="mimeType" schemaDataType="STRING" level="3">
+          <properties key="type" value="string"/>
+          <properties key="id" value="http://wso2jsonschema.org/payload/mimeType"/>
+          <properties key="nullable" value="false"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <node name="filename" schemaDataType="NULL" level="3">
+          <properties key="type" value="null"/>
+          <properties key="id" value="http://wso2jsonschema.org/payload/filename"/>
+          <properties key="nullable" value="false"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <node name="headers" level="3">
+          <node name="name" schemaDataType="STRING" level="4">
+            <properties key="type" value="string"/>
+            <properties key="id" value="http://wso2jsonschema.org/payload/headers/0/name"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode/>
+          </node>
+          <node name="value" schemaDataType="STRING" level="4">
+            <properties key="type" value="string"/>
+            <properties key="id" value="http://wso2jsonschema.org/payload/headers/0/value"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode/>
+          </node>
+          <properties key="type" value="array"/>
+          <properties key="id" value="http://wso2jsonschema.org/payload/headers"/>
+          <properties key="items_id" value="http://wso2jsonschema.org/payload/headers/0"/>
+          <properties key="items_type" value="object"/>
+          <properties key="nullable" value="false"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <node name="body" schemaDataType="OBJECT" level="3">
+          <node name="size" schemaDataType="NUMBER" level="4">
+            <properties key="type" value="number"/>
+            <properties key="id" value="http://wso2jsonschema.org/payload/body/size"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode/>
+          </node>
+          <properties key="type" value="object"/>
+          <properties key="id" value="http://wso2jsonschema.org/payload/body"/>
+          <properties key="nullable" value="false"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <node name="parts" level="3">
+          <node name="partId" schemaDataType="STRING" level="4">
+            <properties key="type" value="string"/>
+            <properties key="id" value="http://wso2jsonschema.org/payload/parts/0/partId"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode/>
+          </node>
+          <node name="mimeType" schemaDataType="STRING" level="4">
+            <properties key="type" value="string"/>
+            <properties key="id" value="http://wso2jsonschema.org/payload/parts/0/mimeType"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode/>
+          </node>
+          <node name="filename" schemaDataType="STRING" level="4">
+            <properties key="type" value="string"/>
+            <properties key="id" value="http://wso2jsonschema.org/payload/parts/0/filename"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode/>
+          </node>
+          <node name="headers" level="4">
+            <node name="name" schemaDataType="STRING" level="5">
+              <properties key="type" value="string"/>
+              <properties key="id" value="http://wso2jsonschema.org/payload/parts/0/headers/0/name"/>
+              <properties key="nullable" value="false"/>
+              <outNode/>
+              <inNode/>
+            </node>
+            <node name="value" schemaDataType="STRING" level="5">
+              <properties key="type" value="string"/>
+              <properties key="id" value="http://wso2jsonschema.org/payload/parts/0/headers/0/value"/>
+              <properties key="nullable" value="false"/>
+              <outNode/>
+              <inNode/>
+            </node>
+            <properties key="type" value="array"/>
+            <properties key="id" value="http://wso2jsonschema.org/payload/parts/0/headers"/>
+            <properties key="items_id" value="http://wso2jsonschema.org/payload/parts/0/headers/0"/>
+            <properties key="items_type" value="object"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode/>
+          </node>
+          <node name="body" schemaDataType="OBJECT" level="4">
+            <node name="attachmentId" schemaDataType="STRING" level="5">
+              <properties key="type" value="string"/>
+              <properties key="id" value="http://wso2jsonschema.org/payload/parts/0/body/attachmentId"/>
+              <properties key="nullable" value="false"/>
+              <outNode/>
+              <inNode/>
+            </node>
+            <node name="size" schemaDataType="NUMBER" level="5">
+              <properties key="type" value="number"/>
+              <properties key="id" value="http://wso2jsonschema.org/payload/parts/0/body/size"/>
+              <properties key="nullable" value="false"/>
+              <outNode/>
+              <inNode/>
+            </node>
+            <node name="data" schemaDataType="STRING" level="5">
+              <properties key="type" value="string"/>
+              <properties key="id" value="http://wso2jsonschema.org/payload/parts/0/body/data"/>
+              <properties key="nullable" value="false"/>
+              <outNode>
+                <outgoingLink inNode="//@output/@treeNode.0/@node.1/@inNode"/>
+              </outNode>
+              <inNode/>
+            </node>
+            <properties key="type" value="object"/>
+            <properties key="id" value="http://wso2jsonschema.org/payload/parts/0/body"/>
+            <properties key="nullable" value="false"/>
+            <properties key="properties_id" value="{name={id=http://wso2jsonschema.org/payload/parts/0/headers/0/name, type=string}, value={id=http://wso2jsonschema.org/payload/parts/0/headers/0/value, type=string}}"/>
+            <properties key="properties_id" value="{attachmentId={id=http://wso2jsonschema.org/payload/parts/0/body/attachmentId, type=string}, size={id=http://wso2jsonschema.org/payload/parts/0/body/size, type=number}, data={id=http://wso2jsonschema.org/payload/parts/0/body/data, type=string}}"/>
+            <outNode/>
+            <inNode/>
+          </node>
+          <properties key="type" value="array"/>
+          <properties key="id" value="http://wso2jsonschema.org/payload/parts"/>
+          <properties key="items_id" value="http://wso2jsonschema.org/payload/parts/0"/>
+          <properties key="items_type" value="object"/>
+          <properties key="nullable" value="false"/>
+          <properties key="properties_id" value="{name={id=http://wso2jsonschema.org/payload/headers/0/name, type=string}, value={id=http://wso2jsonschema.org/payload/headers/0/value, type=string}}"/>
+          <properties key="properties_id" value="{size={id=http://wso2jsonschema.org/payload/body/size, type=number}}"/>
+          <properties key="properties_id" value="{partId={id=http://wso2jsonschema.org/payload/parts/0/partId, type=string}, mimeType={id=http://wso2jsonschema.org/payload/parts/0/mimeType, type=string}, filename={id=http://wso2jsonschema.org/payload/parts/0/filename, type=string}, headers={id=http://wso2jsonschema.org/payload/parts/0/headers, type=array, items=[{id=http://wso2jsonschema.org/payload/parts/0/headers/0, type=object, properties={name={id=http://wso2jsonschema.org/payload/parts/0/headers/0/name, type=string}, value={id=http://wso2jsonschema.org/payload/parts/0/headers/0/value, type=string}}}]}, body={id=http://wso2jsonschema.org/payload/parts/0/body, type=object, properties={attachmentId={id=http://wso2jsonschema.org/payload/parts/0/body/attachmentId, type=string}, size={id=http://wso2jsonschema.org/payload/parts/0/body/size, type=number}, data={id=http://wso2jsonschema.org/payload/parts/0/body/data, type=string}}}}"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <properties key="type" value="object"/>
+        <properties key="id" value="http://wso2jsonschema.org/payload"/>
+        <properties key="nullable" value="false"/>
+        <properties key="properties_id" value="{partId={id=http://wso2jsonschema.org/payload/partId, type=null}, mimeType={id=http://wso2jsonschema.org/payload/mimeType, type=string}, filename={id=http://wso2jsonschema.org/payload/filename, type=null}, headers={id=http://wso2jsonschema.org/payload/headers, type=array, items=[{id=http://wso2jsonschema.org/payload/headers/0, type=object, properties={name={id=http://wso2jsonschema.org/payload/headers/0/name, type=string}, value={id=http://wso2jsonschema.org/payload/headers/0/value, type=string}}}]}, body={id=http://wso2jsonschema.org/payload/body, type=object, properties={size={id=http://wso2jsonschema.org/payload/body/size, type=number}}}, parts={id=http://wso2jsonschema.org/payload/parts, type=array, items=[{id=http://wso2jsonschema.org/payload/parts/0, type=object, properties={partId={id=http://wso2jsonschema.org/payload/parts/0/partId, type=string}, mimeType={id=http://wso2jsonschema.org/payload/parts/0/mimeType, type=string}, filename={id=http://wso2jsonschema.org/payload/parts/0/filename, type=string}, headers={id=http://wso2jsonschema.org/payload/parts/0/headers, type=array, items=[{id=http://wso2jsonschema.org/payload/parts/0/headers/0, type=object, properties={name={id=http://wso2jsonschema.org/payload/parts/0/headers/0/name, type=string}, value={id=http://wso2jsonschema.org/payload/parts/0/headers/0/value, type=string}}}]}, body={id=http://wso2jsonschema.org/payload/parts/0/body, type=object, properties={attachmentId={id=http://wso2jsonschema.org/payload/parts/0/body/attachmentId, type=string}, size={id=http://wso2jsonschema.org/payload/parts/0/body/size, type=number}, data={id=http://wso2jsonschema.org/payload/parts/0/body/data, type=string}}}}}]}}"/>
+        <outNode/>
+        <inNode/>
+      </node>
+      <node name="sizeEstimate" schemaDataType="NUMBER" level="2">
+        <properties key="type" value="number"/>
+        <properties key="id" value="http://wso2jsonschema.org/sizeEstimate"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode/>
+      </node>
+      <properties key="type" value="object"/>
+      <properties key="$schema" value="http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#"/>
+      <properties key="id" value="http://wso2jsonschema.org"/>
+      <properties key="nullable" value="false"/>
+      <outNode/>
+      <inNode/>
+    </treeNode>
+  </input>
+  <output>
+    <treeNode name="root" schemaDataType="OBJECT" level="1">
+      <node name="source" schemaDataType="STRING" level="2">
+        <properties key="type" value="string"/>
+        <properties key="id" value="http://wso2jsonschema.org/source"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode incomingLink="//@operators.0/@basicContainer/@rightContainer/@rightConnectors.0/@outNode/@outgoingLink.0"/>
+      </node>
+      <node name="inputContent" schemaDataType="STRING" level="2">
+        <properties key="type" value="string"/>
+        <properties key="id" value="http://wso2jsonschema.org/inputContent"/>
+        <properties key="nullable" value="true"/>
+        <outNode/>
+        <inNode incomingLink="//@input/@treeNode.0/@node.6/@node.5/@node.4/@node.2/@outNode/@outgoingLink.0"/>
+      </node>
+      <node name="isBinaryContent" schemaDataType="STRING" level="2">
+        <properties key="type" value="string"/>
+        <properties key="id" value="http://wso2jsonschema.org/isBinaryContent"/>
+        <properties key="nullable" value="true"/>
+        <outNode/>
+        <inNode/>
+      </node>
+      <node name="encoding" schemaDataType="STRING" level="2">
+        <properties key="type" value="string"/>
+        <properties key="id" value="http://wso2jsonschema.org/encoding"/>
+        <properties key="nullable" value="true"/>
+        <outNode/>
+        <inNode/>
+      </node>
+      <node name="setTimeout" schemaDataType="STRING" level="2">
+        <properties key="type" value="string"/>
+        <properties key="id" value="http://wso2jsonschema.org/setTimeout"/>
+        <properties key="nullable" value="true"/>
+        <outNode/>
+        <inNode/>
+      </node>
+      <node name="setPassiveMode" schemaDataType="STRING" level="2">
+        <properties key="type" value="string"/>
+        <properties key="id" value="http://wso2jsonschema.org/setPassiveMode"/>
+        <properties key="nullable" value="true"/>
+        <outNode/>
+        <inNode/>
+      </node>
+      <node name="setUserDirIsRoot" schemaDataType="STRING" level="2">
+        <properties key="type" value="string"/>
+        <properties key="id" value="http://wso2jsonschema.org/setUserDirIsRoot"/>
+        <properties key="nullable" value="true"/>
+        <outNode/>
+        <inNode/>
+      </node>
+      <node name="setSoTimeout" schemaDataType="STRING" level="2">
+        <properties key="type" value="string"/>
+        <properties key="id" value="http://wso2jsonschema.org/setSoTimeout"/>
+        <properties key="nullable" value="true"/>
+        <outNode/>
+        <inNode/>
+      </node>
+      <node name="setStrictHostKeyChecking" schemaDataType="STRING" level="2">
+        <properties key="type" value="string"/>
+        <properties key="id" value="http://wso2jsonschema.org/setStrictHostKeyChecking"/>
+        <properties key="nullable" value="true"/>
+        <outNode/>
+        <inNode/>
+      </node>
+      <properties key="type" value="object"/>
+      <properties key="$schema" value="http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#"/>
+      <properties key="id" value="http://wso2jsonschema.org"/>
+      <properties key="nullable" value="false"/>
+      <outNode/>
+      <inNode/>
+    </treeNode>
+  </output>
+  <operators xsi:type="datamapper:Constant" defaultOutputConnectors="1" operatorType="CONSTANT" constantValue="/Users/rosen/Desktop/mulesample/leads.csv">
+    <basicContainer>
+      <leftContainer/>
+      <rightContainer>
+        <rightConnectors>
+          <outNode>
+            <outgoingLink inNode="//@output/@treeNode.0/@node.0/@inNode"/>
+          </outNode>
+        </rightConnectors>
+      </rightContainer>
+    </basicContainer>
+  </operators>
+</datamapper:DataMapperRoot>

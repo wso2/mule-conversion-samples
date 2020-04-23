@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="GmailCSVSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <gmail.init>
+        <userId>rosensuresh@gmail.com</userId>
+        <accessToken>ya29.a0Ae4lvC2bWmQUjAs4Dbo0UVlmaGu9SpabPKYuLxjCm0MOq5rM7SN7urqmGwfPMyCuPAlZBrNhXd0XOC1k0cu0b9bok21_DhRZPtqzPcr767QOLsKr3FFmyz4rcLwychQ5iKE_MtE1qK04LPCWGmHasg2BbT6u34aDN7KL</accessToken>
+        <apiUrl>https://www.googleapis.com/gmail</apiUrl>
+    </gmail.init>
+</sequence>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+~  Copyright (c) 2016, WSO2 Inc. (http://wso2.com) All Rights Reserved.
+~
+~  WSO2 Inc. licenses this file to you under the Apache License,
+~  Version 2.0 (the "License"); you may not use this file except
+~  in compliance with the License.
+~  You may obtain a copy of the License at
+~
+~   http://www.apache.org/licenses/LICENSE-2.0
+~
+~  Unless required by applicable law or agreed to in writing,
+~  software distributed under the License is distributed on an
+~  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+~  KIND, either express or implied.  See the License for the
+~  specific language governing permissions and limitations
+~  under the License.
+-->
+<template xmlns="http://ws.apache.org/ns/synapse" name="copy">
+    <parameter name="source" description="The location of the file."/>
+    <parameter name="destination" description="The location of the copied files."/>
+    <parameter name="filePattern" description="The pattern of the files to be copied."/>
+    <parameter name="setTimeout" description="Sets the timeout value on Jsch(Java Secure Channel) session."/>
+    <parameter name="setPassiveMode" description="Sets the passive mode to enter into passive mode."/>
+    <parameter name="setSoTimeout" description="Sets the socket timeout for the FTP client."/>
+    <parameter name="setStrictHostKeyChecking" description="Sets the host key checking to use."/>
+    <parameter name="setUserDirIsRoot" description="Sets the whether to use the user directory as root."/>
+    <parameter name="includeParentDirectory"
+               description="Boolean type, indicating whether the parent directory will include or not."/>
+    <sequence>
+        <property name="source" expression="$func:source"/>
+        <property name="destination" expression="$func:destination"/>
+        <property name="filePattern" expression="$func:filePattern"/>
+        <property name="setTimeout" expression="$func:setTimeout"/>
+        <property name="setPassiveMode" expression="$func:setPassiveMode"/>
+        <property name="setSoTimeout" expression="$func:setSoTimeout"/>
+        <property name="setStrictHostKeyChecking" expression="$func:setStrictHostKeyChecking"/>
+        <property name="setUserDirIsRoot" expression="$func:setUserDirIsRoot"/>
+        <property name="includeParentDirectory" expression="$func:includeParentDirectory"/>
+        <class name="org.wso2.carbon.connector.FileCopy"/>
+    </sequence>
+</template>

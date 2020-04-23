@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+org.eclipse.jdt.core.classpathVariable.ECLIPSE_WORKSPACE=/Users/rosen/IntegrationStudio/gmail-demo-1_new
+org.eclipse.jdt.core.classpathVariable.JRE_LIB=/Applications/IntegrationStudio.app/Contents/Eclipse/jdk-home/Contents/Home/jre/lib/rt.jar
+org.eclipse.jdt.core.classpathVariable.JRE_SRC=/Applications/IntegrationStudio.app/Contents/Eclipse/jdk-home/Contents/Home/src.zip
+org.eclipse.jdt.core.classpathVariable.JRE_SRCROOT=src
+org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled
+org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.8
+org.eclipse.jdt.core.compiler.compliance=1.8
+org.eclipse.jdt.core.compiler.problem.assertIdentifier=error
+org.eclipse.jdt.core.compiler.problem.enumIdentifier=error
+org.eclipse.jdt.core.compiler.source=1.8
+org.eclipse.jdt.core.userLibrary.Activiti\ Designer\ Extensions=<?xml version\="1.0" encoding\="UTF-8"?>\n<userlibrary systemlibrary\="false" version\="2">\n\t<archive path\="/Applications/IntegrationStudio.app/Contents/Eclipse/configuration/org.eclipse.osgi/721/0/.cp/libs/extensions/org.wso2.developerstudio.bpmn.extensions-7.0.0-SNAPSHOT.jar"/>\n</userlibrary>\n

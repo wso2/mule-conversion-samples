@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/filter" name="FilteringAMessage" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <log>
+                <property name="status" value="validating"/>
+            </log>
+            <foreach expression="//jsonArray/jsonElement">
+                <sequence>
+                    <property expression="json-eval($)" name="record" scope="default" type="STRING"/>
+                    <property expression="$body/jsonElement/id" name="id" scope="default" type="STRING"/>
+                    <property expression="$body/jsonElement/email" name="email" scope="default" type="STRING"/>
+                    <property expression="$body/jsonElement/connectionInfo/IPAddress" name="ip" scope="default" type="STRING"/>
+                    <filter description="Validate if record contains identifier" regex="false" source="boolean(get-property('id'))">
+                        <then>
+                            <property name="validation" scope="default" type="STRING" value="Record"/>
+                            <property name="error" scope="default" type="STRING" value="does not contain id field!"/>
+                            <sequence key="CreateResponse"/>
+                        </then>
+                        <else>
+                            <filter description="Validate if record contains email" regex="false" source="boolean(get-property('email'))">
+                                <then>
+                                    <property name="validation" scope="default" type="STRING" value="Record"/>
+                                    <property name="error" scope="default" type="STRING" value="does not contain email field!"/>
+                                    <sequence key="CreateResponse"/>
+                                </then>
+                                <else>
+                                    <filter description="Validate email format" regex="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" source="get-property('email')">
+                                        <then>
+                                            <filter description="Validate if record contains connection info" regex="false" source="boolean(get-property('ip'))">
+                                                <then>
+                                                    <property name="validation" scope="default" type="STRING" value="Record"/>
+                                                    <property name="error" scope="default" type="STRING" value="does not contain connection info!"/>
+                                                    <sequence key="CreateResponse"/>
+                                                </then>
+                                                <else>
+                                                    <filter description="Validate if IP address is not on blacklist" regex="40.125.118.175" source="get-property('ip')">
+                                                        <then>
+                                                            <property name="validation" scope="default" type="STRING" value="IP address of record"/>
+                                                            <property name="error" scope="default" type="STRING" value="is on blacklist!"/>
+                                                            <sequence key="CreateResponse"/>
+                                                        </then>
+                                                        <else/>
+                                                    </filter>
+                                                </else>
+                                            </filter>
+                                        </then>
+                                        <else>
+                                            <property name="validation" scope="default" type="STRING" value="Email in record"/>
+                                            <property name="error" scope="default" type="STRING" value="is not valid!"/>
+                                            <sequence key="CreateResponse"/>
+                                        </else>
+                                    </filter>
+                                </else>
+                            </filter>
+                        </else>
+                    </filter>
+                </sequence>
+            </foreach>
+            <payloadFactory media-type="text">
+                <format>
+                    User records are valid!
+                </format>
+                <args/>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

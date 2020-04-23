@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/extract" name="ExtractingDataFromLdapDirectory" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST GET">
+        <inSequence>
+            <property name="filters" scope="default" type="STRING" value="{objectClass:*}"/>
+            <ldap.init>
+                <secureConnection>false</secureConnection>
+                <disableSSLCertificateChecking>false</disableSSLCertificateChecking>
+                <providerUrl>[URL]</providerUrl>
+                <securityPrincipal>[Principal DN]</securityPrincipal>
+                <securityCredentials>[Password]</securityCredentials>
+            </ldap.init>
+            <ldap.searchEntry>
+                <limit>1000</limit>
+                <filters>{$ctx:filters}</filters>
+                <dn>ou=people</dn>
+            </ldap.searchEntry>
+            <payloadFactory media-type="json">
+                <format>$1</format>
+                <args>
+                    <arg evaluator="json" expression="$.result.entry"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

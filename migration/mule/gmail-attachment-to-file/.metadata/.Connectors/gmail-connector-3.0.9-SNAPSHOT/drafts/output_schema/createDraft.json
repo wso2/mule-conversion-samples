@@ -1,0 +1,146 @@
+{
+  "id": "http:\/\/wso2jsonschema.org",
+  "title": "root",
+  "$schema": "http:\/\/json-schema.org\/draft-04\/schema#",
+  "properties": {
+    "message": {
+      "id": "http:\/\/wso2jsonschema.org\/message",
+      "properties": {
+        "raw": {
+          "id": "http:\/\/wso2jsonschema.org\/message\/raw",
+          "type": "string"
+        },
+        "id": {
+          "id": "http:\/\/wso2jsonschema.org\/message\/id",
+          "type": "string"
+        },
+        "labelIds": {
+          "id": "http:\/\/wso2jsonschema.org\/message\/labelIds",
+          "items": [
+            {
+              "id": "http:\/\/wso2jsonschema.org\/message\/labelIds\/0",
+              "type": "string"
+            }
+          ],
+          "type": "array"
+        },
+        "threadId": {
+          "id": "http:\/\/wso2jsonschema.org\/message\/threadId",
+          "type": "string"
+        },
+        "historyId": {
+          "id": "http:\/\/wso2jsonschema.org\/message\/historyId",
+          "type": "string"
+        },
+        "payload": {
+          "id": "http:\/\/wso2jsonschema.org\/message\/payload",
+          "properties": {
+            "headers": {
+              "id": "http:\/\/wso2jsonschema.org\/message\/payload\/headers",
+              "items": [
+                {
+                  "id": "http:\/\/wso2jsonschema.org\/message\/payload\/headers\/0",
+                  "type": "object"
+                }
+              ],
+              "type": "array"
+            },
+            "body": {
+              "id": "http:\/\/wso2jsonschema.org\/message\/payload\/body",
+              "properties": {
+                "attachmentId": {
+                  "id": "http:\/\/wso2jsonschema.org\/message\/payload\/body\/attachmentId",
+                  "type": "string"
+                },
+                "data": {
+                  "id": "http:\/\/wso2jsonschema.org\/message\/payload\/body\/data",
+                  "type": "string"
+                },
+                "size": {
+                  "id": "http:\/\/wso2jsonschema.org\/message\/payload\/body\/size",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "filename": {
+              "id": "http:\/\/wso2jsonschema.org\/message\/payload\/filename",
+              "type": "string"
+            },
+            "parts": {
+              "id": "http:\/\/wso2jsonschema.org\/message\/payload\/parts",
+              "items": [
+                {
+                  "id": "http:\/\/wso2jsonschema.org\/message\/payload\/parts\/0",
+                  "properties": {
+                    "headers": {
+                      "id": "http:\/\/wso2jsonschema.org\/message\/payload\/parts\/0\/headers",
+                      "items": [
+                        {
+                          "id": "http:\/\/wso2jsonschema.org\/message\/payload\/parts\/0\/headers\/0",
+                          "properties": {
+                            "name": {
+                              "id": "http:\/\/wso2jsonschema.org\/message\/payload\/parts\/0\/headers\/0\/name",
+                              "type": "string"
+                            },
+                            "value": {
+                              "id": "http:\/\/wso2jsonschema.org\/message\/payload\/parts\/0\/headers\/0\/value",
+                              "type": "string"
+                            }
+                          },
+                          "type": "object"
+                        }
+                      ],
+                      "type": "array"
+                    },
+                    "filename": {
+                      "id": "http:\/\/wso2jsonschema.org\/message\/payload\/parts\/0\/filename",
+                      "type": "string"
+                    },
+                    "partId": {
+                      "id": "http:\/\/wso2jsonschema.org\/message\/payload\/parts\/0\/partId",
+                      "type": "string"
+                    },
+                    "mimeType": {
+                      "id": "http:\/\/wso2jsonschema.org\/message\/payload\/parts\/0\/mimeType",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              ],
+              "type": "array"
+            },
+            "partId": {
+              "id": "http:\/\/wso2jsonschema.org\/message\/payload\/partId",
+              "type": "string"
+            },
+            "mimeType": {
+              "id": "http:\/\/wso2jsonschema.org\/message\/payload\/mimeType",
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "sizeEstimate": {
+          "id": "http:\/\/wso2jsonschema.org\/message\/sizeEstimate",
+          "type": "number"
+        },
+        "snippet": {
+          "id": "http:\/\/wso2jsonschema.org\/message\/snippet",
+          "type": "string"
+        },
+        "internalDate": {
+          "id": "http:\/\/wso2jsonschema.org\/message\/internalDate",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "id": {
+      "id": "http:\/\/wso2jsonschema.org\/id",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
