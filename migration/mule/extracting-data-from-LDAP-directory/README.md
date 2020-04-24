@@ -21,6 +21,8 @@ increase your familiarity with Integration Studio, consider completing one or mo
 
 The example application connects to an LDAP directory and retrieves a list of LDAP users. 
 
+![ExtractingDataFromLdapDirectoryUseCase](../resources/images/extracting-data-from-LDAP-directory/extracting-data-from-LDAP-directory-use-case.png?raw=true)
+
 ### Set Up and Run the Example 
 
 1. Set up LDAP on your machine
