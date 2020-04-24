@@ -10,5 +10,6 @@
             <arg evaluator="xml" expression="$ctx:error"/>
         </args>
     </payloadFactory>
+    <property name="HTTP_SC" scope="axis2" type="INTEGER" value="400"/>
     <respond/>
 </sequence>
