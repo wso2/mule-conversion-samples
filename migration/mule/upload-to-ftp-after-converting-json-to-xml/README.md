@@ -14,6 +14,8 @@ increase your familiarity with Integration Studio, consider completing one or mo
 In this example JSON data is sent to the application and then converted to the XML format using the messageType property.
 Then the message payload is uploaded to the FTP folder.
 
+![UploadToFtpAfterConvertingJsonToXml](../resources/images/upload-to-ftp-after-converting-json-to-xml/upload-to-ftp-after-converting-json-to-xml-use-case.png?raw=true)
+
 ### Set Up and Run the Example
 
 1. Start WSO2 Integration Studio ([Installing WSO2 Integration Studio](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/installing-WSO2-Integration-Studio/)).
