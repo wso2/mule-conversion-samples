@@ -32,8 +32,10 @@ Configure destination property accordingly.
 ![Alt text](../resources/images/upload-to-ftp-after-converting-json-to-xml/upload-to-ftp-after-converting-json-to-xml.png?raw=true "UploadToFtpAfterConvertingJsonToXml")
 7. Run the sample by right click on the **UploadToFtpAfterConvertingJsonToXmlCompositeApplication** under the main 
 **upload-to-ftp-after-converting-json-to-xml** project and selecting **Export Project Artifacts and Run**.
-8. Make a POST request using Postman to `http://localhost:8290/upload` with following JSON message body, and setting the 
-`Content-Type` header to `application/json`:
+8. Open HTTP Client in Integration Studio. Follow [HTTP Client Guidelines](../../../docs/common/adding-http-client-to-integration-studio.md)
+to open HTTP Client if the window is not visible in the interface.
+9. Make a POST request to `http://localhost:8290/upload` with following JSON message body, and setting the `Content-Type` header 
+to `application/json`:
 ```json
 {
     "employees": {
