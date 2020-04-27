@@ -1,0 +1,44 @@
+<unit-test>
+    <artifacts>
+        <test-artifact>
+            <artifact>/UnittestSampleProject/src/main/synapse-config/sequences/secondaryFlow.xml</artifact>
+        </test-artifact>
+        <supportive-artifacts>
+            <artifact>/UnittestSampleProject/src/main/synapse-config/sequences/firstSubFlow.xml</artifact>
+            <artifact>/UnittestSampleProject/src/main/synapse-config/sequences/secondSubFlow.xml</artifact>
+        </supportive-artifacts>
+        <registry-resources/>
+        <connector-resources/>
+    </artifacts>
+    <test-cases>
+        <test-case name="TestCaseForFirstSubFlow">
+            <input>
+                <properties>
+                    <property name="payload" value="payload_1"/>
+                </properties>
+            </input>
+            <assertions>
+                <assertEquals>
+                    <actual>$ctx:flowValue</actual>
+                    <expected><![CDATA[flowValue_1]]></expected>
+                    <message>flowValue property value does not equal to the expected value for the payload_1 query param</message>
+                </assertEquals>
+            </assertions>
+        </test-case>
+        <test-case name="TestCaseForSecondSubFlow">
+            <input>
+                <properties>
+                    <property name="payload" value="payload_2"/>
+                </properties>
+            </input>
+            <assertions>
+                <assertEquals>
+                    <actual>$ctx:flowValue</actual>
+                    <expected><![CDATA[flowValue_2]]></expected>
+                    <message>flowValue property value does not equal to the expected value for the different query param</message>
+                </assertEquals>
+            </assertions>
+        </test-case>
+    </test-cases>
+    <mock-services/>
+</unit-test>
