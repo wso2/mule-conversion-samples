@@ -4,7 +4,11 @@ This example application demonstrat how to use WSO2 EI to build a simple HTTP re
 
 ### Assumption
 
-This document describes the details of the example within the context of WSO2 Integration Studio, WSO2 EI’s graphical user interface (GUI). This document assumes that you are familiar with WSO2 EI and the [Integration Studio interface](https://ei.docs.wso2.com/en/latest/micro-integrator/overview/quick-start-guide/). To increase your familiarity with Integration Studio, consider completing one or more [WSO2 EI Tutorials](https://ei.docs.wso2.com/en/latest/micro-integrator/use-cases/integration-use-cases/).
+This document describes the details of the example within the context of WSO2 Integration Studio, WSO2 EI’s graphical 
+developer tool. This document assumes that you are familiar with WSO2 EI and the 
+[Integration Studio interface](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/WSO2-Integration-Studio/). To 
+increase your familiarity with Integration Studio, consider completing one or more 
+[WSO2 EI Tutorials](https://ei.docs.wso2.com/en/latest/micro-integrator/use-cases/integration-use-cases/).
 
 ### Set Up and Run the Example
 
