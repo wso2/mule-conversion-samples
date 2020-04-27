@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="business-logic" groupId="com.example.UnittestSampleProject.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/business-logic.xml</file>
+    </artifact>
+    <artifact name="secondaryFlow" groupId="com.example.UnittestSampleProject.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/secondaryFlow.xml</file>
+    </artifact>
+    <artifact name="firstSubFlow" groupId="com.example.UnittestSampleProject.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/firstSubFlow.xml</file>
+    </artifact>
+    <artifact name="secondSubFlow" groupId="com.example.UnittestSampleProject.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/secondSubFlow.xml</file>
+    </artifact>
+</artifacts>
