@@ -20,7 +20,7 @@ In this example a simple Hello World payload will be created using [PayloadFacto
 1. Start WSO2 Integration Studio ([Installing WSO2 Integration Studio](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/installing-WSO2-Integration-Studio/)).
 2. In your menu in Studio, click the **File** menu. In the File menu select the **Import...** item.
 3. In the Import window select the **Existing WSO2 Projects into workspace** under **WSO2** folder.
-4. Browse and select the file path to the downloaded sample of this project
+4. Browse and select the file path to the downloaded sample of this Github project
 (``integration-studio-examples/migration/mule/hello-world``) and click **Finish**.
 5. Open the **HelloWorld.xml** under **hello-world/HelloWorld/src/main/synapse-config/api/HelloWorld.xml** directory. 
 ![HelloWorld](../resources/images/hello-world/hello-world.png?raw=true "HelloWorld")
@@ -35,7 +35,7 @@ The Hello World example consists of one simple [Synapse API](https://ei.docs.wso
 
 As the name suggests, the [Payload Factory](https://ei.docs.wso2.com/en/latest/micro-integrator/references/mediators/payloadFactory-Mediator/) sets a value in the message payload. In this example, the value utilizes a WSO2 expression to set a static string on the payload. 
 
-After opening the Integration project, there are two projects under the hello-world main project. First project (named as "HelloWorld") is the WSO2 Integration Project where all the integration use-case related files are stored. Second one is the "HelloWorldCompositeApplication", which is used as the Packaging and exporting artifact to the server runtime. 
+After opening the Integration project, there are two projects under the hello-world main project. First project, "HelloWorld" is the WSO2 Integration Project where all the integration use-case related files are stored. The second project is the "HelloWorldCompositeApplication", which is used as the packaging to export the artifacts to the server runtime. 
 
 You can run **Composite Application** using WSO2 Enterprise Integrator server runtime.
 ### Go Further

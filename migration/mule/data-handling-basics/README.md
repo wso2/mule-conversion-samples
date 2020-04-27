@@ -13,9 +13,9 @@ increase your familiarity with Integration Studio, consider completing one or mo
 
 ### Example Use Case
 
-In this example you will learn on working with query parameters, file operations using 
+In this example you will learn how to work with query parameters, file operations using 
 [File connector](https://store.wso2.com/store/assets/esbconnector/details/5d6de1a4-1fa7-434e-863f-95c8533d3df2), 
-variable assignments and processing XML and JSON payloads.
+variable assignments, and processing XML and JSON payloads.
 ![DataHandlingBasicsUseCase](../resources/images/data-handling-basics/data-handling-basics-use-case.png?raw=true "DataHandlingBasicsUseCase")
 
 ### Set up and run the example
@@ -23,7 +23,8 @@ variable assignments and processing XML and JSON payloads.
 1. Start WSO2 Integration Studio ([Installing WSO2 Integration Studio](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/installing-WSO2-Integration-Studio/)).
 2. In your menu in Studio, click the **File** menu. In the File menu select the **Import...** item.
 3. In the Import window select the **Existing WSO2 Projects into workspace** under **WSO2** folder.
-4. Browse and select the file path to the downloaded sample of this github project (``integration-studio-examples/migration/mule/data-handling-basics``).
+4. Browse and select the file path to the downloaded sample of this Github project (``integration-studio-examples/migration/mule/data-handling-basics``)
+and click **finish**.
 5. Lets add the file connector into the workspace. Right click on the **DataHandlingBasics** and select 
 **Add or Remove Connector**. Keep the **Add connector** option selected and click **Next>**. Search for 'file' using the 
 search bar and click the download button located at the bottom right corner of the file connector. Click **Finish**.
