@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="OAuth2AuthorizationCodeAPI" groupId="org.wso2.OAuth2AuthorizationCode.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/OAuth2AuthorizationCodeAPI.xml</file>
+    </artifact>
+    <artifact name="token-retrieval-seq" groupId="org.wso2.OAuth2AuthorizationCode.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/token-retrieval-seq.xml</file>
+    </artifact>
+    <artifact name="CallbackAPI" groupId="org.wso2.OAuth2AuthorizationCode.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/CallbackAPI.xml</file>
+    </artifact>
+    <artifact name="search-seq" groupId="org.wso2.OAuth2AuthorizationCode.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/search-seq.xml</file>
+    </artifact>
+</artifacts>
