@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:datamapper="http:///org/wso2/developerstudio/eclipse/gmf/datamapper" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_Su9-4IlQEeqgnOIiyz5DDQ" type="DataMapper" name="MapCSVToJson.datamapper_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_Sx0ekIlQEeqgnOIiyz5DDQ" type="2002" fontName=".AppleSystemUIFont">
+    <children xmi:type="notation:Shape" xmi:id="_Uze0UIlQEeqgnOIiyz5DDQ" type="3002" fontName=".AppleSystemUIFont">
+      <children xmi:type="notation:DecorationNode" xmi:id="_Uze0UolQEeqgnOIiyz5DDQ" type="5002"/>
+      <children xmi:type="notation:Shape" xmi:id="_UzgCcIlQEeqgnOIiyz5DDQ" type="3003" fontName=".AppleSystemUIFont">
+        <children xmi:type="notation:DecorationNode" xmi:id="_UzgCcolQEeqgnOIiyz5DDQ" type="5001"/>
+        <children xmi:type="notation:Shape" xmi:id="_UzhQkIlQEeqgnOIiyz5DDQ" type="3020" fontName=".AppleSystemUIFont">
+          <element xmi:type="datamapper:InNode" href="MapCSVToJson.datamapper#//@input/@treeNode.0/@node.0/@inNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UzhQkYlQEeqgnOIiyz5DDQ" x="-1" y="1"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_UzhQkolQEeqgnOIiyz5DDQ" type="3019" fontName=".AppleSystemUIFont">
+          <element xmi:type="datamapper:OutNode" href="MapCSVToJson.datamapper#//@input/@treeNode.0/@node.0/@outNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UzhQk4lQEeqgnOIiyz5DDQ"/>
+        </children>
+        <element xmi:type="datamapper:TreeNode" href="MapCSVToJson.datamapper#//@input/@treeNode.0/@node.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UzgCcYlQEeqgnOIiyz5DDQ"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_UzgCc4lQEeqgnOIiyz5DDQ" type="3003" fontName=".AppleSystemUIFont">
+        <children xmi:type="notation:DecorationNode" xmi:id="_UzgCdYlQEeqgnOIiyz5DDQ" type="5001"/>
+        <children xmi:type="notation:Shape" xmi:id="_UzjFwIlQEeqgnOIiyz5DDQ" type="3020" fontName=".AppleSystemUIFont">
+          <element xmi:type="datamapper:InNode" href="MapCSVToJson.datamapper#//@input/@treeNode.0/@node.1/@inNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UzjFwYlQEeqgnOIiyz5DDQ" x="-1" y="1"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_UzjFwolQEeqgnOIiyz5DDQ" type="3019" fontName=".AppleSystemUIFont">
+          <element xmi:type="datamapper:OutNode" href="MapCSVToJson.datamapper#//@input/@treeNode.0/@node.1/@outNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UzjFw4lQEeqgnOIiyz5DDQ"/>
+        </children>
+        <element xmi:type="datamapper:TreeNode" href="MapCSVToJson.datamapper#//@input/@treeNode.0/@node.1"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UzgCdIlQEeqgnOIiyz5DDQ"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_UzgCdolQEeqgnOIiyz5DDQ" type="3003" fontName=".AppleSystemUIFont">
+        <children xmi:type="notation:DecorationNode" xmi:id="_UzgCeIlQEeqgnOIiyz5DDQ" type="5001"/>
+        <children xmi:type="notation:Shape" xmi:id="_Uzk68IlQEeqgnOIiyz5DDQ" type="3020" fontName=".AppleSystemUIFont">
+          <element xmi:type="datamapper:InNode" href="MapCSVToJson.datamapper#//@input/@treeNode.0/@node.2/@inNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Uzk68YlQEeqgnOIiyz5DDQ" x="-1" y="1"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_Uzk68olQEeqgnOIiyz5DDQ" type="3019" fontName=".AppleSystemUIFont">
+          <element xmi:type="datamapper:OutNode" href="MapCSVToJson.datamapper#//@input/@treeNode.0/@node.2/@outNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Uzk684lQEeqgnOIiyz5DDQ"/>
+        </children>
+        <element xmi:type="datamapper:TreeNode" href="MapCSVToJson.datamapper#//@input/@treeNode.0/@node.2"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UzgCd4lQEeqgnOIiyz5DDQ"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_UzgCeYlQEeqgnOIiyz5DDQ" type="3003" fontName=".AppleSystemUIFont">
+        <children xmi:type="notation:DecorationNode" xmi:id="_UzgCe4lQEeqgnOIiyz5DDQ" type="5001"/>
+        <children xmi:type="notation:Shape" xmi:id="_UzmwIIlQEeqgnOIiyz5DDQ" type="3020" fontName=".AppleSystemUIFont">
+          <element xmi:type="datamapper:InNode" href="MapCSVToJson.datamapper#//@input/@treeNode.0/@node.3/@inNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UzmwIYlQEeqgnOIiyz5DDQ" x="-1" y="1"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_UzmwIolQEeqgnOIiyz5DDQ" type="3019" fontName=".AppleSystemUIFont">
+          <element xmi:type="datamapper:OutNode" href="MapCSVToJson.datamapper#//@input/@treeNode.0/@node.3/@outNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UzmwI4lQEeqgnOIiyz5DDQ"/>
+        </children>
+        <element xmi:type="datamapper:TreeNode" href="MapCSVToJson.datamapper#//@input/@treeNode.0/@node.3"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UzgCeolQEeqgnOIiyz5DDQ"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_UzgCfIlQEeqgnOIiyz5DDQ" type="3020" fontName=".AppleSystemUIFont">
+        <element xmi:type="datamapper:InNode" href="MapCSVToJson.datamapper#//@input/@treeNode.0/@inNode"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UzgCfYlQEeqgnOIiyz5DDQ" x="-1" y="-11"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_UzgCfolQEeqgnOIiyz5DDQ" type="3019" fontName=".AppleSystemUIFont">
+        <element xmi:type="datamapper:OutNode" href="MapCSVToJson.datamapper#//@input/@treeNode.0/@outNode"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UzgCf4lQEeqgnOIiyz5DDQ"/>
+      </children>
+      <element xmi:type="datamapper:TreeNode" href="MapCSVToJson.datamapper#//@input/@treeNode.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Uze0UYlQEeqgnOIiyz5DDQ"/>
+    </children>
+    <element xmi:type="datamapper:Input" href="MapCSVToJson.datamapper#//@input"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Sx0ekYlQEeqgnOIiyz5DDQ" x="185" y="-200" width="250" height="160"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_Sx0ekolQEeqgnOIiyz5DDQ" type="2003" fontName=".AppleSystemUIFont">
+    <children xmi:type="notation:Shape" xmi:id="_V_8ncIlQEeqgnOIiyz5DDQ" type="3011" fontName=".AppleSystemUIFont">
+      <children xmi:type="notation:DecorationNode" xmi:id="_V_9OgIlQEeqgnOIiyz5DDQ" type="5003"/>
+      <children xmi:type="notation:Shape" xmi:id="_V_91kIlQEeqgnOIiyz5DDQ" type="3003" fontName=".AppleSystemUIFont">
+        <children xmi:type="notation:DecorationNode" xmi:id="_V_91kolQEeqgnOIiyz5DDQ" type="5001"/>
+        <children xmi:type="notation:Shape" xmi:id="_V__DsIlQEeqgnOIiyz5DDQ" type="3003" fontName=".AppleSystemUIFont">
+          <children xmi:type="notation:DecorationNode" xmi:id="_V__DsolQEeqgnOIiyz5DDQ" type="5001"/>
+          <children xmi:type="notation:Shape" xmi:id="_V__qwIlQEeqgnOIiyz5DDQ" type="3003" fontName=".AppleSystemUIFont">
+            <children xmi:type="notation:DecorationNode" xmi:id="_V__qwolQEeqgnOIiyz5DDQ" type="5001"/>
+            <children xmi:type="notation:Shape" xmi:id="_WAAR0IlQEeqgnOIiyz5DDQ" type="3020" fontName=".AppleSystemUIFont">
+              <element xmi:type="datamapper:InNode" href="MapCSVToJson.datamapper#//@output/@treeNode.0/@node.0/@node.0/@node.0/@inNode"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WAAR0YlQEeqgnOIiyz5DDQ" x="-10" y="4"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_WAA44IlQEeqgnOIiyz5DDQ" type="3019" fontName=".AppleSystemUIFont">
+              <element xmi:type="datamapper:OutNode" href="MapCSVToJson.datamapper#//@output/@treeNode.0/@node.0/@node.0/@node.0/@outNode"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WAA44YlQEeqgnOIiyz5DDQ"/>
+            </children>
+            <element xmi:type="datamapper:TreeNode" href="MapCSVToJson.datamapper#//@output/@treeNode.0/@node.0/@node.0/@node.0"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_V__qwYlQEeqgnOIiyz5DDQ"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_V__qw4lQEeqgnOIiyz5DDQ" type="3003" fontName=".AppleSystemUIFont">
+            <children xmi:type="notation:DecorationNode" xmi:id="_V__qxYlQEeqgnOIiyz5DDQ" type="5001"/>
+            <children xmi:type="notation:Shape" xmi:id="_WACuEIlQEeqgnOIiyz5DDQ" type="3020" fontName=".AppleSystemUIFont">
+              <element xmi:type="datamapper:InNode" href="MapCSVToJson.datamapper#//@output/@treeNode.0/@node.0/@node.0/@node.1/@inNode"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WACuEYlQEeqgnOIiyz5DDQ" x="-10" y="4"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_WACuEolQEeqgnOIiyz5DDQ" type="3019" fontName=".AppleSystemUIFont">
+              <element xmi:type="datamapper:OutNode" href="MapCSVToJson.datamapper#//@output/@treeNode.0/@node.0/@node.0/@node.1/@outNode"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WACuE4lQEeqgnOIiyz5DDQ"/>
+            </children>
+            <element xmi:type="datamapper:TreeNode" href="MapCSVToJson.datamapper#//@output/@treeNode.0/@node.0/@node.0/@node.1"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_V__qxIlQEeqgnOIiyz5DDQ"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_V__qxolQEeqgnOIiyz5DDQ" type="3003" fontName=".AppleSystemUIFont">
+            <children xmi:type="notation:DecorationNode" xmi:id="_V__qyIlQEeqgnOIiyz5DDQ" type="5001"/>
+            <children xmi:type="notation:Shape" xmi:id="_WAEjQIlQEeqgnOIiyz5DDQ" type="3020" fontName=".AppleSystemUIFont">
+              <element xmi:type="datamapper:InNode" href="MapCSVToJson.datamapper#//@output/@treeNode.0/@node.0/@node.0/@node.2/@inNode"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WAEjQYlQEeqgnOIiyz5DDQ" x="-10" y="4"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_WAEjQolQEeqgnOIiyz5DDQ" type="3019" fontName=".AppleSystemUIFont">
+              <element xmi:type="datamapper:OutNode" href="MapCSVToJson.datamapper#//@output/@treeNode.0/@node.0/@node.0/@node.2/@outNode"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WAEjQ4lQEeqgnOIiyz5DDQ"/>
+            </children>
+            <element xmi:type="datamapper:TreeNode" href="MapCSVToJson.datamapper#//@output/@treeNode.0/@node.0/@node.0/@node.2"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_V__qx4lQEeqgnOIiyz5DDQ"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_V__qyYlQEeqgnOIiyz5DDQ" type="3003" fontName=".AppleSystemUIFont">
+            <children xmi:type="notation:DecorationNode" xmi:id="_V__qy4lQEeqgnOIiyz5DDQ" type="5001"/>
+            <children xmi:type="notation:Shape" xmi:id="_WAFxYIlQEeqgnOIiyz5DDQ" type="3020" fontName=".AppleSystemUIFont">
+              <element xmi:type="datamapper:InNode" href="MapCSVToJson.datamapper#//@output/@treeNode.0/@node.0/@node.0/@node.3/@inNode"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WAFxYYlQEeqgnOIiyz5DDQ" x="-10" y="4"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_WAGYcIlQEeqgnOIiyz5DDQ" type="3019" fontName=".AppleSystemUIFont">
+              <element xmi:type="datamapper:OutNode" href="MapCSVToJson.datamapper#//@output/@treeNode.0/@node.0/@node.0/@node.3/@outNode"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WAGYcYlQEeqgnOIiyz5DDQ"/>
+            </children>
+            <element xmi:type="datamapper:TreeNode" href="MapCSVToJson.datamapper#//@output/@treeNode.0/@node.0/@node.0/@node.3"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_V__qyolQEeqgnOIiyz5DDQ"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_V__qzIlQEeqgnOIiyz5DDQ" type="3020" fontName=".AppleSystemUIFont">
+            <element xmi:type="datamapper:InNode" href="MapCSVToJson.datamapper#//@output/@treeNode.0/@node.0/@node.0/@inNode"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_V__qzYlQEeqgnOIiyz5DDQ" x="-1" y="-11"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_V__qzolQEeqgnOIiyz5DDQ" type="3019" fontName=".AppleSystemUIFont">
+            <element xmi:type="datamapper:OutNode" href="MapCSVToJson.datamapper#//@output/@treeNode.0/@node.0/@node.0/@outNode"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_V__qz4lQEeqgnOIiyz5DDQ"/>
+          </children>
+          <element xmi:type="datamapper:TreeNode" href="MapCSVToJson.datamapper#//@output/@treeNode.0/@node.0/@node.0"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_V__DsYlQEeqgnOIiyz5DDQ"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_V__Ds4lQEeqgnOIiyz5DDQ" type="3020" fontName=".AppleSystemUIFont">
+          <element xmi:type="datamapper:InNode" href="MapCSVToJson.datamapper#//@output/@treeNode.0/@node.0/@inNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_V__DtIlQEeqgnOIiyz5DDQ" x="-1" y="-11"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_V__DtYlQEeqgnOIiyz5DDQ" type="3019" fontName=".AppleSystemUIFont">
+          <element xmi:type="datamapper:OutNode" href="MapCSVToJson.datamapper#//@output/@treeNode.0/@node.0/@outNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_V__DtolQEeqgnOIiyz5DDQ"/>
+        </children>
+        <element xmi:type="datamapper:TreeNode" href="MapCSVToJson.datamapper#//@output/@treeNode.0/@node.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_V_91kYlQEeqgnOIiyz5DDQ"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_V_91k4lQEeqgnOIiyz5DDQ" type="3020" fontName=".AppleSystemUIFont">
+        <element xmi:type="datamapper:InNode" href="MapCSVToJson.datamapper#//@output/@treeNode.0/@inNode"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_V_91lIlQEeqgnOIiyz5DDQ" x="-1" y="-11"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_V_91lYlQEeqgnOIiyz5DDQ" type="3019" fontName=".AppleSystemUIFont">
+        <element xmi:type="datamapper:OutNode" href="MapCSVToJson.datamapper#//@output/@treeNode.0/@outNode"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_V_91lolQEeqgnOIiyz5DDQ"/>
+      </children>
+      <element xmi:type="datamapper:TreeNode" href="MapCSVToJson.datamapper#//@output/@treeNode.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_V_8ncYlQEeqgnOIiyz5DDQ"/>
+    </children>
+    <element xmi:type="datamapper:Output" href="MapCSVToJson.datamapper#//@output"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Sx0ek4lQEeqgnOIiyz5DDQ" x="568" y="-224" width="250" height="140"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_Su9-4YlQEeqgnOIiyz5DDQ"/>
+  <element xmi:type="datamapper:DataMapperRoot" href="MapCSVToJson.datamapper#/"/>
+  <edges xmi:type="notation:Connector" xmi:id="_WrQ1UIlQEeqgnOIiyz5DDQ" type="4001" source="_UzhQkolQEeqgnOIiyz5DDQ" target="_WAAR0IlQEeqgnOIiyz5DDQ">
+    <styles xmi:type="notation:FontStyle" xmi:id="_WrQ1UYlQEeqgnOIiyz5DDQ" fontName=".AppleSystemUIFont"/>
+    <element xmi:type="datamapper:DataMapperLink" href="MapCSVToJson.datamapper#//@input/@treeNode.0/@node.0/@outNode/@outgoingLink.0"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_WrQ1UolQEeqgnOIiyz5DDQ" points="[-2, 0, -135, -12]$[131, 12, -2, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_WrT4oIlQEeqgnOIiyz5DDQ" id="CENTER"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_WrT4oYlQEeqgnOIiyz5DDQ" id="CENTER"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_W9XR8IlQEeqgnOIiyz5DDQ" type="4001" source="_UzjFwolQEeqgnOIiyz5DDQ" target="_WACuEIlQEeqgnOIiyz5DDQ">
+    <styles xmi:type="notation:FontStyle" xmi:id="_W9XR8YlQEeqgnOIiyz5DDQ" fontName=".AppleSystemUIFont"/>
+    <element xmi:type="datamapper:DataMapperLink" href="MapCSVToJson.datamapper#//@input/@treeNode.0/@node.1/@outNode/@outgoingLink.0"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_W9XR8olQEeqgnOIiyz5DDQ" points="[-2, 0, -135, -13]$[131, 13, -2, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_W9X5AIlQEeqgnOIiyz5DDQ" id="CENTER"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_W9X5AYlQEeqgnOIiyz5DDQ" id="CENTER"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_XQ1nkIlQEeqgnOIiyz5DDQ" type="4001" source="_Uzk68olQEeqgnOIiyz5DDQ" target="_WAEjQIlQEeqgnOIiyz5DDQ">
+    <styles xmi:type="notation:FontStyle" xmi:id="_XQ1nkYlQEeqgnOIiyz5DDQ" fontName=".AppleSystemUIFont"/>
+    <element xmi:type="datamapper:DataMapperLink" href="MapCSVToJson.datamapper#//@input/@treeNode.0/@node.2/@outNode/@outgoingLink.0"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_XQ1nkolQEeqgnOIiyz5DDQ" points="[-2, 0, -135, -14]$[131, 14, -2, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_XQ2OoIlQEeqgnOIiyz5DDQ" id="CENTER"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_XQ2OoYlQEeqgnOIiyz5DDQ" id="CENTER"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_XqonoIlQEeqgnOIiyz5DDQ" type="4001" source="_UzmwIolQEeqgnOIiyz5DDQ" target="_WAFxYIlQEeqgnOIiyz5DDQ">
+    <styles xmi:type="notation:FontStyle" xmi:id="_XqonoYlQEeqgnOIiyz5DDQ" fontName=".AppleSystemUIFont"/>
+    <element xmi:type="datamapper:DataMapperLink" href="MapCSVToJson.datamapper#//@input/@treeNode.0/@node.3/@outNode/@outgoingLink.0"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_XqonoolQEeqgnOIiyz5DDQ" points="[-2, 0, -135, -15]$[131, 15, -2, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_XqpOsIlQEeqgnOIiyz5DDQ" id="CENTER"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_XqpOsYlQEeqgnOIiyz5DDQ" id="CENTER"/>
+  </edges>
+</notation:Diagram>
