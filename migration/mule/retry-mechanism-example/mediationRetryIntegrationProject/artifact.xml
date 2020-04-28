@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="mediationRetryAPI" groupId="com.example.mediationRetryIntegrationProject.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/mediationRetryAPI.xml</file>
+    </artifact>
+    <artifact name="retry-mechanism-exampleFlow" groupId="com.example.mediationRetryIntegrationProject.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/retry-mechanism-exampleFlow.xml</file>
+    </artifact>
+    <artifact name="onErrorSeq" groupId="com.example.mediationRetryIntegrationProject.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/onErrorSeq.xml</file>
+    </artifact>
+</artifacts>

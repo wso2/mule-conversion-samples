@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/trigger" name="mediationRetryAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource faultSequence="onErrorSeq" methods="GET">
+        <inSequence>
+            <property description="retry count " name="RETRY_COUNT" scope="default" type="STRING" value="0"/>
+            <sequence key="retry-mechanism-exampleFlow"/>
+        </inSequence>
+        <outSequence/>
+    </resource>
+</api>
