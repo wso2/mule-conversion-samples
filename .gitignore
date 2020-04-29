@@ -17,7 +17,6 @@
 *.ear
 *.tar.gz
 *.rar
-*.zip
 
 # Only include zip files inside exporter projects
 !**/**Exporter/*.zip
