@@ -64,4 +64,3 @@ In this example a message containing sample sales data in JSON is received throu
 
 * Read more about [RabbitMQ Transport](https://ei.docs.wso2.com/en/latest/micro-integrator/references/synapse-properties/transport-parameters/rabbitmq-transport-parameters/)
 * How to receive AMQP messages [RabbitMQ inbound endpoint](https://ei.docs.wso2.com/en/latest/micro-integrator/references/synapse-properties/inbound-endpoints/event-based-inbound-endpoints/rabbitmq-inbound-endpoint-properties/) 
-
