@@ -2,30 +2,62 @@
 <proxy name="tshirt-service" startOnLoad="true" transports="http https" xmlns="http://ws.apache.org/ns/synapse">
     <target>
         <inSequence>
-            <payloadFactory media-type="xml">
-                <format>
-                    <soap:Envelope xmlns:ns="http://www.viewstar.com/webservices/2002/11" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope">
-                        <soap:Header/>
-                        <soap:Body>
-                            <ns:InventoryList>
-                                <ns:inventory>
-                                    <ns:code>TS001</ns:code>
-                                    <ns:colorCode>CTS024</ns:colorCode>
-                                </ns:inventory>
-                                <ns:inventory>
-                                    <ns:code>TS006</ns:code>
-                                    <ns:colorCode>CTS024</ns:colorCode>
-                                </ns:inventory>
-                                <ns:inventory>
-                                    <ns:code>TS005</ns:code>
-                                    <ns:colorCode>CTS024</ns:colorCode>
-                                </ns:inventory>
-                            </ns:InventoryList>
-                        </soap:Body>
-                    </soap:Envelope>
-                </format>
-                <args/>
-            </payloadFactory>
+            <propertyGroup>
+                <property expression="local-name($body/*[1])" name="soapAction" scope="default" type="STRING"/>
+            </propertyGroup>
+            <switch source="get-property('soapAction')">
+                <case regex="ListInventory">
+                    <payloadFactory media-type="xml">
+                        <format>
+                            <Inventory>
+                                <InventoryItem>
+                                    <productCode>HET023</productCode>
+                                    <size>S</size>
+                                    <description>Polo</description>
+                                    <count>200</count>
+                                </InventoryItem>
+                                <InventoryItem>
+                                    <productCode>HET045</productCode>
+                                    <size>L</size>
+                                    <description>Polo</description>
+                                    <count>200</count>
+                                </InventoryItem>
+                                <InventoryItem>
+                                    <productCode>HET051</productCode>
+                                    <size>M</size>
+                                    <description>Polo</description>
+                                    <count>200</count>
+                                </InventoryItem>
+                                <InventoryItem>
+                                    <productCode>HET092</productCode>
+                                    <size>XL</size>
+                                    <description>Polo</description>
+                                    <count>200</count>
+                                </InventoryItem>
+                            </Inventory>
+                        </format>
+                        <args/>
+                    </payloadFactory>
+                </case>
+                <case regex="OrderTshirt">
+                    <payloadFactory media-type="xml">
+                        <format>
+                            <orderId>
+                                2000345467
+                            </orderId>
+                        </format>
+                        <args/>
+                    </payloadFactory>
+                </case>
+                <default>
+                    <makefault version="soap11">
+                        <code value="soap11Env:Client" xmlns:soap11Env="http://schemas.xmlsoap.org/soap/envelope/"/>
+                        <reason value="Action Mismatch"/>
+                        <role/>
+                        <detail>The SOAP action specified on the message, does not match the HTTP SOAP Action.</detail>
+                    </makefault>
+                </default>
+            </switch>
             <respond/>
         </inSequence>
         <outSequence/>
