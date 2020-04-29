@@ -3,40 +3,48 @@
     <target>
         <inSequence>
             <propertyGroup>
-                <property name="soapAction" scope="default" type="STRING" expression="local-name($body/*[1])"/>
+                <property expression="local-name($body/*[1])" name="soapAction" scope="default" type="STRING"/>
             </propertyGroup>
             <switch source="get-property('soapAction')">
                 <case regex="ListInventory">
                     <payloadFactory media-type="xml">
                         <format>
                             <Inventory>
-                                <Items>
-                                    <Item>
-                                        <code>HET023</code>
-                                        <colorCode>BFHR</colorCode>
-                                        <codeName>Polo</codeName>
-                                        <price>200</price>
-                                    </Item>
-                                    <Item>
-                                        <code>HET056</code>
-                                        <colorCode>VFER</colorCode>
-                                        <codeName>Polo</codeName>
-                                        <price>400</price>
-                                    </Item>
-                                    <Item>
-                                        <code>HET016</code>
-                                        <colorCode>GTWS</colorCode>
-                                        <codeName>Vneck</codeName>
-                                        <price>100</price>
-                                    </Item>
-                                    <Item>
-                                        <code>HET083</code>
-                                        <colorCode>BTYU</colorCode>
-                                        <codeName>Polo</codeName>
-                                        <price>300</price>
-                                    </Item>
-                                </Items>
+                                <InventoryItem>
+                                    <productCode>HET023</productCode>
+                                    <size>S</size>
+                                    <description>Polo</description>
+                                    <count>200</count>
+                                </InventoryItem>
+                                <InventoryItem>
+                                    <productCode>HET045</productCode>
+                                    <size>L</size>
+                                    <description>Polo</description>
+                                    <count>200</count>
+                                </InventoryItem>
+                                <InventoryItem>
+                                    <productCode>HET051</productCode>
+                                    <size>M</size>
+                                    <description>Polo</description>
+                                    <count>200</count>
+                                </InventoryItem>
+                                <InventoryItem>
+                                    <productCode>HET092</productCode>
+                                    <size>XL</size>
+                                    <description>Polo</description>
+                                    <count>200</count>
+                                </InventoryItem>
                             </Inventory>
+                        </format>
+                        <args/>
+                    </payloadFactory>
+                </case>
+                <case regex="OrderTshirt">
+                    <payloadFactory media-type="xml">
+                        <format>
+                            <orderId>
+                                2000345467
+                            </orderId>
                         </format>
                         <args/>
                     </payloadFactory>
@@ -57,4 +65,3 @@
     </target>
     <publishWSDL key="conf:backendResources/tshirt.wsdl" preservePolicy="true"/>
 </proxy>
-
