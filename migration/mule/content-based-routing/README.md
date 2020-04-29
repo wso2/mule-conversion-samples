@@ -1,6 +1,7 @@
 # Content-Based Routing
 
 You can look through and run this example application to learn the basics of using Integration Studio to route messages in a flow by using a *Switch* mediator.
+![ContentBasedRoutingUseCase](../resources/images/content-based-routing/content-based-routing-use-case.png?raw=true "ContentBasedRoutingUseCase")
 
 This example application performs the following actions:
 
