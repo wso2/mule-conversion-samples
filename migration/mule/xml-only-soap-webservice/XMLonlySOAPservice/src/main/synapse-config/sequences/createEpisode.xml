@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="createEpisode" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <property description="set upsertResponse" expression="$body//n0:upsertPatientResponse" name="upsertPatientResponse" scope="default" type="STRING" xmlns:n0="http://wso2.org/hospital-admission-service"/>
+    <filter regex="false" source="boolean(get-property('upsertPatientResponse'))">
+        <then>
+            <property description="set Patient Id" expression="//ns0:getPatientResponse/ns1:Patient/*[name()='patientId']" name="patientId" scope="default" type="STRING" xmlns:ns0="http://wso2.org/hospital-admission-service" xmlns:ns1="http://wso2.org/hospital-admission-service/modal"/>
+        </then>
+        <else>
+            <property description="set patient Id" expression="//ns0:upsertPatientResponse/ns1:PatientId" name="patientId" scope="default" type="STRING" xmlns:ns0="http://wso2.org/hospital-admission-service" xmlns:ns1="http://wso2.org/hospital-admission-service/modal"/>
+        </else>
+    </filter>
+    <payloadFactory description="set createEpisode query" media-type="xml">
+        <format>
+            <soapenv:Envelope xmlns:ns0="http://wso2.org/hospital-admission-service" xmlns:ns1="http://wso2.org/hospital-admission-service/modal" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+                <soapenv:Header/>
+                <soapenv:Body>
+                    <ns0:createEpisode>
+                        <ns1:PatientId>$1</ns1:PatientId>
+                    </ns0:createEpisode>
+                </soapenv:Body>
+            </soapenv:Envelope>
+        </format>
+        <args>
+            <arg evaluator="xml" expression="$ctx:patientId"/>
+        </args>
+    </payloadFactory>
+    <header description="SOAPHeader" name="Action" scope="default" value="http://wso2.org/hospital-admission-service/ehr/createEpisode"/>
+    <header description="Content-Type" name="Content-Type" scope="transport" value="text/xml"/>
+    <call description="Invoke EHR Service">
+        <endpoint key="invokeEHRServiceEndpoint"/>
+    </call>
+</sequence>

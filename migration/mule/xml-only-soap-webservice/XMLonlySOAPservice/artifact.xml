@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="Hospital_Admission_SOA" groupId="com.example.XMLonlySOAPservice.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/Hospital_Admission_SOA.xml</file>
+    </artifact>
+    <artifact name="upsertPatient" groupId="com.example.XMLonlySOAPservice.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/upsertPatient.xml</file>
+    </artifact>
+    <artifact name="createEpisode" groupId="com.example.XMLonlySOAPservice.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/createEpisode.xml</file>
+    </artifact>
+    <artifact name="invokePatientService" groupId="com.example.XMLonlySOAPservice.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/invokePatientService.xml</file>
+    </artifact>
+    <artifact name="PatientServiceEndpoint" groupId="com.example.XMLonlySOAPservice.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/PatientServiceEndpoint.xml</file>
+    </artifact>
+    <artifact name="invokeEHRServiceEndpoint" groupId="com.example.XMLonlySOAPservice.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/invokeEHRServiceEndpoint.xml</file>
+    </artifact>
+    <artifact name="invokeEHRService" groupId="com.example.XMLonlySOAPservice.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/invokeEHRService.xml</file>
+    </artifact>
+</artifacts>

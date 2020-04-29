@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="upsertPatient" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <payloadFactory description="admitSubject to upsertPatient" media-type="xml">
+        <format>
+            <soapenv:Envelope xmlns:ns0="http://wso2.org/hospital-admission-service" xmlns:ns1="http://wso2.org/hospital-admission-service/modal" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+                <soapenv:Header/>
+                <soapenv:Body>
+                    <ns0:upsertPatient>
+                        <ns1:Subject>$1</ns1:Subject>
+                    </ns0:upsertPatient>
+                </soapenv:Body>
+            </soapenv:Envelope>
+        </format>
+        <args>
+            <arg evaluator="xml" expression="//ns0:admitSubject/ns1:Subject" xmlns:ns0="http://wso2.org/hospital-admission-service" xmlns:ns1="http://wso2.org/hospital-admission-service/modal"/>
+        </args>
+    </payloadFactory>
+    <header description="SOAPHeader" name="Action" scope="default" value="http://wso2.org/hospital-admission-service/patient/upsertPatient"/>
+    <header description="Content-Type" name="Content-Type" scope="transport" value="text/xml"/>
+    <call description="Invoke Patient Service">
+        <endpoint key="PatientServiceEndpoint"/>
+    </call>
+</sequence>
