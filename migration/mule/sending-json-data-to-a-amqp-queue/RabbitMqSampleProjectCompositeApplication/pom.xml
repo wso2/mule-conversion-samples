@@ -2,27 +2,27 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.example.DataHandlingBasics</groupId>
-  <artifactId>DataHandlingBasicsCompositeApplication</artifactId>
+  <groupId>com.example.RabbitMqSampleProject</groupId>
+  <artifactId>RabbitMqSampleProjectCompositeApplication</artifactId>
   <version>1.0.0</version>
   <packaging>carbon/application</packaging>
-  <name>DataHandlingBasicsCompositeApplication</name>
-  <description>DataHandlingBasicsCompositeApplication</description>
+  <name>RabbitMqSampleProjectCompositeApplication</name>
+  <description>RabbitMqSampleProjectCompositeApplication</description>
   <properties>
-    <com.example.DataHandlingBasics.lib_._fileconnector-connector>capp/EnterpriseServiceBus</com.example.DataHandlingBasics.lib_._fileconnector-connector>
-    <com.example.DataHandlingBasics.api_._DataHandlingBasics>capp/EnterpriseServiceBus</com.example.DataHandlingBasics.api_._DataHandlingBasics>
+    <com.example.RabbitMqSampleProject.endpoint_._RabbitMQEP>capp/EnterpriseServiceBus</com.example.RabbitMqSampleProject.endpoint_._RabbitMQEP>
+    <com.example.RabbitMqSampleProject.api_._MessageReceiveAPI>capp/EnterpriseServiceBus</com.example.RabbitMqSampleProject.api_._MessageReceiveAPI>
     <artifact.types>jaggery/app=zip,synapse/priority-executor=xml,synapse/inbound-endpoint=xml,service/rule=aar,synapse/message-store=xml,event/stream=json,service/meta=xml,datasource/datasource=xml,synapse/proxy-service=xml,bpel/workflow=zip,synapse/sequence=xml,synapse/endpointTemplate=xml,carbon/application=car,wso2/gadget=dar,synapse/api=xml,synapse/event-source=xml,synapse/message-processors=xml,event/receiver=xml,lib/dataservice/validator=jar,synapse/template=xml,synapse/endpoint=xml,lib/carbon/ui=jar,lib/synapse/mediator=jar,event/publisher=xml,synapse/local-entry=xml,synapse/task=xml,webapp/jaxws=war,registry/resource=zip,synapse/configuration=xml,service/axis2=aar,synapse/lib=zip,synapse/sequenceTemplate=xml,event/execution-plan=siddhiql,service/dataservice=dbs,web/application=war,lib/library/bundle=jar</artifact.types>
   </properties>
   <dependencies>
     <dependency>
-      <groupId>com.example.DataHandlingBasics.lib</groupId>
-      <artifactId>fileconnector-connector</artifactId>
-      <version>2.0.22</version>
-      <type>zip</type>
+      <groupId>com.example.RabbitMqSampleProject.api</groupId>
+      <artifactId>MessageReceiveAPI</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
     </dependency>
     <dependency>
-      <groupId>com.example.DataHandlingBasics.api</groupId>
-      <artifactId>DataHandlingBasics</artifactId>
+      <groupId>com.example.RabbitMqSampleProject.endpoint</groupId>
+      <artifactId>RabbitMQEP</artifactId>
       <version>1.0.0</version>
       <type>xml</type>
     </dependency>

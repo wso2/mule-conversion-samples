@@ -11,22 +11,34 @@ developer tool. This document assumes that you are familiar with WSO2 EI and the
 increase your familiarity with Integration Studio, consider completing one or more 
 [WSO2 EI Tutorials](https://ei.docs.wso2.com/en/latest/micro-integrator/use-cases/integration-use-cases/).
 
-### Set up and run the example
+### Example Use Case
 
-Follow the steps in this procedure to create and run this example in your own instance of Integration Studio. You can 
-create template applications straight out of the box in Integration Studio and tweak the configurations of the use 
-case-based templates to create your own customized applications in WSO2 Integrator.
+In this example you will learn how to work with query parameters, file operations using 
+[File connector](https://store.wso2.com/store/assets/esbconnector/details/5d6de1a4-1fa7-434e-863f-95c8533d3df2), 
+variable assignments, and processing XML and JSON payloads.
+![DataHandlingBasicsUseCase](../resources/images/data-handling-basics/data-handling-basics-use-case.png?raw=true "DataHandlingBasicsUseCase")
+
+### Set up and run the example
 
 1. Start WSO2 Integration Studio ([Installing WSO2 Integration Studio](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/installing-WSO2-Integration-Studio/)).
 2. In your menu in Studio, click the **File** menu. In the File menu select the **Import...** item.
 3. In the Import window select the **Existing WSO2 Projects into workspace** under **WSO2** folder.
-4. Browse and select the file path to the downloaded sample of this github project ("data-handling-basics" folder of the 
-downloaded github repository).
-5. Open the **HelloWorld.xml** under **data-handling-basics/DataHandlingBasics/src/main/synapse-config/api** directory. 
-6. The **DataHandlingBasics.xml** is the graphical view of the simple hello world service.
-7. Right click on the **DataHandlingBasics** project and select **Add or Remove Connector**. Keep the **Add connector**
-option selected and click **Next**. Search for 'file' using the search bar and click the download button located at the
-bottom right corner of the file connector. Click **Finish**.
+4. Browse and select the file path to the downloaded sample of this Github project (``integration-studio-examples/migration/mule/data-handling-basics``)
+and click **finish**.
+5. Lets add the file connector into the workspace. Right click on the **DataHandlingBasics** and select 
+**Add or Remove Connector**. Keep the **Add connector** option selected and click **Next>**. Search for 'file' using the 
+search bar and click the download button located at the bottom right corner of the file connector. Click **Finish**.
+5. Open the **DataHandlingBasics.xml** under **data-handling-basics/DataHandlingBasics/src/main/synapse-config/api** directory. 
+![DataHandlingBasics](../resources/images/data-handling-basics/data-handling-basics.png?raw=true "DataHandlingBasics")
+6. The **DataHandlingBasics.xml** is the graphical view of the simple data handling basics service. Provide .txt file path
+for resource greet3 and greet5 and .csv file path for greet4 and greet6. An example file connector configuration is given
+below.
+```xml
+<fileconnector.create>
+    <filePath>/Users/dilmi/Desktop/sample.txt</filePath>
+    <inputContent>{$ctx:inputContent}</inputContent>
+</fileconnector.create>
+```
 8. Run the sample by right click on the **DataHandlingBasicsCompositeApplication** under the main **data-handling-basics** 
 project and selecting **Export Project Artifacts and Run**. In WSO2 Platform Distribution window select both 
 DataHandlingBasics and DataHandlingBasicsConnectorExporter and click finish.
@@ -40,28 +52,25 @@ This will print the words **Hello (yourName)** in your browser and also save a t
 12. ****Sample 4**** : In a browser, access the URL **http://localhost:8290/basic/greet4?username=yourName&age=22**. 
 This will print the words **Hello (yourName)** in your browser and also save a csv file that contains this data.
 13. ****Sample 5**** : You must now send the HTTP endpoint an HTTP request that includes a body with an attached XML 
-file. Send a POST request to **http://localhost:8290/basic/greet5 ** attaching an XML to the body of the message. A 
-sample XML is provided below.
+file. Open HTTP Client in Integration Studio. Follow 
+[HTTP Client Guidelines](../../../docs/common/adding-http-client-to-integration-studio.md)
 
-The easiest way to do this is to send a POST via a browser extension such as Postman (for Google Chrome) or the c
-url command line utility.
+Send a POST request to **http://localhost:8290/basic/greet5** attaching an XML to the body of the message. A 
+sample XML is provided below.
     
     		<user>
     		    <username> test </username>
     		    <age> 21 </age>
     		</user>
      
-This will print the words Hello yourName in your browser and also save a txt file that contains this data.
+This will print the respond Hello yourName and also save a txt file that contains this data.
 13. ****Sample 6**** : You must now send the HTTP endpoint an HTTP request that includes a body with an attached JSON 
 file. Send a POST request to **http://localhost:8290/basic/greet6**, attaching a JSON object the body of the message. A 
 sample JSON is provided below.
     
-The easiest way to do this is by sending a POST via a browser extension such as Postman (for Google Chrome) or the curl 
-command line utility.
-    
     		{ "username": "test", "age" : 21 }
      
-This will print the words Hello yourName in your browser and also save a csv file that contains this data.
+This will print the respond Hello yourName and also save a csv file that contains this data.
 
 ##### Sample 1 – Accessing Properties
 
@@ -94,7 +103,6 @@ In this example you:
 * access query parameters
 * create a file including the user input
 * dynamically set the payload
-
 
 ##### Sample 4 – Variable Assignment and Evaluating Conditions
 
