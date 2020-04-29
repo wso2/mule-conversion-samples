@@ -31,7 +31,7 @@ search bar and click the download button located at the bottom right corner of t
 Configure the following properties with the previously obtained values.
     - Access Token
     - Refresh Token
-    - API URL (e.g.: https://<INSTANCE>.salesforce.com)
+    - API URL (e.g.: https://\<INSTANCE\>.salesforce.com)
 8. Run the sample by right click on the **AuthenticatingSalesforceUsingOauth2CompositeApplication** under the main 
 **authenticating-salesforce-using-oauth2** project and selecting **Export Project Artifacts and Run**.
 9. Open HTTP Client in Integration Studio. Follow [HTTP Client Guidelines](../../../docs/common/adding-http-client-to-integration-studio.md)
