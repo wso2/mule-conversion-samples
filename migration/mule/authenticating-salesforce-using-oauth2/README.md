@@ -21,9 +21,9 @@ In this example, Contacts in Salesforce are retrieved using OAuth 2.0 as the aut
 3. In the Import window select the **Existing WSO2 Projects into workspace** under **WSO2** folder.
 4. Browse and select the file path to the downloaded sample of this Github project 
 (`integration-studio-examples/migration/mule/authenticating-salesforce-using-oauth2/AuthenticatingSalesforceUsingOauth2Registry`) anf click **finish**.
-5. Let's add the file connector into the workspace. Right click on the **AuthenticatingSalesforceUsingOauth2** and select 
+5. Let's add the Salesforce REST connector into the workspace. Right click on the **AuthenticatingSalesforceUsingOauth2** and select 
 **Add or Remove Connector**. Keep the **Add connector** option selected and click **Next>**. Search for 'file' using the 
-search bar and click the download button located at the bottom right corner of the file connector. Click **Finish**.
+search bar and click the download button located at the bottom right corner of the Salesforce REST connector. Click **Finish**.
 6. Follow these [steps](https://ei.docs.wso2.com/en/latest/micro-integrator/references/connectors/salesforce-rest-connector/sf-access-token-generation/) to generate the Access Tokens for Salesforce and obtain the Access Token, and Refresh Token.
 7. Open the **ContactsAPI.xml** under 
 **authenticating-salesforce-using-oauth2/AuthenticatingSalesforceUsingOauth2/src/main/synapse-config/api/** directory. 
