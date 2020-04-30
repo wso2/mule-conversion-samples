@@ -26,16 +26,16 @@ In this example we use two resources, one to output a html page which provides a
 search bar and click the download button located at the bottom right corner of the file connector. Click **Finish**.
 6. Open the **HTTPMultiPartRequestAPI.xml** under 
 **http-multipart-request/HTTPMultiPartRequest/src/main/synapse-config/api/** directory. 
-Copy the uploadFile.html file located in **http-multipart-request/HTTPMultiPartRequest/src/main/resources** directory to a location of your choice. 
-Replace the htmlLocation property value with the copied path to uploadFile.html.
-Replace the destinationDir property value with the destination which the uploaded files should be copied ex:- /Users/user/Desktop/destination.
+7. Copy the uploadFile.html file located in **http-multipart-request/HTTPMultiPartRequest/src/main/resources** directory to a location of your choice.
+8. Replace the {htmllocation} placeholder with the copied path to uploadFile.html and {destinationDir} property value with the destination directory.
+ex:- /Users/user/Desktop/destination/. `The destinationDir directory path should followed by a trailing / character`
 ![Alt text]( "HTTPMultiPartRequest")
-7. Run the sample by right click on the **HTTPMultipartRequestCompositeApplication** under the main 
+10. Run the sample by right click on the **HTTPMultipartRequestCompositeApplication** under the main 
 **HTTPMultiPartRequest** project and selecting **Export Project Artifacts and Run**.
-8. Open a browser of you choice and go to the following URL.
+11. Open a browser of you choice and go to the following URL.
 `http://localhost:8290/uploadFile`
-9. In the html page click on Choose File button and upload any file. Then click submit.
-10. Verify that the file that was uploaded to the html form is in the defined destination(destinationDir) Directory. And in the console log you can see the below log.
+12. In the html page click on Choose File button and upload any file. Then click submit.
+13. Verify that the file that was uploaded to the html form is in the defined destination(destinationDir) Directory. And in the console log you can see the below log.
 `INFO {org.apache.synapse.mediators.builtin.LogMediator} - File Content-Type = text/xml`
 
 ### Go Further
