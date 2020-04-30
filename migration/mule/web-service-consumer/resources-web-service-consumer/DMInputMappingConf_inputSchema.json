@@ -1,0 +1,45 @@
+{
+  "$schema" : "http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#",
+  "inputType" : "JSON",
+  "id" : "http://wso2jsonschema.org",
+  "title" : "root",
+  "type" : "object",
+  "properties" : {
+    "email" : {
+      "id" : "http://wso2jsonschema.org/email",
+      "type" : "string"
+    },
+    "address1" : {
+      "id" : "http://wso2jsonschema.org/address1",
+      "type" : "string"
+    },
+    "address2" : {
+      "id" : "http://wso2jsonschema.org/address2",
+      "type" : "string"
+    },
+    "city" : {
+      "id" : "http://wso2jsonschema.org/city",
+      "type" : "string"
+    },
+    "country" : {
+      "id" : "http://wso2jsonschema.org/country",
+      "type" : "string"
+    },
+    "name" : {
+      "id" : "http://wso2jsonschema.org/name",
+      "type" : "string"
+    },
+    "postalCode" : {
+      "id" : "http://wso2jsonschema.org/postalCode",
+      "type" : "string"
+    },
+    "size" : {
+      "id" : "http://wso2jsonschema.org/size",
+      "type" : "string"
+    },
+    "stateOrProvince" : {
+      "id" : "http://wso2jsonschema.org/stateOrProvince",
+      "type" : "string"
+    }
+  }
+}

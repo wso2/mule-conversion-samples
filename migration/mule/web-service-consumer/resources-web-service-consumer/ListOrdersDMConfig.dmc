@@ -1,0 +1,26 @@
+map_S_Envelope_S_root = function(){ 
+var outputroot={};
+
+var count_i_InventoryItem_af210271_5cac_4a49_9881_e36632f9bb98 = 0;
+outputroot =  {};
+outputroot.Inventory =  {};
+outputroot.Inventory.InventoryItem =  [];
+
+for(i_InventoryItem_af210271_5cac_4a49_9881_e36632f9bb98 in inputsoapenv_Envelope.soapenv_Body.Inventory.InventoryItem){
+outputroot.Inventory.InventoryItem[count_i_InventoryItem_af210271_5cac_4a49_9881_e36632f9bb98] =  {};
+outputroot.Inventory.InventoryItem[count_i_InventoryItem_af210271_5cac_4a49_9881_e36632f9bb98].productCode = inputsoapenv_Envelope.soapenv_Body.Inventory.InventoryItem[i_InventoryItem_af210271_5cac_4a49_9881_e36632f9bb98].productCode;
+outputroot.Inventory.InventoryItem[count_i_InventoryItem_af210271_5cac_4a49_9881_e36632f9bb98].size = inputsoapenv_Envelope.soapenv_Body.Inventory.InventoryItem[i_InventoryItem_af210271_5cac_4a49_9881_e36632f9bb98].size;
+outputroot.Inventory.InventoryItem[count_i_InventoryItem_af210271_5cac_4a49_9881_e36632f9bb98].description = inputsoapenv_Envelope.soapenv_Body.Inventory.InventoryItem[i_InventoryItem_af210271_5cac_4a49_9881_e36632f9bb98].description;
+outputroot.Inventory.InventoryItem[count_i_InventoryItem_af210271_5cac_4a49_9881_e36632f9bb98].count = inputsoapenv_Envelope.soapenv_Body.Inventory.InventoryItem[i_InventoryItem_af210271_5cac_4a49_9881_e36632f9bb98].count;
+
+count_i_InventoryItem_af210271_5cac_4a49_9881_e36632f9bb98++;
+}
+return outputroot;
+};
+
+
+
+
+
+
+
