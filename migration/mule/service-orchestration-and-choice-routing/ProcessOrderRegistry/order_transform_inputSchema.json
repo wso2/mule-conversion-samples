@@ -1,0 +1,63 @@
+{
+  "$schema" : "http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#",
+  "inputType" : "XML",
+  "id" : "http://wso2jsonschema.org",
+  "title" : "processOrder",
+  "type" : "object",
+  "properties" : {
+    "order" : {
+      "id" : "http://wso2jsonschema.org/order",
+      "type" : "object",
+      "properties" : {
+        "orderId" : {
+          "id" : "http://wso2jsonschema.org/order/orderId",
+          "type" : "number"
+        },
+        "customer" : {
+          "id" : "http://wso2jsonschema.org/order/customer",
+          "type" : "object",
+          "properties" : {
+            "address" : {
+              "id" : "http://wso2jsonschema.org/order/customer/address",
+              "type" : "string"
+            },
+            "firstName" : {
+              "id" : "http://wso2jsonschema.org/order/customer/firstName",
+              "type" : "string"
+            },
+            "lastName" : {
+              "id" : "http://wso2jsonschema.org/order/customer/lastName",
+              "type" : "string"
+            }
+          }
+        },
+        "item" : {
+          "id" : "http://wso2jsonschema.org/order/item",
+          "type" : "array",
+          "items" : [ {
+            "id" : "http://wso2jsonschema.org/order/item/0",
+            "type" : "object",
+            "properties" : {
+              "manufacturer" : {
+                "id" : "http://wso2jsonschema.org/order/item/0/manufacturer",
+                "type" : "string"
+              },
+              "name" : {
+                "id" : "http://wso2jsonschema.org/order/item/0/name",
+                "type" : "string"
+              },
+              "productId" : {
+                "id" : "http://wso2jsonschema.org/order/item/0/productId",
+                "type" : "string"
+              },
+              "quantity" : {
+                "id" : "http://wso2jsonschema.org/order/item/0/quantity",
+                "type" : "number"
+              }
+            }
+          } ]
+        }
+      }
+    }
+  }
+}

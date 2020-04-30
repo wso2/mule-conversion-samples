@@ -1,0 +1,60 @@
+<wsdl:definitions name="SamsungServiceService" targetNamespace="http://samsung.wso2.org/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://samsung.wso2.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <wsdl:types>
+      <xs:schema elementFormDefault="unqualified" targetNamespace="http://samsung.wso2.org/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+         <xs:element name="orderRequest" type="tns:orderRequest"/>
+         <xs:element name="orderResponse" type="tns:orderResponse"/>
+         <xs:element name="purchase" type="tns:purchase"/>
+         <xs:element name="purchaseResponse" type="tns:purchaseResponse"/>
+         <xs:complexType name="purchase">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="orderRequest" type="tns:orderRequest"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="orderRequest">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="name" type="xs:string"/>
+               <xs:element name="quantity" type="xs:int"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="purchaseResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="orderResponse" type="tns:orderResponse"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="orderResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="id" type="xs:string"/>
+               <xs:element minOccurs="0" name="result" type="xs:string"/>
+               <xs:element minOccurs="0" name="price" type="xs:string"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>
+   </wsdl:types>
+   <wsdl:message name="purchase">
+      <wsdl:part element="tns:purchase" name="parameters"/>
+   </wsdl:message>
+   <wsdl:message name="purchaseResponse">
+      <wsdl:part element="tns:purchaseResponse" name="parameters"/>
+   </wsdl:message>
+   <wsdl:portType name="SamsungService">
+      <wsdl:operation name="purchase">
+         <wsdl:input message="tns:purchase" name="purchase"/>
+         <wsdl:output message="tns:purchaseResponse" name="purchaseResponse"/>
+      </wsdl:operation>
+   </wsdl:portType>
+   <wsdl:binding name="SamsungServiceServiceSoapBinding" type="tns:SamsungService">
+      <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+      <wsdl:operation name="purchase">
+         <soap:operation soapAction="getAmount" style="document"/>
+         <wsdl:input name="purchase">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="purchaseResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:service name="SamsungServiceService">
+      <wsdl:port binding="tns:SamsungServiceServiceSoapBinding" name="SamsungServicePort"/>
+   </wsdl:service>
+</wsdl:definitions>

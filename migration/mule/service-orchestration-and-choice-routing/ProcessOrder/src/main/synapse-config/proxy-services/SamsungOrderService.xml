@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy name="SamsungOrderService" startOnLoad="true" transports="http https" xmlns="http://ws.apache.org/ns/synapse">
+    <target>
+        <inSequence>
+            <payloadFactory description="Response Message" media-type="xml">
+                <format>
+                    <soapenv:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+                        <soapenv:Header/>
+                        <soapenv:Body>
+                            <soap:Response>
+                                <id xmlns="">$1</id>
+                                <result xmlns="">$2</result>
+                                <price xmlns="">$3</price>
+                            </soap:Response>
+                        </soapenv:Body>
+                    </soapenv:Envelope>
+                </format>
+                <args>
+                    <arg evaluator="xml" expression="get-property('MessageID')"/>
+                    <arg value="ACCEPTED"/>
+                    <arg evaluator="xml" expression="//sam:purchase/orderRequest/quantity * 10" xmlns:sam="http://samsung.se.wso2.org/"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </target>
+    <publishWSDL key="conf:custom/samsung.wsdl" preservePolicy="true"/>
+</proxy>

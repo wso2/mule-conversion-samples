@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy name="Orders" startOnLoad="true" transports="http https" xmlns="http://ws.apache.org/ns/synapse">
+    <target>
+        <inSequence>
+            <propertyGroup description="Intitialize properties">
+                <property expression="count(//item)" name="countItems" scope="default" type="STRING"/>
+                <property name="totalValue" scope="default" type="INTEGER" value="0"/>
+                <property expression="//ord:processOrder/order/orderId" name="orderId" scope="default" type="STRING" xmlns:ord="http://orders.wso2.org/"/>
+            </propertyGroup>
+            <datamapper config="gov:datamapper/order_transform.dmc" description="Convert input to JSON" inputSchema="gov:datamapper/order_transform_inputSchema.json" inputType="XML" outputSchema="gov:datamapper/order_transform_outputSchema.json" outputType="JSON" xsltStyleSheet="gov:datamapper/order_transform_xsltStyleSheet.xml"/>
+            <log description="Log input" level="full"/>
+            <iterate description="Iterate order item" expression="json-eval($.orderItems)" id="itemIterator">
+                <target>
+                    <sequence>
+                        <switch description="samsung manufacturer?" source="json-eval($.manufacturer)">
+                            <case regex="Samsung">
+                                <sequence key="SamsungOrder"/>
+                            </case>
+                            <default>
+                                <sequence key="InHouseOrder"/>
+                            </default>
+                        </switch>
+                    </sequence>
+                </target>
+            </iterate>
+            <aggregate id="itemIterator">
+                <completeCondition timeout="10">
+                    <messageCount max="{get-property('countItems')}" min="{get-property('countItems')}"/>
+                </completeCondition>
+                <onComplete expression="json-eval($.totalPrice)">
+                    <script description="Calculate totalValue" language="js"><![CDATA[mc.setProperty("totalValue",mc.getPayloadJSON().reduce(function(acc, val) { return acc + val; }, 0))]]></script>
+                    <clone>
+                        <target>
+                            <sequence>
+                                <payloadFactory description="Prepare Response" media-type="xml">
+                                    <format>
+                                        <soap:Response xmlns:soap="http://schemas.xmlsoap.org/soap/envelope">
+                                            <message xmlns="">"Order $1 was processed successfully" </message>
+                                        </soap:Response>
+                                    </format>
+                                    <args>
+                                        <arg evaluator="xml" expression="get-property(&quot;orderId&quot;)"/>
+                                    </args>
+                                </payloadFactory>
+                                <respond/>
+                            </sequence>
+                        </target>
+                        <target>
+                            <sequence>
+                                <payloadFactory description="Prepare Payload" media-type="json">
+                                    <format>{
+                                        "order_id": "$1",
+                                        "total_value": "$2"
+                                        }</format>
+                                    <args>
+                                        <arg evaluator="xml" expression="get-property(&quot;orderId&quot;)"/>
+                                        <arg evaluator="xml" expression="get-property(&quot;totalValue&quot;)"/>
+                                    </args>
+                                </payloadFactory>
+                                <sequence key="Audit_Service"/>
+                            </sequence>
+                        </target>
+                    </clone>
+                </onComplete>
+            </aggregate>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <makefault description="Respond SOAP Fault" version="soap11">
+                <code value="soap11Env:VersionMismatch" xmlns:soap11Env="http://schemas.xmlsoap.org/soap/envelope/"/>
+                <reason value=""/>
+            </makefault>
+        </faultSequence>
+    </target>
+    <publishWSDL key="conf:custom/orders.wsdl" preservePolicy="true"/>
+</proxy>

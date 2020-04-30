@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="samsung_wsdl" groupId="com.example.ProcessOrder.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+        <item>
+            <file>samsung.wsdl</file>
+            <path>/_system/config/custom</path>
+            <mediaType>application/wsdl+xml</mediaType>
+        </item>
+    </artifact>
+    <artifact name="orders_wsdl" groupId="com.example.ProcessOrder.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+        <item>
+            <file>orders.wsdl</file>
+            <path>/_system/config/custom</path>
+            <mediaType>application/wsdl+xml</mediaType>
+        </item>
+    </artifact>
+    <artifact name="order_transform" groupId="com.example.ProcessOrder.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>order_transform.dmc</file>
+            <path>/_system/governance/datamapper</path>
+            <mediaType>text/plain</mediaType>
+        </item>
+    </artifact>
+    <artifact name="order_transform_inputSchema" groupId="com.example.ProcessOrder.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>order_transform_inputSchema.json</file>
+            <path>/_system/governance/datamapper</path>
+            <mediaType>text/plain</mediaType>
+        </item>
+    </artifact>
+    <artifact name="order_transform_outputSchema" groupId="com.example.ProcessOrder.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>order_transform_outputSchema.json</file>
+            <path>/_system/governance/datamapper</path>
+            <mediaType>text/plain</mediaType>
+        </item>
+    </artifact>
+    <artifact name="order_transform_xsltStyleSheet" groupId="com.example.ProcessOrder.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>order_transform_xsltStyleSheet.xml</file>
+            <path>/_system/governance/datamapper</path>
+            <mediaType>text/plain</mediaType>
+        </item>
+    </artifact>
+</artifacts>
