@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="check-headers" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <switch source="get-property('soapActionHeader')">
+        <case regex="http://wso2.org/tshirt-service/list-inventory">
+            <payloadFactory media-type="xml">
+                <format>
+                    <Inventory>
+                        <InventoryItem>
+                            <productCode>HET023</productCode>
+                            <size>S</size>
+                            <description>Polo</description>
+                            <count>200</count>
+                        </InventoryItem>
+                        <InventoryItem>
+                            <productCode>HET045</productCode>
+                            <size>L</size>
+                            <description>Polo</description>
+                            <count>200</count>
+                        </InventoryItem>
+                        <InventoryItem>
+                            <productCode>HET051</productCode>
+                            <size>M</size>
+                            <description>Polo</description>
+                            <count>200</count>
+                        </InventoryItem>
+                        <InventoryItem>
+                            <productCode>HET092</productCode>
+                            <size>XL</size>
+                            <description>Polo</description>
+                            <count>200</count>
+                        </InventoryItem>
+                    </Inventory>
+                </format>
+                <args/>
+            </payloadFactory>
+        </case>
+        <default>
+            <makefault version="soap11">
+                <code value="soap11Env:Client" xmlns:soap11Env="http://schemas.xmlsoap.org/soap/envelope/"/>
+                <reason value="Action Mismatch"/>
+                <role/>
+                <detail>The SOAP action specified on the message, does not match the HTTP SOAP Action.</detail>
+            </makefault>
+        </default>
+    </switch>
+</sequence>

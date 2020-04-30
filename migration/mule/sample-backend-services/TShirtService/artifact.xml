@@ -2,4 +2,7 @@
     <artifact name="TshirtService" groupId="org.wso2.TShirtService.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/proxy-services/TshirtService.xml</file>
     </artifact>
+    <artifact name="check-headers" groupId="org.wso2.TShirtService.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/check-headers.xml</file>
+    </artifact>
 </artifacts>
