@@ -2,15 +2,15 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.example.QueryingAMysqlDatabase</groupId>
-  <artifactId>QueryingAMysqlDatabase</artifactId>
+  <groupId>com.example.QueryingAMysqlDatabaseRegistry</groupId>
+  <artifactId>QueryingAMysqlDatabaseRegistry</artifactId>
   <version>1.0.0</version>
   <packaging>pom</packaging>
-  <name>QueryingAMysqlDatabase</name>
-  <description>QueryingAMysqlDatabase</description>
+  <name>QueryingAMysqlDatabaseRegistry</name>
+  <description>QueryingAMysqlDatabaseRegistry</description>
   <properties>
-    <CApp.type>bpel/workflow=zip,lib/registry/filter=jar,webapp/jaxws=war,lib/library/bundle=jar,service/dataservice=dbs,synapse/local-entry=xml,synapse/proxy-service=xml,carbon/application=car,registry/resource=zip,lib/dataservice/validator=jar,synapse/endpoint=xml,web/application=war,lib/carbon/ui=jar,service/axis2=aar,synapse/sequence=xml,synapse/configuration=xml,wso2/gadget=dar,lib/registry/handlers=jar,lib/synapse/mediator=jar,synapse/task=xml,synapse/api=xml,synapse/template=xml,synapse/message-store=xml,synapse/message-processors=xml,synapse/inbound-endpoint=xml</CApp.type>
     <maven.test.skip>false</maven.test.skip>
+    <CApp.type>bpel/workflow=zip,lib/registry/filter=jar,webapp/jaxws=war,lib/library/bundle=jar,service/dataservice=dbs,synapse/local-entry=xml,synapse/proxy-service=xml,carbon/application=car,registry/resource=zip,lib/dataservice/validator=jar,synapse/endpoint=xml,web/application=war,lib/carbon/ui=jar,service/axis2=aar,synapse/sequence=xml,event/stream=json,event/publisher=xml,event/receiver=xml,event/execution-plan=siddhiql,synapse/configuration=xml,wso2/gadget=dar,lib/registry/handlers=jar,lib/synapse/mediator=jar</CApp.type>
   </properties>
   <repositories>
     <repository>
@@ -20,6 +20,14 @@
         <checksumPolicy>ignore</checksumPolicy>
       </releases>
       <id>wso2-nexus</id>
+      <url>http://maven.wso2.org/nexus/content/groups/wso2-public/</url>
+    </repository>
+    <repository>
+      <id>wso2-maven2-repository-1</id>
+      <url>http://dist.wso2.org/maven2</url>
+    </repository>
+    <repository>
+      <id>wso2-nexus-maven2-repository-1</id>
       <url>http://maven.wso2.org/nexus/content/groups/wso2-public/</url>
     </repository>
   </repositories>
@@ -33,6 +41,14 @@
       <id>wso2-nexus</id>
       <url>http://maven.wso2.org/nexus/content/groups/wso2-public/</url>
     </pluginRepository>
+    <pluginRepository>
+      <id>wso2-maven2-repository-1</id>
+      <url>http://dist.wso2.org/maven2</url>
+    </pluginRepository>
+    <pluginRepository>
+      <id>wso2-nexus-maven2-repository-1</id>
+      <url>http://maven.wso2.org/nexus/content/groups/wso2-public/</url>
+    </pluginRepository>
   </pluginRepositories>
   <build>
     <directory>target/capp</directory>
@@ -43,22 +59,6 @@
         <version>1.4.0</version>
         <extensions>true</extensions>
         <executions>
-          <execution>
-            <id>package</id>
-            <phase>package</phase>
-            <goals>
-              <goal>exec</goal>
-            </goals>
-            <configuration>
-              <executable>mvn</executable>
-              <workingDirectory>${project.build.directory}</workingDirectory>
-              <arguments>
-                <argument>clean</argument>
-                <argument>package</argument>
-                <argument>-Dmaven.test.skip=${maven.test.skip}</argument>
-              </arguments>
-            </configuration>
-          </execution>
           <execution>
             <id>install</id>
             <phase>install</phase>
@@ -97,44 +97,23 @@
         <artifactId>maven-eclipse-plugin</artifactId>
         <version>2.9</version>
         <configuration>
-          <buildcommands />
+          <buildcommands>
+            <buildcommand>org.eclipse.jdt.core.javabuilder</buildcommand>
+          </buildcommands>
           <projectnatures>
-            <projectnature>org.wso2.developerstudio.eclipse.esb.project.nature</projectnature>
+            <projectnature>org.wso2.developerstudio.eclipse.general.project.nature</projectnature>
+            <projectnature>org.eclipse.jdt.core.javanature</projectnature>
           </projectnatures>
         </configuration>
       </plugin>
       <plugin>
         <groupId>org.wso2.maven</groupId>
-        <artifactId>synapse-unit-test-maven-plugin</artifactId>
-        <version>5.2.17</version>
-        <executions>
-          <execution>
-            <id>synapse-unit-test</id>
-            <phase>test</phase>
-            <goals>
-              <goal>synapse-unit-test</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <server>
-            <testServerType>${testServerType}</testServerType>
-            <testServerHost>${testServerHost}</testServerHost>
-            <testServerPort>${testServerPort}</testServerPort>
-            <testServerPath>${testServerPath}</testServerPath>
-          </server>
-          <testCasesFilePath>${project.basedir}/test/${testFile}</testCasesFilePath>
-          <mavenTestSkip>${maven.test.skip}</mavenTestSkip>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.wso2.maven</groupId>
-        <artifactId>wso2-esb-api-plugin</artifactId>
-        <version>2.1.0</version>
+        <artifactId>wso2-general-project-plugin</artifactId>
+        <version>2.1.1</version>
         <extensions>true</extensions>
         <executions>
           <execution>
-            <id>api</id>
+            <id>registry</id>
             <phase>process-resources</phase>
             <goals>
               <goal>pom-gen</goal>

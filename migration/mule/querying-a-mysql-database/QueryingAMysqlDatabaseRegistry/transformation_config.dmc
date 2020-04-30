@@ -1,0 +1,16 @@
+map_S_root_S_root = function(){ 
+var outputroot={};
+
+var count_i_employee_e9c9a43a_d3c7_4a5a_a976_002ba63ae992 = 0;
+outputroot =  [];
+
+for(i_employee_e9c9a43a_d3c7_4a5a_a976_002ba63ae992 in inputroot.employees.employee){
+outputroot[count_i_employee_e9c9a43a_d3c7_4a5a_a976_002ba63ae992] =  {};
+outputroot[count_i_employee_e9c9a43a_d3c7_4a5a_a976_002ba63ae992].first_name = inputroot.employees.employee[i_employee_e9c9a43a_d3c7_4a5a_a976_002ba63ae992].first_name;
+
+count_i_employee_e9c9a43a_d3c7_4a5a_a976_002ba63ae992++;
+}
+return outputroot;
+};
+
+
