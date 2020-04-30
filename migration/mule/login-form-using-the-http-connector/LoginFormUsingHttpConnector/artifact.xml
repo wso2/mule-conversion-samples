@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="login-form-using-the-http-connector" groupId="com.example.LoginFormUsingHttpConnector.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/login-form-using-the-http-connector.xml</file>
+    </artifact>
+    <artifact name="ParseTemplate" groupId="com.example.LoginFormUsingHttpConnector.template" version="1.0.0" type="synapse/sequenceTemplate" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/templates/ParseTemplate.xml</file>
+    </artifact>
+    <artifact name="DoLogin" groupId="com.example.LoginFormUsingHttpConnector.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/DoLogin.xml</file>
+    </artifact>
+</artifacts>
