@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy name="TshirtService" startOnLoad="true" transports="http https" xmlns="http://ws.apache.org/ns/synapse">
+    <target>
+        <inSequence>
+            <propertyGroup>
+                <property name="soapAction" scope="default" type="STRING" expression="local-name($body/*[1])"/>
+            </propertyGroup>
+            <switch source="get-property('soapAction')">
+                <case regex="ListInventory">
+                    <payloadFactory media-type="xml">
+                        <format>
+                            <Inventory>
+                                <Items>
+                                    <Item>
+                                        <code>HET023</code>
+                                        <colorCode>BFHR</colorCode>
+                                        <codeName>Polo</codeName>
+                                        <price>200</price>
+                                    </Item>
+                                    <Item>
+                                        <code>HET056</code>
+                                        <colorCode>VFER</colorCode>
+                                        <codeName>Polo</codeName>
+                                        <price>400</price>
+                                    </Item>
+                                    <Item>
+                                        <code>HET016</code>
+                                        <colorCode>GTWS</colorCode>
+                                        <codeName>Vneck</codeName>
+                                        <price>100</price>
+                                    </Item>
+                                    <Item>
+                                        <code>HET083</code>
+                                        <colorCode>BTYU</colorCode>
+                                        <codeName>Polo</codeName>
+                                        <price>300</price>
+                                    </Item>
+                                </Items>
+                            </Inventory>
+                        </format>
+                        <args/>
+                    </payloadFactory>
+                </case>
+                <default>
+                    <makefault version="soap11">
+                        <code value="soap11Env:Client" xmlns:soap11Env="http://schemas.xmlsoap.org/soap/envelope/"/>
+                        <reason value="Action Mismatch"/>
+                        <role/>
+                        <detail>The SOAP action specified on the message, does not match the HTTP SOAP Action.</detail>
+                    </makefault>
+                </default>
+            </switch>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </target>
+    <publishWSDL key="conf:backendResources/tshirt.wsdl" preservePolicy="true"/>
+</proxy>
+

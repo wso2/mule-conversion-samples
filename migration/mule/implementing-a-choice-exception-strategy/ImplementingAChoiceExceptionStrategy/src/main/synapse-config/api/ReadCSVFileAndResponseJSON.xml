@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/file" name="ReadCSVFileAndResponseJSON" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <property description="Set File Path" expression="fn:concat('file://', get-property('query.param.filePath'))" name="filePath" scope="default" type="STRING"/>
+            <fileconnector.read>
+                <source>{$ctx:filePath}</source>
+                <contentType>text/plain</contentType>
+            </fileconnector.read>
+            <datamapper config="gov:datamapper/CSVToJSONTransformation.dmc" description="TransformCSVtoJSON" inputSchema="gov:datamapper/CSVToJSONTransformation_inputSchema.json" inputType="CSV" outputSchema="gov:datamapper/CSVToJSONTransformation_outputSchema.json" outputType="JSON" xsltStyleSheet="gov:datamapper/CSVToJSONTransformation_xsltStyleSheet.xml"/>
+            <property action="remove" description="Enable response body" name="NO_ENTITY_BODY" scope="axis2"/>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <switch source="get-property('ERROR_MESSAGE')">
+                <case regex="FILE_CONNECTOR:FILE_OR_DIR_NOT_EXIST">
+                    <payloadFactory description="Invalid Path" media-type="json">
+                        <format>{
+	message: "Your path is invalid"
+}</format>
+                        <args/>
+                    </payloadFactory>
+                    <log description="Logger"/>
+                </case>
+                <case regex="FILE_CONNECTOR:FILE_OR_DIR_ACCESS_DENIED">
+                    <payloadFactory description="Access Denied" media-type="json">
+                        <format>{
+	message: "Access to file denied"
+}</format>
+                        <args/>
+                    </payloadFactory>
+                    <log description="Logger"/>
+                </case>
+                <default/>
+            </switch>
+            <respond/>
+        </faultSequence>
+    </resource>
+</api>

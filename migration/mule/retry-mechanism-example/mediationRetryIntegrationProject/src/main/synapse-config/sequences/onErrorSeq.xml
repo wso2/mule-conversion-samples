@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="onErrorSeq" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log description="fail message" level="custom">
+        <property name="message" value="Processing failed"/>
+    </log>
+    <property description="retry count" expression="get-property('RETRY_COUNT') + 1" name="RETRY_COUNT" scope="default" type="STRING"/>
+    <log description="current iteration" level="custom">
+        <property expression="get-property('RETRY_COUNT')" name="message"/>
+    </log>
+    <filter description="decide " regex="5.0" source="get-property('RETRY_COUNT')">
+        <then>
+            <property description="HTTP status = 500" name="HTTP_SC" scope="axis2" type="STRING" value="500"/>
+            <payloadFactory description="error payload" media-type="xml">
+                <format>
+                    <Response xmlns="">
+                        <message>Processing failed. </message>
+                        <reason>$1</reason>
+                    </Response>
+                </format>
+                <args>
+                    <arg evaluator="xml" expression="$ctx:ERROR_MESSAGE"/>
+                </args>
+            </payloadFactory>
+            <respond description="respond"/>
+        </then>
+        <else>
+            <script description="sleep" language="js"><![CDATA[java.lang.Thread.sleep(5000);]]></script>
+            <sequence key="retry-mechanism-exampleFlow"/>
+        </else>
+    </filter>
+</sequence>

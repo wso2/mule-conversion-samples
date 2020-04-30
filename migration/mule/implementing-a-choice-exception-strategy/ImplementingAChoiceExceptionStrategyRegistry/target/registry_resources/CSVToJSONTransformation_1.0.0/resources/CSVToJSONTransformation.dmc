@@ -1,0 +1,22 @@
+map_S_root_S_root = function(){ 
+var outputroot={};
+
+var count_i_inputroot_a8b26d1f_e54d_458c_9688_57149e151314 = 0;
+outputroot =  [];
+
+for(i_inputroot_a8b26d1f_e54d_458c_9688_57149e151314 in inputroot){
+outputroot[count_i_inputroot_a8b26d1f_e54d_458c_9688_57149e151314] =  {};
+outputroot[count_i_inputroot_a8b26d1f_e54d_458c_9688_57149e151314].orderId = Number(inputroot[i_inputroot_a8b26d1f_e54d_458c_9688_57149e151314].orderId);
+outputroot[count_i_inputroot_a8b26d1f_e54d_458c_9688_57149e151314].name = inputroot[i_inputroot_a8b26d1f_e54d_458c_9688_57149e151314].name;
+outputroot[count_i_inputroot_a8b26d1f_e54d_458c_9688_57149e151314].pricePerUnit = Number(inputroot[i_inputroot_a8b26d1f_e54d_458c_9688_57149e151314].pricePerUnit);
+outputroot[count_i_inputroot_a8b26d1f_e54d_458c_9688_57149e151314].units = Number(inputroot[i_inputroot_a8b26d1f_e54d_458c_9688_57149e151314].units);
+
+count_i_inputroot_a8b26d1f_e54d_458c_9688_57149e151314++;
+}
+return outputroot;
+};
+
+
+
+
+

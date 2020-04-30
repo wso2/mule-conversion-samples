@@ -10,31 +10,33 @@ increase your familiarity with Integration Studio, consider completing one or mo
 [WSO2 EI Tutorials](https://ei.docs.wso2.com/en/latest/micro-integrator/use-cases/integration-use-cases/).
 
 ### Example Use Case
+
 In this example, Contacts in Salesforce are retrieved using OAuth 2.0 as the authentication mechanism. The retrieved records are then logged for simplicity.   
+![AuthenticatingSalesforceUsingOauth2RegistryUseCase](../resources/images/authenticating-salesforce-using-oauth2/authenticating-salesforce-using-oauth2-use-case.png?raw=true "AuthenticatingSalesforceUsingOauth2RegistryUseCase")
 
 ### Set Up and Run the Example
 
 1. Start WSO2 Integration Studio ([Installing WSO2 Integration Studio](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/installing-WSO2-Integration-Studio/)).
 2. In your menu in Studio, click the **File** menu. In the File menu select the **Import...** item.
 3. In the Import window select the **Existing WSO2 Projects into workspace** under **WSO2** folder.
-4. Browse and select the file path to the downloaded sample of this github project 
-("authenticating-salesforce-using-oauth2" folder of the downloaded github repository).
-5. Lets add the file connector into the workspace. Right click on the **AuthenticatingSalesforceUsingOauth2** and select 
+4. Browse and select the file path to the downloaded sample of this Github project 
+(`integration-studio-examples/migration/mule/authenticating-salesforce-using-oauth2/AuthenticatingSalesforceUsingOauth2Registry`) anf click **finish**.
+5. Let's add the Salesforce REST connector into the workspace. Right click on the **AuthenticatingSalesforceUsingOauth2** and select 
 **Add or Remove Connector**. Keep the **Add connector** option selected and click **Next>**. Search for 'file' using the 
-search bar and click the download button located at the bottom right corner of the file connector. Click **Finish**.
+search bar and click the download button located at the bottom right corner of the Salesforce REST connector. Click **Finish**.
 6. Follow these [steps](https://ei.docs.wso2.com/en/latest/micro-integrator/references/connectors/salesforce-rest-connector/sf-access-token-generation/) to generate the Access Tokens for Salesforce and obtain the Access Token, and Refresh Token.
 7. Open the **ContactsAPI.xml** under 
 **authenticating-salesforce-using-oauth2/AuthenticatingSalesforceUsingOauth2/src/main/synapse-config/api/** directory. 
+![AuthenticatingSalesforceUsingOauth2Registry](../resources/images/authenticating-salesforce-using-oauth2/authenticating-salesforce-using-oauth2.png?raw=true "AuthenticatingSalesforceUsingOauth2Registry")
 Configure the following properties with the previously obtained values.
     - Access Token
     - Refresh Token
     - API URL (e.g.: https://<INSTANCE>.salesforce.com)
 8. Run the sample by right click on the **AuthenticatingSalesforceUsingOauth2CompositeApplication** under the main 
 **authenticating-salesforce-using-oauth2** project and selecting **Export Project Artifacts and Run**.
-9. Make a GET request using curl to `http://localhost:8290/contacts` as follows.
-```bash
-curl http://localhost:8290/contacts 
-```
+9. Open HTTP Client in Integration Studio. Follow [HTTP Client Guidelines](../../../docs/common/adding-http-client-to-integration-studio.md)
+to open HTTP Client if the window is not visible in the interface.
+9. Make a GET request to `http://localhost:8290/contacts`.
 10. Following logs can be observed in the console log.
 ```
 [2020-04-24 16:28:31,381]  INFO {org.apache.synapse.mediators.builtin.LogMediator} - To: http://www.w3.org/2005/08/addressing/anonymous, WSAction: , SOAPAction: , MessageID: urn:uuid:2280a0c3-4ffe-47ca-a727-21424e531b0f, Direction: request, Payload: {"Id": "0032v00003JxgH6AAJ", "LastName": "Pattinson", "LastModifiedDate": "2019-12-09T11:59:19.000+0000"}
