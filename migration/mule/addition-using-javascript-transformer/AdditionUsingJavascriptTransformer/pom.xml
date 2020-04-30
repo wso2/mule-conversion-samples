@@ -129,12 +129,12 @@
       </plugin>
       <plugin>
         <groupId>org.wso2.maven</groupId>
-        <artifactId>wso2-esb-proxy-plugin</artifactId>
+        <artifactId>wso2-esb-api-plugin</artifactId>
         <version>2.1.0</version>
         <extensions>true</extensions>
         <executions>
           <execution>
-            <id>proxy</id>
+            <id>api</id>
             <phase>process-resources</phase>
             <goals>
               <goal>pom-gen</goal>
