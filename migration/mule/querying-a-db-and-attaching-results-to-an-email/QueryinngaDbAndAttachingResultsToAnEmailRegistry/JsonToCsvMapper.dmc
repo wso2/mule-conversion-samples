@@ -1,0 +1,24 @@
+map_S_root_S_root = function(){ 
+var outputroot={};
+
+var count_i_employees_9e89d16b_52ab_4954_93af_68480e0ef3dc = 0;
+outputroot =  [];
+
+for(i_employees_9e89d16b_52ab_4954_93af_68480e0ef3dc in inputroot.employees){
+outputroot[count_i_employees_9e89d16b_52ab_4954_93af_68480e0ef3dc] =  {};
+outputroot[count_i_employees_9e89d16b_52ab_4954_93af_68480e0ef3dc].first_name = inputroot.employees[i_employees_9e89d16b_52ab_4954_93af_68480e0ef3dc].firstName;
+outputroot[count_i_employees_9e89d16b_52ab_4954_93af_68480e0ef3dc].last_name = inputroot.employees[i_employees_9e89d16b_52ab_4954_93af_68480e0ef3dc].lastName;
+outputroot[count_i_employees_9e89d16b_52ab_4954_93af_68480e0ef3dc].gender = inputroot.employees[i_employees_9e89d16b_52ab_4954_93af_68480e0ef3dc].gender;
+outputroot[count_i_employees_9e89d16b_52ab_4954_93af_68480e0ef3dc].dob = inputroot.employees[i_employees_9e89d16b_52ab_4954_93af_68480e0ef3dc].dob;
+outputroot[count_i_employees_9e89d16b_52ab_4954_93af_68480e0ef3dc].hire_date = inputroot.employees[i_employees_9e89d16b_52ab_4954_93af_68480e0ef3dc].hire_date;
+
+count_i_employees_9e89d16b_52ab_4954_93af_68480e0ef3dc++;
+}
+return outputroot;
+};
+
+
+
+
+
+

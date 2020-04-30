@@ -1,0 +1,33 @@
+{
+  "$schema" : "http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#",
+  "outputType" : "CSV",
+  "id" : "root",
+  "title" : "root",
+  "type" : "array",
+  "items" : [ {
+    "properties" : {
+      "first_name" : {
+        "id" : "first_name",
+        "type" : "string"
+      },
+      "last_name" : {
+        "id" : "last_name",
+        "type" : "string"
+      },
+      "gender" : {
+        "id" : "gender",
+        "type" : "string"
+      },
+      "dob" : {
+        "id" : "dob",
+        "type" : "string"
+      },
+      "hire_date" : {
+        "id" : "hire_date",
+        "type" : "string"
+      }
+    },
+    "id" : "root/0",
+    "type" : "object"
+  } ]
+}

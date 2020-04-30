@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/employees" name="MainAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <datamapper config="gov:datamapper/XmlToJsonMapper.dmc" inputSchema="gov:datamapper/XmlToJsonMapper_inputSchema.json" inputType="XML" outputSchema="gov:datamapper/XmlToJsonMapper_outputSchema.json" outputType="JSON" xsltStyleSheet="gov:datamapper/XmlToJsonMapper_xsltStyleSheet.xml"/>
+            <foreach expression="json-eval($.employees)" id="employee_iterator">
+                <sequence>
+                    <property expression="json-eval($.firstName)" name="firstName" scope="default" type="STRING"/>
+                    <property expression="json-eval($.lastName)" name="lastName" scope="default" type="STRING"/>
+                    <dblookup>
+                        <connection>
+                            <pool>
+                                <driver>com.mysql.jdbc.Driver</driver>
+                                <url>jdbc:mysql://localhost:3306/company</url>
+                                <user>root</user>
+                                <password>root</password>
+                                <property name="autocommit" value="true"/>
+                            </pool>
+                        </connection>
+                        <statement>
+                            <sql><![CDATA[select first_name,last_name,gender,dob,hire_date from employees where first_name =? and last_name=?]]></sql>
+                            <parameter expression="get-property('firstName')" type="VARCHAR"/>
+                            <parameter expression="get-property('lastName')" type="VARCHAR"/>
+                            <result column="gender" name="gender"/>
+                            <result column="dob" name="dob"/>
+                            <result column="last_name" name="last_name"/>
+                            <result column="hire_date" name="hire_date"/>
+                            <result column="first_name" name="first_name"/>
+                        </statement>
+                    </dblookup>
+                    <payloadFactory media-type="json">
+                        <format>{"firstName": "$1", "lastName": "$2", "gender": "$3", "dob": "$4", "hire_date": "$5"}</format>
+                        <args>
+                            <arg evaluator="xml" expression="get-property('first_name')"/>
+                            <arg evaluator="xml" expression="get-property('last_name')"/>
+                            <arg evaluator="xml" expression="get-property('gender')"/>
+                            <arg evaluator="xml" expression="get-property('dob')"/>
+                            <arg evaluator="xml" expression="get-property('hire_date')"/>
+                        </args>
+                    </payloadFactory>
+                </sequence>
+            </foreach>
+            <datamapper config="gov:datamapper/JsonToCsvMapper.dmc" inputSchema="gov:datamapper/JsonToCsvMapper_inputSchema.json" inputType="JSON" outputSchema="gov:datamapper/JsonToCsvMapper_outputSchema.json" outputType="CSV" xsltStyleSheet="gov:datamapper/JsonToCsvMapper_xsltStyleSheet.xml"/>
+            <log level="full"/>
+            <propertyGroup>
+                <property name="transport.mail.bodyWhenAttached" scope="axis2" type="STRING" value="Please find the attached DB extract"/>
+                <property name="AttachmentFile" scope="axis2" type="STRING" value="employees.csv"/>
+                <property name="transport.mail.Format" scope="axis2" type="STRING" value="Attachment"/>
+                <property name="messageType" scope="axis2" type="STRING" value="text/html"/>
+                <property name="ContentType" scope="axis2" type="STRING" value="text/html"/>
+                <property name="Subject" scope="transport" type="STRING" value="Export from Excel"/>
+                <property name="OUT_ONLY" scope="default" type="STRING" value="true"/>
+            </propertyGroup>
+            <clone continueParent="true" id="request_clone">
+                <target>
+                    <endpoint>
+                        <address statistics="enable" trace="enable" uri="mailto:test@gmail.com">
+                            <suspendOnFailure>
+                                <initialDuration>-1</initialDuration>
+                                <progressionFactor>1</progressionFactor>
+                            </suspendOnFailure>
+                            <markForSuspension>
+                                <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                            </markForSuspension>
+                        </address>
+                    </endpoint>
+                </target>
+            </clone>
+            <payloadFactory media-type="text">
+                <format>Report has been successfully processed and sent to email</format>
+                <args/>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

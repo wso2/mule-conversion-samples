@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="XmlToJsonMapper" groupId="com.example.QueryinngaDbAndAttachingResultsToAnEmail.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>XmlToJsonMapper.dmc</file>
+            <path>/_system/governance/datamapper</path>
+            <mediaType>text/plain</mediaType>
+        </item>
+    </artifact>
+    <artifact name="XmlToJsonMapper_inputSchema" groupId="com.example.QueryinngaDbAndAttachingResultsToAnEmail.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>XmlToJsonMapper_inputSchema.json</file>
+            <path>/_system/governance/datamapper</path>
+            <mediaType>text/plain</mediaType>
+        </item>
+    </artifact>
+    <artifact name="XmlToJsonMapper_outputSchema" groupId="com.example.QueryinngaDbAndAttachingResultsToAnEmail.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>XmlToJsonMapper_outputSchema.json</file>
+            <path>/_system/governance/datamapper</path>
+            <mediaType>text/plain</mediaType>
+        </item>
+    </artifact>
+    <artifact name="XmlToJsonMapper_xsltStyleSheet" groupId="com.example.QueryinngaDbAndAttachingResultsToAnEmail.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>XmlToJsonMapper_xsltStyleSheet.xml</file>
+            <path>/_system/governance/datamapper</path>
+            <mediaType>text/plain</mediaType>
+        </item>
+    </artifact>
+    <artifact name="JsonToCsvMapper" groupId="com.example.QueryinngaDbAndAttachingResultsToAnEmail.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>JsonToCsvMapper.dmc</file>
+            <path>/_system/governance/datamapper</path>
+            <mediaType>text/plain</mediaType>
+        </item>
+    </artifact>
+    <artifact name="JsonToCsvMapper_inputSchema" groupId="com.example.QueryinngaDbAndAttachingResultsToAnEmail.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>JsonToCsvMapper_inputSchema.json</file>
+            <path>/_system/governance/datamapper</path>
+            <mediaType>text/plain</mediaType>
+        </item>
+    </artifact>
+    <artifact name="JsonToCsvMapper_outputSchema" groupId="com.example.QueryinngaDbAndAttachingResultsToAnEmail.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>JsonToCsvMapper_outputSchema.json</file>
+            <path>/_system/governance/datamapper</path>
+            <mediaType>text/plain</mediaType>
+        </item>
+    </artifact>
+    <artifact name="JsonToCsvMapper_xsltStyleSheet" groupId="com.example.QueryinngaDbAndAttachingResultsToAnEmail.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>JsonToCsvMapper_xsltStyleSheet.xml</file>
+            <path>/_system/governance/datamapper</path>
+            <mediaType>text/plain</mediaType>
+        </item>
+    </artifact>
+</artifacts>

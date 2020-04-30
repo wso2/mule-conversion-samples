@@ -1,0 +1,24 @@
+map_S_root_S_root = function(){ 
+var outputroot={};
+
+var count_i_inputroot_0650dcc9_4a8d_4d39_977f_426ac899475a = 0;
+outputroot =  [];
+
+for(i_inputroot_0650dcc9_4a8d_4d39_977f_426ac899475a in inputroot){
+outputroot[count_i_inputroot_0650dcc9_4a8d_4d39_977f_426ac899475a] =  {};
+outputroot[count_i_inputroot_0650dcc9_4a8d_4d39_977f_426ac899475a].name = inputroot[i_inputroot_0650dcc9_4a8d_4d39_977f_426ac899475a].name;
+outputroot[count_i_inputroot_0650dcc9_4a8d_4d39_977f_426ac899475a].orderId = inputroot[i_inputroot_0650dcc9_4a8d_4d39_977f_426ac899475a].orderId;
+outputroot[count_i_inputroot_0650dcc9_4a8d_4d39_977f_426ac899475a].pricePerUnit = (inputroot[i_inputroot_0650dcc9_4a8d_4d39_977f_426ac899475a].pricePerUnit).toString();
+outputroot[count_i_inputroot_0650dcc9_4a8d_4d39_977f_426ac899475a].units = (inputroot[i_inputroot_0650dcc9_4a8d_4d39_977f_426ac899475a].units).toString();
+outputroot[count_i_inputroot_0650dcc9_4a8d_4d39_977f_426ac899475a].totalPrice = 1*inputroot[i_inputroot_0650dcc9_4a8d_4d39_977f_426ac899475a].units*inputroot[i_inputroot_0650dcc9_4a8d_4d39_977f_426ac899475a].pricePerUnit;
+
+count_i_inputroot_0650dcc9_4a8d_4d39_977f_426ac899475a++;
+}
+return outputroot;
+};
+
+
+
+
+
+

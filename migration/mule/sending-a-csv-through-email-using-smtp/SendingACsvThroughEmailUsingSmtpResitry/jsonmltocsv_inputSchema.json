@@ -1,0 +1,29 @@
+{
+  "$schema" : "http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#",
+  "inputType" : "XML",
+  "id" : "",
+  "title" : "root",
+  "type" : "array",
+  "items" : [ {
+    "properties" : {
+      "orderId" : {
+        "id" : "null/0",
+        "type" : "string"
+      },
+      "name" : {
+        "id" : "null/0",
+        "type" : "string"
+      },
+      "units" : {
+        "id" : "null/0",
+        "type" : "number"
+      },
+      "pricePerUnit" : {
+        "id" : "null/0",
+        "type" : "number"
+      }
+    },
+    "id" : "/0",
+    "type" : "object"
+  } ]
+}
