@@ -42,13 +42,15 @@
             </foreach>
             <datamapper config="gov:datamapper/JsonToCsvMapper.dmc" inputSchema="gov:datamapper/JsonToCsvMapper_inputSchema.json" inputType="JSON" outputSchema="gov:datamapper/JsonToCsvMapper_outputSchema.json" outputType="CSV" xsltStyleSheet="gov:datamapper/JsonToCsvMapper_xsltStyleSheet.xml"/>
             <log level="full"/>
-            <property name="transport.mail.bodyWhenAttached" scope="axis2" type="STRING" value="Please find the attached DB extract"/>
-            <property name="AttachmentFile" scope="axis2" type="STRING" value="employees.csv"/>
-            <property name="transport.mail.Format" scope="axis2" type="STRING" value="Attachment"/>
-            <property name="messageType" scope="axis2" type="STRING" value="text/html"/>
-            <property name="ContentType" scope="axis2" type="STRING" value="text/html"/>
-            <property name="Subject" scope="transport" type="STRING" value="Export from Excel"/>
-            <property name="OUT_ONLY" scope="default" type="STRING" value="true"/>
+            <propertyGroup>
+                <property name="transport.mail.bodyWhenAttached" scope="axis2" type="STRING" value="Please find the attached DB extract"/>
+                <property name="AttachmentFile" scope="axis2" type="STRING" value="employees.csv"/>
+                <property name="transport.mail.Format" scope="axis2" type="STRING" value="Attachment"/>
+                <property name="messageType" scope="axis2" type="STRING" value="text/html"/>
+                <property name="ContentType" scope="axis2" type="STRING" value="text/html"/>
+                <property name="Subject" scope="transport" type="STRING" value="Export from Excel"/>
+                <property name="OUT_ONLY" scope="default" type="STRING" value="true"/>
+            </propertyGroup>
             <clone continueParent="true" id="request_clone">
                 <target>
                     <endpoint>
