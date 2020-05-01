@@ -20,8 +20,7 @@ increase your familiarity with Integration Studio, consider completing one or mo
 ### Example Use Case
 
 The example application connects to an LDAP directory and retrieves a list of LDAP users. 
-
-![ExtractingDataFromLdapDirectoryUseCase](../resources/images/extracting-data-from-LDAP-directory/extracting-data-from-LDAP-directory-use-case.png?raw=true)
+![ExtractingDataFromLdapDirectoryUseCase](../resources/images/extracting-data-from-LDAP-directory/extracting-data-from-LDAP-directory-use-case.png?raw=true "Extracting data From LDAP directory use-case")
 
 ### Set Up and Run the Example 
 
@@ -55,8 +54,8 @@ successful, click **Next**.
 
 8. Click **File > Import... > LDIF into LDAP** and then click **Next**. 
 
-9. Set the path to `ldap.ldif`, which is located in the `resources` directory of this project. Set 
-**Import into** to `local LDAP`. Click **Finish** to finish the import process. If you click **ROOT DSE** in the panel 
+9. Set the path to `ldap.ldif`, which is located in the `resources` directory of this project (`integration-studio-examples/migration/mule/extracting-data-from-LDAP-directory/resources/ldap.ldif`).
+Set **Import into** to `local LDAP`. Click **Finish** to finish the import process. If you click **ROOT DSE** in the panel 
 **LDAP browser**, you should see the imported data structure.
 
 10. Start WSO2 Integration Studio ([Installing WSO2 Integration Studio](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/installing-WSO2-Integration-Studio/)).
@@ -65,8 +64,8 @@ successful, click **Next**.
 
 12. In the Import window select the **Existing WSO2 Projects into workspace** under **WSO2** folder.
 
-13. Browse and select the file path to the downloaded sample of this github project ("extracting-data-from-LDAP-directory" 
-folder of the downloaded github repository).
+13. Browse and select the file path to the downloaded sample of this Github project
+(`integration-studio-examples/migration/mule/extracting-data-from-LDAP-directory`) and click **Finish**.
 
 14. Lets add the ldap connector into the workspace. Right click on **ExtractingDataFromLdapDirectory** and select 
 **Add or Remove Connector**. In the **Add or Remove Connectors** window, select **Add connector** option and click 
@@ -75,18 +74,21 @@ be downloaded form the store. Now click **Finish**.
 
 15. Open the **ExtractingDataFromLdapDirectory.xml** under 
 **extracting-data-from-LDAP-directory/ExtractingDataFromLdapDirectory/src/main/synapse-config/api** directory and specify 
-following values
+following values.
 
 		URL 			ldap://localhost:389/dc=my-domain,dc=com
 		Principal DN    	cn=Manager,dc=my-domain,dc=com
 		Password		root
 
-![Alt text](../resources/images/extracting-data-from-LDAP-directory/extracting-data-from-LDAP-directory.png?raw=true "ExtractingDataFromLdapDirectory")
+![ExtractingDataFromLdapDirectory](../resources/images/extracting-data-from-LDAP-directory/extracting-data-from-LDAP-directory.png?raw=true "Extracting data from LDAP directory")
 
 16. Run the sample by right click on the **ExtractingDataFromLdapDirectoryCompositeApplication** under the main 
 **extracting-data-from-LDAP-directory** project and selecting **Export Project Artifacts and Run**.
 
-17. Open your browser and type `http://localhost:8290/extract` in the address bar.
+17. Open HTTP Client in Integration Studio. Follow [HTTP Client Guidelines](../../../docs/common/adding-http-client-to-integration-studio.md) 
+to open HTTP Client if the window is not visible in the interface.
+
+18. Make a GET request to `http://localhost:8290/extract`.
 
 You should see three user records in response:
 ```
