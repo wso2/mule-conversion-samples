@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/loan" name="Loan" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" uri-template="/calculate*">
+        <inSequence>
+            <property expression="boolean(get-property('query.param.name')) and boolean(get-property('query.param.amount')) and boolean(get-property('query.param.term')) and boolean(get-property('query.param.ssn')) " name="containAllQueryParams" scope="default" type="STRING"/>
+            <switch source="$ctx:containAllQueryParams">
+                <case regex="true">
+                    <call>
+                        <endpoint key="HttpEndpoint"/>
+                    </call>
+                    <foreach expression="json-eval($.banks)" id="ForEachBank">
+                        <sequence>
+                            <switch source="$body/jsonValue">
+                                <case regex="1">
+                                    <payloadFactory media-type="json">
+                                        <format>{
+"name": "Bank 1",
+"amount": $1,
+"term": $2,
+"payment": $3,
+"currency":
+"EUR"
+}
+										</format>
+                                        <args>
+                                            <arg evaluator="xml" expression="get-property('query.param.amount')"/>
+                                            <arg evaluator="xml" expression="get-property('query.param.term')"/>
+                                            <arg evaluator="xml" expression="(fn:round(1.17 * get-property('query.param.amount') div get-property('query.param.term') * 100) div 100)"/>
+                                        </args>
+                                    </payloadFactory>
+                                    <log level="full">
+                                        <property name="BANK" value="1"/>
+                                    </log>
+                                </case>
+                                <case regex="2">
+                                    <payloadFactory media-type="json">
+                                        <format>{
+"name": "Bank 2",
+"amount": $1,
+"term": $2,
+"payment": $3,
+"currency":
+"EUR"
+}
+										</format>
+                                        <args>
+                                            <arg evaluator="xml" expression="get-property('query.param.amount')"/>
+                                            <arg evaluator="xml" expression="get-property('query.param.term')"/>
+                                            <arg evaluator="xml" expression="(fn:round(1.12 * get-property('query.param.amount') div get-property('query.param.term') * 100) div 100)"/>
+                                        </args>
+                                    </payloadFactory>
+                                    <log>
+                                        <property name="BANK" value="2"/>
+                                    </log>
+                                </case>
+                                <default>
+                                    <payloadFactory media-type="json">
+                                        <format>{
+"name": "Bank 3",
+"amount": $1,
+"term": $2,
+"payment": $3,
+"currency":
+"EUR"
+}
+										</format>
+                                        <args>
+                                            <arg evaluator="xml" expression="get-property('query.param.amount')"/>
+                                            <arg evaluator="xml" expression="get-property('query.param.term')"/>
+                                            <arg evaluator="xml" expression="(fn:round(1.12 * get-property('query.param.amount') div get-property('query.param.term') * 100) div 100)"/>
+                                        </args>
+                                    </payloadFactory>
+                                    <log level="full">
+                                        <property name="BANK" value="3"/>
+                                    </log>
+                                </default>
+                            </switch>
+                            <propertyGroup>
+                                <property expression="json-eval($.name)" name="name" scope="default" type="STRING"/>
+                                <property expression="json-eval($.payment)" name="payment" scope="default" type="STRING"/>
+                                <property expression="json-eval($.currency)" name="currency" scope="default" type="STRING"/>
+                            </propertyGroup>
+                            <property expression="fn:concat(get-property('bankInfo'), fn:concat(get-property('name'), ': Payment ', get-property('payment'), ' ', get-property('currency') ,' per month', ' , '))" name="bankInfo" scope="default" type="STRING"/>
+                        </sequence>
+                    </foreach>
+                    <payloadFactory media-type="text">
+                        <format>“Bank info for customer $1 about loan $2 EUR in term $3 months: $4”</format>
+                        <args>
+                            <arg evaluator="xml" expression="get-property('query.param.name')"/>
+                            <arg evaluator="xml" expression="get-property('query.param.amount')"/>
+                            <arg evaluator="xml" expression="get-property('query.param.term')"/>
+                            <arg evaluator="xml" expression="get-property('bankInfo')"/>
+                        </args>
+                    </payloadFactory>
+                </case>
+                <default>
+                    <payloadFactory media-type="text">
+                        <format>
+							Error: Incomplete Request
+						</format>
+                        <args/>
+                    </payloadFactory>
+                </default>
+            </switch>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>
