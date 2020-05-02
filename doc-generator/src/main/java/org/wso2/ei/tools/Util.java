@@ -20,6 +20,7 @@
 package org.wso2.ei.tools;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,6 +36,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Objects;
+
+import static org.wso2.ei.tools.Constants.ZIP_FILE_EXT;
 
 /**
  * Util functions used for site builder.
@@ -143,7 +146,7 @@ public class Util {
      * @param file file which want to content as string
      * @return file content as a string
      */
-    public static String getCodeFile(File file, String readMeParentPath, String readmeName) {
+    public static String getCodeFile(File file, File readmeParentFile, String readmeName) {
         try {
             if (file.exists()) {
                 return IOUtils.toString(new FileInputStream(file), String.valueOf(StandardCharsets.UTF_8));
@@ -151,7 +154,7 @@ public class Util {
                 throw new ServiceException("Invalid file path in INCLUDE_CODE tag. Mentioned file does not exists in "
                         + "the project. Please mention the correct file path and try again.\n\tInclude file path\t:"
                         + file.getPath() + "\n\tREADME file path\t:"
-                                           + readMeParentPath + Constants.FORWARD_SLASH + readmeName);
+                                           + readmeParentFile.toPath().resolve(readmeName));
             }
         } catch (IOException e) {
             throw new ServiceException("Error occurred when converting file content to string. file: "
@@ -166,7 +169,7 @@ public class Util {
      * @param file code file
      * @return code without licence header
      */
-    public static String removeLicenceHeader(String code, String file) {
+    public static String removeLicenceHeader(String code, File file) {
         if (code.contains(Constants.LICENCE_LAST_LINE)) {
             String[] temp = code.split(Constants.LICENCE_LAST_LINE);
             return temp[1].trim();
@@ -179,12 +182,12 @@ public class Util {
     /**
      * Get markdown code block with associated type of the code file.
      *
-     * @param fullPathOfIncludeCodeFile code file path of the particular code block
+     * @param includeCodeFilePath code file path of the particular code block
      * @param code                      code content
      * @return code block in markdown format
      */
-    public static String getMarkdownCodeBlockWithCodeType(String fullPathOfIncludeCodeFile, String code) {
-        String type = fullPathOfIncludeCodeFile.substring(fullPathOfIncludeCodeFile.lastIndexOf('.') + 1);
+    public static String getMarkdownCodeBlockWithCodeType(Path includeCodeFilePath, String code) {
+        String type = FilenameUtils.getExtension(includeCodeFilePath.toString());
 
         String codeSyntax;
         switch (type) {
@@ -277,7 +280,7 @@ public class Util {
      * @return zip file name
      */
     public static File getZipFile(Path directory, File projectFile) {
-        return directory.resolve(projectFile.getParentFile().getName() + ".zip").toFile();
+        return directory.resolve(projectFile.getParentFile().getName() + ZIP_FILE_EXT).toFile();
     }
 
     /**

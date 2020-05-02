@@ -22,7 +22,7 @@ package org.wso2.ei.tools;
 /**
  * Constants used in site builder.
  */
-public final class Constants {
+final class Constants {
 
     // Default files and directories
     static final String GIT_PROPERTIES_FILE = "git.properties";
@@ -30,7 +30,8 @@ public final class Constants {
     // Special syntax
     static final String INCLUDE_CODE_TAG = "INCLUDE_CODE:";
     static final String INCLUDE_CODE_SEGMENT_TAG = "INCLUDE_CODE_SEGMENT:";
-    static final String IMG_TAG = "![";
+    static final String MD_IMG_TAG = "![";
+    static final String HTML_IMG_TAG = "<img ";
     static final String CDATA_TAG = "<![CDATA[";
     static final String INCLUDE_MD_TAG = "INCLUDE_MD:";
     public static final String EMPTY_STRING = "";
@@ -50,7 +51,9 @@ public final class Constants {
     static final String COMMA = ",";
     public static final String HASH = "#";
     public static final String EQUAL = "=";
+    public static final String DOWNLOAD_ZIP_LOCATION_TAG = "${DOWNLOAD_ZIP_LOCATION}";
     static final String MARKDOWN_FILE_EXT = ".md";
+    static final String ZIP_FILE_EXT = ".zip";
     public static final String GIT_COMMIT_ID = "git.commit.id";
     public static final String COMMIT_HASH = "commitHash: ";
     public static final String TITLE = "title: ";

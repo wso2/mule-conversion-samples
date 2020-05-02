@@ -49,16 +49,19 @@ import static org.wso2.ei.tools.Constants.CODE_SEGMENT_END;
 import static org.wso2.ei.tools.Constants.COMMA;
 import static org.wso2.ei.tools.Constants.COMMENT_END;
 import static org.wso2.ei.tools.Constants.COMMENT_START;
+import static org.wso2.ei.tools.Constants.DOWNLOAD_ZIP_LOCATION_TAG;
 import static org.wso2.ei.tools.Constants.EMPTY_STRING;
 import static org.wso2.ei.tools.Constants.GIT_PROPERTIES_FILE;
 import static org.wso2.ei.tools.Constants.HASH;
-import static org.wso2.ei.tools.Constants.IMG_TAG;
+import static org.wso2.ei.tools.Constants.HTML_IMG_TAG;
 import static org.wso2.ei.tools.Constants.INCLUDE_CODE_SEGMENT_TAG;
 import static org.wso2.ei.tools.Constants.INCLUDE_CODE_TAG;
 import static org.wso2.ei.tools.Constants.INCLUDE_MD_TAG;
 import static org.wso2.ei.tools.Constants.MARKDOWN_FILE_EXT;
+import static org.wso2.ei.tools.Constants.MD_IMG_TAG;
 import static org.wso2.ei.tools.Constants.NEW_LINE;
 import static org.wso2.ei.tools.Constants.OPEN_CURLY_BRACKET;
+import static org.wso2.ei.tools.Constants.ZIP_FILE_EXT;
 
 /**
  * This tool processes the integration studio example projects and the corresponding readme files to generate the
@@ -149,13 +152,14 @@ public class DocsGenerator {
     private static boolean processSourceDirectory(DirRegistry dirRegistry, List<File> files) {
         boolean projectFileFound = false;
         Path relativeImageOutDirPath = dirRegistry.getReadmeOutDir().relativize(dirRegistry.getReadmeImagesOutDir());
+        Path relativeZipOutDirPath = dirRegistry.getReadmeOutDir().relativize((dirRegistry.getZipOutDir()));
         for (File file: files) {
             if (file.isFile() && (config.getProjectFileName().equals(file.getName()))) {
                 projectFileFound = true;
                 File readmeFile = Paths.get(file.getParent(), config.getReadmeFileName()).toFile();
                 try {
                     if (readmeFile.exists()) {
-                        processReadmeFile(readmeFile, relativeImageOutDirPath, true);
+                        processReadmeFile(readmeFile, relativeImageOutDirPath, relativeZipOutDirPath, true);
                         Files.copy(readmeFile.toPath(),
                                    dirRegistry.getReadmeOutDir().resolve(
                                            file.getParentFile().getName() + MARKDOWN_FILE_EXT));
@@ -184,7 +188,7 @@ public class DocsGenerator {
         Path relativeImageOutDir = dirRegistry.getReadmeOutDir().relativize(dirRegistry.getIncludesImagesOutDir());
         for (File file: files) {
             if (file.isFile() && file.getName().endsWith(MARKDOWN_FILE_EXT)) {
-                processReadmeFile(file, relativeImageOutDir, false);
+                processReadmeFile(file, relativeImageOutDir, null, false);
             } else if (!directoriesFound && file.isDirectory()) {
                 directoriesFound = true;
             }
@@ -198,32 +202,68 @@ public class DocsGenerator {
      *
      * @param file README.md file
      */
-    private static void processReadmeFile(File file, Path relativeImageOutDirPath, boolean addFrontMatter) {
+    private static void processReadmeFile(File file, Path relativeImageOutDirPath,
+                                          Path zipOutputDir, boolean addFrontMatter) {
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
             StringBuilder processedLines = new StringBuilder();
             processFrontMatter(addFrontMatter, reader, processedLines);
 
             while ((line = reader.readLine()) != null) {
-                if (line.contains(INCLUDE_CODE_TAG)) {
-                    // Replace INCLUDE_CODE line with include code file.
-                    processedLines.append(getIncludeCodeFile(file.getParent(), line));
-                } else if (line.contains(INCLUDE_CODE_SEGMENT_TAG)) {
-                    // Replace INCLUDE_CODE_SEGMENT line with include code segment.
-                    processedLines.append(getIncludeCodeSegment(file.getParent(), line));
-                } else if (line.contains(IMG_TAG)) {
-                    processedLines.append(updateImageUri(line, relativeImageOutDirPath));
-                } else if (line.contains(INCLUDE_MD_TAG)) {
-                    processedLines.append(getIncludeMarkdownFile(file.getParent(), line));
-                } else {
-                    processedLines.append(line);
-                }
-                processedLines.append('\n');
+                processedLines.append(processReadmeLine(file, relativeImageOutDirPath, zipOutputDir, line))
+                              .append('\n');
             }
             IOUtils.write(processedLines, new FileOutputStream(file), String.valueOf(StandardCharsets.UTF_8));
         } catch (IOException e) {
             throw new ServiceException("Could not find the README.md file: " + file.getPath(), e);
         }
+    }
+
+    private static String processReadmeLine(File file, Path relativeImageOutDirPath, Path zipOutputDir, String line) {
+        String processedLine;
+        if (line.contains(INCLUDE_CODE_TAG)) {
+            // Replace INCLUDE_CODE line with include code file.
+            processedLine = getIncludeCodeFile(file.getParentFile(), line);
+        } else if (line.contains(INCLUDE_CODE_SEGMENT_TAG)) {
+            // Replace INCLUDE_CODE_SEGMENT line with include code segment.
+            processedLine = getIncludeCodeSegment(file.getParentFile(), line);
+        } else if (line.contains(MD_IMG_TAG)) {
+            processedLine = updateMdImageUri(line, relativeImageOutDirPath);
+        } else if (line.contains(HTML_IMG_TAG)) {
+            processedLine = updateHtmlImageUri(line, relativeImageOutDirPath);
+        } else if (line.contains(DOWNLOAD_ZIP_LOCATION_TAG)) {
+            processedLine = updateZipFileLocation(line, file.getParentFile(), zipOutputDir);
+        } else if (line.contains(INCLUDE_MD_TAG)) {
+            processedLine = getIncludeMarkdownFile(file.getParentFile(), zipOutputDir, line);
+        } else {
+            processedLine = line;
+        }
+        return processedLine;
+    }
+
+    private static String updateZipFileLocation(String line, File parentFile, Path zipOutputDir) {
+        if (zipOutputDir == null) { // ignore zip location update when processing includes files.
+            return line;
+        }
+        return line.replace(DOWNLOAD_ZIP_LOCATION_TAG,
+                            zipOutputDir.resolve(parentFile.getName() + ZIP_FILE_EXT).toString());
+    }
+
+    private static String updateHtmlImageUri(String line, Path relativeImageOutDirPath) {
+        int imgTagStartIdx = line.indexOf(HTML_IMG_TAG) + HTML_IMG_TAG.length();
+        int srcTagStartIdx = line.indexOf("src", imgTagStartIdx) + "src".length();
+
+        int srcPathStartIdx = line.indexOf('"', srcTagStartIdx) + 1;
+        int srcPathEndIdx = line.indexOf('"', srcPathStartIdx) - 1;
+
+        if (srcTagStartIdx > srcPathEndIdx) {
+            throw new ServiceException("Empty image tag found. Line " + line);
+        }
+
+        String srcPath = line.substring(srcPathStartIdx, srcPathEndIdx);
+        String filename = Paths.get(srcPath).getFileName().toString();
+        Path newSrcPath = relativeImageOutDirPath.resolve(filename);
+        return line.replace(srcPath, newSrcPath.toString());
     }
 
     private static void processFrontMatter(boolean addFrontMatter, BufferedReader reader,
@@ -238,11 +278,11 @@ public class DocsGenerator {
         }
     }
 
-    public static String updateImageUri(String line, Path relativeImageOutDirPath) {
+    public static String updateMdImageUri(String line, Path relativeImageOutDirPath) {
         if (line.contains(CDATA_TAG)) { // ignore CDATA tags
             return line;
         }
-        int altTextStartIdx = line.indexOf(IMG_TAG);
+        int altTextStartIdx = line.indexOf(MD_IMG_TAG);
         int altTextEndIdx = line.indexOf(']', altTextStartIdx);
         int uriStartIdx = line.indexOf('(', altTextEndIdx) + 1;
         int uriEndIdx = line.indexOf(')', uriStartIdx) - 1;
@@ -261,27 +301,26 @@ public class DocsGenerator {
     /**
      * Get code file content should be included in the README.md file.
      *
-     * @param readMeParentPath parent path of the README.md file
+     * @param readmeParentFile parent path of the README.md file
      * @param line             line having INCLUDE_CODE_TAG
      * @return code content of the code file should be included
      */
-    private static String getIncludeCodeFile(String readMeParentPath, String line) {
-        String fullPathOfIncludeCodeFile = readMeParentPath
-                                           + getIncludeFilePathFromIncludeCodeLine(line, INCLUDE_CODE_TAG);
-        File includeCodeFile = new File(fullPathOfIncludeCodeFile);
-        String code = Util.removeLicenceHeader(Util.getCodeFile(includeCodeFile, readMeParentPath,
-                                                      config.getReadmeFileName()), readMeParentPath).trim();
-        return handleCodeAlignment(line, Util.getMarkdownCodeBlockWithCodeType(fullPathOfIncludeCodeFile, code));
+    private static String getIncludeCodeFile(File readmeParentFile, String line) {
+        Path includeCodeFilePath = getIncludeFilePath(line, INCLUDE_CODE_TAG, readmeParentFile);
+        File includeCodeFile = includeCodeFilePath.toFile();
+        String code = Util.removeLicenceHeader(Util.getCodeFile(includeCodeFile, readmeParentFile,
+                                                      config.getReadmeFileName()), readmeParentFile).trim();
+        return handleCodeAlignment(line, Util.getMarkdownCodeBlockWithCodeType(includeCodeFilePath, code));
     }
 
     /**
      * Get code segment should be included in the README.md file.
      *
-     * @param readMeParentPath parent path of the README.md file
+     * @param readMeParentFile parent path of the README.md file
      * @param line             line having INCLUDE_CODE_SEGMENT_TAG
      * @return code segment content should be included
      */
-    private static String getIncludeCodeSegment(String readMeParentPath, String line) {
+    private static String getIncludeCodeSegment(File readMeParentFile, String line) {
         String includeLineData = line.replace(COMMENT_START, EMPTY_STRING).replace(COMMENT_END, EMPTY_STRING)
                 .replace(INCLUDE_CODE_SEGMENT_TAG, EMPTY_STRING)
                 .trim();
@@ -289,16 +328,16 @@ public class DocsGenerator {
         String[] tempDataArr = includeLineData.replace(OPEN_CURLY_BRACKET, EMPTY_STRING)
                 .replace(CLOSE_CURLY_BRACKET, EMPTY_STRING).split(COMMA);
 
-        String fullPathOfIncludeCodeFile =
-                readMeParentPath + File.separator + tempDataArr[0].replace("file:", EMPTY_STRING).trim();
+        Path includeCodeFilePath =
+                readMeParentFile.toPath().resolve(tempDataArr[0].replace("file:", EMPTY_STRING).trim());
         String segment = tempDataArr[1].replace("segment:", EMPTY_STRING).trim();
 
-        File includeCodeFile = new File(fullPathOfIncludeCodeFile);
-        String codeFileContent = Util.removeLicenceHeader(Util.getCodeFile(includeCodeFile, readMeParentPath,
-                                                                 config.getReadmeFileName()), readMeParentPath);
+        File includeCodeFile = includeCodeFilePath.toFile();
+        String codeFileContent = Util.removeLicenceHeader(Util.getCodeFile(includeCodeFile, readMeParentFile,
+                                                                 config.getReadmeFileName()), readMeParentFile);
 
         String code = getCodeSegment(codeFileContent, segment).trim();
-        return handleCodeAlignment(line, Util.getMarkdownCodeBlockWithCodeType(fullPathOfIncludeCodeFile, code));
+        return handleCodeAlignment(line, Util.getMarkdownCodeBlockWithCodeType(includeCodeFilePath, code));
     }
 
     /**
@@ -337,9 +376,12 @@ public class DocsGenerator {
      * @param line line having include tag
      * @return file path of the file should be included
      */
-    private static String getIncludeFilePathFromIncludeCodeLine(String line, String includeTag) {
-        return "/" + line.replace(COMMENT_START, EMPTY_STRING).replace(COMMENT_END, EMPTY_STRING)
-                .replace(includeTag, EMPTY_STRING).trim();
+    private static Path getIncludeFilePath(String line, String includeTag, File readmeParentFile) {
+        String path =  line.replace(COMMENT_START, EMPTY_STRING)
+                           .replace(COMMENT_END, EMPTY_STRING)
+                           .replace(includeTag, EMPTY_STRING)
+                           .trim();
+        return Paths.get(readmeParentFile.toString(), path);
     }
 
     /**
@@ -381,111 +423,23 @@ public class DocsGenerator {
     /**
      * Get markdown file content should be included in the README.md file.
      *
-     * @param readMeParentPath parent path of the README.md file
+     * @param readmeParentFile parent file of the readme file file
      * @param line             line having INCLUDE_MD_TAG
      * @return content of the markdown file should be included
      */
-    private static String getIncludeMarkdownFile(String readMeParentPath, String line) {
-        String fullPathOfIncludeMdFile = readMeParentPath + getIncludeFilePathFromIncludeCodeLine(line, INCLUDE_MD_TAG);
-        File includeMdFile = new File(fullPathOfIncludeMdFile);
-        String includeMdContent = Util.getCodeFile(includeMdFile, readMeParentPath, config.getReadmeFileName()).trim();
-        // Check fullPathOfIncludeMdFile is `get-the-code.md`.
-        if (fullPathOfIncludeMdFile.contains("get-the-code.md")) {
-            String markdownWithZipName = setZipFileName(includeMdContent, readMeParentPath);
-            return setModuleName(setGetTheCodeMdPaths(fullPathOfIncludeMdFile, markdownWithZipName), readMeParentPath);
-        } else {
-            return includeMdContent;
-        }
-    }
-
-    /**
-     * Set zip file name by replacing MD_FILE_NAME tag with zip file name.
-     *
-     * @param includeMdContent include markdown file content
-     * @param readMeParentPath README.md parent path
-     * @return include markdown file content after replacing MD_FILE_NAME tag
-     */
-    private static String setZipFileName(String includeMdContent, String readMeParentPath) {
-        String zipName = readMeParentPath.substring(readMeParentPath.lastIndexOf('/') + 1).trim();
-        return includeMdContent.replace("<<<MD_FILE_NAME>>>", zipName);
-    }
-
-    /**
-     * Set paths in `tutorial-get-the-code.md` for non default cases.
-     *
-     * @param fullPathOfIncludeMdFile full path of include md file
-     * @param includeMdContent        include md file content
-     * @return `tutorial-get-the-code.md` content after changing `download-zip` path.
-     */
-    private static String setGetTheCodeMdPaths(String fullPathOfIncludeMdFile, String includeMdContent) {
-        // Get the no of occurrences of `../`
-        int occurrences = fullPathOfIncludeMdFile.split("\\../", -1).length - 1;
-        if (occurrences == 4) { // Default case: `tutorial-get-the-code.md` has 4 `../`s.
-            return includeMdContent;
-        } else { // Need to set the `download-zip` path.
-            // Set the `download-zip` image path.
-            String mdImgPath = Util.getStringBetweenTwoStrings(includeMdContent, "<img src=\"",
-                                                          "\" width=\"200\" alt=\"Download ZIP\">");
-            String correctImgPath = Util.addPrevDirectorySyntax(mdImgPath, occurrences + 1 - 5);
-            String replacedImgContent = includeMdContent.replace(mdImgPath, correctImgPath);
-            // Set the `download-zip` anchor path.
-            String zipAnchorPath = Util.getStringBetweenTwoStrings(replacedImgContent, "<a href=\"",
-                                                              "\">\n" + "    <img src=\"");
-            String correctZipAnchorPath = Util.addPrevDirectorySyntax(zipAnchorPath, occurrences + 1 - 5);
-            return replacedImgContent.replace(zipAnchorPath, correctZipAnchorPath);
-        }
-    }
-
-    /**
-     * Set module name by replacing MODULE_NAME tag by module name of the project.
-     *
-     * @param includeMdContent include markdown file content
-     * @param readMeParentPath README.md parent path
-     * @return include markdown file content after replacing MODULE_NAME tag
-     */
-    private static String setModuleName(String includeMdContent, String readMeParentPath) {
-        String moduleName = findModuleName(readMeParentPath);
-        if (moduleName.isEmpty()) {
-            throw new ServiceException("Module name not found. projectPath: " + readMeParentPath);
-        } else {
-            return includeMdContent.replace("<<<MODULE_NAME>>>", moduleName);
-        }
-    }
-
-    /**
-     * Find module name to set module name.
-     *
-     * @param readMeParentPath README.md parent path
-     * @return module name
-     */
-    private static String findModuleName(String readMeParentPath) {
-        boolean moduleFound = false;
-        String moduleName = "";
-        File moduleParent = new File(readMeParentPath + File.separator + "src");
-        File[] listOfFiles = moduleParent.listFiles();
-
-        if (listOfFiles == null) {
-            throw new ServiceException("Cannot find module name. projectPath: " + moduleParent.getPath());
-        } else {
-            for (File child : listOfFiles) {
-                if (child.isDirectory()) {
-                    if (!moduleFound) {
-                        moduleName = child.getName();
-                        moduleFound = true;
-                    } else {
-                        throw new ServiceException(
-                                "Module name already found, Please confirm this project contains only "
-                                + "one module. projectPath: " + moduleParent.getPath());
-                    }
-                }
-            }
-        }
-        return moduleName;
+    private static String getIncludeMarkdownFile(File readmeParentFile, Path zipFileOutDir, String line) {
+        Path fullPathOfIncludeMdFile = getIncludeFilePath(line, INCLUDE_MD_TAG, readmeParentFile);
+        File includeMdFile = fullPathOfIncludeMdFile.toFile();
+        String includeMdContent = Util.getCodeFile(includeMdFile, readmeParentFile, config.getReadmeFileName()).trim();
+        return includeMdContent.replace(DOWNLOAD_ZIP_LOCATION_TAG,
+                                        zipFileOutDir.resolve(readmeParentFile.getName() + ZIP_FILE_EXT).toString());
     }
 
     /**
      * Interface to write the processing logic for provided set of files when traversing the directory
      * structure.
+     *
+     * NOTE: Used a specific class instead of {@link java.util.function.BiPredicate} for clarity.
      */
     private interface DirectoryProcessor {
 
