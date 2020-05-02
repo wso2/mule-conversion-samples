@@ -14,7 +14,31 @@ multiple lines for the main heading.
 # Asynchronous messaging
 ```
 
-### 2. Include code
+### 2. Include markdown content
+
+Use below syntax to add markdown files. So when pre-processing `README.md` files this tag will be replaced with the 
+actual markdown file content given in `INCLUDE_MD` tag.
+```
+<!-- INCLUDE_MD: path/to/file/prerequisites.md -->
+```
+
+### 3. Include images
+
+If you want to add images and add image attachments to your `README.md` file add all the images to `docs/assets/img`
+and add the image attachment in the `README.md` file.
+
+When you are adding images: 
+  
+- Add image attachment as a new line in the `README.md`.
+    ```
+    ![alt text](../../../../assets/img/pass-through-messaging-1.svg)
+    ```
+- Do not use `[`, `]`, `(`, `)` to name images and for image alt text.
+    > **Tip**: "pass-through-messaging[1].svg" is not allowed.
+ 
+When you are mentioning the resource file please mention the valid path to the file you want to add.
+
+### 4. Include code
 
 #### (a) Include a code file
 
@@ -121,58 +145,11 @@ function handleResponse(http:Response | error response) returns http:Response {
 }
 ```
 
-### 3. Include markdown content
+## Website ready content
 
-Use below syntax to add markdown files. So when pre-processing `README.md` files this tag will be replaced with the 
-actual markdown file content given in `INCLUDE_MD` tag.
-```
-<!-- INCLUDE_MD: path/to/file/prerequisites.md -->
-```
+Once you build the project using command `mvn clean install`, website ready doc content will be generated in
+`doc-generator/target/mkdocs-content` directory. This content can be copied directly to the docs-ei repository with 
+the provided doc structure.  
 
-### 4. Include images
 
-If you want to add images and add image attachments to your `README.md` file add all the images to `docs/assets/img`
-and add the image attachment in the `README.md` file.
 
-When you are adding images: 
-  
-- Add image attachment as a new line in the `README.md`.
-    ```
-    ![alt text](../../../../assets/img/pass-through-messaging-1.svg)
-    ```
-- Do not use `[`, `]`, `(`, `)` to name images and for image alt text.
-    > **Tip**: "pass-through-messaging[1].svg" is not allowed.
- 
-When you are mentioning the resource file please mention the valid path to the file you want to add.
-
-## Build website
-
-#### Prerequisites
-
- - Install [Docker](https://docs.docker.com/install/)
- - Install [Apache Maven](https://maven.apache.org/install.html)
-
-#### Generate website content
-
-Navigate to `docs/doc-generator` and run below command.
-
-```bash
-$ cd docs/doc-generator
-$ mvn clean install
-```
-
-This will generate website content inside `docs/doc-generator/target/www`.
-
-#### Testing the website
-
-Navigate to `docs/doc-generator` directory and run below command.
-
-```bash
-docker run --rm -it -p 8000:8000 -v ${PWD}/target/www:/docs squidfunk/mkdocs-material
-```
-
-You will see following log in the terminal. You can go to the serving Url and check your guide.
-
-```
-Serving on http://0.0.0.0:8000
-```
