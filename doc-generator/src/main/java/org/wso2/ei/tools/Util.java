@@ -35,7 +35,6 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Objects;
 
 import static org.wso2.ei.tools.Constants.ZIP_FILE_EXT;
 
@@ -63,19 +62,6 @@ public class Util {
                 logger.info("Directory already exists: {}", directoryPath);
             }
         }
-    }
-
-    public static Path getPathPreservedTempDir(Path tempBaseDir, Path sourcesRelativePath) {
-        String[] pathFromBaseDir = sourcesRelativePath.toString().split("\\.\\./");
-        if (pathFromBaseDir.length == 0) {
-            return tempBaseDir;
-        }
-
-        if (pathFromBaseDir.length > 2) {
-            throw new ServiceException("Unexpected source relative path " + sourcesRelativePath);
-        }
-
-        return Paths.get(tempBaseDir.toString(), pathFromBaseDir[1].split("/"));
     }
 
     /**
@@ -223,16 +209,6 @@ public class Util {
     }
 
     /**
-     * Checks given directory is empty or not.
-     *
-     * @param directory directory want to check
-     * @return is empty
-     */
-    public static boolean isDirEmpty(File directory) {
-        return directory.isDirectory() && Objects.requireNonNull(directory.list()).length == 0;
-    }
-
-    /**
      * Get commit hash from `git.properties` file input stream.
      *
      * @param inputStream `git.properties` file input stream
@@ -281,48 +257,5 @@ public class Util {
      */
     public static File getZipFile(Path directory, File projectFile) {
         return directory.resolve(projectFile.getParentFile().getName() + ZIP_FILE_EXT).toFile();
-    }
-
-    /**
-     * Check whether given string has a image attachment syntax.
-     *
-     * @param line line
-     * @return is image attachment line
-     */
-    public static boolean isImageAttachmentLine(String line) {
-        try {
-            return line.trim().substring(0, 2).equals("![") && line.contains("assets/img");
-        } catch (Exception e) {
-            return false;
-        }
-    }
-
-    /**
-     * Get string between two strings of a given string.
-     *
-     * @param original original string
-     * @param subStr1  substring one
-     * @param subStr2  substring two
-     * @return string between substring one and substring two of string original
-     */
-    public static String getStringBetweenTwoStrings(String original, String subStr1, String subStr2) {
-        original = original.substring(original.indexOf(subStr1) + subStr1.length());
-        original = original.substring(0, original.indexOf(subStr2));
-        return original;
-    }
-
-    /**
-     * Add previous directory syntax `../` for a given string.
-     *
-     * @param path        directory path
-     * @param occurrences no of occurrences want to add `../`
-     * @return directory path after adding `../` occurrences.
-     */
-    public static String addPrevDirectorySyntax(String path, int occurrences) {
-        StringBuilder pathBuilder = new StringBuilder(path);
-        for (int i = 0; i < occurrences; i++) {
-            pathBuilder.insert(0, "../");
-        }
-        return pathBuilder.toString();
     }
 }
