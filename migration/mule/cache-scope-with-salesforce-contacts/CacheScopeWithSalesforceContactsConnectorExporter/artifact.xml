@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="salesforcerest-connector" groupId="com.example.CacheScopeWithSalesforceContacts.lib" version="1.0.8" type="synapse/lib" serverRole="EnterpriseServiceBus">
+        <file>salesforcerest-connector-1.0.8.zip</file>
+    </artifact>
+</artifacts>
