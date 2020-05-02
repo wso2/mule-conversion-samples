@@ -38,6 +38,9 @@ As the name suggests, the [Payload Factory](https://ei.docs.wso2.com/en/latest/m
 After opening the Integration project, there are two projects under the hello-world main project. First project, "HelloWorld" is the WSO2 Integration Project where all the integration use-case related files are stored. The second project is the "HelloWorldCompositeApplication", which is used as the packaging to export the artifacts to the server runtime. 
 
 You can run **Composite Application** using WSO2 Enterprise Integrator server runtime.
+
+<!-- INCLUDE_MD: ../../../docs/common/get-the-code.md -->
+
 ### Go Further
 
 * Learn more about configuring an [REST API](https://ei.docs.wso2.com/en/latest/micro-integrator/references/synapse-properties/rest-api-properties/) in Studio.
