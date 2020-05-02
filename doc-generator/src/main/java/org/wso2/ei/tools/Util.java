@@ -1,22 +1,23 @@
 /*
  *  Copyright (c) 2019, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
  *
- *  WSO2 Inc. licenses this file to you under the Apache License,
- *  Version 2.0 (the "License"); you may not use this file except
- *  in compliance with the License.
- *  You may obtain a copy of the License at
+ * WSO2 Inc. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
  *
  *    http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing,
  * software distributed under the License is distributed on an
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
+ * KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations
  * under the License.
+ *
  */
 
-package org.wso2.integration.ballerina.utils;
+package org.wso2.ei.tools;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
@@ -31,42 +32,27 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Objects;
-
-import static org.wso2.integration.ballerina.Constants.BALLERINA_CODE_MD_SYNTAX;
-import static org.wso2.integration.ballerina.Constants.CODE;
-import static org.wso2.integration.ballerina.Constants.CODE_MD_SYNTAX;
-import static org.wso2.integration.ballerina.Constants.COMMIT_HASH;
-import static org.wso2.integration.ballerina.Constants.EMPTY_STRING;
-import static org.wso2.integration.ballerina.Constants.EQUAL;
-import static org.wso2.integration.ballerina.Constants.FORWARD_SLASH;
-import static org.wso2.integration.ballerina.Constants.FRONT_MATTER_SIGN;
-import static org.wso2.integration.ballerina.Constants.GIT_COMMIT_ID;
-import static org.wso2.integration.ballerina.Constants.HASH;
-import static org.wso2.integration.ballerina.Constants.JAVA_CODE_MD_SYNTAX;
-import static org.wso2.integration.ballerina.Constants.LICENCE_LAST_LINE;
-import static org.wso2.integration.ballerina.Constants.NEW_LINE;
-import static org.wso2.integration.ballerina.Constants.NOTE;
-import static org.wso2.integration.ballerina.Constants.README_MD;
-import static org.wso2.integration.ballerina.Constants.TITLE;
 
 /**
  * Util functions used for site builder.
  */
-public class Utils {
-    private static final Logger logger = LoggerFactory.getLogger(Utils.class);
-    private Utils() {}
+public class Util {
+    private static final Logger logger = LoggerFactory.getLogger(Util.class);
+
+    private Util() {}
 
     /**
      * Create a directory.
      *
      * @param directoryPath path of the directory
      */
-    public static void createDirectory(String directoryPath) {
-        File file = new File(directoryPath);
+    public static void mkdirs(Path directoryPath) {
+        File file = directoryPath.toFile();
         if (!file.exists()) {
-            if (!file.mkdir()) {
+            if (!file.mkdirs()) {
                 throw new ServiceException("Error occurred when creating directory: " + directoryPath);
             }
         } else {
@@ -74,6 +60,19 @@ public class Utils {
                 logger.info("Directory already exists: {}", directoryPath);
             }
         }
+    }
+
+    public static Path getPathPreservedTempDir(Path tempBaseDir, Path sourcesRelativePath) {
+        String[] pathFromBaseDir = sourcesRelativePath.toString().split("\\.\\./");
+        if (pathFromBaseDir.length == 0) {
+            return tempBaseDir;
+        }
+
+        if (pathFromBaseDir.length > 2) {
+            throw new ServiceException("Unexpected source relative path " + sourcesRelativePath);
+        }
+
+        return Paths.get(tempBaseDir.toString(), pathFromBaseDir[1].split("/"));
     }
 
     /**
@@ -103,9 +102,9 @@ public class Utils {
      *
      * @param directory path of the directory
      */
-    public static void deleteDirectory(String directory) {
+    public static void deleteDirectory(Path directory) {
         try {
-            FileUtils.deleteDirectory(new File(directory));
+            FileUtils.deleteDirectory(directory.toFile());
         } catch (IOException e) {
             throw new ServiceException("Error occurred while deleting temporary directory " + directory, e);
         }
@@ -130,9 +129,9 @@ public class Utils {
      * @param src  path of the source directory
      * @param dest path of the destination directory
      */
-    public static void copyDirectoryContent(String src, String dest) {
+    public static void copyDirectoryContent(Path src, Path dest) {
         try {
-            FileUtils.copyDirectory(new File(src), new File(dest));
+            FileUtils.copyDirectory(src.toFile(), dest.toFile());
         } catch (IOException e) {
             throw new ServiceException("Error when copying directory content. src: " + src + ", dest: " + dest, e);
         }
@@ -144,18 +143,19 @@ public class Utils {
      * @param file file which want to content as string
      * @return file content as a string
      */
-    public static String getCodeFile(File file, String readMeParentPath, String tempDir) {
+    public static String getCodeFile(File file, String readMeParentPath, String readmeName) {
         try {
             if (file.exists()) {
                 return IOUtils.toString(new FileInputStream(file), String.valueOf(StandardCharsets.UTF_8));
             } else {
                 throw new ServiceException("Invalid file path in INCLUDE_CODE tag. Mentioned file does not exists in "
                         + "the project. Please mention the correct file path and try again.\n\tInclude file path\t:"
-                        + file.getPath() + "\n\tREADME file path\t:" + readMeParentPath + FORWARD_SLASH + README_MD);
+                        + file.getPath() + "\n\tREADME file path\t:"
+                                           + readMeParentPath + Constants.FORWARD_SLASH + readmeName);
             }
         } catch (IOException e) {
-            throw new ServiceException("Error occurred when converting file content to string. file: " + file.getPath(),
-                    e);
+            throw new ServiceException("Error occurred when converting file content to string. file: "
+                                       + file.getPath(), e);
         }
     }
 
@@ -167,8 +167,8 @@ public class Utils {
      * @return code without licence header
      */
     public static String removeLicenceHeader(String code, String file) {
-        if (code.contains(LICENCE_LAST_LINE)) {
-            String[] temp = code.split(LICENCE_LAST_LINE);
+        if (code.contains(Constants.LICENCE_LAST_LINE)) {
+            String[] temp = code.split(Constants.LICENCE_LAST_LINE);
             return temp[1].trim();
         } else {
             throw new ServiceException("Licence header is not in the correct format.\nGuide\t: " + file + "\nCode\t:\n"
@@ -186,29 +186,37 @@ public class Utils {
     public static String getMarkdownCodeBlockWithCodeType(String fullPathOfIncludeCodeFile, String code) {
         String type = fullPathOfIncludeCodeFile.substring(fullPathOfIncludeCodeFile.lastIndexOf('.') + 1);
 
+        String codeSyntax;
         switch (type) {
-        case "bal":
-            return BALLERINA_CODE_MD_SYNTAX.replace(CODE, code);
-        case "java":
-            return JAVA_CODE_MD_SYNTAX.replace(CODE, code);
-        default:
-            return CODE_MD_SYNTAX.replace(CODE, code);
+            case "bal":
+                codeSyntax = Constants.BALLERINA_CODE_MD_SYNTAX;
+                break;
+            case "java":
+                codeSyntax = Constants.JAVA_CODE_MD_SYNTAX;
+                break;
+            case "synapse":
+                codeSyntax = Constants.SYNAPSE_CODE_MD_SYNTAX;
+                break;
+            default:
+                codeSyntax = Constants.CODE_MD_SYNTAX;
+                break;
         }
+        return codeSyntax.replace(Constants.CODE, code);
     }
 
     /**
      * Add default front matter for posts.
      *
-     * @param line heading line of the md file.
+     * @param title heading title of the md file.
      * @return default front matter for posts
      */
-    public static String getPostFrontMatter(String line, String versionID) {
-        line = line.replace(HASH, EMPTY_STRING).trim();
-        return FRONT_MATTER_SIGN + NEW_LINE
-                + TITLE + line + NEW_LINE
-                + COMMIT_HASH + versionID + NEW_LINE
-                + NOTE + NEW_LINE
-                + FRONT_MATTER_SIGN;
+    public static String generateFrontMatter(String title, String commitHash) {
+        title = title.substring(1).trim();
+        return Constants.FRONT_MATTER_SIGN + Constants.NEW_LINE
+                + Constants.TITLE + title + Constants.NEW_LINE
+                + Constants.COMMIT_HASH + commitHash + Constants.NEW_LINE
+                + Constants.NOTE + Constants.NEW_LINE
+                + Constants.FRONT_MATTER_SIGN;
     }
 
     /**
@@ -232,8 +240,8 @@ public class Utils {
         try (BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
             String line;
             while ((line = br.readLine()) != null) {
-                if (line.contains(GIT_COMMIT_ID + EQUAL)) {
-                    commitHash = line.replace(GIT_COMMIT_ID + EQUAL, EMPTY_STRING);
+                if (line.contains(Constants.GIT_COMMIT_ID + Constants.EQUAL)) {
+                    commitHash = line.replace(Constants.GIT_COMMIT_ID + Constants.EQUAL, Constants.EMPTY_STRING);
                 }
             }
             return commitHash;
@@ -249,7 +257,7 @@ public class Utils {
      * @return string without leading whitespaces
      */
     private static String removeLeadingSpaces(String param) {
-        return param.replaceAll("^\\s+", EMPTY_STRING);
+        return param.replaceAll("^\\s+", Constants.EMPTY_STRING);
     }
 
     /**
@@ -259,17 +267,17 @@ public class Utils {
      * @return leading whitespaces of the string
      */
     public static String getLeadingWhitespaces(String param) {
-        return param.replace(removeLeadingSpaces(param), EMPTY_STRING);
+        return param.replace(removeLeadingSpaces(param), Constants.EMPTY_STRING);
     }
 
     /**
-     * Get zip file name using the toml file path.
+     * Get zip file name using the project file path.
      *
-     * @param tomlFile toml file
+     * @param projectFile toml file
      * @return zip file name
      */
-    public static String getZipFileName(String tempDir, File tomlFile) {
-        return Paths.get(tempDir, "assets", "zip", tomlFile.getParentFile().getName()) + ".zip";
+    public static File getZipFile(Path directory, File projectFile) {
+        return directory.resolve(projectFile.getParentFile().getName() + ".zip").toFile();
     }
 
     /**

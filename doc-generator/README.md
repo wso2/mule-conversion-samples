@@ -1,6 +1,6 @@
-# Ballerina Integrator Markdown files generator
+# Markdown files generator
 
-This guide helps to generate markdown files which needs to generate ballerina integrator website using **wso2/docs-ei** 
+This guide helps to generate markdown files which needs to generate wso2 docs website using **wso2/docs-ei** 
 github repository.
 
 ## Instructions to create README.md files

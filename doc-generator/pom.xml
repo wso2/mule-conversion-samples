@@ -4,10 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <parent>
-        <groupId>org.wso2.ballerina-integrator</groupId>
-        <artifactId>ballerina-integrator</artifactId>
+        <groupId>org.wso2.ei.examples</groupId>
+        <artifactId>integration-studio</artifactId>
         <version>1.0.0</version>
-        <relativePath>../../pom.xml</relativePath>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     
     <modelVersion>4.0.0</modelVersion>
@@ -59,10 +59,8 @@
                     <failOnNoGitDirectory>true</failOnNoGitDirectory>
                     <failOnUnableToExtractRepoInfo>true</failOnUnableToExtractRepoInfo>
                     <skip>false</skip>
-                    <offline>false</offline>
                     <runOnlyOnce>false</runOnlyOnce>
                     <useNativeGit>false</useNativeGit>
-                    <nativeGitTimeoutInMs>30000</nativeGitTimeoutInMs>
                     <abbrevLength>7</abbrevLength>
                     <commitIdGenerationMode>flat</commitIdGenerationMode>
                     <gitDescribe>
@@ -83,8 +81,6 @@
                     </validationProperties>
                     <validationShouldFailIfNoMatch>false</validationShouldFailIfNoMatch>
                     <evaluateOnCommit>HEAD</evaluateOnCommit>
-                    <useBranchNameFromBuildEnvironment>true</useBranchNameFromBuildEnvironment>
-                    <injectIntoSysProperties>true</injectIntoSysProperties>
                 </configuration>
             </plugin>
             <plugin>
@@ -100,9 +96,11 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>org.wso2.integration.ballerina.DocsGenerator</mainClass>
+                    <mainClass>org.wso2.ei.tools.DocsGenerator</mainClass>
+                    <includePluginDependencies>true</includePluginDependencies>
                     <arguments>
                         <argument>${project.basedir}</argument>
+                        <argument>config.yaml</argument>
                     </arguments>
                 </configuration>
             </plugin>
@@ -120,6 +118,10 @@
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
         </dependency>
         <dependency>
             <groupId>net.lingala.zip4j</groupId>
