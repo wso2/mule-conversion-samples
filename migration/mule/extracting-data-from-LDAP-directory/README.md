@@ -19,8 +19,11 @@ increase your familiarity with Integration Studio, consider completing one or mo
 
 ### Example Use Case
 
-The example application connects to an LDAP directory and retrieves a list of LDAP users. 
-![ExtractingDataFromLdapDirectoryUseCase](../resources/images/extracting-data-from-LDAP-directory/extracting-data-from-LDAP-directory-use-case.png?raw=true "Extracting data From LDAP directory use-case")
+The example application connects to an LDAP directory and retrieves a list of LDAP users.
+
+<p align="center">
+  <img width="60%" src="../../../docs/assets/images/migration-mule/extracting-data-from-LDAP-directory-use-case.png">
+</p>
 
 ### Set Up and Run the Example 
 
@@ -80,7 +83,9 @@ following values.
 		Principal DN    	cn=Manager,dc=my-domain,dc=com
 		Password		root
 
-![ExtractingDataFromLdapDirectory](../resources/images/extracting-data-from-LDAP-directory/extracting-data-from-LDAP-directory.png?raw=true "Extracting data from LDAP directory")
+<p align="center">
+  <img width="60%" src="../../../docs/assets/images/migration-mule/extracting-data-from-LDAP-directory.png">
+</p>
 
 16. Run the sample by right click on the **ExtractingDataFromLdapDirectoryCompositeApplication** under the main 
 **extracting-data-from-LDAP-directory** project and selecting **Export Project Artifacts and Run**.

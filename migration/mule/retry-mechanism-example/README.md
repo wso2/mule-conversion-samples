@@ -11,7 +11,9 @@ This document describes the details of the example within the context of WSO2 In
 
 The application consumes HTTP requests and based on the query parameter `fail` either successfully completes the flow or throw an exception inside the message flow causing the retry mechanism to repeat the flow. 
 
-![RetryMechanismDiagram](../resources/images/retry-mechanism-example/retry-mechanism-example-use-case.png?raw=true "Invoke mediation logic until successful")
+<p align="center">
+  <img width="90%" src="../../../docs/assets/images/migration-mule/retry-mechanism-example-use-case.png">
+</p>
 
 >**NOTE** 
 The example demonstrates how to call a message flow recursively to achieve the requirement. 
@@ -26,7 +28,11 @@ Follow the steps in this procedure to create and run this example in your own in
 3. In the Import window select the **Existing WSO2 Projects into workspace** under **WSO2** folder.
 4. Browse and select the file path to the downloaded sample of this github project (`retry-mechanism-example` folder of the downloaded github repository)
 5. Open the **mediationRetryAPI.xml** file in the **retry-mechanism-example/mediationRetryIntegrationProject/src/main/synapse-config/api/** directory. The **mediationRetryAPI.xml** is the graphical view of the retry mechanism sample.
-![RetryMechanismScreenshot](../resources/images/retry-mechanism-example/retry-mechanism-example.png?raw=true "mediationRetryAPI")
+
+<p align="center">
+  <img width="60%" src="../../../docs/assets/images/migration-mule/retry-mechanism-example.png">
+</p>
+
 6. In the **Package Explorer**, right-click **Composite Application Project** and select **Export Project Artifacts and Run**. Select all 
    the artifacts in the wizard. Studio runs the application on the embedded server.
 7. In the REST client e.g. Postman or using embedded HTTP4e client send the following request: 

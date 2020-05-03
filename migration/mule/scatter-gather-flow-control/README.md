@@ -28,7 +28,10 @@ increase your familiarity with Integration Studio, consider completing one or mo
 
 This example read two CSV files and aggregate the two contents into one payload. then the payload is transformed to JSON 
 format before responding back to the client.
-![ScatterGatherFlowControlUseCase](../resources/images/scatter-gather-flow-control/scatter-gather-flow-control-use-case.png?raw=true "Scatter gather flow control use case")
+
+<p align="center">
+  <img width="60%" src="../../../docs/assets/images/migration-mule/scatter-gather-flow-control-use-case.png">
+</p>
 
 #### Set Up and Run this Example
 
@@ -41,7 +44,11 @@ format before responding back to the client.
 **Add or Remove Connector**. Keep the **Add connector** option selected and click **Next>**. Search for `file` using the 
 search bar and click the download button located at the bottom right corner of the file connector. Click **Finish**.
 6. Open the **ScatterGatherFlowControl.xml** under **scatter-gather-flow-control/ScatterGatherFlowControl/src/main/synapse-config/api** directory.
-![ScatterGatherFlowControl](../resources/images/scatter-gather-flow-control/scatter-gather-flow-control.png?raw=true "Scatter gather flow control")
+
+<p align="center">
+  <img width="60%" src="../../../docs/assets/images/migration-mule/scatter-gather-flow-control.png">
+</p>
+
 7. Provide file paths of `contacts-1.csv` and `contacts-2.csv` resides in `integration-studio-examples/migration/mule/scatter-gather-flow-control/resources` location.
 8. Run the sample by right click on the **ScatterGatherFlowControlCompositeApplication** under the main **scatter-gather-flow-control** project and selecting **Export Project Artifacts and Run**.
 9. Open HTTP Client in Integration Studio. Follow [HTTP Client Guidelines](../../../docs/common/adding-http-client-to-integration-studio.md)

@@ -15,7 +15,9 @@ increase your familiarity with Integration Studio, consider completing one or mo
 In this example, we send a JSON message containing two numbers to an HTTP endpoint. The [Script Mediator](https://ei.docs.wso2.com/en/latest/micro-integrator/references/mediators/script-Mediator/) 
 then process the data and add two numbers. 
 
-![AdditionUsingJavascriptTransformerUseCase](../resources/images/addition-using-javascript-transformer/addition-using-javascript-transformer-use-case.png?raw=true "Addition using javascript transformer use case")
+<p align="center">
+  <img width="70%" src="../../../docs/assets/images/migration-mule/addition-using-javascript-transformer-use-case.png">
+</p>
 
 ### Set Up and Run the Example
 
@@ -24,8 +26,12 @@ then process the data and add two numbers.
 3. In the Import window select the **Existing WSO2 Projects into workspace** under **WSO2** folder.
 4. Browse and select the file path to the downloaded sample of this Github project
 (``integration-studio-examples/migration/mule/addition-using-javascript-transformer``) and click **Finish**.
-5. Open the **AdditionUsingJavascriptTransformer.xml** under **addition-using-javascript-transformer/AdditionUsingJavascriptTransformer/src/main/synapse-config/api/AdditionUsingJavascriptTransformer.xml** directory. 
-![AdditionUsingJavascriptTransformer](../resources/images/addition-using-javascript-transformer/addition-using-javascript-transformer.png?raw=true "Addition using javascript transformer")
+5. Open the **AdditionUsingJavascriptTransformer.xml** under **addition-using-javascript-transformer/AdditionUsingJavascriptTransformer/src/main/synapse-config/api/AdditionUsingJavascriptTransformer.xml** directory.
+
+<p align="center">
+  <img width="65%" src="../../../docs/assets/images/migration-mule/addition-using-javascript-transformer.png">
+</p>
+
 6. The **AdditionUsingJavascriptTransformer.xml** is the graphical view of the javascript transform mediator.
 7. Run the sample by right click on the **AdditionUsingJavascriptTransformerCompositeApplication** under the main **addition-using-javascript-transformer** project and selecting **Export Project Artifacts and Run**.
 8. Open HTTP Client in Integration Studio. Follow [HTTP Client Guidelines](../../../docs/common/adding-http-client-to-integration-studio.md)

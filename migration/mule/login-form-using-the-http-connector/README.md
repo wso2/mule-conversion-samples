@@ -14,15 +14,21 @@ increase your familiarity with Integration Studio, consider completing one or mo
 In this example, a user submits a username and a password using the HTML login form provided by the application. Once user submit the username and password values, WSO2 EI server receives the credentials and respond the relevant HTML page with the authentication result.  
 * **Get Login Page** (GET `/api/login`). This resource get the index.html page from the Registry project and respond back.
 
-    ![Login page](../resources/images/login-form-using-the-http-connector/GetLoginPageFlow.png?raw=true "Login page")
+<p align="center">
+  <img width="60%" src="../../../docs/assets/images/migration-mule/login-form-using-the-http-connector-get-login-page-flow.png">
+</p>
 
 * **Do Login** (POST `/api/login`). This resource checks the username and password is equals to the `wso2` and respond the relevant HTML page based on the authentication status.
 
-    ![Login submit](../resources/images/login-form-using-the-http-connector/DoLoginFlow.png?raw=true "Login submit")
+<p align="center">
+  <img width="70%" src="../../../docs/assets/images/migration-mule/login-form-using-the-http-connector-do-login-flow.png">
+</p>
 
 * **Requester Login** (GET `/api/requesterLogin`). TThis resource is responsible for filling in the correct credentials and calling Do Login resource in order to make a successful login.
 
-    ![Login requester](../resources/images/login-form-using-the-http-connector/CallLoginFlowUsingRequester.png?raw=true "Login requester")
+<p align="center">
+  <img width="70%" src="../../../docs/assets/images/migration-mule/login-form-using-the-http-connector-call-login-flow-using-requester.png">
+</p>
 
 ### Set Up and Run the Example
 
@@ -36,16 +42,22 @@ In this example, a user submits a username and a password using the HTML login f
 **login-form-using-the-http-connector** project and selecting **Export Project Artifacts and Run**.
 6. Open your browser and hit [http://localhost:8290/api/login](http://localhost:8290/api/login).
 
-    ![Login Page](../resources/images/login-form-using-the-http-connector/login_page.png?raw=true "Login Page")
+<p align="center">
+  <img width="40%" src="../../../docs/assets/images/migration-mule/login-form-using-the-http-connector-login-page.png">
+</p>
 
 7. Enter `wso2` for username and `wso2` for password. Hit submit button.
 8. You should receive this response: 
 
-    ![Login Success](../resources/images/login-form-using-the-http-connector/login_success.png?raw=true "Login Success")
+<p align="center">
+  <img width="40%" src="../../../docs/assets/images/migration-mule/login-form-using-the-http-connector-login-success.png">
+</p>
     
-    Otherwise:
+   Otherwise:
     
-    ![Login Failure](../resources/images/login-form-using-the-http-connector/login_error.png?raw=true "Login Failure")
+<p align="center">
+  <img width="40%" src="../../../docs/assets/images/migration-mule/login-form-using-the-http-connector-login-error.png">
+</p>
 
 9. Open HTTP Client in Integration Studio. Follow [HTTP Client Guidelines](../../../docs/common/adding-http-client-to-integration-studio.md)
 to open HTTP Client if the window is not visible in the interface.

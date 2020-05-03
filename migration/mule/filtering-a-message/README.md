@@ -16,7 +16,10 @@ This example application receives the list of users in JSON format. Every record
 in correct format, object with information about user connection. Connection info should contains IP address. If all of 
 the mentioned fields are presented and validation process is successful as well, we will see: *User records are valid!* 
 in response of the HTTP call.
-![FilteringAMessageUseCase](../resources/images/filtering-a-message/filtering-a-message-use-case.png?raw=true "Filtering a message use-case")
+
+<p align="center">
+  <img width="60%" src="../../../docs/assets/images/migration-mule/filtering-a-message-use-case.png">
+</p>
 
 ### Set Up and Run the Example ###
 
@@ -26,8 +29,12 @@ in response of the HTTP call.
 4. Browse and select the file path to the downloaded sample of this Github project
 (``integration-studio-examples/migration/mule/filtering-a-message``) and click **Finish**.
 5. Open the **FilteringAMessage.xml** under **filtering-a-message/FilteringAMessage/src/main/synapse-config/api** 
-directory. 
-![FilteringAMessage](../resources/images/filtering-a-message/filtering-a-message.png?raw=true "Filtering a message")
+directory.
+
+<p align="center">
+  <img width="70%" src="../../../docs/assets/images/migration-mule/filtering-a-message.png">
+</p>
+
 6. The **FilteringAMessage.xml** is the graphical view of the filtering message service.
 7. Run the sample by right click on the **FilteringAMessageCompositeApplication** under the main **filtering-a-message** 
 project and selecting **Export Project Artifacts and Run**.

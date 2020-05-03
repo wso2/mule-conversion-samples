@@ -13,7 +13,10 @@ increase your familiarity with Integration Studio, consider completing one or mo
 ### Example Use Case
 
 In this example a simple Hello World payload will be created using [PayloadFactory Mediator](https://ei.docs.wso2.com/en/latest/micro-integrator/references/mediators/payloadFactory-Mediator/).
-![HelloWorldUseCase](../resources/images/hello-world/hello-world-use-case.png?raw=true "HelloWorldUseCase")
+
+<p align="center">
+  <img width="50%" src="../../../docs/assets/images/migration-mule/hello-world-use-case.png">
+</p>
 
 ### Set Up and Run the Example
 
@@ -22,8 +25,12 @@ In this example a simple Hello World payload will be created using [PayloadFacto
 3. In the Import window select the **Existing WSO2 Projects into workspace** under **WSO2** folder.
 4. Browse and select the file path to the downloaded sample of this Github project
 (``integration-studio-examples/migration/mule/hello-world``) and click **Finish**.
-5. Open the **HelloWorld.xml** under **hello-world/HelloWorld/src/main/synapse-config/api/HelloWorld.xml** directory. 
-![HelloWorld](../resources/images/hello-world/hello-world.png?raw=true "HelloWorld")
+5. Open the **HelloWorld.xml** under **hello-world/HelloWorld/src/main/synapse-config/api/HelloWorld.xml** directory.
+
+<p align="center">
+  <img width="60%" src="../../../docs/assets/images/migration-mule/hello-world.png">
+</p>
+
 6. The **HelloWorld.xml** is the graphical view of the simple hello world service.
 7. Run the sample by right click on the **HelloWorldCompositeApplication** under the main **hello-world** project and selecting **Export Project Artifacts and Run**.
 8. Open HTTP Client in Integration Studio. Follow [HTTP Client Guidelines](../../../docs/common/adding-http-client-to-integration-studio.md)
