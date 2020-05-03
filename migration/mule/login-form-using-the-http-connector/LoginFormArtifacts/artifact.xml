@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="index.html" groupId="com.example.LoginFormArtifacts.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+        <item>
+            <file>index.html</file>
+            <path>/_system/governance/custom</path>
+            <mediaType>text/html</mediaType>
+        </item>
+    </artifact>
+    <artifact name="loginFailure.html" groupId="com.example.LoginFormArtifacts.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+        <item>
+            <file>loginFailure.html</file>
+            <path>/_system/governance/custom</path>
+            <mediaType>text/html</mediaType>
+        </item>
+    </artifact>
+    <artifact name="loginSuccessful.html" groupId="com.example.LoginFormArtifacts.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+        <item>
+            <file>loginSuccessful.html</file>
+            <path>/_system/governance/custom</path>
+            <mediaType>text/html</mediaType>
+        </item>
+    </artifact>
+</artifacts>

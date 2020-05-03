@@ -1,0 +1,25 @@
+{
+  "$schema" : "http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#",
+  "outputType" : "JSON",
+  "id" : "http://wso2jsonschema.org",
+  "title" : "root",
+  "type" : "object",
+  "properties" : {
+    "firstname" : {
+      "id" : "http://wso2jsonschema.org/firstname",
+      "type" : "string"
+    },
+    "surname" : {
+      "id" : "http://wso2jsonschema.org/surname",
+      "type" : "string"
+    },
+    "phone" : {
+      "id" : "http://wso2jsonschema.org/phone",
+      "type" : "string"
+    },
+    "email" : {
+      "id" : "http://wso2jsonschema.org/email",
+      "type" : "string"
+    }
+  }
+}

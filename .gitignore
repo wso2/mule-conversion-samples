@@ -31,3 +31,6 @@ hs_err_pid*
 # Excluding .meta and target directories
 **/.meta
 **/target
+
+**/.idea
+**/*.iml

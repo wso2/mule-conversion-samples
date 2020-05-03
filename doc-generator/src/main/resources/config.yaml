@@ -1,0 +1,19 @@
+relativeBasePath: "../"
+
+# Project file name of each project that needs to be zipped.
+projectFileName: ".project"
+readmeFileName: "README.md"
+
+# Relative paths to source directory from doc gen tool directory
+sourcePath: "../migration/mule"
+sourceImagesPath: "../docs/assets/images/migration-mule"
+
+# Relative paths to includes directory with supportive markdown files
+includesPath: "../docs/common"
+includesImagesPath: "../docs/assets/images/common"
+
+# Relative path to generated doc content. This is the directory structure for docs-ei repository
+readmeOutputPath: "en/micro-integrator/docs/references/mule-migration/examples"
+readmeImagesOutputPath: "en/micro-integrator/docs/assets/img/mule-migration"
+includesImagesOutputPath: "en/micro-integrator/docs/assets/img/mule-migration/common"
+zipOutputPath: "en/micro-integrator/docs/assets/zip/mule-migration"

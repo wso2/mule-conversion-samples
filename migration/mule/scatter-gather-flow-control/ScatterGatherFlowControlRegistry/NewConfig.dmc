@@ -1,0 +1,20 @@
+map_S_root_S_root = function(){ 
+var outputroot={};
+
+var count_i_inputroot_9a7ee523_c77f_4bc1_9d45_a3c5fa184c04 = 0;
+outputroot =  {};
+
+for(i_inputroot_9a7ee523_c77f_4bc1_9d45_a3c5fa184c04 in inputroot){
+outputroot.firstname = inputroot[i_inputroot_9a7ee523_c77f_4bc1_9d45_a3c5fa184c04].firstname;
+outputroot.surname = inputroot[i_inputroot_9a7ee523_c77f_4bc1_9d45_a3c5fa184c04].surname;
+outputroot.phone = inputroot[i_inputroot_9a7ee523_c77f_4bc1_9d45_a3c5fa184c04].phone;
+outputroot.email = inputroot[i_inputroot_9a7ee523_c77f_4bc1_9d45_a3c5fa184c04].email;
+
+count_i_inputroot_9a7ee523_c77f_4bc1_9d45_a3c5fa184c04++;
+}
+return outputroot;
+};
+
+
+
+
