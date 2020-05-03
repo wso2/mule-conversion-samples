@@ -22,7 +22,9 @@ There are two functions that the HTTP Request-Response with Logger example appli
 1. Receiving HTTP requests and returning HTTP responses
 2. Logging the payload
 
-![HttpRequestResponseWithLoggerUseCase](../resources/images/http-request-response-with-logger/http-request-response-with-logger-use-case.png?raw=true "Http request response with logger Use Case")
+<p align="center">
+  <img width="60%" src="../../../docs/assets/images/migration-mule/http-request-response-with-logger-use-case.png">
+</p>
 
 ### Set Up and Run the Example
 
@@ -31,8 +33,12 @@ There are two functions that the HTTP Request-Response with Logger example appli
 3. In the Import window select the **Existing WSO2 Projects into workspace** under **WSO2** folder.
 4. Browse and select the file path to the downloaded sample of this Github project
 (``integration-studio-examples/migration/mule/http-request-response-with-logger``) and click **Finish**.
-5. Open the **HttpRequestResponseWithLogger.xml** under **http-request-response-with-logger/HttpRequestResponseWithLogger/src/main/synapse-config/api/HttpRequestResponseWithLoggerAPI.xml** directory. 
-![HttpRequestResponseWithLogger](../resources/images/http-request-response-with-logger/http-request-response-with-logger.png?raw=true "Http request response with logger")
+5. Open the **HttpRequestResponseWithLogger.xml** under **http-request-response-with-logger/HttpRequestResponseWithLogger/src/main/synapse-config/api/HttpRequestResponseWithLoggerAPI.xml** directory.
+
+<p align="center">
+  <img width="60%" src="../../../docs/assets/images/migration-mule/http-request-response-with-logger.png">
+</p>
+
 6. The **HttpRequestResponseWithLoggerAPI.xml** is the graphical view of the simple http-request-response-with-logger service.
 7. Run the sample by right click on the **HttpRequestResponseWithLoggerCompositeApplication** under the main **http-request-response-with-logger** project and selecting **Export Project Artifacts and Run**.
 8. Open HTTP Client in Integration Studio. Follow [HTTP Client Guidelines](../../../docs/common/adding-http-client-to-integration-studio.md)

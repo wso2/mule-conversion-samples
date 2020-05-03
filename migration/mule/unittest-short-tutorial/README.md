@@ -23,13 +23,28 @@ Follow the steps in this procedure to create and run this example in your own in
 2. Create the following scenario on it.
 
 - api/business-logic.xml
-![Alt text](../resources/images/unittest-short-tutorial/main.png?raw=true "mainAPI")
+
+<p align="center">
+  <img width="60%" src="../../../docs/assets/images/migration-mule/unittest-short-tutorial-main.png">
+</p>
+
 - sequence/secondaryFlow.xml
-![Alt text](../resources/images/unittest-short-tutorial/secondary.png?raw=true "secondarySequence")
+
+<p align="center">
+  <img width="30%" src="../../../docs/assets/images/migration-mule/unittest-short-tutorial-secondary.png">
+</p>
+
 - sequence/firstSubFlow.xml
-![Alt text](../resources/images/unittest-short-tutorial/subFlow.png?raw=true "firstSubFlowSequence")
+
+<p align="center">
+  <img width="25%" src="../../../docs/assets/images/migration-mule/unittest-short-tutorial-subFlow.png">
+</p>
+
 - sequence/secondSubFlow.xml
-![Alt text](../resources/images/unittest-short-tutorial/subFlow.png?raw=true "secondSubFlowSequence")
+
+<p align="center">
+  <img width="25%" src="../../../docs/assets/images/migration-mule/unittest-short-tutorial-subFlow.png">
+</p>
 
 - Integration solution source
 ```xml
@@ -257,7 +272,9 @@ You can run the created Unit Test Suites using the unit testing server that is i
 
 Once you run the unit test suites, it will start the unit testing server in the console and prints the summary report for the given unit test suite(s) using the response from the unit testing server.
 
-![Alt text](../resources/images/unittest-short-tutorial/run_tests.png?raw=true "Run Tests")
+<p align="center">
+  <img width="50%" src="../../../docs/assets/images/migration-mule/unittest-short-tutorial-run-tests.png">
+</p>
 
 ### Go Further
 

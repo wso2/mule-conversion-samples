@@ -12,8 +12,11 @@ increase your familiarity with Integration Studio, consider completing one or mo
 
 ### Example Use Case
 
-In this example, by hitting an HTTPS endpoint a user will attempt to grant the access to his data at Box Service. For this purpose, OAuth authorization will be triggered. A user will be asked to enter his user name and password. If successful, he can click a button in order to grant the access.  
-![OAuth2 Authorization](../resources/images/oauth2-authorization-code-using-the-http-connector/oauth2-authorization-code-using-the-http-connector-use-case.png?raw=true "OAuth2 Authorization")
+In this example, by hitting an HTTPS endpoint a user will attempt to grant the access to his data at Box Service. For this purpose, OAuth authorization will be triggered. A user will be asked to enter his user name and password. If successful, he can click a button in order to grant the access.
+
+<p align="center">
+  <img width="90%" src="../../../docs/assets/images/migration-mule/oauth2-authorization-code-using-the-http-connector-use-case.png">
+</p>
 
 ### Set Up and Run the Example ###
 
@@ -46,7 +49,11 @@ You can find instructions to configure the WSO2 Micro Integrator in the [officia
 4. Browse and select the file path to the downloaded sample of this project
 (``integration-studio-examples/migration/mule/oauth2-authorization-code-using-the-http-connector``) and click **Finish**.
 5. Open the **OAuth2AuthorizationCodeAPI.xml** under **oauth2-authorization-code-using-the-http-connector/OAuth2AuthorizationCode/src/main/synapse-config/api/OAuth2AuthorizationCodeAPI.xml** directory.
-![OAuth2 Authorization](../resources/images/oauth2-authorization-code-using-the-http-connector/oauth2-authorization-code-using-the-http-connector.png?raw=true "OAuth2 Authorization")
+
+<p align="center">
+  <img width="60%" src="../../../docs/assets/images/migration-mule/oauth2-authorization-code-using-the-http-connector.png">
+</p>
+
 6. The **OAuth2AuthorizationCodeAPI.xml** is the graphical view of the simple hello world service.
 7. Open the **config.xml** in the **oauth2-authorization-code-using-the-http-connector/resources-oauth** directory and
 replace **client_id** and **client_secret** with the credentials you obtained from Box in the previous section.

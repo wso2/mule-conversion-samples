@@ -11,8 +11,11 @@ increase your familiarity with Integration Studio, consider completing one or mo
 
 ### Example Use Case
 
-In this example, Contacts in Salesforce are retrieved using OAuth 2.0 as the authentication mechanism. The retrieved records are then logged for simplicity.   
-![AuthenticatingSalesforceUsingOauth2RegistryUseCase](../resources/images/authenticating-salesforce-using-oauth2/authenticating-salesforce-using-oauth2-use-case.png?raw=true "AuthenticatingSalesforceUsingOauth2RegistryUseCase")
+In this example, Contacts in Salesforce are retrieved using OAuth 2.0 as the authentication mechanism. The retrieved records are then logged for simplicity.
+
+<p align="center">
+  <img width="70%" src="../../../docs/assets/images/migration-mule/authenticating-salesforce-using-oauth2-use-case.png">
+</p>
 
 ### Set Up and Run the Example
 
@@ -26,8 +29,12 @@ In this example, Contacts in Salesforce are retrieved using OAuth 2.0 as the aut
 search bar and click the download button located at the bottom right corner of the Salesforce REST connector. Click **Finish**.
 6. Follow these [steps](https://ei.docs.wso2.com/en/latest/micro-integrator/references/connectors/salesforce-rest-connector/sf-access-token-generation/) to generate the Access Tokens for Salesforce and obtain the Access Token, and Refresh Token.
 7. Open the **ContactsAPI.xml** under 
-**authenticating-salesforce-using-oauth2/AuthenticatingSalesforceUsingOauth2/src/main/synapse-config/api/** directory. 
-![AuthenticatingSalesforceUsingOauth2Registry](../resources/images/authenticating-salesforce-using-oauth2/authenticating-salesforce-using-oauth2.png?raw=true "AuthenticatingSalesforceUsingOauth2Registry")
+**authenticating-salesforce-using-oauth2/AuthenticatingSalesforceUsingOauth2/src/main/synapse-config/api/** directory.
+
+<p align="center">
+  <img width="70%" src="../../../docs/assets/images/migration-mule/authenticating-salesforce-using-oauth2.png">
+</p>
+
 Configure the following properties with the previously obtained values.
     - Access Token
     - Refresh Token

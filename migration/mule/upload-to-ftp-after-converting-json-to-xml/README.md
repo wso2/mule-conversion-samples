@@ -14,7 +14,9 @@ WSO2 EI’s graphical developer tool. To increase your familiarity with Integrat
 In this example JSON data is sent to the application and then converted to the XML format using the messageType property.
 Then the message payload is uploaded to the FTP folder.
 
-![UploadToFtpAfterConvertingJsonToXml](../resources/images/upload-to-ftp-after-converting-json-to-xml/upload-to-ftp-after-converting-json-to-xml-use-case.png?raw=true)
+<p align="center">
+  <img width="60%" src="../../../docs/assets/images/migration-mule/upload-to-ftp-after-converting-json-to-xml-use-case.png">
+</p>
 
 ### Set Up and Run the Example
 
@@ -29,7 +31,11 @@ search bar and click the download button located at the bottom right corner of t
 6. Open the **UploadToFtpAfterConvertingJsonToXml.xml** under 
 **upload-to-ftp-after-converting-json-to-xml/UploadToFtpAfterConvertingJsonToXml/src/main/synapse-config/api/** directory. 
 Configure destination property accordingly.
-![Alt text](../resources/images/upload-to-ftp-after-converting-json-to-xml/upload-to-ftp-after-converting-json-to-xml.png?raw=true "UploadToFtpAfterConvertingJsonToXml")
+
+<p align="center">
+  <img width="60%" src="../../../docs/assets/images/migration-mule/upload-to-ftp-after-converting-json-to-xml.png">
+</p>
+
 7. Run the sample by right click on the **UploadToFtpAfterConvertingJsonToXmlCompositeApplication** under the main 
 **upload-to-ftp-after-converting-json-to-xml** project and selecting **Export Project Artifacts and Run**.
 8. Open HTTP Client in Integration Studio. Follow [HTTP Client Guidelines](../../../docs/common/adding-http-client-to-integration-studio.md)
