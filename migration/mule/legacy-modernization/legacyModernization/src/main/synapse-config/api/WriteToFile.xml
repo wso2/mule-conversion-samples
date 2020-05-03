@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/OrderFulfillment" name="WriteToFile" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <property expression="/soapenv:Envelope/soapenv:Body/ord:putShippingOrder/shippingId" name="shippingID" scope="default" type="STRING" xmlns:ord="http://ordermgmt.org/" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"/>
+            <datamapper config="gov:datamapper/MapToLegacy.dmc" inputSchema="gov:datamapper/MapToLegacy_inputSchema.json" inputType="XML" outputSchema="gov:datamapper/MapToLegacy_outputSchema.json" outputType="CSV" xsltStyleSheet="gov:datamapper/MapToLegacy_xsltStyleSheet.xml"/>
+            <clone>
+                <target>
+                    <sequence>
+                        <property expression="$body/int:text/text()" name="csvBody" scope="default" type="STRING" xmlns:int="http://ws.apache.org/commons/ns/payload"/>
+                        <property expression="fn:concat($ctx:csvBody,'&#xa;')" name="csvBodyWithNewLine" scope="default" type="STRING"/>
+                        <fileconnector.append>
+                            <destination>/Users/WSO2User/CSVOutput.csv</destination>
+                            <inputContent>{$ctx:csvBodyWithNewLine}</inputContent>
+                        </fileconnector.append>
+                    </sequence>
+                </target>
+                <target>
+                    <sequence>
+                        <payloadFactory media-type="json">
+                            <format>{"Shipping Order ID" : "$1","Order Received Status" : true}
+							</format>
+                            <args>
+                                <arg evaluator="xml" expression="$ctx:shippingID"/>
+                            </args>
+                        </payloadFactory>
+                        <respond/>
+                    </sequence>
+                </target>
+            </clone>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>
