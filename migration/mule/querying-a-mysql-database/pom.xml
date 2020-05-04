@@ -10,7 +10,9 @@
   <description>querying-a-mysql-database</description>
   <modules>
     <module>QueryingAMysqlDatabase</module>
-    <module>QueryingAMysqlDatabaseProjectCompositeApplication</module>
+    <module>QueryingAMysqlDatabaseDataService</module>
+    <module>QueryingAMysqlDatabaseRegistry</module>
+    <module>QueryingAMysqlDatabaseCompositeApplication</module>
   </modules>
   <build>
     <plugins>

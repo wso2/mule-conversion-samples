@@ -3,11 +3,11 @@
   <description />
   <config id="Datasource">
     <property name="driverClassName">com.mysql.jdbc.Driver</property>
-    <property name="url">jdbc:mysql://[machine-name/ip]:[port]/employees</property>
-    <property name="username"></property>
-    <property name="password"></property>
+    <property name="url">jdbc:mysql://[machine-name/ip]:[port]/company</property>
+    <property name="username">[username]</property>
+    <property name="password">[password]</property>
   </config>
-  <resource method="GET" path="Employee/{last_name}">
+  <resource method="GET" path="employee/{last_name}">
     <description />
     <call-query href="GetEmployeeDetails">
       <with-param name="last_name" query-param="last_name" />

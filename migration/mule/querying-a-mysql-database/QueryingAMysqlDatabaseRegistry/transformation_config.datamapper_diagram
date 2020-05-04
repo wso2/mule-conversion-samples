@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:datamapper="http:///org/wso2/developerstudio/eclipse/gmf/datamapper" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_asC_EI3CEeqUCc_r_sO18g" type="DataMapper" name="transformation_config.datamapper_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_azC-8I3CEeqUCc_r_sO18g" type="2002" fontName=".AppleSystemUIFont">
+    <children xmi:type="notation:Shape" xmi:id="_oVaXwI3CEeqUCc_r_sO18g" type="3002" fontName=".AppleSystemUIFont">
+      <children xmi:type="notation:DecorationNode" xmi:id="_oVaXwo3CEeqUCc_r_sO18g" type="5002"/>
+      <children xmi:type="notation:Shape" xmi:id="_oVkIwI3CEeqUCc_r_sO18g" type="3003" fontName=".AppleSystemUIFont">
+        <children xmi:type="notation:DecorationNode" xmi:id="_oVkIwo3CEeqUCc_r_sO18g" type="5001"/>
+        <children xmi:type="notation:Shape" xmi:id="_oVrdgI3CEeqUCc_r_sO18g" type="3003" fontName=".AppleSystemUIFont">
+          <children xmi:type="notation:DecorationNode" xmi:id="_oVsEkI3CEeqUCc_r_sO18g" type="5001"/>
+          <children xmi:type="notation:Shape" xmi:id="_oVtSsI3CEeqUCc_r_sO18g" type="3003" fontName=".AppleSystemUIFont">
+            <children xmi:type="notation:DecorationNode" xmi:id="_oVtSso3CEeqUCc_r_sO18g" type="5001"/>
+            <children xmi:type="notation:Shape" xmi:id="_oVvH4I3CEeqUCc_r_sO18g" type="3020" fontName=".AppleSystemUIFont">
+              <element xmi:type="datamapper:InNode" href="transformation_config.datamapper#//@input/@treeNode.0/@node.0/@node.0/@node.0/@inNode"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oVvH4Y3CEeqUCc_r_sO18g" x="-1" y="1"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_oVvH4o3CEeqUCc_r_sO18g" type="3019" fontName=".AppleSystemUIFont">
+              <element xmi:type="datamapper:OutNode" href="transformation_config.datamapper#//@input/@treeNode.0/@node.0/@node.0/@node.0/@outNode"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oVvH443CEeqUCc_r_sO18g"/>
+            </children>
+            <element xmi:type="datamapper:TreeNode" href="transformation_config.datamapper#//@input/@treeNode.0/@node.0/@node.0/@node.0"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oVtSsY3CEeqUCc_r_sO18g"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_oVtSs43CEeqUCc_r_sO18g" type="3020" fontName=".AppleSystemUIFont">
+            <element xmi:type="datamapper:InNode" href="transformation_config.datamapper#//@input/@treeNode.0/@node.0/@node.0/@inNode"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oVtStI3CEeqUCc_r_sO18g" x="-1" y="-11"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_oVtStY3CEeqUCc_r_sO18g" type="3019" fontName=".AppleSystemUIFont">
+            <element xmi:type="datamapper:OutNode" href="transformation_config.datamapper#//@input/@treeNode.0/@node.0/@node.0/@outNode"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oVtSto3CEeqUCc_r_sO18g"/>
+          </children>
+          <element xmi:type="datamapper:TreeNode" href="transformation_config.datamapper#//@input/@treeNode.0/@node.0/@node.0"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oVrdgY3CEeqUCc_r_sO18g"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_oVsEkY3CEeqUCc_r_sO18g" type="3020" fontName=".AppleSystemUIFont">
+          <element xmi:type="datamapper:InNode" href="transformation_config.datamapper#//@input/@treeNode.0/@node.0/@inNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oVsEko3CEeqUCc_r_sO18g" x="-1" y="-11"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_oVsEk43CEeqUCc_r_sO18g" type="3019" fontName=".AppleSystemUIFont">
+          <element xmi:type="datamapper:OutNode" href="transformation_config.datamapper#//@input/@treeNode.0/@node.0/@outNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oVsElI3CEeqUCc_r_sO18g"/>
+        </children>
+        <element xmi:type="datamapper:TreeNode" href="transformation_config.datamapper#//@input/@treeNode.0/@node.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oVkIwY3CEeqUCc_r_sO18g"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_oVkIw43CEeqUCc_r_sO18g" type="3020" fontName=".AppleSystemUIFont">
+        <element xmi:type="datamapper:InNode" href="transformation_config.datamapper#//@input/@treeNode.0/@inNode"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oVkIxI3CEeqUCc_r_sO18g" x="-1" y="-11"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_oVkv0I3CEeqUCc_r_sO18g" type="3019" fontName=".AppleSystemUIFont">
+        <element xmi:type="datamapper:OutNode" href="transformation_config.datamapper#//@input/@treeNode.0/@outNode"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oVkv0Y3CEeqUCc_r_sO18g"/>
+      </children>
+      <element xmi:type="datamapper:TreeNode" href="transformation_config.datamapper#//@input/@treeNode.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oVaXwY3CEeqUCc_r_sO18g"/>
+    </children>
+    <element xmi:type="datamapper:Input" href="transformation_config.datamapper#//@input"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_azC-8Y3CEeqUCc_r_sO18g" x="185" y="-200" width="250" height="160"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_azDmAI3CEeqUCc_r_sO18g" type="2003" fontName=".AppleSystemUIFont">
+    <children xmi:type="notation:Shape" xmi:id="_qjAQsI3CEeqUCc_r_sO18g" type="3011" fontName=".AppleSystemUIFont">
+      <children xmi:type="notation:DecorationNode" xmi:id="_qjA3wI3CEeqUCc_r_sO18g" type="5003"/>
+      <children xmi:type="notation:Shape" xmi:id="_qjHlcI3CEeqUCc_r_sO18g" type="3003" fontName=".AppleSystemUIFont">
+        <children xmi:type="notation:DecorationNode" xmi:id="_qjHlco3CEeqUCc_r_sO18g" type="5001"/>
+        <children xmi:type="notation:Shape" xmi:id="_qjJaoI3CEeqUCc_r_sO18g" type="3020" fontName=".AppleSystemUIFont">
+          <element xmi:type="datamapper:InNode" href="transformation_config.datamapper#//@output/@treeNode.0/@node.0/@inNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qjJaoY3CEeqUCc_r_sO18g" x="-10" y="4"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_qjJaoo3CEeqUCc_r_sO18g" type="3019" fontName=".AppleSystemUIFont">
+          <element xmi:type="datamapper:OutNode" href="transformation_config.datamapper#//@output/@treeNode.0/@node.0/@outNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qjJao43CEeqUCc_r_sO18g"/>
+        </children>
+        <element xmi:type="datamapper:TreeNode" href="transformation_config.datamapper#//@output/@treeNode.0/@node.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qjHlcY3CEeqUCc_r_sO18g"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_qjHlc43CEeqUCc_r_sO18g" type="3020" fontName=".AppleSystemUIFont">
+        <element xmi:type="datamapper:InNode" href="transformation_config.datamapper#//@output/@treeNode.0/@inNode"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qjHldI3CEeqUCc_r_sO18g" x="-1" y="-11"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_qjIMgI3CEeqUCc_r_sO18g" type="3019" fontName=".AppleSystemUIFont">
+        <element xmi:type="datamapper:OutNode" href="transformation_config.datamapper#//@output/@treeNode.0/@outNode"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qjIMgY3CEeqUCc_r_sO18g"/>
+      </children>
+      <element xmi:type="datamapper:TreeNode" href="transformation_config.datamapper#//@output/@treeNode.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qjAQsY3CEeqUCc_r_sO18g"/>
+    </children>
+    <element xmi:type="datamapper:Output" href="transformation_config.datamapper#//@output"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_azDmAY3CEeqUCc_r_sO18g" x="495" y="-200" width="250" height="160"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_asC_EY3CEeqUCc_r_sO18g"/>
+  <element xmi:type="datamapper:DataMapperRoot" href="transformation_config.datamapper#/"/>
+  <edges xmi:type="notation:Connector" xmi:id="_rEXRUI3CEeqUCc_r_sO18g" type="4001" source="_oVvH4o3CEeqUCc_r_sO18g" target="_qjJaoI3CEeqUCc_r_sO18g">
+    <styles xmi:type="notation:FontStyle" xmi:id="_rEXRUY3CEeqUCc_r_sO18g" fontName=".AppleSystemUIFont"/>
+    <element xmi:type="datamapper:DataMapperLink" href="transformation_config.datamapper#//@input/@treeNode.0/@node.0/@node.0/@node.0/@outNode/@outgoingLink.0"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_rEXRUo3CEeqUCc_r_sO18g" points="[-2, 0, -62, 40]$[58, -40, -2, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_rEi3gI3CEeqUCc_r_sO18g" id="CENTER"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_rEi3gY3CEeqUCc_r_sO18g" id="CENTER"/>
+  </edges>
+</notation:Diagram>
