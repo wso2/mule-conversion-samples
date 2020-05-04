@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><artifacts>
-    <artifact name="fileconnector-connector" groupId="com.example.HTTPMultipartRequest.lib" version="2.0.21" type="synapse/lib" serverRole="EnterpriseServiceBus">
-        <file>fileconnector-connector-2.0.21.zip</file>
+    <artifact name="fileconnector-connector" groupId="com.example.HTTPMultipartRequest.lib" version="2.0.22" type="synapse/lib" serverRole="EnterpriseServiceBus">
+        <file>fileconnector-connector-2.0.22.zip</file>
     </artifact>
 </artifacts>
