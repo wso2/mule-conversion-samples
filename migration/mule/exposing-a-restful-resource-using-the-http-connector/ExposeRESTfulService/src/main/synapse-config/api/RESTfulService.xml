@@ -3,12 +3,10 @@
     <resource methods="POST">
         <inSequence>
             <payloadFactory description="Mock payload data saved " media-type="json">
-                <format>
-					{
-					"personId":"1",
-					"message":"Person was created"
-					}
-				</format>
+                <format>{
+	"personId":"1",
+	"message":"Person was created"
+}</format>
                 <args/>
             </payloadFactory>
             <respond/>
@@ -20,7 +18,7 @@
         <inSequence>
             <payloadFactory description="Mock Payload Retrieve one " media-type="json">
                 <format>{
-   "personId":"1",
+   "personId”:”$1”,
    "firstname":"John",
    "lastname":"Doe",
    "address":{
@@ -31,7 +29,9 @@
    },
    "age":12
 }</format>
-                <args/>
+                <args>
+                    <arg evaluator="xml" expression="get-property('uri.var.personId')"/>
+                </args>
             </payloadFactory>
             <respond/>
         </inSequence>
@@ -41,14 +41,12 @@
     <resource methods="GET" uri-template="/">
         <inSequence>
             <payloadFactory description="Mock Payload Retrieve all " media-type="json">
-                <format>
-					[ { "personId":"1", "firstname":"John", "lastname":"Doe",
-					"address":{ "streetAddress":"Lincoln St.", "city":"San Francisco",
-					"state":"CA", "zipCode":"90401" }, "age":12 }, { "personId":"2",
-					"firstname":"Peter", "lastname":"Troy", "address":{
-					"streetAddress":"Ron St.", "city":"Illinois", "state":"IL",
-					"zipCode":"60603" }, "age":14 } ]
-				</format>
+                <format>[ { "personId":"1", "firstname":"John", "lastname":"Doe",
+"address":{ "streetAddress":"Lincoln St.", "city":"San Francisco",
+"state":"CA", "zipCode":"90401" }, "age":12 }, { "personId":"2",
+"firstname":"Peter", "lastname":"Troy", "address":{
+"streetAddress":"Ron St.", "city":"Illinois", "state":"IL",
+"zipCode":"60603" }, "age":14 } ]</format>
                 <args/>
             </payloadFactory>
             <respond/>

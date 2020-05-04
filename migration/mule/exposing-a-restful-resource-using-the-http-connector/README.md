@@ -22,29 +22,45 @@ Follow the procedure below to create, then run the HTTP with JSON application.
 1. Download the GitHub Project and import the project to Integration Studio (File-> Import [WSO2-> Existing WSO2 projects into workspace])
 2. In the Package Explorer in Studio, right-click the project name, then select Run As > Run on Micro Integrator. The studio runs the application and WSO2 EI is up and kicking!
 3. Send a POST request to **http://localhost:8290/person** with the body equal to:
-		
-		{
-		 	"firstname":"John",
-		 	"lastname":"Doe",
-		 	"age": "12",
-		 	"address": 
-		  {
-		  	"streetAddress":"Lincoln St.",
-		    "city":"San Francisco",
-		    "state":"CA",
-		    "zipCode":"90401"
-			}
-		} 
-  You should receive a response saying a person was created successfully. For example: 
+```json 
+{
+   "firstname":"John",
+   "lastname":"Doe",
+   "age":"12",
+   "address":{
+      "streetAddress":"Lincoln St.",
+      "city":"San Francisco",
+      "state":"CA",
+      "zipCode":"90401"
+   }
+}
+```
 
-		{ "personId": "1", "message": "Person was created"}
-
+ You should receive a response saying a person was created successfully. For example: 
+```json
+{
+   "personId":"1",
+   "message":"Person was created"
+}
+```
 4. Send a GET request to **http://localhost:8290/person**.
-  You should receive a response with all created persons.
+ You should receive a response with all created persons.
 5. Take the value of `personId` from the previous response and send a GET request to **http://localhost:8290/person/{personId}**
-  You should recieve a response with the person data:
-
-		{"personId": "1", "firstname":"John","lastname":"Doe","address":{"streetAddress":"Lincoln St.","city":"San Francisco","state":"CA","zipCode":"90401"},"age":12}
+ You should recieve a response with the person data:
+```json
+{
+   "personId":"1",
+   "firstname":"John",
+   "lastname":"Doe",
+   "address":{
+      "streetAddress":"Lincoln St.",
+      "city":"San Francisco",
+      "state":"CA",
+      "zipCode":"90401"
+   },
+   "age":12
+}
+```
 
 ### How it Works
 
@@ -57,8 +73,9 @@ The sections below elaborate further on the configurations of the application an
 When an end user's POST request reaches the application, first it will come to REST API's first resource(Which handles POST requests) [https://ei.docs.wso2.com/en/latest/micro-integrator/develop/creating-artifacts/creating-an-api/), which listens to POST requests at http://localhost:8290/person. 
 
 Next, the PayloadFactory create the following message to send back to the client: 
-
-	{ "personId": "1", "message": "Person was created"}
+```json
+{ "personId": "1", "message": "Person was created"}
+```
 
 Finally, WSO2 EI sends the message back to the client using [respond mediator](https://ei.docs.wso2.com/en/latest/micro-integrator/references/mediators/respond-Mediator/).
 
@@ -67,7 +84,8 @@ Finally, WSO2 EI sends the message back to the client using [respond mediator](h
 This resource is responsible for retrieving a specific person's data, based on the provided person ID. It starts with a WSO2 API Resource, which listens at http://localhost:8290/person/{personId}.
 
 Next, the flow will create a mock person detail using the PayloadFactory mediator and send the response using Respond mediator.
-	
+**Note** this sample is only sending a mock response with the peronId path parameter as the ID
+    
 
 ### GET Resource for /person (3rd Resource)
 
@@ -76,12 +94,12 @@ When an end-user request reaches the application for http://localhost:8290/perso
 Next, the resource creates a dummy payload with a set of two-person details using (PayloadFactory mediator)[https://ei.docs.wso2.com/en/latest/micro-integrator/references/mediators/payloadFactory-Mediator/]
 
 Finally, the response is sent back to the client using the Respond Mediator.
+**Note** this sample is only sending a mock response with pre-defined person details
 
   
 ### Go Further
 
 - Learn more about the [HTTP REST API](https://ei.docs.wso2.com/en/latest/micro-integrator/references/synapse-properties/rest-api-properties/).
-
 
 
 
