@@ -17,9 +17,13 @@
                 </target>
                 <target>
                     <sequence>
-                        <payloadFactory media-type="json">
-                            <format>{"Shipping Order ID" : "$1","Order Received Status" : true}
-							</format>
+                        <payloadFactory media-type="xml">
+                            <format>
+                                <shippingOrderResponse>
+                                    <shippingOrderID>$1</shippingOrderID>
+                                    <orderReceivedStatus>true</orderReceivedStatus>
+                                </shippingOrderResponse>
+                            </format>
                             <args>
                                 <arg evaluator="xml" expression="$ctx:shippingID"/>
                             </args>
