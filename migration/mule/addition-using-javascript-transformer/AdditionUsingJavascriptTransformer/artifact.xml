@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><artifacts>
-    <artifact name="AdditionUsingJavascriptTransformer" groupId="com.example.AdditionUsingJavascriptTransformer.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
-        <file>src/main/synapse-config/proxy-services/AdditionUsingJavascriptTransformer.xml</file>
+    <artifact name="AdditionUsingJavascriptTransformer" groupId="com.example.AdditionUsingJavascriptTransformer.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/AdditionUsingJavascriptTransformer.xml</file>
     </artifact>
 </artifacts>

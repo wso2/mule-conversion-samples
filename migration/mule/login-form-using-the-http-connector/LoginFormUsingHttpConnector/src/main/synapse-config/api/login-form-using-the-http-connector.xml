@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/api" name="login-form-using-the-http-connector" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" uri-template="/login">
+        <inSequence>
+            <call-template description="Parse Template" target="ParseTemplate">
+                <with-param name="html_page" value="index.html"/>
+            </call-template>
+            <respond description="Response login form"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/login">
+        <inSequence>
+            <log description="Logger" level="custom">
+                <property name="Login" value="User is trying to login"/>
+            </log>
+            <filter xpath="//username='wso2' and //password='wso2'">
+                <then>
+                    <call-template description="Successful login" target="ParseTemplate">
+                        <with-param name="html_page" value="loginSuccessful.html"/>
+                    </call-template>
+                </then>
+                <else>
+                    <call-template description="Unsuccessful login" target="ParseTemplate">
+                        <with-param name="html_page" value="loginFailure.html"/>
+                    </call-template>
+                </else>
+            </filter>
+            <respond description="Response login status"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/requesterLogin">
+        <inSequence>
+            <payloadFactory description="Transform Message" media-type="json">
+                <format>
+                    {
+                    	"username" : "wso2",
+                    	"password" : "wso2"
+                    }
+                </format>
+                <args/>
+            </payloadFactory>
+            <call>
+                <endpoint key="DoLogin"/>
+            </call>
+            <respond description="Response login status"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

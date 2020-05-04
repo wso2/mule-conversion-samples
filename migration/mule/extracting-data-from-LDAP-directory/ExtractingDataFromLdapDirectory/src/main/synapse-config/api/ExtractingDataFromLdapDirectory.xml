@@ -12,6 +12,7 @@
             </ldap.init>
             <ldap.searchEntry>
                 <limit>1000</limit>
+                <scope>ONE_LEVEL</scope>
                 <filters>{$ctx:filters}</filters>
                 <dn>ou=people</dn>
             </ldap.searchEntry>

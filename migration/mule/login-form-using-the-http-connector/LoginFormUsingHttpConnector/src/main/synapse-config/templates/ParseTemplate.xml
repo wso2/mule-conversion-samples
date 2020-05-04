@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template name="ParseTemplate" xmlns="http://ws.apache.org/ns/synapse">
+    <parameter name="html_page"/>
+    <sequence>
+        <property description="Read HTML from the Registry" expression="get-property('registry',fn:concat('gov:/custom/',$func:html_page))" name="html_page" scope="default" type="OM"/>
+        <enrich description="Add HTML into the body">
+            <source clone="true" property="html_page" type="property"/>
+            <target type="body"/>
+        </enrich>
+        <property description="Set response type" name="messageType" scope="axis2" type="STRING" value="text/html"/>
+    </sequence>
+</template>

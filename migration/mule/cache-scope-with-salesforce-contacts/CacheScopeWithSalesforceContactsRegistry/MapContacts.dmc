@@ -1,0 +1,26 @@
+map_S_root_S_root = function(){ 
+var outputroot={};
+
+var count_i_records_0a2b2aae_2be8_4db1_a499_93d6440ae915 = 0;
+outputroot =  {};
+outputroot.Contacts =  [];
+
+for(i_records_0a2b2aae_2be8_4db1_a499_93d6440ae915 in inputroot.records){
+outputroot.Contacts[count_i_records_0a2b2aae_2be8_4db1_a499_93d6440ae915] =  {};
+outputroot.Contacts[count_i_records_0a2b2aae_2be8_4db1_a499_93d6440ae915].Id = inputroot.records[i_records_0a2b2aae_2be8_4db1_a499_93d6440ae915].Id;
+outputroot.Contacts[count_i_records_0a2b2aae_2be8_4db1_a499_93d6440ae915].FirstName = inputroot.records[i_records_0a2b2aae_2be8_4db1_a499_93d6440ae915].FirstName;
+outputroot.Contacts[count_i_records_0a2b2aae_2be8_4db1_a499_93d6440ae915].LastName = inputroot.records[i_records_0a2b2aae_2be8_4db1_a499_93d6440ae915].LastName;
+outputroot.Contacts[count_i_records_0a2b2aae_2be8_4db1_a499_93d6440ae915].Email = inputroot.records[i_records_0a2b2aae_2be8_4db1_a499_93d6440ae915].Email;
+outputroot.Contacts[count_i_records_0a2b2aae_2be8_4db1_a499_93d6440ae915].Phone = inputroot.records[i_records_0a2b2aae_2be8_4db1_a499_93d6440ae915].Phone;
+
+count_i_records_0a2b2aae_2be8_4db1_a499_93d6440ae915++;
+}
+return outputroot;
+};
+
+
+
+
+
+
+

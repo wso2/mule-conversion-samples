@@ -1,0 +1,43 @@
+<unit-test>
+    <artifacts>
+        <test-artifact>
+            <artifact>/UnittestSampleProject/src/main/synapse-config/api/business-logic.xml</artifact>
+        </test-artifact>
+        <supportive-artifacts>
+            <artifact>/UnittestSampleProject/src/main/synapse-config/sequences/secondSubFlow.xml</artifact>
+            <artifact>/UnittestSampleProject/src/main/synapse-config/sequences/firstSubFlow.xml</artifact>
+            <artifact>/UnittestSampleProject/src/main/synapse-config/sequences/secondaryFlow.xml</artifact>
+        </supportive-artifacts>
+        <registry-resources/>
+        <connector-resources/>
+    </artifacts>
+    <test-cases>
+        <test-case name="TestCaseForTrueResponseCase">
+            <input>
+                <request-path>/?url_key=payload_1</request-path>
+                <request-method>GET</request-method>
+            </input>
+            <assertions>
+                <assertEquals>
+                    <actual>$body</actual>
+                    <expected><![CDATA[responsePayload_1]]></expected>
+                    <message>Respond from the API does not equal to the expected response</message>
+                </assertEquals>
+            </assertions>
+        </test-case>
+        <test-case name="TestCaseForFalseResponseCase">
+            <input>
+                <request-path>/?url_key=payload_other</request-path>
+                <request-method>GET</request-method>
+            </input>
+            <assertions>
+                <assertEquals>
+                    <actual>$body</actual>
+                    <expected><![CDATA[responsePayload_2]]></expected>
+                    <message>Respond from the API does not equal to the expected response</message>
+                </assertEquals>
+            </assertions>
+        </test-case>
+    </test-cases>
+    <mock-services/>
+</unit-test>

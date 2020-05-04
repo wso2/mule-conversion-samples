@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="FileReadingSequence" groupId="com.example.SendingACsvThroughEmailUsingSmtp.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/FileReadingSequence.xml</file>
+    </artifact>
+    <artifact name="FileReaderScheduler" groupId="com.example.SendingACsvThroughEmailUsingSmtp.task" version="1.0.0" type="synapse/task" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/tasks/FileReaderScheduler.xml</file>
+    </artifact>
+</artifacts>

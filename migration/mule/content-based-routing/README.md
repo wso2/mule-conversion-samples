@@ -2,6 +2,10 @@
 
 You can look through and run this example application to learn the basics of using Integration Studio to route messages in a flow by using a *Switch* mediator.
 
+<p align="center">
+  <img width="60%" src="../../../docs/assets/images/migration-mule/content-based-routing-use-case.png">
+</p>
+
 This example application performs the following actions:
 
 1. Listens for messages.
@@ -39,7 +43,11 @@ increase your familiarity with Integration Studio, consider completing one or mo
 4. Browse and select the file path to the downloaded sample of this github project ("content-based-routing" folder of the downloaded github repository).
 5. Open the **ContentBasedRoutingAPI.xml** under **content-based-routing/ContentBasedRouting/src/main/synapse-config/api/ContentBasedRoutingAPI.xml** directory. 
 6. The **ContentBasedRoutingAPI.xml** is the graphical view of the content based routing sample.
-![Alt text](../resources/images/content-based-routing/content-based-routing.png?raw=true "ContentBasedRoutingAPI")
+
+<p align="center">
+  <img width="60%" src="../../../docs/assets/images/migration-mule/content-based-routing.png">
+</p>
+
 7. Run the sample by right click on the **ContentBasedRoutingCompositeApplication** under the main **content-based-routing** project and selecting **Export Project Artifacts and Run**.
 
 4. Open any web browser, paste the following URL in the address bar, and press Enter:

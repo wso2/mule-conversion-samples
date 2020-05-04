@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="tshirt" groupId="org.wso2.resources-backend-service.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+        <item>
+            <file>tshirt.wsdl</file>
+            <path>/_system/config/backendResources</path>
+            <mediaType>application/wsdl+xml</mediaType>
+        </item>
+    </artifact>
+</artifacts>

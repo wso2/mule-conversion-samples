@@ -41,7 +41,7 @@
             <property expression="get-property('query.param.age')" name="age" scope="default" type="STRING"/>
             <property expression="concat('Username: ', $ctx:username, ' Age: ', $ctx:age)" name="inputContent" scope="default" type="STRING"/>
             <fileconnector.create>
-                <source>{text file path}</source>
+                <filePath>{text file path}</filePath>
                 <inputContent>{$ctx:inputContent}</inputContent>
             </fileconnector.create>
             <payloadFactory media-type="text">
@@ -61,7 +61,7 @@
             <property expression="get-property('query.param.age')" name="age" scope="default" type="STRING"/>
             <property expression="concat($ctx:username, ',', $ctx:age)" name="inputContent" scope="default" type="STRING"/>
             <fileconnector.create>
-                <source>{csv file path}</source>
+                <filePath>{csv file path}</filePath>
                 <inputContent>{$ctx:inputContent}</inputContent>
             </fileconnector.create>
             <payloadFactory media-type="text">
@@ -83,7 +83,7 @@
                 <property expression="concat('Username: ', $ctx:username, ' Age: ', $ctx:age)" name="inputContent" scope="default" type="STRING"/>
             </propertyGroup>
             <fileconnector.create>
-                <source>{text file path}</source>
+                <filePath>{text file path}</filePath>
                 <inputContent>{$ctx:inputContent}</inputContent>
             </fileconnector.create>
             <payloadFactory media-type="text">
@@ -105,7 +105,7 @@
                 <property expression="concat($ctx:username, ',', $ctx:age)" name="inputContent" scope="default" type="STRING"/>
             </propertyGroup>
             <fileconnector.create>
-                <source>{csv file path}</source>
+                <filePath>{csv file path}</filePath>
                 <inputContent>{$ctx:inputContent}</inputContent>
             </fileconnector.create>
             <payloadFactory media-type="text">

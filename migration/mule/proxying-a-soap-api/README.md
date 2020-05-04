@@ -14,6 +14,10 @@ This document describes the details of the example within the context of Integra
 
 In this simple example, an application serves as a minimum proxy that can routes request and response to and from a SOAP API. After receiving request, it calls SOAP API of service described in wsdl (resources/tshirt.wsdl) and lists inventories.
 
+<p align="center">
+  <img width="60%" src="../../../docs/assets/images/migration-mule/proxying-a-soap-api-use-case.png">
+</p>
+
 ### Set Up and Run the Example ###
 
 Complete the following procedure to create, then run this example in your own instance of Integration Studio. Skip ahead to the next section if you prefer to simply examine this example via code snippets.
@@ -24,6 +28,11 @@ Complete the following procedure to create, then run this example in your own in
 4. Browse and select the file path to the downloaded sample of this github project ('proxying-a-soap-api' folder of the downloaded github repository).
 5. Open the **proxyingASoapApiAPI.xml** under **proxying-a-soap-api/proxyingASoapApi/src/main/synapse-config/api/** directory. 
 6. The **proxyingASoapApiAPI.xml** is the graphical view of the content based routing sample.
+
+<p align="center">
+  <img width="60%" src="../../../docs/assets/images/migration-mule/proxying-a-soap-api.png">
+</p>
+
 7. Run the sample by right click on the **proxyingASoapApiCompositeApplication** under the main **proxying-a-soap-api** project and selecting **Export Project Artifacts and Run**.
 5. Send the following POST request with xml body to your API via the proxy URL: http://localhost:8290/listInventory.
 
