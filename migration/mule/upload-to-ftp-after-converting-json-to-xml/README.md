@@ -23,8 +23,8 @@ Then the message payload is uploaded to the FTP folder.
 1. Start WSO2 Integration Studio ([Installing WSO2 Integration Studio](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/installing-WSO2-Integration-Studio/)).
 2. In your menu in Studio, click the **File** menu. In the File menu select the **Import...** item.
 3. In the Import window select the **Existing WSO2 Projects into workspace** under **WSO2** folder.
-4. Browse and select the file path to the downloaded sample of this github project 
-("upload-to-ftp-after-converting-json-to-xml" folder of the downloaded github repository).
+4. Browse and select the file path to the downloaded sample of this Github project
+(``integration-studio-examples/migration/mule/upload-to-ftp-after-converting-json-to-xml``) and click **Finish**.
 5. Lets add the file connector into the workspace. Right click on the **UploadToFtpAfterConvertingJsonToXml** and select 
 **Add or Remove Connector**. Keep the **Add connector** option selected and click **Next>**. Search for 'file' using the 
 search bar and click the download button located at the bottom right corner of the file connector. Click **Finish**.
@@ -40,7 +40,7 @@ Configure destination property accordingly.
 **upload-to-ftp-after-converting-json-to-xml** project and selecting **Export Project Artifacts and Run**.
 8. Open HTTP Client in Integration Studio. Follow [HTTP Client Guidelines](../../../docs/common/adding-http-client-to-integration-studio.md)
 to open HTTP Client if the window is not visible in the interface.
-9. Make a POST request to `http://localhost:8290/upload` with following JSON message body, and setting the `Content-Type` header 
+9. Make a POST request to *http://localhost:8290/upload* with following JSON message body, and setting the `Content-Type` header 
 to `application/json`:
 ```json
 {
