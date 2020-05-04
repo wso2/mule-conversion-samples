@@ -2,4 +2,7 @@
     <artifact name="SendingJsonDataToAJmsQueue" groupId="com.example.SendingJsonDataToAJmsQueue.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/api/SendingJsonDataToAJmsQueue.xml</file>
     </artifact>
+    <artifact name="ActiveMQEP" groupId="com.example.SendingJsonDataToAJmsQueue.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/ActiveMQEP.xml</file>
+    </artifact>
 </artifacts>
