@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy name="PatientService" startOnLoad="true" transports="http https" xmlns="http://ws.apache.org/ns/synapse">
+    <target>
+        <inSequence>
+            <switch source="local-name($body/*[1])">
+                <case regex="getPatient">
+                    <payloadFactory media-type="xml">
+                        <format>
+                            <soapenv:Envelope xmlns:ns0="http://wso2.org/hospital-admission-service" xmlns:ns1="http://wso2.org/hospital-admission-service/modal" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+                                <soapenv:Header/>
+                                <soapenv:Body>
+                                    <ns0:getPatientResponse>
+                                        <ns1:Patient>
+                                            <patientId>$1</patientId>
+                                            <dateOfBirth>1930-01-01</dateOfBirth>
+                                            <gender>Male</gender>
+                                            <nationality>USA</nationality>
+                                            <address1>DisneyLand</address1>
+                                            <lastName>Duck</lastName>
+                                            <firstName>Donald</firstName>
+                                            <nationalId>$2</nationalId>
+                                        </ns1:Patient>
+                                    </ns0:getPatientResponse>
+                                </soapenv:Body>
+                            </soapenv:Envelope>
+                        </format>
+                        <args>
+                            <arg evaluator="xml" expression="get-property('SYSTEM_DATE')"/>
+                            <arg evaluator="xml" expression="get-property('SYSTEM_DATE')"/>
+                        </args>
+                    </payloadFactory>
+                </case>
+                <case regex="upsertPatient">
+                    <payloadFactory media-type="xml">
+                        <format>
+                            <soapenv:Envelope xmlns:ns0="http://wso2.org/hospital-admission-service" xmlns:ns1="http://wso2.org/hospital-admission-service/modal" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+                                <soapenv:Header/>
+                                <soapenv:Body>
+                                    <ns0:upsertPatientResponse>
+                                        <ns1:PatientId>$1</ns1:PatientId>
+                                    </ns0:upsertPatientResponse>
+                                </soapenv:Body>
+                            </soapenv:Envelope>
+                        </format>
+                        <args>
+                            <arg evaluator="xml" expression="get-property('SYSTEM_DATE')"/>
+                        </args>
+                    </payloadFactory>
+                </case>
+                <default>
+                    <makefault version="soap11">
+                        <code value="soap11Env:Server" xmlns:soap11Env="http://schemas.xmlsoap.org/soap/envelope/"/>
+                        <reason value="The endpoint reference for the Operation not found"/>
+                    </makefault>
+                </default>
+            </switch>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </target>
+    <publishWSDL key="gov:backend/PatientService.wsdl" preservePolicy="true">
+        <resource key="gov:backend/xsd/SOA-Message-1.0.xsd" location="xsd/SOA-Message-1.0.xsd"/>
+        <resource key="gov:backend/xsd/SOA-Model-1.0.xsd" location="SOA-Model-1.0.xsd"/>
+    </publishWSDL>
+</proxy>
