@@ -17,7 +17,7 @@ docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-manag
 In this example a message containing sample sales data in JSON is received through an HTTP API. This message is then sent to RabbitMQ using the RabbitMQ transport. Once this message reaches the queue, it can be viewed through he RabbitMQ web console.
 
 <p align="center">
-  <img width="60%" src="../../../docs/assets/images/migration-mule/sending-json-data-to-a-amqp-queue-use-case.png">
+  <img width="80%" src="../../../docs/assets/images/migration-mule/sending-json-data-to-a-amqp-queue-use-case.png">
 </p>
 
 ## Set Up and Run the Example
@@ -49,7 +49,7 @@ In this example a message containing sample sales data in JSON is received throu
 8. Open the **MessageReceiveAPI.xml** file in the **sending-json-data-to-a-amqp-queue/AMQPIntegrationProject/src/main/synapse-config/api/** directory. The **MessageReceiveAPI.xml** is the graphical view of the AMQP sample.
 
 <p align="center">
-  <img width="60%" src="../../../docs/assets/images/migration-mule/sending-json-data-to-a-amqp-queue.png">
+  <img width="70%" src="../../../docs/assets/images/migration-mule/sending-json-data-to-a-amqp-queue.png">
 </p>
 
 9. Right click `AMQPIntegrationProjectCompositeApplication` in **project explorer**  and choose **Export Composite Application Project**. Choose all the artifacts in the wizard and export CApp to <Product_HOME>/repository/deployment/server/carbonapps directory. 

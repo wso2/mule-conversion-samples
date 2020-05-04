@@ -13,6 +13,10 @@ increase your familiarity with Integration Studio, consider completing one or mo
 
 The very basic concept of caching consists of temporary storing a result of some operations, in our use case it is caching fetched data from Salesforce. The example illustrates caching when we ask for a data once again, the result is returned directly from cache instead of making a new call to Salesforce.
 
+<p align="center">
+  <img width="90%" src="../../../docs/assets/images/migration-mule/cache-scope-with-salesforce-contacts-use-case.png">
+</p>
+
 ### Set Up and Run the Example
 
 1. Start WSO2 Integration Studio ([Installing WSO2 Integration Studio](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/installing-WSO2-Integration-Studio/)).
@@ -30,6 +34,11 @@ Configure the following properties with the previously obtained values.
     - Access Token
     - Refresh Token
     - API URL (e.g.: https://<INSTANCE>.salesforce.com)
+
+<p align="center">
+  <img width="100%" src="../../../docs/assets/images/migration-mule/cache-scope-with-salesforce-contacts.png">
+</p>
+
 8. Run the sample by right click on the **CacheScopeWithSalesforceContactsCompositeApplication** under the main 
 **cache-scope-with-salesforce-contacts** project and selecting **Export Project Artifacts and Run**.
 9. Open HTTP Client in Integration Studio. Follow [HTTP Client Guidelines](../../../docs/common/adding-http-client-to-integration-studio.md)
