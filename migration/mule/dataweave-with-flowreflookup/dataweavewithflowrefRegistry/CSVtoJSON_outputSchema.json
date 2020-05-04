@@ -1,0 +1,57 @@
+{
+  "$schema" : "http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#",
+  "outputType" : "JSON",
+  "id" : "http://wso2jsonschema.org",
+  "title" : "root",
+  "type" : "object",
+  "properties" : {
+    "records" : {
+      "id" : "http://wso2jsonschema.org/records",
+      "type" : "array",
+      "items" : [ {
+        "id" : "http://wso2jsonschema.org/records/0",
+        "type" : "object",
+        "properties" : {
+          "Name" : {
+            "id" : "http://wso2jsonschema.org/records/0/Name",
+            "type" : "string"
+          },
+          "BillingStreet" : {
+            "id" : "http://wso2jsonschema.org/records/0/BillingStreet",
+            "type" : "string"
+          },
+          "BillingCity" : {
+            "id" : "http://wso2jsonschema.org/records/0/BillingCity",
+            "type" : "string"
+          },
+          "BillingState" : {
+            "id" : "http://wso2jsonschema.org/records/0/BillingState",
+            "type" : "string"
+          },
+          "BillingPostalCode" : {
+            "id" : "http://wso2jsonschema.org/records/0/BillingPostalCode",
+            "type" : "string"
+          },
+          "Region__c" : {
+            "id" : "http://wso2jsonschema.org/records/0/Region__c",
+            "type" : "string"
+          },
+          "attributes" : {
+            "id" : "http://wso2jsonschema.org/records/0/attributes",
+            "type" : "object",
+            "properties" : {
+              "type" : {
+                "id" : "http://wso2jsonschema.org/records/0/attributes/type",
+                "type" : "string"
+              },
+              "referenceId" : {
+                "id" : "http://wso2jsonschema.org/records/0/attributes/referenceId",
+                "type" : "string"
+              }
+            }
+          }
+        }
+      } ]
+    }
+  }
+}

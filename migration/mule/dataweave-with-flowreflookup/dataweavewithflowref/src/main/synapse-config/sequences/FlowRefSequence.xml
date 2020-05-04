@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="FlowRefSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <property description="set CSV File Path" name="csvFilePath" scope="default" type="STRING" value="{Companies.csv_file_path}"/>
+    <fileconnector.read>
+        <source>{$ctx:csvFilePath}</source>
+        <contentType>text/plain</contentType>
+        <numberOfLinesToSkip>0</numberOfLinesToSkip>
+    </fileconnector.read>
+    <datamapper config="gov:datamapper/CSVtoJSON.dmc" inputSchema="gov:datamapper/CSVtoJSON_inputSchema.json" inputType="CSV" outputSchema="gov:datamapper/CSVtoJSON_outputSchema.json" outputType="JSON" xsltStyleSheet="gov:datamapper/CSVtoJSON_xsltStyleSheet.xml"/>
+    <foreach expression="json-eval($.records)" id="companiesiterate">
+        <sequence>
+            <property expression="json-eval($.BillingState)" name="RegionValue" scope="default" type="STRING"/>
+            <sequence key="LookupSalesRegionSequence"/>
+            <enrich>
+                <source clone="false" property="RegionValue" type="property"/>
+                <target xpath="json-eval($.Region__c)"/>
+            </enrich>
+        </sequence>
+    </foreach>
+    <property expression="json-eval($)" name="fieldAndValue" scope="default" type="STRING"/>
+    <property name="sObject" scope="default" type="STRING" value="Account"/>
+    <salesforcerest.init>
+        <accessToken></accessToken>
+        <apiVersion>v44.0</apiVersion>
+        <hostName>https://login.salesforce.com</hostName>
+        <refreshToken></refreshToken>
+        <apiUrl></apiUrl>
+        <registryPath>connectors/SalesforceRest</registryPath>
+    </salesforcerest.init>
+    <salesforcerest.createMultipleRecords>
+        <sObjectName>{$ctx:sObject}</sObjectName>
+        <fieldAndValue>{$ctx:fieldAndValue}</fieldAndValue>
+    </salesforcerest.createMultipleRecords>
+</sequence>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="LookupSalesRegionSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <script language="js"><![CDATA[var regionCode = mc.getProperty("RegionValue").trim();
+var northEast = ["CT","ME","MA","NH","VT","RI","NY","NJ","DE","DC","MD","NH"];
+var southEast = ["AL","AR","FL", "GA","LA" ,"SC","NC","TN","TX"];
+var midWest = ["ID","IL", "IA","KS","MT", "WY","ND","SD","OH" ];
+var southWest = ["AZ","CO","OK","NM", "NV"];
+var westCoast = ["CA","HI","WA","OR", "AK"];
+print("State to lookup is: " + regionCode );
+var region;
+if(northEast.indexOf(String(regionCode)) != -1) region = "NorthEast"; 
+if(southEast.indexOf(String(regionCode)) != -1) region = "SouthEast"; 
+if(midWest.indexOf(String(regionCode)) != -1) region = "MidWest"; 
+if(southWest.indexOf(String(regionCode)) != -1) region = "SouthWest"; 
+if(westCoast.indexOf(String(regionCode)) != -1) region = "WestCoast"; 
+mc.setProperty('RegionValue',region);]]></script>
+    <log level="custom">
+        <property expression="$ctx:RegionValue" name="Region is "/>
+    </log>
+</sequence>
