@@ -42,7 +42,9 @@ E.g.:
 [2020-04-28 11:18:16,994]  INFO {org.apache.synapse.mediators.builtin.LogMediator} - To: http://www.w3.org/2005/08/addressing/anonymous, WSAction: , SOAPAction: , MessageID: urn:uuid:9f36fa4b-a851-45a1-945a-afdbd9f004ad, Direction: request, Payload: {"hasErrors":false,"results":[{"referenceId":"1","id":"0032v00003Un7V6AAJ"},{"referenceId":"2","id":"0032v00003Un7V7AAJ"}]}
 
 ```
-
+12. You may verify whether the records were successfully added to salesforce by visiting Salesforce. Then, navigate to **Contacts** tab and use the drop-down menu to display All Contacts.
+Scan your contacts for two new entries: John Doe, Jane Doe
+                                                                                                                                                                                                                                        
 ### How It Works
 
 This application accepts CSV files which contain contact information, then uploads the contacts to Salesforce.
