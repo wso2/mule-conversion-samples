@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sequence name="OnErrorPropagate" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
-    <log level="custom">
-        <property name="Error Message" value="An Unexpeted erroe occured"/>
+    <log description="Logger" level="custom">
+        <property name="Rollback transaction" value="The message rolls back to its original state for reprocessing."/>
     </log>
-    <property name="SET_ROLLBACK_ONLY" scope="axis2" type="STRING" value="true"/>
+    <property description="Rollback transaction" name="SET_ROLLBACK_ONLY" scope="axis2" type="STRING" value="true"/>
 </sequence>
