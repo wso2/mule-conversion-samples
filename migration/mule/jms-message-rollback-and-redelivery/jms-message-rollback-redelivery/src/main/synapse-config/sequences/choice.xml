@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="choice" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log level="custom">
+        <property expression="get-property('default','jms.message.delivery.count')" name="DeliveryCount"/>
+    </log>
+    <filter regex="5" source="get-property('default','jms.message.delivery.count')">
+        <then>
+            <log level="custom">
+                <property name="No exception thrown" value="Transaction without error"/>
+            </log>
+            <property name="OUT_ONLY" scope="default" type="STRING" value="true"/>
+            <call>
+                <endpoint>
+                    <address uri="jms:/topic1?transport.jms.ConnectionFactoryJNDIName=TopicConnectionFactory&amp;java.naming.factory.initial=org.apache.activemq.jndi.ActiveMQInitialContextFactory&amp;java.naming.provider.url=tcp://localhost:61616&amp;transport.jms.DestinationType=topic">
+                        <suspendOnFailure>
+                            <initialDuration>-1</initialDuration>
+                            <progressionFactor>1</progressionFactor>
+                        </suspendOnFailure>
+                        <markForSuspension>
+                            <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                        </markForSuspension>
+                    </address>
+                </endpoint>
+            </call>
+            <log level="custom">
+                <property name="Rollback transaction" value="The message rolls back to its original state for reprocessing."/>
+            </log>
+        </then>
+        <else>
+            <log level="custom">
+                <property name="This is the reason why the processing has failed" value="Execute the failing script"/>
+            </log>
+            <makefault version="pox">
+                <reason value="Exception"/>
+            </makefault>
+            <call/>
+        </else>
+    </filter>
+</sequence>
