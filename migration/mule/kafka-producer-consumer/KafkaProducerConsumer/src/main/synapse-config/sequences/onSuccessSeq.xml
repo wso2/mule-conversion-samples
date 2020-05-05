@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="onSuccessSeq" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log level="custom">
+        <property expression="fn:concat('New message arrived: ', get-property('messageValue'), ', key: &quot;', get-property('key'), '&quot;,', ' partition: &quot;', get-property('partitionNo'), '&quot;,', ' offset: &quot;', get-property('offset'), '&quot;')" name="Log Message" xmlns:ns="http://org.apache.synapse/xsd"/>
+    </log>
+</sequence>

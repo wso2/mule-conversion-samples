@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="KafkaProducerAPI" groupId="org.wso2.KafkaProducerConsumer.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/KafkaProducerAPI.xml</file>
+    </artifact>
+    <artifact name="onSuccessSeq" groupId="org.wso2.KafkaProducerConsumer.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/onSuccessSeq.xml</file>
+    </artifact>
+    <artifact name="KafkaConsumerIEP" groupId="org.wso2.KafkaProducerConsumer.inbound-endpoint" version="1.0.0" type="synapse/inbound-endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/inbound-endpoints/KafkaConsumerIEP.xml</file>
+    </artifact>
+    <artifact name="onErrorSeq" groupId="org.wso2.KafkaProducerConsumer.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/onErrorSeq.xml</file>
+    </artifact>
+</artifacts>
