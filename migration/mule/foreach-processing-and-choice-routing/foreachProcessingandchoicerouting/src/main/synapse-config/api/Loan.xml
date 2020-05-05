@@ -2,17 +2,17 @@
 <api context="/loan" name="Loan" xmlns="http://ws.apache.org/ns/synapse">
     <resource methods="GET" uri-template="/calculate*">
         <inSequence>
-            <property expression="boolean(get-property('query.param.name')) and boolean(get-property('query.param.amount')) and boolean(get-property('query.param.term')) and boolean(get-property('query.param.ssn')) " name="containAllQueryParams" scope="default" type="STRING"/>
-            <switch source="$ctx:containAllQueryParams">
+            <property description="This property checks if all the query parameters exist. It outputs the boolean value according to the result. " expression="boolean(get-property('query.param.name')) and boolean(get-property('query.param.amount')) and boolean(get-property('query.param.term')) and boolean(get-property('query.param.ssn')) " name="containAllQueryParams" scope="default" type="STRING"/>
+            <switch description="According to the boolean value of containAllQueryParams property, for the true case it goes further in the mediation. For the false value it outputs an Error message. " source="$ctx:containAllQueryParams">
                 <case regex="true">
-                    <call>
+                    <call description="It calls the HttpEndpoint. ">
                         <endpoint key="HttpEndpoint"/>
                     </call>
-                    <foreach expression="json-eval($.banks)" id="ForEachBank">
+                    <foreach description="It goes to the each element of of the array banks, which is in the response payload of calling the HttpEndpoint API. " expression="json-eval($.banks)" id="ForEachBank">
                         <sequence>
-                            <switch source="$body/jsonValue">
+                            <switch description="When it iterates through the foreach mediator, as the response we get jsonValue. As we have two cases other than the default case, we refer to these values as case regex." source="$body/jsonValue">
                                 <case regex="1">
-                                    <payloadFactory media-type="json">
+                                    <payloadFactory description="Creates the payload according tothe rate of bank 1. " media-type="json">
                                         <format>{
 "name": "Bank 1",
 "amount": $1,
@@ -21,7 +21,7 @@
 "currency":
 "EUR"
 }
-										</format>
+                                        </format>
                                         <args>
                                             <arg evaluator="xml" expression="get-property('query.param.amount')"/>
                                             <arg evaluator="xml" expression="get-property('query.param.term')"/>
@@ -33,7 +33,7 @@
                                     </log>
                                 </case>
                                 <case regex="2">
-                                    <payloadFactory media-type="json">
+                                    <payloadFactory description="Creates the payload according tothe rate of bank 2. " media-type="json">
                                         <format>{
 "name": "Bank 2",
 "amount": $1,
@@ -42,7 +42,7 @@
 "currency":
 "EUR"
 }
-										</format>
+                                        </format>
                                         <args>
                                             <arg evaluator="xml" expression="get-property('query.param.amount')"/>
                                             <arg evaluator="xml" expression="get-property('query.param.term')"/>
@@ -54,7 +54,7 @@
                                     </log>
                                 </case>
                                 <default>
-                                    <payloadFactory media-type="json">
+                                    <payloadFactory description="Creates the payload according tothe rate of bank 3. " media-type="json">
                                         <format>{
 "name": "Bank 3",
 "amount": $1,
@@ -63,7 +63,7 @@
 "currency":
 "EUR"
 }
-										</format>
+                                        </format>
                                         <args>
                                             <arg evaluator="xml" expression="get-property('query.param.amount')"/>
                                             <arg evaluator="xml" expression="get-property('query.param.term')"/>
@@ -80,10 +80,10 @@
                                 <property expression="json-eval($.payment)" name="payment" scope="default" type="STRING"/>
                                 <property expression="json-eval($.currency)" name="currency" scope="default" type="STRING"/>
                             </propertyGroup>
-                            <property expression="fn:concat(get-property('bankInfo'), fn:concat(get-property('name'), ': Payment ', get-property('payment'), ' ', get-property('currency') ,' per month', ' , '))" name="bankInfo" scope="default" type="STRING"/>
+                            <property description="Concatanate the payload. " expression="fn:concat(get-property('bankInfo'), fn:concat(get-property('name'), ': Payment ', get-property('payment'), ' ', get-property('currency') ,' per month', ' , '))" name="bankInfo" scope="default" type="STRING"/>
                         </sequence>
                     </foreach>
-                    <payloadFactory media-type="text">
+                    <payloadFactory description="Create the final message to be displayed. " media-type="text">
                         <format>“Bank info for customer $1 about loan $2 EUR in term $3 months: $4”</format>
                         <args>
                             <arg evaluator="xml" expression="get-property('query.param.name')"/>
@@ -94,12 +94,13 @@
                     </payloadFactory>
                 </case>
                 <default>
-                    <payloadFactory media-type="text">
+                    <payloadFactory description="Creates the error message. " media-type="text">
                         <format>
-							Error: Incomplete Request
-						</format>
+                            Error: Incomplete Request
+                        </format>
                         <args/>
                     </payloadFactory>
+                    <property description="Create the 500 status. " name="HTTP_SC" scope="axis2" type="STRING" value="500"/>
                 </default>
             </switch>
             <respond/>

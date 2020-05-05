@@ -4,25 +4,20 @@
         <inSequence>
             <!--This is generated API skeleton.-->
             <!--Business Logic Goes Here-->
-            <payloadFactory media-type="json">
+            <payloadFactory description="Creates the payload. " media-type="json">
                 <format>{
                 "name": "John FLetcher",
                 "ssn": "123456789",
                 "amount": "10000",
                 "term": "10",
-                "banks": [
-                  1,
-                  3
-                ],
+                "banks": [1,2,3],
                 "requestedDate": "2018-12-12"
               }</format>
                 <args/>
             </payloadFactory>
-            <loopback/>
-        </inSequence>
-        <outSequence>
             <respond/>
-        </outSequence>
+        </inSequence>
+        <outSequence/>
         <faultSequence/>
     </resource>
 </api>
