@@ -23,7 +23,7 @@
     <dependency>
       <groupId>com.example.HTTPMultipartRequest.lib</groupId>
       <artifactId>fileconnector-connector</artifactId>
-      <version>2.0.21</version>
+      <version>2.0.22</version>
       <type>zip</type>
     </dependency>
   </dependencies>
