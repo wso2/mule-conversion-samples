@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<api context="/basic" name="DataHandlingBasics" xmlns="http://ws.apache.org/ns/synapse">
+<api context="/basic" name="Dataweave2Basics" xmlns="http://ws.apache.org/ns/synapse">
     <resource methods="GET" uri-template="/greet1">
         <inSequence>
             <payloadFactory media-type="text">
