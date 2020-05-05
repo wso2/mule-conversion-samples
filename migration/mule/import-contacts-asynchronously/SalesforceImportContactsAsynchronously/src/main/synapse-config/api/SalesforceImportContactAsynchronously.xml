@@ -2,7 +2,7 @@
 <api context="/salesforce" name="SalesforceImportContactAsynchronously" xmlns="http://ws.apache.org/ns/synapse">
     <resource methods="POST" uri-template="/importContactAsynchronously">
         <inSequence>
-            <propertyGroup>
+            <propertyGroup description="Capture Request Body Parameters as Properties">
                 <property expression="json-eval($.accessToken)" name="accessToken" scope="default" type="STRING"/>
                 <property expression="json-eval($.apiUrl)" name="apiUrl" scope="default" type="STRING"/>
                 <property expression="json-eval($.sObjectName)" name="sObjectName" scope="default" type="STRING"/>
@@ -32,27 +32,33 @@
                             <intervalTime>{$ctx:intervalTime}</intervalTime>
                             <blocking>{$ctx:blocking}</blocking>
                         </salesforcerest.init>
-                        <log level="full" separator=","/>
                         <fileconnector.read>
                             <source>{$ctx:source}</source>
                             <contentType>{$ctx:contentType}</contentType>
                             <filePattern>{$ctx:filePattern}</filePattern>
                         </fileconnector.read>
-                        <log level="full" separator=","/>
-                        <datamapper config="gov:datamapper/MapCSV.dmc" inputSchema="gov:datamapper/MapCSV_inputSchema.json" inputType="CSV" outputSchema="gov:datamapper/MapCSV_outputSchema.json" outputType="JSON" xsltStyleSheet="gov:datamapper/MapCSV_xsltStyleSheet.xml"/>
-                        <log level="full" separator=","/>
-                        <property expression="json-eval($.fieldAndValue)" name="fieldAndValue" scope="default" type="STRING"/>
+                        <log level="custom">
+                            <property name="Message" value="File is Read"/>
+                        </log>
+                        <datamapper config="gov:datamapper/MapCSV.dmc" description="Map CSV Data to Salesforce Input Schema" inputSchema="gov:datamapper/MapCSV_inputSchema.json" inputType="CSV" outputSchema="gov:datamapper/MapCSV_outputSchema.json" outputType="JSON" xsltStyleSheet="gov:datamapper/MapCSV_xsltStyleSheet.xml"/>
+                        <property description="Saved Mapped Body into Property" expression="json-eval($.fieldAndValue)" name="fieldAndValue" scope="default" type="STRING"/>
                         <salesforcerest.createMultipleRecords>
                             <sObjectName>{$ctx:sObjectName}</sObjectName>
                             <fieldAndValue>{$ctx:fieldAndValue}</fieldAndValue>
                         </salesforcerest.createMultipleRecords>
-                        <script language="js"><![CDATA[java.lang.Thread.sleep(20000);]]></script>
-                        <property name="conf:/resource/importContactStatus" scope="registry" type="STRING" value="Done"/>
+                        <log level="full">
+                            <property name="Message" value="Contacts have been created in SFDC: "/>
+                        </log>
+                        <script description="Wait for 20 sec" language="js"><![CDATA[java.lang.Thread.sleep(20000);]]></script>
+                        <log level="custom">
+                            <property name="Message" value="Migration has been Completed"/>
+                        </log>
+                        <property description="Set Status as Done" name="conf:/resource/importContactStatus" scope="registry" type="STRING" value="Done"/>
                     </sequence>
                 </target>
                 <target>
                     <sequence>
-                        <payloadFactory media-type="json">
+                        <payloadFactory description="Generate Response with Status" media-type="json">
                             <format>
 						      	"Job ID" : "$1"
 							</format>
@@ -60,7 +66,7 @@
                                 <arg evaluator="xml" expression="$ctx:MessageID"/>
                             </args>
                         </payloadFactory>
-                        <respond/>
+                        <respond description="Send the Response"/>
                     </sequence>
                 </target>
             </clone>
@@ -72,11 +78,11 @@
         <inSequence>
             <property expression="get-property('registry', 'conf:/resource/importContactStatus')" name="importContactStatus" scope="default" type="STRING"/>
             <payloadFactory media-type="json">
-                <format>
-			      	"Import Contact Status" : "$1"
+                <format>{"Import Contact Status" : "$1","Synchronization triggered at" : "$2"}
 			      </format>
                 <args>
                     <arg evaluator="xml" expression="$ctx:importContactStatus"/>
+                    <arg evaluator="xml" expression="get-property(&quot;SYSTEM_DATE&quot;, &quot;yyyy-MM-dd'T'HH:mm:ss.SSSXXX&quot;)"/>
                 </args>
             </payloadFactory>
             <respond/>
