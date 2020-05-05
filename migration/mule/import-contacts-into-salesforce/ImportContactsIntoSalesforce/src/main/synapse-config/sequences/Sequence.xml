@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="Sequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <fileconnector.read>
+        <source></source>
+        <contentType>text/plain</contentType>
+        <filePattern>.*.csv</filePattern>
+        <numberOfLinesToSkip>1</numberOfLinesToSkip>
+    </fileconnector.read>
+    <datamapper config="gov:datamapper/MapCSV.dmc" description="Map CSV to Contact" inputSchema="gov:datamapper/MapCSV_inputSchema.json" inputType="CSV" outputSchema="gov:datamapper/MapCSV_outputSchema.json" outputType="JSON" xsltStyleSheet="gov:datamapper/MapCSV_xsltStyleSheet.xml"/>
+    <property expression="json-eval($.fieldAndValue)" name="fieldAndValue" scope="default" type="STRING"/>
+    <property expression="json-eval($.sObject)" name="sObject" scope="default" type="STRING"/>
+    <salesforcerest.init>
+        <accessToken></accessToken>
+        <apiVersion>v44.0</apiVersion>
+        <hostName>https://login.salesforce.com</hostName>
+        <refreshToken></refreshToken>
+        <apiUrl></apiUrl>
+        <registryPath>connectors/SalesforceRest</registryPath>
+    </salesforcerest.init>
+    <salesforcerest.createMultipleRecords>
+        <sObjectName>{$ctx:sObject}</sObjectName>
+        <fieldAndValue>{$ctx:fieldAndValue}</fieldAndValue>
+    </salesforcerest.createMultipleRecords>
+    <log level="full"/>
+</sequence>

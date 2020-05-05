@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="Schedular" groupId="com.example.ImportContactsIntoSalesforce.task" version="1.0.0" type="synapse/task" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/tasks/Schedular.xml</file>
+    </artifact>
+    <artifact name="Sequence" groupId="com.example.ImportContactsIntoSalesforce.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/Sequence.xml</file>
+    </artifact>
+</artifacts>

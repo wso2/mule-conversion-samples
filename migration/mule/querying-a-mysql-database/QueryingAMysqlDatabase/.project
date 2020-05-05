@@ -7,6 +7,6 @@
 	<buildSpec>
 	</buildSpec>
 	<natures>
-		<nature>org.wso2.developerstudio.eclipse.ds.project.nature</nature>
+		<nature>org.wso2.developerstudio.eclipse.esb.project.nature</nature>
 	</natures>
 </projectDescription>

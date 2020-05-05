@@ -11,6 +11,10 @@ This document assumes that you are familiar with WSO2 EI and the [Integration St
 ### Example use case
 The XML data containing employee names is sent to the application using the HTTP POST method. The ForEach mediator then queries the MySQL DB individually for employee details. The result of each query is aggregated into a List. This List is then transformed to a CSV format and attached as a CSV file to an email which is sent using SMTP.
 
+<p align="center">
+  <img width="80%" src="../../../docs/assets/images/migration-mule/querying-a-db-and-attaching-results-to-an-email-use-case.png">
+</p>
+
 ### Set up and run the example
 
 1. Install the MySQL server.
@@ -29,7 +33,8 @@ The XML data containing employee names is sent to the application using the HTTP
 
 7. In the Import window select the **Existing WSO2 Projects into workspace** under **WSO2** folder.
 
-8. Browse and select the file path to the downloaded sample of this github project ("querying-a-db-and-attaching-results-to-an-email" folder of the downloaded github repository).
+8. Browse and select the file path to the downloaded sample of this github project ("querying-a-db-and-attaching-results-to-an-email" folder of the downloaded github repository).<br>
+    <img width="100%" src="../../../docs/assets/images/migration-mule/querying-a-db-and-attaching-results-to-an-email.png">
 
 9. Double-click the **DB Lookup** mediator and change the configuration according to your database configs.
 

@@ -20,7 +20,7 @@ In this example JSON data is sent to the application and then converted to the X
 
 3. In the Import window select the **Existing WSO2 Projects into workspace** under **WSO2** folder.
 
-4. Browse and select the file path to the downloaded sample of this github project ("upload-to-ftp-after-converting-json-to-xml" folder of the downloaded github repository).
+4. Browse and select the file path to the downloaded sample of this Github project (``integration-studio-examples/migration/mule/upload-to-ftp-after-converting-json-to-xml``) and click **Finish**.
 
 5. Lets add the file connector into the workspace. Right click on the **UploadToFtpAfterConvertingJsonToXml** and select **Add or Remove Connector**. Keep the **Add connector** option selected and click **Next>**. Search for 'file' using the search bar and click the download button located at the bottom right corner of the file connector. Click **Finish**.
 
@@ -31,7 +31,7 @@ In this example JSON data is sent to the application and then converted to the X
 
 8. Open HTTP Client in Integration Studio. Follow [HTTP Client Guidelines](../../../docs/common/adding-http-client-to-integration-studio.md) to open HTTP Client if the window is not visible in the interface.
 
-9. Make a POST request to `http://localhost:8290/upload` with following JSON message body, and setting the `Content-Type` header to `application/json`:
+9. Make a POST request to *http://localhost:8290/upload* with following JSON message body, and setting the `Content-Type` header to `application/json`:
     ```json
     {
         "employees": {
@@ -66,7 +66,6 @@ In this example JSON data is sent to the application and then converted to the X
                                 "zipCode": "333"
                             }
                         ]
-                    }
                 }
             ]
         }

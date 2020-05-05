@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions name="PatientService"
+	xmlns:mes="http://wso2.org/hospital-admission-service" 
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://wso2.org/hospital-admission-service/patient" 
+	xmlns:tns="http://wso2.org/hospital-admission-service/patient">
+	
+	<wsdl:types>
+		<xsd:schema>
+			<xsd:import namespace="http://wso2.org/hospital-admission-service" schemaLocation="xsd/SOA-Message-1.0.xsd" />
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="upsertPatient">
+		<wsdl:part element="mes:upsertPatient" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="upsertPatientResponse">
+		<wsdl:part element="mes:upsertPatientResponse" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="getPatient">
+		<wsdl:part element="mes:getPatient" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="getPatientResponse">
+		<wsdl:part element="mes:getPatientResponse" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="patientFault">
+		<wsdl:part element="mes:patientFault" name="fault" />
+	</wsdl:message>
+	<wsdl:portType name="Patient">
+		<wsdl:operation name="upsertPatient">
+			<wsdl:input message="tns:upsertPatient" />
+			<wsdl:output message="tns:upsertPatientResponse" />
+			<wsdl:fault name="patientFault" message="tns:patientFault" />
+		</wsdl:operation>
+		<wsdl:operation name="getPatient">
+			<wsdl:input message="tns:getPatient" />
+			<wsdl:output message="tns:getPatientResponse" />
+			<wsdl:fault name="patientFault" message="tns:patientFault" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="PatientSoap" type="tns:Patient">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="upsertPatient">
+			<soap:operation soapAction="http://wso2.org/hospital-admission-service/patient/upsertPatient" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="patientFault">
+				<soap:body use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getPatient">
+			<soap:operation soapAction="http://wso2.org/hospital-admission-service/patient/getPatient" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="patientFault">
+				<soap:body use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="PatientService">
+		<wsdl:port binding="tns:PatientSoap" name="PatientPort"/>
+	</wsdl:service>
+</wsdl:definitions>

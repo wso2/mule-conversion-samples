@@ -13,7 +13,7 @@ includesPath: "../docs/common"
 includesImagesPath: "../docs/assets/images/common"
 
 # Relative path to generated doc content. This is the directory structure for docs-ei repository
-readmeOutputPath: "en/micro-integrator/docs/references/mule-migration/examples"
-readmeImagesOutputPath: "en/micro-integrator/docs/assets/img/mule-migration"
-includesImagesOutputPath: "en/micro-integrator/docs/assets/img/mule-migration/common"
+readmeOutputPath: "en/micro-integrator/docs/references/mule-migration/migration-examples"
+readmeImagesOutputPath: "en/micro-integrator/docs/assets/img/migration-examples"
+includesImagesOutputPath: "en/micro-integrator/docs/assets/img/migration-examples/common"
 zipOutputPath: "en/micro-integrator/docs/assets/zip/mule-migration"

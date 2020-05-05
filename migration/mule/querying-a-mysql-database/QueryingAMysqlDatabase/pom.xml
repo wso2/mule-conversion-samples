@@ -99,18 +99,42 @@
         <configuration>
           <buildcommands />
           <projectnatures>
-            <projectnature>org.wso2.developerstudio.eclipse.ds.project.nature</projectnature>
+            <projectnature>org.wso2.developerstudio.eclipse.esb.project.nature</projectnature>
           </projectnatures>
         </configuration>
       </plugin>
       <plugin>
         <groupId>org.wso2.maven</groupId>
-        <artifactId>maven-dataservice-plugin</artifactId>
+        <artifactId>synapse-unit-test-maven-plugin</artifactId>
+        <version>5.2.17</version>
+        <executions>
+          <execution>
+            <id>synapse-unit-test</id>
+            <phase>test</phase>
+            <goals>
+              <goal>synapse-unit-test</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <server>
+            <testServerType>${testServerType}</testServerType>
+            <testServerHost>${testServerHost}</testServerHost>
+            <testServerPort>${testServerPort}</testServerPort>
+            <testServerPath>${testServerPath}</testServerPath>
+          </server>
+          <testCasesFilePath>${project.basedir}/test/${testFile}</testCasesFilePath>
+          <mavenTestSkip>${maven.test.skip}</mavenTestSkip>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.wso2.maven</groupId>
+        <artifactId>wso2-esb-api-plugin</artifactId>
         <version>2.1.0</version>
         <extensions>true</extensions>
         <executions>
           <execution>
-            <id>dataservice</id>
+            <id>api</id>
             <phase>process-resources</phase>
             <goals>
               <goal>pom-gen</goal>

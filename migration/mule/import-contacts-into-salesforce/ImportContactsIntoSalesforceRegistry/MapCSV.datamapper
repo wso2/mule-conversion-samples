@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datamapper:DataMapperRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:datamapper="http:///org/wso2/developerstudio/eclipse/gmf/datamapper">
+  <input>
+    <treeNode name="root" level="1">
+      <node name="id" schemaDataType="STRING" level="2">
+        <properties key="type" value="string"/>
+        <properties key="id" value="http://wso2jsonschema.org/0/id"/>
+        <properties key="nullable" value="false"/>
+        <outNode>
+          <outgoingLink inNode="//@output/@treeNode.0/@node.0/@node.0/@node.4/@node.1/@inNode"/>
+        </outNode>
+        <inNode/>
+      </node>
+      <node name="firstname" schemaDataType="STRING" level="2">
+        <properties key="type" value="string"/>
+        <properties key="id" value="http://wso2jsonschema.org/0/firstname"/>
+        <properties key="nullable" value="false"/>
+        <outNode>
+          <outgoingLink inNode="//@output/@treeNode.0/@node.0/@node.0/@node.0/@inNode"/>
+        </outNode>
+        <inNode/>
+      </node>
+      <node name="surname" schemaDataType="STRING" level="2">
+        <properties key="type" value="string"/>
+        <properties key="id" value="http://wso2jsonschema.org/0/surname"/>
+        <properties key="nullable" value="false"/>
+        <outNode>
+          <outgoingLink inNode="//@output/@treeNode.0/@node.0/@node.0/@node.1/@inNode"/>
+        </outNode>
+        <inNode/>
+      </node>
+      <node name="phone" schemaDataType="STRING" level="2">
+        <properties key="type" value="string"/>
+        <properties key="id" value="http://wso2jsonschema.org/0/phone"/>
+        <properties key="nullable" value="false"/>
+        <outNode>
+          <outgoingLink inNode="//@output/@treeNode.0/@node.0/@node.0/@node.3/@inNode"/>
+        </outNode>
+        <inNode/>
+      </node>
+      <node name="email" schemaDataType="STRING" level="2">
+        <properties key="type" value="string"/>
+        <properties key="id" value="http://wso2jsonschema.org/0/email"/>
+        <properties key="nullable" value="false"/>
+        <outNode>
+          <outgoingLink inNode="//@output/@treeNode.0/@node.0/@node.0/@node.2/@inNode"/>
+        </outNode>
+        <inNode/>
+      </node>
+      <properties key="type" value="array"/>
+      <properties key="$schema" value="http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#"/>
+      <properties key="id" value="http://wso2jsonschema.org"/>
+      <properties key="items_id" value="http://wso2jsonschema.org/0"/>
+      <properties key="items_type" value="object"/>
+      <properties key="nullable" value="false"/>
+      <outNode/>
+      <inNode/>
+    </treeNode>
+  </input>
+  <output>
+    <treeNode name="root" schemaDataType="OBJECT" level="1">
+      <node name="fieldAndValue" schemaDataType="OBJECT" level="2">
+        <node name="records" level="3">
+          <node name="FirstName" schemaDataType="STRING" level="4">
+            <properties key="type" value="string"/>
+            <properties key="id" value="http://wso2jsonschema.org/fieldAndValue/records/0/FirstName"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode incomingLink="//@input/@treeNode.0/@node.1/@outNode/@outgoingLink.0"/>
+          </node>
+          <node name="LastName" schemaDataType="STRING" level="4">
+            <properties key="type" value="string"/>
+            <properties key="id" value="http://wso2jsonschema.org/fieldAndValue/records/0/LastName"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode incomingLink="//@input/@treeNode.0/@node.2/@outNode/@outgoingLink.0"/>
+          </node>
+          <node name="Email" schemaDataType="STRING" level="4">
+            <properties key="type" value="string"/>
+            <properties key="id" value="http://wso2jsonschema.org/fieldAndValue/records/0/Email"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode incomingLink="//@input/@treeNode.0/@node.4/@outNode/@outgoingLink.0"/>
+          </node>
+          <node name="Phone" schemaDataType="STRING" level="4">
+            <properties key="type" value="string"/>
+            <properties key="id" value="http://wso2jsonschema.org/fieldAndValue/records/0/Phone"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode incomingLink="//@input/@treeNode.0/@node.3/@outNode/@outgoingLink.0"/>
+          </node>
+          <node name="attributes" schemaDataType="OBJECT" level="4">
+            <node name="type" schemaDataType="STRING" level="5">
+              <properties key="type" value="string"/>
+              <properties key="id" value="http://wso2jsonschema.org/fieldAndValue/records/0/attributes/type"/>
+              <properties key="nullable" value="false"/>
+              <outNode/>
+              <inNode incomingLink="//@operators.0/@basicContainer/@rightContainer/@rightConnectors.0/@outNode/@outgoingLink.0"/>
+            </node>
+            <node name="referenceId" schemaDataType="STRING" level="5">
+              <properties key="type" value="string"/>
+              <properties key="id" value="http://wso2jsonschema.org/fieldAndValue/records/0/attributes/referenceId"/>
+              <properties key="nullable" value="false"/>
+              <outNode/>
+              <inNode incomingLink="//@input/@treeNode.0/@node.0/@outNode/@outgoingLink.0"/>
+            </node>
+            <properties key="type" value="object"/>
+            <properties key="id" value="http://wso2jsonschema.org/fieldAndValue/records/0/attributes"/>
+            <properties key="nullable" value="false"/>
+            <properties key="properties_id" value="{type={id=http://wso2jsonschema.org/fieldAndValue/records/0/attributes/type, type=string}, referenceId={id=http://wso2jsonschema.org/fieldAndValue/records/0/attributes/referenceId, type=string}}"/>
+            <outNode/>
+            <inNode/>
+          </node>
+          <properties key="type" value="array"/>
+          <properties key="id" value="http://wso2jsonschema.org/fieldAndValue/records"/>
+          <properties key="items_id" value="http://wso2jsonschema.org/fieldAndValue/records/0"/>
+          <properties key="items_type" value="object"/>
+          <properties key="nullable" value="false"/>
+          <properties key="properties_id" value="{FirstName={id=http://wso2jsonschema.org/fieldAndValue/records/0/FirstName, type=string}, LastName={id=http://wso2jsonschema.org/fieldAndValue/records/0/LastName, type=string}, Email={id=http://wso2jsonschema.org/fieldAndValue/records/0/Email, type=string}, Phone={id=http://wso2jsonschema.org/fieldAndValue/records/0/Phone, type=string}, attributes={id=http://wso2jsonschema.org/fieldAndValue/records/0/attributes, type=object, properties={type={id=http://wso2jsonschema.org/fieldAndValue/records/0/attributes/type, type=string}, referenceId={id=http://wso2jsonschema.org/fieldAndValue/records/0/attributes/referenceId, type=string}}}}"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <properties key="type" value="object"/>
+        <properties key="id" value="http://wso2jsonschema.org/fieldAndValue"/>
+        <properties key="nullable" value="false"/>
+        <properties key="properties_id" value="{records={id=http://wso2jsonschema.org/fieldAndValue/records, type=array, items=[{id=http://wso2jsonschema.org/fieldAndValue/records/0, type=object, properties={FirstName={id=http://wso2jsonschema.org/fieldAndValue/records/0/FirstName, type=string}, LastName={id=http://wso2jsonschema.org/fieldAndValue/records/0/LastName, type=string}, Email={id=http://wso2jsonschema.org/fieldAndValue/records/0/Email, type=string}, Phone={id=http://wso2jsonschema.org/fieldAndValue/records/0/Phone, type=string}, attributes={id=http://wso2jsonschema.org/fieldAndValue/records/0/attributes, type=object, properties={type={id=http://wso2jsonschema.org/fieldAndValue/records/0/attributes/type, type=string}, referenceId={id=http://wso2jsonschema.org/fieldAndValue/records/0/attributes/referenceId, type=string}}}}}]}}"/>
+        <outNode/>
+        <inNode/>
+      </node>
+      <node name="sObject" schemaDataType="STRING" level="2">
+        <properties key="type" value="string"/>
+        <properties key="id" value="http://wso2jsonschema.org/sObject"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode incomingLink="//@operators.0/@basicContainer/@rightContainer/@rightConnectors.0/@outNode/@outgoingLink.1"/>
+      </node>
+      <properties key="type" value="object"/>
+      <properties key="$schema" value="http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#"/>
+      <properties key="id" value="http://wso2jsonschema.org"/>
+      <properties key="nullable" value="false"/>
+      <outNode/>
+      <inNode/>
+    </treeNode>
+  </output>
+  <operators xsi:type="datamapper:Constant" defaultOutputConnectors="2" operatorType="CONSTANT" constantValue="Contact">
+    <basicContainer>
+      <leftContainer/>
+      <rightContainer>
+        <rightConnectors>
+          <outNode>
+            <outgoingLink inNode="//@output/@treeNode.0/@node.0/@node.0/@node.4/@node.0/@inNode"/>
+            <outgoingLink inNode="//@output/@treeNode.0/@node.1/@inNode"/>
+          </outNode>
+        </rightConnectors>
+      </rightContainer>
+    </basicContainer>
+  </operators>
+</datamapper:DataMapperRoot>

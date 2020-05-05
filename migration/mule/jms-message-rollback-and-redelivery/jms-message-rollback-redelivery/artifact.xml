@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="jmsMessageRollbackAndRedelivery" groupId="com.example.jms-message-rollback-redelivery.inbound-endpoint" version="1.0.0" type="synapse/inbound-endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/inbound-endpoints/jmsMessageRollbackAndRedelivery.xml</file>
+    </artifact>
+    <artifact name="OnErrorPropagate" groupId="com.example.jms-message-rollback-redelivery.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/OnErrorPropagate.xml</file>
+    </artifact>
+    <artifact name="choice" groupId="com.example.jms-message-rollback-redelivery.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/choice.xml</file>
+    </artifact>
+</artifacts>

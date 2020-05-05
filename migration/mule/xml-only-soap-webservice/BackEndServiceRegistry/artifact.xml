@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="AdmissionService_wsdl" groupId="com.example.BackEndServiceRegistry.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+        <item>
+            <file>AdmissionService.wsdl</file>
+            <path>/_system/governance/backend</path>
+            <mediaType>application/wsdl+xml</mediaType>
+        </item>
+    </artifact>
+    <artifact name="EHRService_wsdl" groupId="com.example.BackEndServiceRegistry.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+        <item>
+            <file>EHRService.wsdl</file>
+            <path>/_system/governance/backend</path>
+            <mediaType>application/wsdl+xml</mediaType>
+        </item>
+    </artifact>
+    <artifact name="PatientService_wsdl" groupId="com.example.BackEndServiceRegistry.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+        <item>
+            <file>PatientService.wsdl</file>
+            <path>/_system/governance/backend</path>
+            <mediaType>application/wsdl+xml</mediaType>
+        </item>
+    </artifact>
+    <artifact name="SOA-Message-1.0_xsd" groupId="com.example.BackEndServiceRegistry.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+        <item>
+            <file>SOA-Message-1.0.xsd</file>
+            <path>/_system/governance/backend/xsd</path>
+            <mediaType>application/x-xsd+xml</mediaType>
+        </item>
+    </artifact>
+    <artifact name="SOA-Model-1.0_xsd" groupId="com.example.BackEndServiceRegistry.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+        <item>
+            <file>SOA-Model-1.0.xsd</file>
+            <path>/_system/governance/backend/xsd</path>
+            <mediaType>application/x-xsd+xml</mediaType>
+        </item>
+    </artifact>
+</artifacts>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="salesforcerest-connector" groupId="com.example.ImportContactsIntoSalesforce.lib" version="1.0.8" type="synapse/lib" serverRole="EnterpriseServiceBus">
+        <file>salesforcerest-connector-1.0.8.zip</file>
+    </artifact>
+    <artifact name="fileconnector-connector" groupId="com.example.ImportContactsIntoSalesforce.lib" version="2.0.21" type="synapse/lib" serverRole="EnterpriseServiceBus">
+        <file>fileconnector-connector-2.0.21.zip</file>
+    </artifact>
+</artifacts>

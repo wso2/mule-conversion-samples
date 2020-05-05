@@ -9,7 +9,11 @@ This document assumes that you are familiar with WSO2 EI and the [Integration St
 
 ### Example Use Case
 
-In this example, a CSV file containing sample sales data which is stored in the local directory is converted to the collection of Maps using the Data Mapper mediator and is sent to an email address using the MailTo transport. The Data Mapper mediator computes the total price for each order by multiplying the unit price with the number of units. 
+In this example, a CSV file containing sample sales data which is stored in the local directory is converted to the collection of Maps using the Data Mapper mediator and is sent to an email address using the MailTo transport. The Data Mapper mediator computes the total price for each order by multiplying the unit price with the number of units.
+
+<p align="center">
+  <img width="50%" src="../../../docs/assets/images/migration-mule/sending-a-csv-through-email-using-smtp-use-case.png">
+</p>
 
 ### Set Up and Run the Example
 
@@ -35,7 +39,8 @@ Follow the steps in this procedure to create and run this example in your own in
 
 10. In the design view of the  **FileReadingSequence.xml**, double click on the **Address Endpoint** under **Send Mediator** to access its properties view.
 
-11. In the **URI** text box, replace the email address after **mailto:** with the email address that you need to receive emails.
+11. In the **URI** text box, replace the email address after **mailto:** with the email address that you need to receive emails.<br>
+    <img width="70%" src="../../../docs/assets/images/migration-mule/sending-a-csv-through-email-using-smtp.png">
 
 12. Enable and configure **MailTo Transport** in Micro Integrator as explained [here](https://ei.docs.wso2.com/en/latest/micro-integrator/setup/transport_configurations/configuring-transports/#configuring-the-mailto-transport).
 
