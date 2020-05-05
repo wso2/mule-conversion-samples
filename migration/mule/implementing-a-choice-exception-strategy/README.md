@@ -44,6 +44,8 @@ The WSO2 Project reads a CSV file and returns exception messages for two types o
 		  "message": "Access to file denied"
 		}
 
+<!-- INCLUDE_MD: ../../../docs/common/get-the-code.md -->
+
 ### Go further
        
 * Read the documentation about handling exceptions [here](https://docs.wso2.com/display/EI660/Error+Handling).

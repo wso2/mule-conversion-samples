@@ -16,9 +16,7 @@ docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-manag
 
 In this example a message containing sample sales data in JSON is received through an HTTP API. This message is then sent to RabbitMQ using the RabbitMQ transport. Once this message reaches the queue, it can be viewed through he RabbitMQ web console.
 
-<p align="center">
-  <img width="60%" src="../../../docs/assets/images/migration-mule/sending-json-data-to-a-amqp-queue-use-case.png">
-</p>
+<img width="60%" src="../../../docs/assets/images/migration-mule/sending-json-data-to-a-amqp-queue-use-case.png">
 
 ## Set Up and Run the Example
 
@@ -26,10 +24,15 @@ In this example a message containing sample sales data in JSON is received throu
    ```
     http://localhost:15672
    ```
+
 2. Go to the **Exchanges** tab and click on **Add a new Exchange** to create an exchange called ***sales_exchange***. You may leave the other feilds as they are and then click on **Add exchange**.
+
 3. Now go to the **Queues** tab and click on Add a new queue to create a queue called ***sales_queue***. You may leave the other fields as they are and then click on **Add queue**.
+
 4. Click on **sales_exchange** under the **Exchanges** tab and then go to the section titled **Add binding from this exchange**. In the **To queue** field type in ***sales_queue*** and then click on **Bind**.
+
 5. Download WSO2 Integrator Studio binary distribution (platform independent) and extract it to a known location. 
+
 6. Navigate to <Product_HOME>/conf folder and open `deployment.toml` file. Edit it to enable `RabbitMQ Transport` and configure it. This configuration is globally applied. 
    ```
     [transport.rabbitmq]
@@ -42,18 +45,19 @@ In this example a message containing sample sales data in JSON is received throu
     parameter.username = "guest"
     parameter.password = "guest"
    ```
+
 7. Open the Example project in [Integration Studio](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/WSO2-Integration-Studio/). Note `RabbitMQEP` has connection details and other    information. Whatever information set at `deployment.toml` configuration can be overridden at the endpoint. 
     ```
     rabbitmq:/sales_queue?rabbitmq.server.host.name=localhost&rabbitmq.server.port=5672&rabbitmq.queue.name=sales_queue&rabbitmq.queue.route.key=sales_queue&rabbitmq.exchange.name=sales_exchange
     ```
-8. Open the **MessageReceiveAPI.xml** file in the **sending-json-data-to-a-amqp-queue/AMQPIntegrationProject/src/main/synapse-config/api/** directory. The **MessageReceiveAPI.xml** is the graphical view of the AMQP sample.
 
-<p align="center">
+8. Open the **MessageReceiveAPI.xml** file in the **sending-json-data-to-a-amqp-queue/AMQPIntegrationProject/src/main/synapse-config/api/** directory. The **MessageReceiveAPI.xml** is the graphical view of the AMQP sample.<br>
   <img width="60%" src="../../../docs/assets/images/migration-mule/sending-json-data-to-a-amqp-queue.png">
-</p>
 
 9. Right click `AMQPIntegrationProjectCompositeApplication` in **project explorer**  and choose **Export Composite Application Project**. Choose all the artifacts in the wizard and export CApp to <Product_HOME>/repository/deployment/server/carbonapps directory. 
+
 10. Start the WSO2 EI server by executing  micro-integrator.sh (or micro-integrator.bat if Windows) in <Product_HOME>/bin folder. 
+
 11. Make a HTTP POST request using Postman, curl or the Embedded HTTP4e Client to send the following JSON data:
 
     API Url:
@@ -64,7 +68,10 @@ In this example a message containing sample sales data in JSON is received throu
     ```
     { "ITEM_ID": 1, "ITEM_NAME": "Shirt", "QTY": 1, "PRICE": 20 }
     ```
+
 12. You will receive an `HTTP 202` response. Now, navigate back to the RabbbitMQ web admin console. You should notice an increase in the number of messages in ***sales_queue***. You may also **view  the message** by clicking on sales_queue in the **Get messages** option.
+
+<!-- INCLUDE_MD: ../../../docs/common/get-the-code.md -->
 
 ## Go Further
 

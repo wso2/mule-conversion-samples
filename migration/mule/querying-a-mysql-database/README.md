@@ -26,41 +26,55 @@ The datasource service instructs the database server to run the SQL query, retri
 converts the result to JSON. 
 
 ### Set Up and Run the Example
+
 1. Install the MySQL server.
+
 2. Download the JDBC driver for MySQL from [here](https://dev.mysql.com/downloads/connector/j/) and copy it to your 
 <MI_HOME>/lib directory.
+
 3. Start the MySQL server.
-4. Create the database
-```sql
-create database employees;
-```
-5. Create the table employee
-```sql
-create table employees (id int NOT NULL AUTO_INCREMENT, first_name varchar(100), last_name varchar(100), age int, PRIMARY KEY (id));
-```
+
+4. Create the database.
+    ```sql
+    create database employees;
+    ```
+
+5. Create the table employee.
+    ```sql
+    create table employees (id int NOT NULL AUTO_INCREMENT, first_name varchar(100), last_name varchar(100), age int, PRIMARY KEY (id));
+    ```
+
 6. Enter the following data into the table:
-```sql
-insert into employees(first_name,last_name,age) values("Chava", "Puckett", 28);
-insert into employees(first_name,last_name,age) values("Quentin", "Puckett", 28);
-```
+    ```sql
+    insert into employees(first_name,last_name,age) values("Chava", "Puckett", 28);
+    insert into employees(first_name,last_name,age) values("Quentin", "Puckett", 28);
+    ```
+
 7. Start WSO2 Integration Studio ([Installing WSO2 Integration Studio](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/installing-WSO2-Integration-Studio/)).
+
 8. In your menu in Studio, click the **File** menu. In the File menu select the **Import...** item.
+
 9. In the Import window select the **Existing WSO2 Projects into workspace** under **WSO2** folder.
-10. Browse and select the file path to the downloaded sample of this github project ("querying-a-mysql-database" folder 
-of the downloaded github repository).
+
+10. Browse and select the file path to the downloaded sample of this github project ("querying-a-mysql-database" folder of the downloaded github repository).
+
 11. Open the **RDBMSDataService.dbs** under **querying-a-mysql-database/QueryingAMysqlDatabase/dataservice** directory. 
-12. The **RDBMSDataService.dbs** is the graphical view of the datasource. Configure connection attributes : url, username,
-password.
-13. Run the sample by right click on the **QueryingAMysqlDatabaseProjectCompositeApplication** under the main 
-**querying-a-mysql-database** project and selecting **Export Project Artifacts and Run**.
+
+12. The **RDBMSDataService.dbs** is the graphical view of the datasource. Configure connection attributes : url, username,password.
+
+13. Run the sample by right click on the **QueryingAMysqlDatabaseProjectCompositeApplication** under the main **querying-a-mysql-database** project and selecting **Export Project Artifacts and Run**.
+
 14. Use REST Console or `curl` to make your request.<br/>
         Request URI: http://localhost:8290/services/RDBMSDataService/Employee/Puckett<br/>
         Request method: GET<br/>
         Headers : Accept=application/json<br/>
+
 15. You should get the following JSON response
-```json
-{"employees":{"employee":[{"first_name":"Chava"},{"first_name":"Quentin"}]}}
-```
+    ```json
+    {"employees":{"employee":[{"first_name":"Chava"},{"first_name":"Quentin"}]}}
+    ```
+
+<!-- INCLUDE_MD: ../../../docs/common/get-the-code.md -->
 
 ### Go Further
 

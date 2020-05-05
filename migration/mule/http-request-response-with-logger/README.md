@@ -5,59 +5,54 @@ parameters from the URL.
 
 ### Assumptions
 
-This document describes the details of the example within the context of WSO2 Integration Studio, WSO2 EI’s graphical 
-developer tool. This document assumes that you are familiar with WSO2 EI and the 
-[Integration Studio interface](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/WSO2-Integration-Studio/). To 
-increase your familiarity with Integration Studio, consider completing one or more 
-[WSO2 EI Tutorials](https://ei.docs.wso2.com/en/latest/micro-integrator/use-cases/integration-use-cases/).
+This document describes the details of the example within the context of WSO2 Integration Studio, WSO2 EI’s graphical developer tool. This document assumes that you are familiar with WSO2 EI and the [Integration Studio interface](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/WSO2-Integration-Studio/). To increase your familiarity with Integration Studio, consider completing one or more [WSO2 EI Tutorials](https://ei.docs.wso2.com/en/latest/micro-integrator/use-cases/integration-use-cases/).
 
 ## Example Use Case
 
 In this example, a user calls the EI application by submitting a request. (i.e., entering a specific URL: http://localhost:8084/echo). 
+
 The application receives the request, sets the request path as the payload, and returns the payload to the end user. 
-In other words, when a user types `http://localhost:8084/echo` in address bar of a browser, application returns with
-`/echo` and if the user changes the url to `http://localhost:8084/moon`, application responds with `/moon`.
+
+In other words, when a user types `http://localhost:8084/echo` in address bar of a browser, application returns with `/echo` and if the user changes the url to `http://localhost:8084/moon`, application responds with `/moon`.
 
 There are two functions that the HTTP Request-Response with Logger example application illustrates:
 1. Receiving HTTP requests and returning HTTP responses
 2. Logging the payload
 
-<p align="center">
-  <img width="60%" src="../../../docs/assets/images/migration-mule/http-request-response-with-logger-use-case.png">
-</p>
+<img width="60%" src="../../../docs/assets/images/migration-mule/http-request-response-with-logger-use-case.png">
 
 ### Set Up and Run the Example
 
 1. Start WSO2 Integration Studio ([Installing WSO2 Integration Studio](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/installing-WSO2-Integration-Studio/)).
-2. In your menu in Studio, click the **File** menu. In the File menu select the **Import...** item.
-3. In the Import window select the **Existing WSO2 Projects into workspace** under **WSO2** folder.
-4. Browse and select the file path to the downloaded sample of this Github project
-(``integration-studio-examples/migration/mule/http-request-response-with-logger``) and click **Finish**.
-5. Open the **HttpRequestResponseWithLogger.xml** under **http-request-response-with-logger/HttpRequestResponseWithLogger/src/main/synapse-config/api/HttpRequestResponseWithLoggerAPI.xml** directory.
 
-<p align="center">
-  <img width="60%" src="../../../docs/assets/images/migration-mule/http-request-response-with-logger.png">
-</p>
+2. In your menu in Studio, click the **File** menu. In the File menu select the **Import...** item.
+
+3. In the Import window select the **Existing WSO2 Projects into workspace** under **WSO2** folder.
+
+4. Browse and select the file path to the downloaded sample of this Github project (``integration-studio-examples/migration/mule/http-request-response-with-logger``) and click **Finish**.
+
+5. Open the **HttpRequestResponseWithLogger.xml** under **http-request-response-with-logger/HttpRequestResponseWithLogger/src/main/synapse-config/api/HttpRequestResponseWithLoggerAPI.xml** directory.<br>
+    <img width="60%" src="../../../docs/assets/images/migration-mule/http-request-response-with-logger.png">
 
 6. The **HttpRequestResponseWithLoggerAPI.xml** is the graphical view of the simple http-request-response-with-logger service.
+
 7. Run the sample by right click on the **HttpRequestResponseWithLoggerCompositeApplication** under the main **http-request-response-with-logger** project and selecting **Export Project Artifacts and Run**.
-8. Open HTTP Client in Integration Studio. Follow [HTTP Client Guidelines](../../../docs/common/adding-http-client-to-integration-studio.md)
-to open HTTP Client if the window is not visible in the interface.
+
+8. Open HTTP Client in Integration Studio. Follow [HTTP Client Guidelines](../../../docs/common/adding-http-client-to-integration-studio.md) to open HTTP Client if the window is not visible in the interface.
+
 9. Make a GET request to *http://localhost:8290/api/echo*. Application presents a message that reads `/echo`.
+
 10. Now replace the word `echo` with the word `moon`, and execute. The application responds with `/moon`.
 
 ### How it Works
 
-This example consists a simple [Synapse API](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/creating-artifacts/creating-an-api/) 
-that accept a HTTP request and read the postfix of the URL. Log mediator used to log the URL prefix and [Payload factory](https://ei.docs.wso2.com/en/latest/micro-integrator/references/mediators/payloadFactory-Mediator/) mediator
-to set the payload.
+This example consists a simple [Synapse API](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/creating-artifacts/creating-an-api/) that accept a HTTP request and read the postfix of the URL. Log mediator used to log the URL prefix and [Payload factory](https://ei.docs.wso2.com/en/latest/micro-integrator/references/mediators/payloadFactory-Mediator/) mediator to set the payload.
 
-After opening the Integration project, there are two projects under the http-request-response-with-logger main project. 
-First project (named as "HttpRequestResponseWithLogger") is the WSO2 Integration Project where all the integration 
-use-case related files are stored. Second one is the "HttpRequestResponseWithLoggerCompositeApplication", which is 
-used as the Packaging and exporting artifact to the server runtime.
+After opening the Integration project, there are two projects under the http-request-response-with-logger main project. First project (named as "HttpRequestResponseWithLogger") is the WSO2 Integration Project where all the integration use-case related files are stored. Second one is the "HttpRequestResponseWithLoggerCompositeApplication", which is used as the Packaging and exporting artifact to the server runtime.
 
 You can run **Composite Application** using WSO2 Enterprise Integrator server runtime.
+
+<!-- INCLUDE_MD: ../../../docs/common/get-the-code.md -->
 
 ### Go Further
 
