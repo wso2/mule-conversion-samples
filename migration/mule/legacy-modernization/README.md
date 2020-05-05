@@ -59,13 +59,14 @@ search bar and click the download button located at the bottom right corner of t
 7. Update the fileConnector.append/destination parameter in 
 **legacy-modernization/legacyModernization/src/main/synapse-config/api/WriteToFile.xml** to the new location of the 
 copied file in your computer. (By default it is set as **/Users/WSO2User/CSVOutput.csv**)
-8. Run the sample by right clicking on the **legacyModernizationCompositeApplication** project and selecting **Run as -> 
+8. Save the modifications by pressing ctrl+s
+9. Run the sample by right clicking on the **legacyModernizationCompositeApplication** project and selecting **Run as -> 
 Run On Micro Integrator**. (Make sure to select legacyModernization, LegacyModernizationFileConnectorExporter, 
 legacyModernizationRegistry while creating the car app during this step prompt wizard)
-9. Now go back to the SoapUI to send the soap request
-10. Click the submit request icon (green "play" button at upper left) to submit the request to the EI application 
+10. Now go back to the SoapUI to send the soap request
+12. Click the submit request icon (green "play" button at upper left) to submit the request to the EI application 
 (see below, left). soapUI displays the response from the EI application in the response pane (see below, right).
-11. Review the contents of the SOAP response, to examine the details of your processed request. Note, in particular, 
+12. Review the contents of the SOAP response, to examine the details of your processed request. Note, in particular, 
 the orderReceivedStatus with the value "true". The entire response in raw format will be as follows.
 
 ```xml
@@ -78,7 +79,7 @@ the orderReceivedStatus with the value "true". The entire response in raw format
    </soapenv:Body>
 </soapenv:Envelope>
 ```
-12. Navigate to the **CSVOutput.csv** file in your computer and open it. You can see the following content added in it.
+13. Navigate to the **CSVOutput.csv** file in your computer and open it. You can see the following content added in it.
 
 ```
 1234.0,500.0,1.99,WSO2,100 Geary St Level 4,San Francisco,CA,USA,94108.0,WSO2,100 Geary St Level 4,San Francisco,CA,USA,94108.0,1234.0
