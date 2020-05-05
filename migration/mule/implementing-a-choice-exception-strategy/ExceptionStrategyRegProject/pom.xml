@@ -2,12 +2,12 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.example.ImplementingAChoiceExceptionStrategy</groupId>
-  <artifactId>ImplementingAChoiceExceptionStrategyRegistry</artifactId>
+  <groupId>com.example.ExceptionStrategyRegProject</groupId>
+  <artifactId>ExceptionStrategyRegProject</artifactId>
   <version>1.0.0</version>
   <packaging>pom</packaging>
-  <name>ImplementingAChoiceExceptionStrategyRegistry</name>
-  <description>ImplementingAChoiceExceptionStrategyRegistry</description>
+  <name>ExceptionStrategyRegProject</name>
+  <description>ExceptionStrategyRegProject</description>
   <properties>
     <maven.test.skip>false</maven.test.skip>
     <CApp.type>bpel/workflow=zip,lib/registry/filter=jar,webapp/jaxws=war,lib/library/bundle=jar,service/dataservice=dbs,synapse/local-entry=xml,synapse/proxy-service=xml,carbon/application=car,registry/resource=zip,lib/dataservice/validator=jar,synapse/endpoint=xml,web/application=war,lib/carbon/ui=jar,service/axis2=aar,synapse/sequence=xml,event/stream=json,event/publisher=xml,event/receiver=xml,event/execution-plan=siddhiql,synapse/configuration=xml,wso2/gadget=dar,lib/registry/handlers=jar,lib/synapse/mediator=jar</CApp.type>

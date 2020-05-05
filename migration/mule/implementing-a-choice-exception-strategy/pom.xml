@@ -9,10 +9,8 @@
   <name>implementing-a-choice-exception-strategy</name>
   <description>implementing-a-choice-exception-strategy</description>
   <modules>
-    <module>ImplementingAChoiceExceptionStrategy</module>
-    <module>ImplementingAChoiceExceptionStrategyRegistry</module>
-    <module>ImplementingAChoiceExceptionStrategyConnectorExporter</module>
-    <module>ImplementingAChoiceExceptionStrategyCompositeApplication</module>
+    <module>ExceptionStrategyRegProject</module>
+    <module>ExceptionStrategyCompositeApplication</module>
   </modules>
   <build>
     <plugins>
