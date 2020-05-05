@@ -1,0 +1,59 @@
+{
+  "$schema" : "http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#",
+  "outputType" : "JSON",
+  "id" : "http://wso2jsonschema.org",
+  "title" : "root",
+  "type" : "object",
+  "properties" : {
+    "fieldAndValue" : {
+      "id" : "http://wso2jsonschema.org/fieldAndValue",
+      "type" : "object",
+      "properties" : {
+        "records" : {
+          "id" : "http://wso2jsonschema.org/fieldAndValue/records",
+          "type" : "array",
+          "items" : [ {
+            "id" : "http://wso2jsonschema.org/fieldAndValue/records/0",
+            "type" : "object",
+            "properties" : {
+              "FirstName" : {
+                "id" : "http://wso2jsonschema.org/fieldAndValue/records/0/FirstName",
+                "type" : "string"
+              },
+              "LastName" : {
+                "id" : "http://wso2jsonschema.org/fieldAndValue/records/0/LastName",
+                "type" : "string"
+              },
+              "Email" : {
+                "id" : "http://wso2jsonschema.org/fieldAndValue/records/0/Email",
+                "type" : "string"
+              },
+              "Phone" : {
+                "id" : "http://wso2jsonschema.org/fieldAndValue/records/0/Phone",
+                "type" : "string"
+              },
+              "attributes" : {
+                "id" : "http://wso2jsonschema.org/fieldAndValue/records/0/attributes",
+                "type" : "object",
+                "properties" : {
+                  "type" : {
+                    "id" : "http://wso2jsonschema.org/fieldAndValue/records/0/attributes/type",
+                    "type" : "string"
+                  },
+                  "referenceId" : {
+                    "id" : "http://wso2jsonschema.org/fieldAndValue/records/0/attributes/referenceId",
+                    "type" : "string"
+                  }
+                }
+              }
+            }
+          } ]
+        }
+      }
+    },
+    "sObject" : {
+      "id" : "http://wso2jsonschema.org/sObject",
+      "type" : "string"
+    }
+  }
+}
