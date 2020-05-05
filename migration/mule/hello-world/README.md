@@ -4,40 +4,37 @@ This application demonstrates a simple HTTP request-response activity. WSO2 EI r
 
 ### Assumption
 
-This document describes the details of the example within the context of WSO2 Integration Studio, WSO2 EI’s graphical 
-developer tool. This document assumes that you are familiar with WSO2 EI and the 
-[Integration Studio interface](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/WSO2-Integration-Studio/). To 
-increase your familiarity with Integration Studio, consider completing one or more 
-[WSO2 EI Tutorials](https://ei.docs.wso2.com/en/latest/micro-integrator/use-cases/integration-use-cases/).
+This document describes the details of the example within the context of WSO2 Integration Studio, WSO2 EI’s graphical developer tool. This document assumes that you are familiar with WSO2 EI and the [Integration Studio interface](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/WSO2-Integration-Studio/). To increase your familiarity with Integration Studio, consider completing one or more [WSO2 EI Tutorials](https://ei.docs.wso2.com/en/latest/micro-integrator/use-cases/integration-use-cases/).
 
 ### Example Use Case
 
 In this example a simple Hello World payload will be created using [PayloadFactory Mediator](https://ei.docs.wso2.com/en/latest/micro-integrator/references/mediators/payloadFactory-Mediator/).
 
-<p align="center">
-  <img width="50%" src="../../../docs/assets/images/migration-mule/hello-world-use-case.png">
-</p>
+<img width="50%" src="../../../docs/assets/images/migration-mule/hello-world-use-case.png">
 
 ### Set Up and Run the Example
 
 1. Start WSO2 Integration Studio ([Installing WSO2 Integration Studio](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/installing-WSO2-Integration-Studio/)).
-2. In your menu in Studio, click the **File** menu. In the File menu select the **Import...** item.
-3. In the Import window select the **Existing WSO2 Projects into workspace** under **WSO2** folder.
-4. Browse and select the file path to the downloaded sample of this Github project
-(``integration-studio-examples/migration/mule/hello-world``) and click **Finish**.
-5. Open the **HelloWorld.xml** under **hello-world/HelloWorld/src/main/synapse-config/api/HelloWorld.xml** directory.
 
-<p align="center">
-  <img width="60%" src="../../../docs/assets/images/migration-mule/hello-world.png">
-</p>
+2. In your menu in Studio, click the **File** menu. In the File menu select the **Import...** item.
+
+3. In the Import window select the **Existing WSO2 Projects into workspace** under **WSO2** folder.
+
+4. Browse and select the file path to the downloaded sample of this Github project (``integration-studio-examples/migration/mule/hello-world``) and click **Finish**.
+
+5. Open the **HelloWorld.xml** under **hello-world/HelloWorld/src/main/synapse-config/api/HelloWorld.xml** directory.<br>
+    <img width="60%" src="../../../docs/assets/images/migration-mule/hello-world.png">
 
 6. The **HelloWorld.xml** is the graphical view of the simple hello world service.
+
 7. Run the sample by right click on the **HelloWorldCompositeApplication** under the main **hello-world** project and selecting **Export Project Artifacts and Run**.
-8. Open HTTP Client in Integration Studio. Follow [HTTP Client Guidelines](../../../docs/common/adding-http-client-to-integration-studio.md)
-to open HTTP Client if the window is not visible in the interface.
+
+8. Open HTTP Client in Integration Studio. Follow [HTTP Client Guidelines](../../../docs/common/adding-http-client-to-integration-studio.md) to open HTTP Client if the window is not visible in the interface.
+
 9. Make a GET request to `http://localhost:8290/helloworld`.
 
 ### How it Works
+
 The Hello World example consists of one simple [Synapse API](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/creating-artifacts/creating-an-api/). This Synapse API accepts an HTTP request, sets a static payload on the message, then returns a response to the end user.
 
 As the name suggests, the [Payload Factory](https://ei.docs.wso2.com/en/latest/micro-integrator/references/mediators/payloadFactory-Mediator/) sets a value in the message payload. In this example, the value utilizes a WSO2 expression to set a static string on the payload. 

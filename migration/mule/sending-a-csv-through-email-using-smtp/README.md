@@ -20,22 +20,27 @@ In this example, a CSV file containing sample sales data which is stored in the 
 Follow the steps in this procedure to create and run this example in your own instance of Integration Studio. You can create template applications straight out of the box in Integration Studio and tweak the configurations of the use case-based templates to create your own customized applications in WSO2 Integrator.
 
 1. Start WSO2 Integration Studio ([Installing WSO2 Integration Studio](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/installing-WSO2-Integration-Studio/)).
-2. In your menu in Studio, click the **File** menu. In the File menu select the **Import...** item.
-3. In the Import window select the **Existing WSO2 Projects into workspace** under **WSO2** folder.
-4. Browse and select the file path to the downloaded sample of this github project ("sending-a-csv-file-through-email-using-smtp" folder of the 
-downloaded github repository).
-5. Copy the **input.csv** under **sending-a-csv-file-through-email-using-smtp/SendingACsvThroughEmailUsingSmtp/src/test/resources** in to any location in your file system.
-6. Open the **FileReadingSequence.xml** under **sending-a-csv-file-through-email-using-smtp/SendingACsvThroughEmailUsingSmtp/src/main/synapse-config/sequences** 
-directory. 
-7. Double click on the **File mediator** to access its property view. 
-8. In the property view under **Connector Parameters** double click on **Call Template Parameter - source**.
-9. In the popup window, replace the value of  **Parameter Value** text box with the path of the **input.csv** that you copied in step 5, and click Finish.
-10. In the design view of the  **FileReadingSequence.xml**, double click on the **Address Endpoint** under **Send Mediator** to access its properties view.
-11. In the **URI** text box, replace the email address after **mailto:** with the email address that you need to receive emails.
 
-<p align="center">
-  <img width="70%" src="../../../docs/assets/images/migration-mule/sending-a-csv-through-email-using-smtp.png">
-</p>
+2. In your menu in Studio, click the **File** menu. In the File menu select the **Import...** item.
+
+3. In the Import window select the **Existing WSO2 Projects into workspace** under **WSO2** folder.
+
+4. Browse and select the file path to the downloaded sample of this github project ("sending-a-csv-file-through-email-using-smtp" folder of the downloaded github repository).
+
+5. Copy the **input.csv** under **sending-a-csv-file-through-email-using-smtp/SendingACsvThroughEmailUsingSmtp/src/test/resources** in to any location in your file system.
+
+6. Open the **FileReadingSequence.xml** under **sending-a-csv-file-through-email-using-smtp/SendingACsvThroughEmailUsingSmtp/src/main/synapse-config/sequences** directory. 
+
+7. Double click on the **File mediator** to access its property view. 
+
+8. In the property view under **Connector Parameters** double click on **Call Template Parameter - source**.
+
+9. In the popup window, replace the value of  **Parameter Value** text box with the path of the **input.csv** that you copied in step 5, and click Finish.
+
+10. In the design view of the  **FileReadingSequence.xml**, double click on the **Address Endpoint** under **Send Mediator** to access its properties view.
+
+11. In the **URI** text box, replace the email address after **mailto:** with the email address that you need to receive emails.<br>
+    <img width="70%" src="../../../docs/assets/images/migration-mule/sending-a-csv-through-email-using-smtp.png">
 
 12. Enable and configure **MailTo Transport** in Micro Integrator as explained [here](https://ei.docs.wso2.com/en/latest/micro-integrator/setup/transport_configurations/configuring-transports/#configuring-the-mailto-transport).
 
@@ -60,10 +65,10 @@ directory.
 		  }
 		]
 
+<!-- INCLUDE_MD: ../../../docs/common/get-the-code.md -->
+
 ### Go Further
 
 * Read about MailTo Transport [here](https://ei.docs.wso2.com/en/latest/micro-integrator/references/synapse-properties/transport-parameters/mailto-transport-parameters/)
-
 * Read about File Connector [here](https://docs.wso2.com/display/ESBCONNECTORS/File+Connector)
-
 * Read about Data Mapper mediator [here](https://ei.docs.wso2.com/en/latest/micro-integrator/references/mediators/data-Mapper-Mediator/)

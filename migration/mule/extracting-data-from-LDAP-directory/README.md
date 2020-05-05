@@ -11,19 +11,13 @@ open source projects.
 
 ### Assumption
 
-This document describes the details of the example within the context of **WSO2 Integration Studio**, WSO2 EI’s graphical 
-user interface (GUI). This document assumes that you are familiar with WSO2 EI and the 
-[Integration Studio interface](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/WSO2-Integration-Studio/). To 
-increase your familiarity with Integration Studio, consider completing one or more 
-[WSO2 EI Tutorials](https://ei.docs.wso2.com/en/latest/micro-integrator/use-cases/integration-use-cases/).
+This document describes the details of the example within the context of **WSO2 Integration Studio**, WSO2 EI’s graphical user interface (GUI). This document assumes that you are familiar with WSO2 EI and the [Integration Studio interface](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/WSO2-Integration-Studio/). To increase your familiarity with Integration Studio, consider completing one or more [WSO2 EI Tutorials](https://ei.docs.wso2.com/en/latest/micro-integrator/use-cases/integration-use-cases/).
 
 ### Example Use Case
 
 The example application connects to an LDAP directory and retrieves a list of LDAP users.
 
-<p align="center">
-  <img width="60%" src="../../../docs/assets/images/migration-mule/extracting-data-from-LDAP-directory-use-case.png">
-</p>
+<img width="60%" src="../../../docs/assets/images/migration-mule/extracting-data-from-LDAP-directory-use-case.png">
 
 ### Set Up and Run the Example 
 
@@ -33,33 +27,27 @@ The example application connects to an LDAP directory and retrieves a list of LD
    
 2. Install Apache Directory Studio from [http://directory.apache.org/studio/downloads.html](http://directory.apache.org/studio/downloads.html).
  
-3. Navigate to `etc\openldap\slapd.conf` in your OpenLDAP installation directory and set `rootpw` in the 
-**BDB database definitions** section to `root`. You might also need to encrypt the password by using the following 
-command before adding it to the `slapd.conf` file:
-		
-		slappasswd -h {SHA} -s <password>
+3. Navigate to `etc\openldap\slapd.conf` in your OpenLDAP installation directory and set `rootpw` in the **BDB database definitions** section to `root`. You might also need to encrypt the password by using the following command before adding it to the `slapd.conf` file:
+	```	
+	slappasswd -h {SHA} -s <password>
+    ```
    
 4. Start the LDAP server
    * For Windows: Enter `libexec\StartLDAP.cmd` at a command line.
    * For MacOS: Enter `sudo /usr/libexec/slapd -d 255`.
     
 5. Start Apache Directory Studio and create a new connection by selecting **File > New ... > LDAP Connection**. Use these settings:
+	* name: local LDAP
+	* hostname: localhost
+	* port: 389
 
-		name		local LDAP
-		hostname	localhost
-		port		389
-
-6. Click **Check network parameter**. If the test is not successful, your LDAP server is not running. If the test is 
-successful, click **Next**.
+6. Click **Check network parameter**. If the test is not successful, your LDAP server is not running. If the test is successful, click **Next**.
 	
-7. Set **Bind dn or user** to `cn=Manager,dc=my-domain,dc=com` and **Bind password** to `root`. Click 
-**Check Authentication** to verify the connection. Click **Finish**.
+7. Set **Bind dn or user** to `cn=Manager,dc=my-domain,dc=com` and **Bind password** to `root`. Click **Check Authentication** to verify the connection. Click **Finish**.
 
 8. Click **File > Import... > LDIF into LDAP** and then click **Next**. 
 
-9. Set the path to `ldap.ldif`, which is located in the `resources` directory of this project (`integration-studio-examples/migration/mule/extracting-data-from-LDAP-directory/resources/ldap.ldif`).
-Set **Import into** to `local LDAP`. Click **Finish** to finish the import process. If you click **ROOT DSE** in the panel 
-**LDAP browser**, you should see the imported data structure.
+9. Set the path to `ldap.ldif`, which is located in the `resources` directory of this project (`integration-studio-examples/migration/mule/extracting-data-from-LDAP-directory/resources/ldap.ldif`). Set **Import into** to `local LDAP`. Click **Finish** to finish the import process. If you click **ROOT DSE** in the panel **LDAP browser**, you should see the imported data structure.
 
 10. Start WSO2 Integration Studio ([Installing WSO2 Integration Studio](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/installing-WSO2-Integration-Studio/)).
 
@@ -67,31 +55,20 @@ Set **Import into** to `local LDAP`. Click **Finish** to finish the import proce
 
 12. In the Import window select the **Existing WSO2 Projects into workspace** under **WSO2** folder.
 
-13. Browse and select the file path to the downloaded sample of this Github project
-(`integration-studio-examples/migration/mule/extracting-data-from-LDAP-directory`) and click **Finish**.
+13. Browse and select the file path to the downloaded sample of this Github project (`integration-studio-examples/migration/mule/extracting-data-from-LDAP-directory`) and click **Finish**.
 
-14. Lets add the ldap connector into the workspace. Right click on **ExtractingDataFromLdapDirectory** and select 
-**Add or Remove Connector**. In the **Add or Remove Connectors** window, select **Add connector** option and click 
-**Next>**. Type `ldap` on the search bar of the WSO2 Connector Store. Click on download symbol and ldap connector will 
-be downloaded form the store. Now click **Finish**.
+14. Lets add the ldap connector into the workspace. Right click on **ExtractingDataFromLdapDirectory** and select **Add or Remove Connector**. In the **Add or Remove Connectors** window, select **Add connector** option and click **Next>**. Type `ldap` on the search bar of the WSO2 Connector Store. Click on download symbol and ldap connector will be downloaded form the store. Now click **Finish**.
 
-15. Open the **ExtractingDataFromLdapDirectory.xml** under 
-**extracting-data-from-LDAP-directory/ExtractingDataFromLdapDirectory/src/main/synapse-config/api** directory and specify 
-following values.
+15. Open the **ExtractingDataFromLdapDirectory.xml** under **extracting-data-from-LDAP-directory/ExtractingDataFromLdapDirectory/src/main/synapse-config/api** directory and specify following values.
 
-		URL 			ldap://localhost:389/dc=my-domain,dc=com
-		Principal DN    	cn=Manager,dc=my-domain,dc=com
-		Password		root
+	* URL: ldap://localhost:389/dc=my-domain,dc=com
+	* Principal DN: cn=Manager,dc=my-domain,dc=com
+	* Password: root<br>
+    <img width="60%" src="../../../docs/assets/images/migration-mule/extracting-data-from-LDAP-directory.png">
 
-<p align="center">
-  <img width="60%" src="../../../docs/assets/images/migration-mule/extracting-data-from-LDAP-directory.png">
-</p>
+16. Run the sample by right click on the **ExtractingDataFromLdapDirectoryCompositeApplication** under the main **extracting-data-from-LDAP-directory** project and selecting **Export Project Artifacts and Run**.
 
-16. Run the sample by right click on the **ExtractingDataFromLdapDirectoryCompositeApplication** under the main 
-**extracting-data-from-LDAP-directory** project and selecting **Export Project Artifacts and Run**.
-
-17. Open HTTP Client in Integration Studio. Follow [HTTP Client Guidelines](../../../docs/common/adding-http-client-to-integration-studio.md) 
-to open HTTP Client if the window is not visible in the interface.
+17. Open HTTP Client in Integration Studio. Follow [HTTP Client Guidelines](../../../docs/common/adding-http-client-to-integration-studio.md) to open HTTP Client if the window is not visible in the interface.
 
 18. Make a GET request to `http://localhost:8290/extract`.
 
@@ -130,3 +107,4 @@ You should see three user records in response:
     }
 ]
 ```
+<!-- INCLUDE_MD: ../../../docs/common/get-the-code.md -->

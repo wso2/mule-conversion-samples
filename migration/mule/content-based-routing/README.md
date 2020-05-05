@@ -2,20 +2,19 @@
 
 You can look through and run this example application to learn the basics of using Integration Studio to route messages in a flow by using a *Switch* mediator.
 
-<p align="center">
-  <img width="60%" src="../../../docs/assets/images/migration-mule/content-based-routing-use-case.png">
-</p>
+<img width="60%" src="../../../docs/assets/images/migration-mule/content-based-routing-use-case.png">
+
 
 This example application performs the following actions:
 
 1. Listens for messages.
-1. Passes messages to a *Property* mediator that sets the property `language` to the language that is passed in the message by the parameter `language`.
-1. Uses a  *Switch* mediator to find out whether each message contains a `language` attribute. The presence and value of this attribute determine how the *Switch* mediator routes the message:
 
+1. Passes messages to a *Property* mediator that sets the property `language` to the language that is passed in the message by the parameter `language`.
+
+1. Uses a  *Switch* mediator to find out whether each message contains a `language` attribute. The presence and value of this attribute determine how the *Switch* mediator routes the message:
   - If the value is `French`, the router routes the message to a *PayloadFactory* component that is named *Reply in French*. This latter component returns the message `Bonjour!` to the requester.
   - If the value is `Spanish`, the router routes the message to a *PayloadFactory* component that is named *Reply in Spanish*. This latter component returns the message `Hola!` to the requester.
   - If the message contains no `language` attribute, the switch routes the message to the default path, which is a sequence that:
-
     1. Logs the message "No language specified. Using English as a default." to the console
     1. Sets the value of `language` to `English`.
     1. Returns the message `Hello!`.
@@ -29,24 +28,22 @@ This example demonstrates that, when you are planning to route messages in a flo
 
 ### Assumptions
 
-This document describes the details of the example within the context of WSO2 Integration Studio, WSO2 EI’s graphical 
-developer tool. This document assumes that you are familiar with WSO2 EI and the 
-[Integration Studio interface](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/WSO2-Integration-Studio/). To 
-increase your familiarity with Integration Studio, consider completing one or more 
-[WSO2 EI Tutorials](https://ei.docs.wso2.com/en/latest/micro-integrator/use-cases/integration-use-cases/).
+This document describes the details of the example within the context of WSO2 Integration Studio, WSO2 EI’s graphical developer tool. This document assumes that you are familiar with WSO2 EI and the [Integration Studio interface](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/WSO2-Integration-Studio/). To increase your familiarity with Integration Studio, consider completing one or more [WSO2 EI Tutorials](https://ei.docs.wso2.com/en/latest/micro-integrator/use-cases/integration-use-cases/).
 
 ### Set Up and Run the Example
 
 1. Start WSO2 Integration Studio ([Installing WSO2 Integration Studio](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/installing-WSO2-Integration-Studio/)).
-2. In your menu in Studio, click the **File** menu. In the File menu select the **Import...** item.
-3. In the Import window select the **Existing WSO2 Projects into workspace** under **WSO2** folder.
-4. Browse and select the file path to the downloaded sample of this github project ("content-based-routing" folder of the downloaded github repository).
-5. Open the **ContentBasedRoutingAPI.xml** under **content-based-routing/ContentBasedRouting/src/main/synapse-config/api/ContentBasedRoutingAPI.xml** directory. 
-6. The **ContentBasedRoutingAPI.xml** is the graphical view of the content based routing sample.
 
-<p align="center">
-  <img width="60%" src="../../../docs/assets/images/migration-mule/content-based-routing.png">
-</p>
+2. In your menu in Studio, click the **File** menu. In the File menu select the **Import...** item.
+
+3. In the Import window select the **Existing WSO2 Projects into workspace** under **WSO2** folder.
+
+4. Browse and select the file path to the downloaded sample of this github project ("content-based-routing" folder of the downloaded github repository).
+
+5. Open the **ContentBasedRoutingAPI.xml** under **content-based-routing/ContentBasedRouting/src/main/synapse-config/api/ContentBasedRoutingAPI.xml** directory. 
+
+6. The **ContentBasedRoutingAPI.xml** is the graphical view of the content based routing sample.<br>
+    <img width="60%" src="../../../docs/assets/images/migration-mule/content-based-routing.png">
 
 7. Run the sample by right click on the **ContentBasedRoutingCompositeApplication** under the main **content-based-routing** project and selecting **Export Project Artifacts and Run**.
 
@@ -72,8 +69,11 @@ increase your familiarity with Integration Studio, consider completing one or mo
         http://localhost:8290/hello
 
     **Result:** Your browser presents a message that reads "Hello!".
-Check the console log in Studio again and look for a log message that are similar to these:
+
+    Check the console log in Studio again and look for a log message that are similar to these:
 
 
         [2020-04-01 16:52:39,713]  INFO {org.apache.synapse.mediators.builtin.LogMediator} - To: /hello, MessageID: urn:uuid:fb9ecdb2-21c6-4c4b-9aec-822853b3d5b2, Direction: request, message = No language specified. Using English as a default.
         [2020-04-01 16:52:39,714]  INFO {org.apache.synapse.mediators.builtin.LogMediator} - To: /hello, MessageID: urn:uuid:fb9ecdb2-21c6-4c4b-9aec-822853b3d5b2, Direction: request, message = The reply Hello! means hello in English
+
+<!-- INCLUDE_MD: ../../../docs/common/get-the-code.md -->
