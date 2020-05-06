@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><resources>
+    <item>
+        <file>MapCSVToJson_outputSchema.json</file>
+        <path>/_system/governance/datamapper</path>
+        <mediaType>text/plain</mediaType>
+    </item>
+</resources>
