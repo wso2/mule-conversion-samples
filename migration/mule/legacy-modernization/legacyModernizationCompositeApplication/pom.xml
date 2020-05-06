@@ -2,56 +2,55 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.example.legacyModernization</groupId>
+  <groupId>org.wso2.legacyModernization</groupId>
   <artifactId>legacyModernizationCompositeApplication</artifactId>
   <version>1.0.0</version>
   <packaging>carbon/application</packaging>
   <name>legacyModernizationCompositeApplication</name>
   <description>legacyModernizationCompositeApplication</description>
   <properties>
-    <com.example.LegacyModernizationFileConnectorExporter.lib_._fileconnector-connector>capp/EnterpriseServiceBus</com.example.LegacyModernizationFileConnectorExporter.lib_._fileconnector-connector>
-    <com.example.legacyModernizationRegistry.resource_._MapToLegacy_xsltStyleSheet>capp/EnterpriseServiceBus</com.example.legacyModernizationRegistry.resource_._MapToLegacy_xsltStyleSheet>
-    <com.example.legacyModernizationRegistry.resource_._MapToLegacy_inputSchema>capp/EnterpriseServiceBus</com.example.legacyModernizationRegistry.resource_._MapToLegacy_inputSchema>
-    <com.example.SalesforceImportContactsAsynchronously.api_._SalesforceImportContactAsynchronously>capp/EnterpriseServiceBus</com.example.SalesforceImportContactsAsynchronously.api_._SalesforceImportContactAsynchronously>
-    <com.example.legacyModernizationRegistry.resource_._MapToLegacy>capp/EnterpriseServiceBus</com.example.legacyModernizationRegistry.resource_._MapToLegacy>
-    <com.example.legacyModernization.api_._WriteToFile>capp/EnterpriseServiceBus</com.example.legacyModernization.api_._WriteToFile>
+    <org.wso2.legacyModernizationRegistry.resource_._MapToLegacy_inputSchema>capp/EnterpriseServiceBus</org.wso2.legacyModernizationRegistry.resource_._MapToLegacy_inputSchema>
+    <org.wso2.legacyModernizationRegistry.resource_._MapToLegacy_xsltStyleSheet>capp/EnterpriseServiceBus</org.wso2.legacyModernizationRegistry.resource_._MapToLegacy_xsltStyleSheet>
+    <org.wso2.legacyModernizationRegistry.resource_._MapToLegacy_outputSchema>capp/EnterpriseServiceBus</org.wso2.legacyModernizationRegistry.resource_._MapToLegacy_outputSchema>
+    <org.wso2.legacyModernizationRegistry.resource_._MapToLegacy>capp/EnterpriseServiceBus</org.wso2.legacyModernizationRegistry.resource_._MapToLegacy>
+    <org.wso2.legacyModernization.api_._WriteToFile>capp/EnterpriseServiceBus</org.wso2.legacyModernization.api_._WriteToFile>
+    <org.wso2.LegacyModernizationFileConnectorExporter.lib_._fileconnector-connector>capp/EnterpriseServiceBus</org.wso2.LegacyModernizationFileConnectorExporter.lib_._fileconnector-connector>
     <artifact.types>jaggery/app=zip,synapse/priority-executor=xml,synapse/inbound-endpoint=xml,service/rule=aar,synapse/message-store=xml,event/stream=json,service/meta=xml,datasource/datasource=xml,synapse/proxy-service=xml,bpel/workflow=zip,synapse/sequence=xml,synapse/endpointTemplate=xml,carbon/application=car,wso2/gadget=dar,synapse/api=xml,synapse/event-source=xml,synapse/message-processors=xml,event/receiver=xml,lib/dataservice/validator=jar,synapse/template=xml,synapse/endpoint=xml,lib/carbon/ui=jar,lib/synapse/mediator=jar,event/publisher=xml,synapse/local-entry=xml,synapse/task=xml,webapp/jaxws=war,registry/resource=zip,synapse/configuration=xml,service/axis2=aar,synapse/lib=zip,synapse/sequenceTemplate=xml,event/execution-plan=siddhiql,service/dataservice=dbs,web/application=war,lib/library/bundle=jar</artifact.types>
-    <com.example.legacyModernizationRegistry.resource_._MapToLegacy_outputSchema>capp/EnterpriseServiceBus</com.example.legacyModernizationRegistry.resource_._MapToLegacy_outputSchema>
   </properties>
   <dependencies>
     <dependency>
-      <groupId>com.example.legacyModernization.api</groupId>
+      <groupId>org.wso2.legacyModernizationRegistry.resource</groupId>
+      <artifactId>MapToLegacy_inputSchema</artifactId>
+      <version>1.0.0</version>
+      <type>zip</type>
+    </dependency>
+    <dependency>
+      <groupId>org.wso2.legacyModernization.api</groupId>
       <artifactId>WriteToFile</artifactId>
       <version>1.0.0</version>
       <type>xml</type>
     </dependency>
     <dependency>
-      <groupId>com.example.legacyModernizationRegistry.resource</groupId>
-      <artifactId>MapToLegacy</artifactId>
-      <version>1.0.0</version>
-      <type>zip</type>
-    </dependency>
-    <dependency>
-      <groupId>com.example.LegacyModernizationFileConnectorExporter.lib</groupId>
-      <artifactId>fileconnector-connector</artifactId>
-      <version>2.0.21</version>
-      <type>zip</type>
-    </dependency>
-    <dependency>
-      <groupId>com.example.legacyModernizationRegistry.resource</groupId>
-      <artifactId>MapToLegacy_outputSchema</artifactId>
-      <version>1.0.0</version>
-      <type>zip</type>
-    </dependency>
-    <dependency>
-      <groupId>com.example.legacyModernizationRegistry.resource</groupId>
+      <groupId>org.wso2.legacyModernizationRegistry.resource</groupId>
       <artifactId>MapToLegacy_xsltStyleSheet</artifactId>
       <version>1.0.0</version>
       <type>zip</type>
     </dependency>
     <dependency>
-      <groupId>com.example.legacyModernizationRegistry.resource</groupId>
-      <artifactId>MapToLegacy_inputSchema</artifactId>
+      <groupId>org.wso2.legacyModernizationRegistry.resource</groupId>
+      <artifactId>MapToLegacy</artifactId>
+      <version>1.0.0</version>
+      <type>zip</type>
+    </dependency>
+    <dependency>
+      <groupId>org.wso2.LegacyModernizationFileConnectorExporter.lib</groupId>
+      <artifactId>fileconnector-connector</artifactId>
+      <version>2.0.21</version>
+      <type>zip</type>
+    </dependency>
+    <dependency>
+      <groupId>org.wso2.legacyModernizationRegistry.resource</groupId>
+      <artifactId>MapToLegacy_outputSchema</artifactId>
       <version>1.0.0</version>
       <type>zip</type>
     </dependency>
