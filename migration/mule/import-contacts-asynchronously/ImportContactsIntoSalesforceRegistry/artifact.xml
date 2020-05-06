@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?><artifacts>
-    <artifact name="MapCSV" groupId="com.example.ImportContactsIntoSalesforce.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+    <artifact name="MapCSV" groupId="org.wso2.ImportContactsIntoSalesforceRegistry.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
         <item>
             <file>MapCSV.dmc</file>
             <path>/_system/governance/datamapper</path>
             <mediaType>text/plain</mediaType>
         </item>
     </artifact>
-    <artifact name="MapCSV_inputSchema" groupId="com.example.ImportContactsIntoSalesforce.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+    <artifact name="MapCSV_inputSchema" groupId="org.wso2.ImportContactsIntoSalesforceRegistry.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
         <item>
             <file>MapCSV_inputSchema.json</file>
             <path>/_system/governance/datamapper</path>
             <mediaType>text/plain</mediaType>
         </item>
     </artifact>
-    <artifact name="MapCSV_outputSchema" groupId="com.example.ImportContactsIntoSalesforce.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+    <artifact name="MapCSV_outputSchema" groupId="org.wso2.ImportContactsIntoSalesforceRegistry.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
         <item>
             <file>MapCSV_outputSchema.json</file>
             <path>/_system/governance/datamapper</path>
             <mediaType>text/plain</mediaType>
         </item>
     </artifact>
-    <artifact name="MapCSV_xsltStyleSheet" groupId="com.example.ImportContactsIntoSalesforce.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+    <artifact name="MapCSV_xsltStyleSheet" groupId="org.wso2.ImportContactsIntoSalesforceRegistry.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
         <item>
             <file>MapCSV_xsltStyleSheet.xml</file>
             <path>/_system/governance/datamapper</path>
