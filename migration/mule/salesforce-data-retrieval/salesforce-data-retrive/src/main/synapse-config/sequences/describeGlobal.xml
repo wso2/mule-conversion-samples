@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="describeGlobal" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <salesforcerest.init>
+        <accessToken>00D2x000000pIxA!AR0AQDsl.VentwASWEDeS2Xy63LI4HLo1wharNw2oe0QH.FY.pSdzxP.zV0nj5PGZp8ADAomMbASv_sJCC5.v.C_idWkpSFU</accessToken>
+        <apiVersion>v44.0</apiVersion>
+        <hostName>https://login.salesforce.com</hostName>
+        <refreshToken>5Aep861Xq7VoDavIt5QG2vWIHGbv.B1Q.4rMXb9o3DFmhvbChNyuaciZrOHQVzwgrqvZQRhFqM7_qMGngUVsUb2</refreshToken>
+        <clientSecret>37D9E930DEEB0BAF7842124352065F6DB2D90219D9DB06238978590665EDEFEC</clientSecret>
+        <clientId>3MVG97quAmFZJfVyr_k_q7IC1iEc71lap9m4ayJWpUrkVe85mnF0GNjsIu2G4__FGC4NOzS.3o10Eh_H81xX8</clientId>
+        <apiUrl>https://ap17.salesforce.com</apiUrl>
+        <registryPath>connectors/SalesforceRest</registryPath>
+    </salesforcerest.init>
+    <salesforcerest.describeGlobal/>
+</sequence>
