@@ -44,4 +44,5 @@ Go to source tab and change the value of mongoDB_servers property to IP address 
 ### Go Further
 
 * Learn more about [file connector](https://docs.wso2.com/display/ESBCONNECTORS/Working+with+the+File+Connector#WorkingwiththeFileConnector-append).
-* Read more on [WSO2 connectors](https://docs.wso2.com/display/ESBCONNECTORS/WSO2+ESB+Connectors+Documentation)
+* Learn more about [data services](https://ei.docs.wso2.com/en/latest/micro-integrator/use-cases/tutorials/sending-a-simple-message-to-a-datasource).
+* Read more on [WSO2 connectors](https://docs.wso2.com/display/ESBCONNECTORS/WSO2+ESB+Connectors+Documentation).
