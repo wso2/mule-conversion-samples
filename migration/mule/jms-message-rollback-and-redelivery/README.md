@@ -1,52 +1,52 @@
 # JMS message rollback and redelivery
 
-This example shows how to implement jms rollback and redelivery within the WSO2 Integration Studio. While when we passing the jms messages inside the WSO2 EI, following failures could be happening.
+This example shows how to implement jms rollback and redelivery within the WSO2 Integration Studio. The JMS message passing flow in this example is configured with the ActiveMQ MOM.
+If one of the following failures occurred, the message should be rollbacked.
 * Failures during message mediation process.
-* Message sending failure,due to endpoint is unavailability.
-
-The JMS message passing flow in this example is configured with the ActiveMQ MOM. The requirement is if any of the above failures happen, the message should not be acknowledged, it should be rollbacked. After a specific number of unsuccessful failures happen the message should send to ActiveMQ topic.
+* Message sending failure, due to endpoint is unavailability.
 
 ## Assumptions
 
-This document describes the details of the example within the context of WSO2 Integration Studio, editor to develop WSO2 EI artifacts. This document assumes that you are familiar with WSO2 EI and the [Integration Studio interface](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/WSO2-Integration-Studio/). To increase your familiarity with Integration Studio, consider completing one or more [WSO2 EI Tutorials](https://ei.docs.wso2.com/en/latest/micro-integrator/use-cases/integration-use-cases/). Further, this example assumes that [ActiveMQ](http://activemq.apache.org/getting-started.html) is running on your machine.
+This document describes the details of the example within the context of WSO2 Integration Studio, WSO2 EI’s graphical developer tool. This document assumes that you are familiar with WSO2 EI and the [Integration Studio interface](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/WSO2-Integration-Studio/). To increase your familiarity with Integration Studio, consider completing one or more [WSO2 EI Tutorials](https://ei.docs.wso2.com/en/latest/micro-integrator/use-cases/integration-use-cases/).
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 ## Example Use Case
 
-In this example there is a JMS message in transaction inside WSO2 EI mediation flow which throws an exception when processed. This message is then handled by the `OnErrorPropagate` sequence, which rollbacks and retries to deliver the same message. The number of JMS message delivery count and filtering process is handled by sequence called `choice` sequence. 
+In this example there is a JMS message in transaction inside WSO2 EI mediation flow which throws an exception when processed. This message is then handled by the `OnErrorPropagate` sequence, which rollbacks and retries to deliver the same message. The number of JMS message delivery count and filtering process is handled by `choice` sequence. 
 After a specific number of unsuccessful attempts to commit (4 in this case), it sends the message successfully.
+<p align="center">
+    <img width="70%" src="../../../docs/assets/images/migration-mule/jms-message-rollback-and-redelivery-use-case.png">
+</p>
 
 ## Set Up and Run the Example
-
-Follow the steps in this procedure to create and run this example in your own instance of Integration Studio. You can create template applications straight out of the box in Integration Studio and tweak the configurations of the use case-based templates to create your own customized applications in WSO2 Integrator.
 
 1. Start WSO2 Integration Studio. See [Installing WSO2 Integration Studio](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/installing-WSO2-Integration-Studio/) 
 2. In your menu in Studio, click the File menu. In the File menu select the **Import...** item.
 3. In the Import window select the **Existing WSO2 Projects into workspace** under **WSO2** folder.
-4. Browse and select the file path to the downloaded sample of this github project (`jms-message-rollback-and-redelivery` folder of the downloaded github repository).
-5. Please find the following graphical view of the `jms-message-rollback-and-redelivery` sample.
-   
-   **jmsMessageRollbackAndRedelivery.xml**
+4. Browse and select the file path to the downloaded sample of this Github project (``integration-studio-examples/migration/mule/jms-message-rollback-and-redelivery``) and click **Finish**.
+5. Open **jmsMessageRollbackAndRedelivery.xml** under **jms-message-rollback-and-redelivery/jms-message-rollback-redelivery/src/main/synapse-config/inbound-endpoints** directory.<br>
+   Here we have defined jms configuration parameters, sequence that the message should be injected, fault sequence that should be invoked in case of failure.
    
    <p align="center">
-     <img width="50%" src="../../../docs/assets/images/migration-mule/jsm-InboundEP.png">
+     <img width="20%" src="../../../docs/assets/images/migration-mule/jms-message-rollback-and-redelivery-inboundEP.png">
    </p>
    
-   **choice.xml**
-   
+   Open **choice.xml** under **jms-message-rollback-and-redelivery/jms-message-rollback-redelivery/src/main/synapse-config/sequences** directory.<br>
+   In this sequence we throw an exception for first 4 messages and sends the message in 5th attempt.
+    
    <p align="center">
-     <img width="50%" src="../../../docs/assets/images/migration-mule/jms-choice.png">
+     <img width="60%" src="../../../docs/assets/images/migration-mule/jms-message-rollback-and-redelivery-choice-seq.png">
    </p>   
    
    **OnErrorPropagate.xml**
+   This sequence will be invoked on an error and will roll back the transaction.
    
    <p align="center">
-     <img width="50%" src="../../../docs/assets/images/migration-mule/jms-OnErrorPropagate.png">
+     <img width="30%" src="../../../docs/assets/images/migration-mule/jms-message-rollback-and-redelivery-OnErrorPropagate-seq.png">
    </p>
 
-6. Before you start configuring the ActiveMQ, you also need WSO2 MI, and we refer to that location as `<MI_HOME>` and ActiveMQ location refer as <ACTIVEMQ_HOME>.
-7. For setup the ActiveMQ with WSO2 MI, download Apache [ActiveMQ](http://activemq.apache.org/getting-started.html). 
-8. Copy the following client libraries from the `<ACTIVEMQ_HOME>/lib` directory to the `<MI_HOME>/lib` directory.
-
+6. Download [WSO2 MI](https://wso2.com/integration/micro-integrator/) and Apache [ActiveMQ](http://activemq.apache.org/getting-started.html). 
+7. Copy the following client libraries from `<ACTIVEMQ_HOME>/lib` directory to `<MI_HOME>/lib` directory where 
+`MI_HOME` and `ACTIVEMQ_HOME` is the home directories of MI and ActiveMQ distributions respectively.
    **ActiveMQ 5.8.0 and above**
 
    * activemq-broker-5.8.0.jar
@@ -65,7 +65,7 @@ Follow the steps in this procedure to create and run this example in your own in
    * geronimo-j2ee-management_1.0_spec-1.0.jar
    * geronimo-jms_1.1_spec-1.1.1.jar
    
-9. To send messages to an ActiveMQ instance, you need to update the `deployment.toml` file with the relevant connection parameters. Add the following configurations to enable the JMS sender with ActiveMQ connection parameters.
+9. Update `deployment.toml` file located at `<MI_HOME>/conf` with the relevant connection parameters. Add the following configurations to enable the JMS sender with ActiveMQ connection parameters.
     
    ```
    [[transport.jms.sender]]
@@ -77,8 +77,8 @@ Follow the steps in this procedure to create and run this example in your own in
    parameter.cache_level = "producer"
   
    ``` 
-10. Now login to the activeMQ admin console at http://localhost:8161/admin/send.jsp with the default username and password admin. Create a Queue name as "in". Type json message (Ex: `{"name":"John"}`) and then click on Send.
-11. The transaction will fail with not matched with 'jms.message.delivery.count' condition in `choice` sequence. The first four attempts (to simulate an error condition), and then the message will be delivered correctly to the `topic1`.   
+10. Now login to activeMQ admin console at *http://localhost:8161/admin/send.jsp* with the default username and password admin. Create a Queue named `in`. Enter a json message (Ex: `{"name":"John"}`) and click **Send**.
+11. The transaction will fail with "Exception" the first four attempts, and then the message will be delivered correctly to the `topic1`.
 12. Search for "topic1" in http://localhost:8161/admin/topics.jsp and notice that the number under the Messages Enqueued column has increased by 1. This verifies that the message has been delivered correctly and the transaction was successful.   
 13. You can see a log entry in WSO2 server console similar to the following.
 
@@ -138,6 +138,9 @@ Follow the steps in this procedure to create and run this example in your own in
    [2020-05-04 16:11:32,726]  INFO {TimeoutHandler} - This engine will expire all callbacks after GLOBAL_TIMEOUT: 120 seconds, irrespective of the timeout action, after the specified or optional timeout
    [2020-05-04 16:11:32,735]  INFO {JMSConnectionFactory} - JMS ConnectionFactory : jms:/topic1?transport.jms.ConnectionFactoryJNDIName=TopicConnectionFactory&java.naming.factory.initial=org.apache.activemq.jndi.ActiveMQInitialContextFactory&java.naming.provider.url=tcp://localhost:61616&transport.jms.DestinationType=topic initialized
    ```
+   
+<!-- INCLUDE_MD: ../../../docs/common/get-the-code.md -->
+
 ### Go Further 
 
 Please refer following topics to learn more about JMS 
