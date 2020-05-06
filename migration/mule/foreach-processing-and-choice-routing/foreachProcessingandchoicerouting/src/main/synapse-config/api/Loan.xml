@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/loan" name="Loan" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" uri-template="/calculate*">
+        <inSequence>
+            <property description="This property checks if all the query parameters exist. It outputs the boolean value according to the result. " expression="boolean(get-property('query.param.name')) and boolean(get-property('query.param.amount')) and boolean(get-property('query.param.term')) and boolean(get-property('query.param.ssn')) " name="containAllQueryParams" scope="default" type="STRING"/>
+            <switch description="According to the boolean value of containAllQueryParams property, for the true case it goes further in the mediation. For the false value it outputs an Error message. " source="$ctx:containAllQueryParams">
+                <case regex="true">
+                    <call description="It calls the HttpEndpoint. ">
+                        <endpoint key="HttpEndpoint"/>
+                    </call>
+                    <foreach description="It goes to the each element of of the array banks, which is in the response payload of calling the HttpEndpoint API. " expression="json-eval($.banks)" id="ForEachBank">
+                        <sequence>
+                            <switch description="When it iterates through the foreach mediator, as the response we get jsonValue. As we have two cases other than the default case, we refer to these values as case regex." source="$body/jsonValue">
+                                <case regex="1">
+                                    <payloadFactory description="Creates the payload according tothe rate of bank 1. " media-type="json">
+                                        <format>{
+"name": "Bank 1",
+"amount": $1,
+"term": $2,
+"payment": $3,
+"currency":
+"EUR"
+}
+                                        </format>
+                                        <args>
+                                            <arg evaluator="xml" expression="get-property('query.param.amount')"/>
+                                            <arg evaluator="xml" expression="get-property('query.param.term')"/>
+                                            <arg evaluator="xml" expression="(fn:round(1.17 * get-property('query.param.amount') div get-property('query.param.term') * 100) div 100)"/>
+                                        </args>
+                                    </payloadFactory>
+                                    <log level="full">
+                                        <property name="BANK" value="1"/>
+                                    </log>
+                                </case>
+                                <case regex="2">
+                                    <payloadFactory description="Creates the payload according tothe rate of bank 2. " media-type="json">
+                                        <format>{
+"name": "Bank 2",
+"amount": $1,
+"term": $2,
+"payment": $3,
+"currency":
+"EUR"
+}
+                                        </format>
+                                        <args>
+                                            <arg evaluator="xml" expression="get-property('query.param.amount')"/>
+                                            <arg evaluator="xml" expression="get-property('query.param.term')"/>
+                                            <arg evaluator="xml" expression="(fn:round(1.12 * get-property('query.param.amount') div get-property('query.param.term') * 100) div 100)"/>
+                                        </args>
+                                    </payloadFactory>
+                                    <log>
+                                        <property name="BANK" value="2"/>
+                                    </log>
+                                </case>
+                                <default>
+                                    <payloadFactory description="Creates the payload according tothe rate of bank 3. " media-type="json">
+                                        <format>{
+"name": "Bank 3",
+"amount": $1,
+"term": $2,
+"payment": $3,
+"currency":
+"EUR"
+}
+                                        </format>
+                                        <args>
+                                            <arg evaluator="xml" expression="get-property('query.param.amount')"/>
+                                            <arg evaluator="xml" expression="get-property('query.param.term')"/>
+                                            <arg evaluator="xml" expression="(fn:round(1.12 * get-property('query.param.amount') div get-property('query.param.term') * 100) div 100)"/>
+                                        </args>
+                                    </payloadFactory>
+                                    <log level="full">
+                                        <property name="BANK" value="3"/>
+                                    </log>
+                                </default>
+                            </switch>
+                            <propertyGroup>
+                                <property expression="json-eval($.name)" name="name" scope="default" type="STRING"/>
+                                <property expression="json-eval($.payment)" name="payment" scope="default" type="STRING"/>
+                                <property expression="json-eval($.currency)" name="currency" scope="default" type="STRING"/>
+                            </propertyGroup>
+                            <property description="Concatanate the payload. " expression="fn:concat(get-property('bankInfo'), fn:concat(get-property('name'), ': Payment ', get-property('payment'), ' ', get-property('currency') ,' per month', ' , '))" name="bankInfo" scope="default" type="STRING"/>
+                        </sequence>
+                    </foreach>
+                    <payloadFactory description="Create the final message to be displayed. " media-type="text">
+                        <format>“Bank info for customer $1 about loan $2 EUR in term $3 months: $4”</format>
+                        <args>
+                            <arg evaluator="xml" expression="get-property('query.param.name')"/>
+                            <arg evaluator="xml" expression="get-property('query.param.amount')"/>
+                            <arg evaluator="xml" expression="get-property('query.param.term')"/>
+                            <arg evaluator="xml" expression="get-property('bankInfo')"/>
+                        </args>
+                    </payloadFactory>
+                </case>
+                <default>
+                    <payloadFactory description="Creates the error message. " media-type="text">
+                        <format>
+                            Error: Incomplete Request
+                        </format>
+                        <args/>
+                    </payloadFactory>
+                    <property description="Create the 500 status. " name="HTTP_SC" scope="axis2" type="STRING" value="500"/>
+                </default>
+            </switch>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

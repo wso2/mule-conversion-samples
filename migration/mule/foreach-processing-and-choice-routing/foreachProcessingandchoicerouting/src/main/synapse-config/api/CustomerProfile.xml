@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/api" name="CustomerProfile" version="v1" version-type="context" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" url-mapping="/customerprofile">
+        <inSequence>
+            <!--This is generated API skeleton.-->
+            <!--Business Logic Goes Here-->
+            <payloadFactory description="Creates the payload. " media-type="json">
+                <format>{
+                "name": "John FLetcher",
+                "ssn": "123456789",
+                "amount": "10000",
+                "term": "10",
+                "banks": [1,2,3],
+                "requestedDate": "2018-12-12"
+              }</format>
+                <args/>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>
