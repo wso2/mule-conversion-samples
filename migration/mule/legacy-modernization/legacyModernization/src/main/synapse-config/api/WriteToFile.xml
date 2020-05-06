@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/OrderFulfillment" name="WriteToFile" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <property description="Save Shipping ID as Property" expression="/soapenv:Envelope/soapenv:Body/ord:putShippingOrder/shippingId" name="shippingID" scope="default" type="STRING" xmlns:ord="http://ordermgmt.org/" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"/>
+            <datamapper config="gov:datamapper/MapToLegacy.dmc" description="Convert SOAP Body to CSV" inputSchema="gov:datamapper/MapToLegacy_inputSchema.json" inputType="XML" outputSchema="gov:datamapper/MapToLegacy_outputSchema.json" outputType="CSV" xsltStyleSheet="gov:datamapper/MapToLegacy_xsltStyleSheet.xml"/>
+            <clone>
+                <target>
+                    <sequence>
+                        <property description="Save Mapped Body in Property" expression="$body/int:text/text()" name="csvBody" scope="default" type="STRING" xmlns:int="http://ws.apache.org/commons/ns/payload"/>
+                        <property description="Add Newline" expression="fn:concat($ctx:csvBody,'&#xa;')" name="csvBodyWithNewLine" scope="default" type="STRING"/>
+                        <fileconnector.append>
+                            <destination>/Users/niruhan/IntegrationStudio/workspace/legacyModernization/src/main/resources/CSVOutput.csv</destination>
+                            <inputContent>{$ctx:csvBodyWithNewLine}</inputContent>
+                        </fileconnector.append>
+                    </sequence>
+                </target>
+                <target>
+                    <sequence>
+                        <payloadFactory description="Generate Response with Shipping ID and Status" media-type="xml">
+                            <format>
+                                <shippingOrderResponse>
+                                    <shippingOrderID>$1</shippingOrderID>
+                                    <orderReceivedStatus>true</orderReceivedStatus>
+                                </shippingOrderResponse>
+                            </format>
+                            <args>
+                                <arg evaluator="xml" expression="$ctx:shippingID"/>
+                            </args>
+                        </payloadFactory>
+                        <respond description="Send Response to Request"/>
+                    </sequence>
+                </target>
+            </clone>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

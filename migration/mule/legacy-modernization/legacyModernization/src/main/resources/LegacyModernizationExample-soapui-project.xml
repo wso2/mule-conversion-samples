@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project name="LegacyModernizationExample" resourceRoot="" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" activeEnvironment="Default" id="4a82a186-11bc-410b-87c5-9bd4efb0ca92" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="IFulfillmentServiceSoapBinding" type="wsdl" bindingName="{http://ordermgmt.org/}IFulfillmentServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:1080/OrderFulfillment?wsdl" id="6b51e23e-6ce4-471f-bfc1-1c657ec12826" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:1080/OrderFulfillment?wsdl"><con:part><con:url>http://localhost:1080/OrderFulfillment?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="IFulfillmentService" targetNamespace="http://ordermgmt.org/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ordermgmt.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://ordermgmt.org/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="address" type="tns:address"/>
+      <xs:element name="order" type="tns:order"/>
+      <xs:element name="orderItem" type="tns:orderItem"/>
+      <xs:element name="putShippingOrder" type="tns:putShippingOrder"/>
+      <xs:element name="putShippingOrderResponse" type="tns:putShippingOrderResponse"/>
+      <xs:element name="shippingOrder" type="tns:shippingOrder"/>
+      <xs:element name="shippingOrderConfirmation" type="tns:shippingOrderConfirmation"/>
+      <xs:complexType name="putShippingOrder">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="shippingId" type="xs:string"/>
+          <xs:element minOccurs="0" name="billingAddress" type="tns:address"/>
+          <xs:element minOccurs="0" name="shippingAddress" type="tns:address"/>
+          <xs:element minOccurs="0" name="order" type="tns:order"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="address">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="name" type="xs:string"/>
+          <xs:element minOccurs="0" name="line1" type="xs:string"/>
+          <xs:element minOccurs="0" name="line2" type="xs:string"/>
+          <xs:element minOccurs="0" name="city" type="xs:string"/>
+          <xs:element minOccurs="0" name="stateOrProvinceCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="countryCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="postalCode" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="order">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="orderItem" type="tns:orderItem"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="orderItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="merchantSKU" type="xs:string"/>
+          <xs:element name="quantity" type="xs:int"/>
+          <xs:element name="price" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="putShippingOrderResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ShippingOrderConfirmation" type="tns:shippingOrderConfirmation"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="shippingOrderConfirmation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="shippingOrder" type="tns:shippingOrder"/>
+          <xs:element name="orderReceivedStatus" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="shippingOrder">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="shippingId" type="xs:string"/>
+          <xs:element minOccurs="0" name="billingAddress" type="tns:address"/>
+          <xs:element minOccurs="0" name="shippingAddress" type="tns:address"/>
+          <xs:element minOccurs="0" name="order" type="tns:order"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="putShippingOrderResponse">
+    <wsdl:part element="tns:putShippingOrderResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="putShippingOrder">
+    <wsdl:part element="tns:putShippingOrder" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="IFulfillment">
+    <wsdl:operation name="putShippingOrder">
+      <wsdl:input message="tns:putShippingOrder" name="putShippingOrder"></wsdl:input>
+      <wsdl:output message="tns:putShippingOrderResponse" name="putShippingOrderResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IFulfillmentServiceSoapBinding" type="tns:IFulfillment">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="putShippingOrder">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="putShippingOrder">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="putShippingOrderResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IFulfillmentService">
+    <wsdl:port binding="tns:IFulfillmentServiceSoapBinding" name="IFulfillmentPort">
+      <soap:address location="http://localhost:1080/OrderFulfillment"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:1080/OrderFulfillment</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="putShippingOrder" bindingOperationName="putShippingOrder" type="Request-Response" outputName="putShippingOrderResponse" inputName="putShippingOrder" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="d283a4fa-6dc1-41e7-a5e9-6f959430d9cf"><con:settings/><con:call name="Request 1" id="2aff8443-cdc7-490f-9436-9f29b328cdd9"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8290/OrderFulfillment</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ord="http://ordermgmt.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ord:putShippingOrder>
+         <shippingId>1234</shippingId>
+         <billingAddress>
+            <name>WSO2</name>
+            <line1>100 Geary St</line1>
+            <line2>Level 4</line2>
+            <city>San Francisco</city>
+            <stateOrProvinceCode>CA</stateOrProvinceCode>
+            <countryCode>USA</countryCode>
+            <postalCode>94108</postalCode>
+         </billingAddress>
+         <shippingAddress>
+            <name>WSO2</name>
+            <line1>100 Geary St</line1>
+            <line2>Level 4</line2>
+            <city>San Francisco</city>
+            <stateOrProvinceCode>CA</stateOrProvinceCode>
+            <countryCode>USA</countryCode>
+            <postalCode>94108</postalCode>
+         </shippingAddress>
+         <order>
+            <orderItem>
+               <merchantSKU>1234</merchantSKU>
+               <quantity>500</quantity>
+               <price>1.99</price>
+            </orderItem>
+            <orderItem>
+               <merchantSKU>6789</merchantSKU>
+               <quantity>1500</quantity>
+               <price>9.59</price>
+            </orderItem>
+            <orderItem>
+               <merchantSKU>9998</merchantSKU>
+               <quantity>5000</quantity>
+               <price>3.00</price>
+            </orderItem>
+         </order>
+      </ord:putShippingOrder>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ordermgmt.org/IFulfillment/putShippingOrder"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite name="IFulfillmentServiceSoapBinding TestSuite" id="7fafa687-db17-4a7c-8529-dfbb727b2794"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="putShippingOrder TestCase" searchProperties="true" id="96c7bf95-4e85-40af-9bd8-c4133d92ca31"><con:settings/><con:testStep type="request" name="putShippingOrder" id="de8d6fcd-32d8-4ca1-820d-80f9701fffff"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>IFulfillmentServiceSoapBinding</con:interface><con:operation>putShippingOrder</con:operation><con:request name="putShippingOrder" id="c4d80e87-eb20-4498-8e4a-f7c26d11f262"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:1080/OrderFulfillment</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ord="http://ordermgmt.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ord:putShippingOrder>
+         <!--Optional:-->
+         <shippingId>?</shippingId>
+         <!--Optional:-->
+         <billingAddress>
+            <!--Optional:-->
+            <name>?</name>
+            <!--Optional:-->
+            <line1>?</line1>
+            <!--Optional:-->
+            <line2>?</line2>
+            <!--Optional:-->
+            <city>?</city>
+            <!--Optional:-->
+            <stateOrProvinceCode>?</stateOrProvinceCode>
+            <!--Optional:-->
+            <countryCode>?</countryCode>
+            <!--Optional:-->
+            <postalCode>?</postalCode>
+         </billingAddress>
+         <!--Optional:-->
+         <shippingAddress>
+            <!--Optional:-->
+            <name>?</name>
+            <!--Optional:-->
+            <line1>?</line1>
+            <!--Optional:-->
+            <line2>?</line2>
+            <!--Optional:-->
+            <city>?</city>
+            <!--Optional:-->
+            <stateOrProvinceCode>?</stateOrProvinceCode>
+            <!--Optional:-->
+            <countryCode>?</countryCode>
+            <!--Optional:-->
+            <postalCode>?</postalCode>
+         </shippingAddress>
+         <!--Optional:-->
+         <order>
+            <!--Zero or more repetitions:-->
+            <orderItem>
+               <!--Optional:-->
+               <merchantSKU>?</merchantSKU>
+               <quantity>?</quantity>
+            </orderItem>
+         </order>
+      </ord:putShippingOrder>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://ordermgmt.org/IFulfillment/putShippingOrder" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
