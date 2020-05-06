@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><artifacts>
-    <artifact name="SalesforceImportContactAsynchronously" groupId="com.example.SalesforceImportContactsAsynchronously.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+    <artifact name="SalesforceImportContactAsynchronously" groupId="org.wso2.SalesforceImportContactsAsynchronously.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/api/SalesforceImportContactAsynchronously.xml</file>
     </artifact>
 </artifacts>
