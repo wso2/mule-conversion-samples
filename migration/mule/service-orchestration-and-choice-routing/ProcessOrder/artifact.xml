@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="Audit_Service" groupId="com.example.ProcessOrder.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/Audit_Service.xml</file>
+    </artifact>
+    <artifact name="InHouseOrder" groupId="com.example.ProcessOrder.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/InHouseOrder.xml</file>
+    </artifact>
+    <artifact name="SamsungOrder" groupId="com.example.ProcessOrder.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/SamsungOrder.xml</file>
+    </artifact>
+    <artifact name="SamsungOrderService" groupId="com.example.ProcessOrder.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/SamsungOrderService.xml</file>
+    </artifact>
+    <artifact name="Orders" groupId="com.example.ProcessOrder.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/Orders.xml</file>
+    </artifact>
+    <artifact name="PriceService" groupId="com.example.ProcessOrder.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/PriceService.xml</file>
+    </artifact>
+</artifacts>

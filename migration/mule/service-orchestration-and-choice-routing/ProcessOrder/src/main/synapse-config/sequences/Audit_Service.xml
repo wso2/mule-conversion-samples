@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="Audit_Service" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <payloadFactory description="Prepare request to DB" media-type="json">
+        <format>{
+ 	"id": "$1",
+	"order_id":" $2",
+	"total_value": "$3"
+}
+        </format>
+        <args>
+            <arg evaluator="xml" expression="get-property('MessageID')"/>
+            <arg evaluator="json" expression="$.order_id"/>
+            <arg evaluator="json" expression="$.total_value"/>
+        </args>
+    </payloadFactory>
+    <log description="LOG DB Request" level="full"/>
+    <dbreport description="Save Order Summary">
+        <connection>
+            <pool>
+                <driver>com.mysql.cj.jdbc.Driver</driver>
+                <url>jdbc:mysql://localhost:3306/OrderProcess</url>
+                <user>process_manager</user>
+                <password>process123</password>
+            </pool>
+        </connection>
+        <statement>
+            <sql><![CDATA[ insert into order_audits (id,order_id,total_value) values (?,?,?)]]></sql>
+            <parameter expression="//id" type="VARCHAR"/>
+            <parameter expression="//order_id" type="VARCHAR"/>
+            <parameter expression="//total_value" type="VARCHAR"/>
+        </statement>
+    </dbreport>
+    <drop/>
+</sequence>

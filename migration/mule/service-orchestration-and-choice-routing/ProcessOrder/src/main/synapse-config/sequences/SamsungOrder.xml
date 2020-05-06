@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="SamsungOrder" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <payloadFactory description="Prepare request" media-type="xml">
+        <format>
+            <soapenv:Envelope xmlns:sam="http://samsung.se.wso2.org/" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+                <soapenv:Header/>
+                <soapenv:Body>
+                    <sam:purchase>
+                        <orderRequest xmlns="">
+                            <name>$1</name>
+                            <quantity>$2</quantity>
+                        </orderRequest>
+                    </sam:purchase>
+                </soapenv:Body>
+            </soapenv:Envelope>
+        </format>
+        <args>
+            <arg evaluator="json" expression="$.name"/>
+            <arg evaluator="json" expression="$.quantity"/>
+        </args>
+    </payloadFactory>
+    <header description="Set Action to getAmount" name="Action" scope="default" value="getAmount"/>
+    <call description="Invoke Samsung WebService">
+        <endpoint>
+            <address uri="http://localhost:8290/services/SamsungOrderService">
+                <suspendOnFailure>
+                    <initialDuration>-1</initialDuration>
+                    <progressionFactor>-1</progressionFactor>
+                    <maximumDuration>0</maximumDuration>
+                </suspendOnFailure>
+                <markForSuspension>
+                    <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                </markForSuspension>
+            </address>
+        </endpoint>
+    </call>
+    <payloadFactory description="Set Response" media-type="json">
+        <format>{
+	"id": 		"$1", 
+	"status": 	"$2",
+	"totalPrice": "$3"
+}</format>
+        <args>
+            <arg evaluator="xml" expression="//soap:Response/id" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"/>
+            <arg evaluator="xml" expression="//soap:Response/result" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"/>
+            <arg evaluator="xml" expression="//soap:Response/price" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"/>
+        </args>
+    </payloadFactory>
+</sequence>

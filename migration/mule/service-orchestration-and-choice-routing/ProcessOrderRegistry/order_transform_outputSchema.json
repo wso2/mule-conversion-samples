@@ -1,0 +1,57 @@
+{
+  "$schema" : "http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#",
+  "outputType" : "JSON",
+  "id" : "http://wso2jsonschema.org",
+  "title" : "root",
+  "type" : "object",
+  "properties" : {
+    "orderId" : {
+      "id" : "http://wso2jsonschema.org/orderId",
+      "type" : "number"
+    },
+    "customer" : {
+      "id" : "http://wso2jsonschema.org/customer",
+      "type" : "object",
+      "properties" : {
+        "address" : {
+          "id" : "http://wso2jsonschema.org/customer/address",
+          "type" : "string"
+        },
+        "firstName" : {
+          "id" : "http://wso2jsonschema.org/customer/firstName",
+          "type" : "string"
+        },
+        "lastName" : {
+          "id" : "http://wso2jsonschema.org/customer/lastName",
+          "type" : "string"
+        }
+      }
+    },
+    "orderItems" : {
+      "id" : "http://wso2jsonschema.org/orderItems",
+      "type" : "array",
+      "items" : [ {
+        "id" : "http://wso2jsonschema.org/orderItems/0",
+        "type" : "object",
+        "properties" : {
+          "manufacturer" : {
+            "id" : "http://wso2jsonschema.org/orderItems/0/manufacturer",
+            "type" : "string"
+          },
+          "name" : {
+            "id" : "http://wso2jsonschema.org/orderItems/0/name",
+            "type" : "string"
+          },
+          "productId" : {
+            "id" : "http://wso2jsonschema.org/orderItems/0/productId",
+            "type" : "string"
+          },
+          "quantity" : {
+            "id" : "http://wso2jsonschema.org/orderItems/0/quantity",
+            "type" : "number"
+          }
+        }
+      } ]
+    }
+  }
+}
