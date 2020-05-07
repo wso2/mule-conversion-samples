@@ -152,14 +152,14 @@ public class DocsGenerator {
     private static boolean processSourceDirectory(DirRegistry dirRegistry, List<File> files) {
         boolean projectFileFound = false;
         Path relativeImageOutDirPath = dirRegistry.getReadmeOutDir().relativize(dirRegistry.getReadmeImagesOutDir());
-        Path relativeZipOutDirPath = dirRegistry.getReadmeOutDir().relativize((dirRegistry.getZipOutDir()));
         for (File file: files) {
             if (file.isFile() && (config.getProjectFileName().equals(file.getName()))) {
                 projectFileFound = true;
                 File readmeFile = Paths.get(file.getParent(), config.getReadmeFileName()).toFile();
                 try {
                     if (readmeFile.exists()) {
-                        processReadmeFile(readmeFile, relativeImageOutDirPath, relativeZipOutDirPath, true);
+                        processReadmeFile(readmeFile, relativeImageOutDirPath, dirRegistry.getHtmlZipAbsolutePath(),
+                                          dirRegistry.getHtmlImageAbsolutePath(), true);
                         Files.copy(readmeFile.toPath(),
                                    dirRegistry.getReadmeOutDir().resolve(
                                            file.getParentFile().getName() + MARKDOWN_FILE_EXT));
@@ -188,7 +188,8 @@ public class DocsGenerator {
         Path relativeImageOutDir = dirRegistry.getReadmeOutDir().relativize(dirRegistry.getIncludesImagesOutDir());
         for (File file: files) {
             if (file.isFile() && file.getName().endsWith(MARKDOWN_FILE_EXT)) {
-                processReadmeFile(file, relativeImageOutDir, null, false);
+                processReadmeFile(file, relativeImageOutDir, null,
+                                  dirRegistry.getHtmlCommonImageAbsoluteDir(), false);
             } else if (!directoriesFound && file.isDirectory()) {
                 directoriesFound = true;
             }
@@ -203,15 +204,15 @@ public class DocsGenerator {
      * @param file README.md file
      */
     private static void processReadmeFile(File file, Path relativeImageOutDirPath,
-                                          Path zipOutputDir, boolean addFrontMatter) {
+                                          Path zipOutputDir, Path htmlImagePath, boolean addFrontMatter) {
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
             StringBuilder processedLines = new StringBuilder();
             processFrontMatter(addFrontMatter, reader, processedLines);
 
             while ((line = reader.readLine()) != null) {
-                processedLines.append(processReadmeLine(file, relativeImageOutDirPath, zipOutputDir, line))
-                              .append('\n');
+                processedLines.append(processReadmeLine(file, relativeImageOutDirPath,
+                                                        zipOutputDir, htmlImagePath, line)).append('\n');
             }
             IOUtils.write(processedLines, new FileOutputStream(file), String.valueOf(StandardCharsets.UTF_8));
         } catch (IOException e) {
@@ -219,7 +220,8 @@ public class DocsGenerator {
         }
     }
 
-    private static String processReadmeLine(File file, Path relativeImageOutDirPath, Path zipOutputDir, String line) {
+    private static String processReadmeLine(File file, Path relativeImageOutDirPath, Path zipOutputDir,
+                                            Path htmlImagePath, String line) {
         String processedLine;
         if (line.contains(INCLUDE_CODE_TAG)) {
             // Replace INCLUDE_CODE line with include code file.
@@ -230,7 +232,7 @@ public class DocsGenerator {
         } else if (line.contains(MD_IMG_TAG)) {
             processedLine = updateMdImageUri(line, relativeImageOutDirPath);
         } else if (line.contains(HTML_IMG_TAG)) {
-            processedLine = updateHtmlImageUri(line, relativeImageOutDirPath);
+            processedLine = updateHtmlImageUri(line, htmlImagePath);
         } else if (line.contains(DOWNLOAD_ZIP_LOCATION_TAG)) {
             processedLine = updateZipFileLocation(line, file.getParentFile(), zipOutputDir);
         } else if (line.contains(INCLUDE_MD_TAG)) {
@@ -249,7 +251,7 @@ public class DocsGenerator {
                             zipOutputDir.resolve(parentFile.getName() + ZIP_FILE_EXT).toString());
     }
 
-    private static String updateHtmlImageUri(String line, Path relativeImageOutDirPath) {
+    private static String updateHtmlImageUri(String line, Path imageOutDirPath) {
         int imgTagStartIdx = line.indexOf(HTML_IMG_TAG) + HTML_IMG_TAG.length();
         int srcTagStartIdx = line.indexOf("src", imgTagStartIdx) + "src".length();
 
@@ -262,7 +264,7 @@ public class DocsGenerator {
 
         String srcPath = line.substring(srcPathStartIdx, srcPathEndIdx);
         String filename = Paths.get(srcPath).getFileName().toString();
-        Path newSrcPath = relativeImageOutDirPath.resolve(filename);
+        Path newSrcPath = imageOutDirPath.resolve(filename);
         return line.replace(srcPath, newSrcPath.toString());
     }
 

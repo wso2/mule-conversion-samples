@@ -42,6 +42,9 @@ public class DirRegistry {
     private final Path tempIncludesDir;
     private final Path toolDir;
     private final Path baseDir;
+    private final Path htmlImageAbsoluteDir;
+    private final Path htmlCommonImageAbsoluteDir;
+    private final Path htmlZipAbsoluteDir;
 
     public DirRegistry(Config config) {
         toolDir = Paths.get(config.getAbsoluteToolPath());
@@ -60,6 +63,10 @@ public class DirRegistry {
         includesImagesDir = Paths.get(config.getAbsoluteToolPath(), config.getIncludesImagesPath());
         tempSourcesDir = tempDir.resolve(baseDir.relativize(sourceDir));
         tempIncludesDir = tempDir.resolve(baseDir.relativize(includesDir));
+
+        htmlImageAbsoluteDir = Paths.get(config.getHtmlReadmeImagesAbsolutePath());
+        htmlCommonImageAbsoluteDir = Paths.get(config.getHtmlIncludesImagesAbsolutePath());
+        htmlZipAbsoluteDir = Paths.get(config.getHtmlZipAbsolutePath());
     }
 
     public Path getTargetDir() {
@@ -120,5 +127,17 @@ public class DirRegistry {
 
     public Path getIncludesImagesOutDir() {
         return includesImagesOutDir;
+    }
+
+    public Path getHtmlImageAbsolutePath() {
+        return htmlImageAbsoluteDir;
+    }
+
+    public Path getHtmlCommonImageAbsoluteDir() {
+        return htmlCommonImageAbsoluteDir;
+    }
+
+    public Path getHtmlZipAbsolutePath() {
+        return htmlZipAbsoluteDir;
     }
 }
