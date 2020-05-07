@@ -152,15 +152,14 @@ public class DocsGenerator {
     private static boolean processSourceDirectory(DirRegistry dirRegistry, List<File> files) {
         boolean projectFileFound = false;
         Path relativeImageOutDirPath = dirRegistry.getReadmeOutDir().relativize(dirRegistry.getReadmeImagesOutDir());
-        Path relativeZipOutDirPath = dirRegistry.getReadmeOutDir().relativize((dirRegistry.getZipOutDir()));
         for (File file: files) {
             if (file.isFile() && (config.getProjectFileName().equals(file.getName()))) {
                 projectFileFound = true;
                 File readmeFile = Paths.get(file.getParent(), config.getReadmeFileName()).toFile();
                 try {
                     if (readmeFile.exists()) {
-                        processReadmeFile(readmeFile, relativeImageOutDirPath, relativeZipOutDirPath,
-                                          dirRegistry.getHtmlImageAbsoluteDir(), true);
+                        processReadmeFile(readmeFile, relativeImageOutDirPath, dirRegistry.getHtmlZipAbsolutePath(),
+                                          dirRegistry.getHtmlImageAbsolutePath(), true);
                         Files.copy(readmeFile.toPath(),
                                    dirRegistry.getReadmeOutDir().resolve(
                                            file.getParentFile().getName() + MARKDOWN_FILE_EXT));

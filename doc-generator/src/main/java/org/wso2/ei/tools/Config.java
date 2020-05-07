@@ -38,6 +38,7 @@ public class Config {
     private String relativeBasePath = "../";
     private String htmlReadmeImagesAbsolutePath = "/assets/img/";
     private String htmlIncludesImagesAbsolutePath = "/assets/img/common";
+    private String htmlZipAbsolutePath = "/assets/zip";
 
     public String getProjectFileName() {
         return projectFileName;
@@ -149,5 +150,13 @@ public class Config {
 
     public void setHtmlIncludesImagesAbsolutePath(String htmlIncludesImagesAbsolutePath) {
         this.htmlIncludesImagesAbsolutePath = htmlIncludesImagesAbsolutePath;
+    }
+
+    public String getHtmlZipAbsolutePath() {
+        return htmlZipAbsolutePath;
+    }
+
+    public void setHtmlZipAbsolutePath(String htmlZipAbsolutePath) {
+        this.htmlZipAbsolutePath = htmlZipAbsolutePath;
     }
 }

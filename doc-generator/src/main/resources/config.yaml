@@ -20,4 +20,6 @@ zipOutputPath: "en/micro-integrator/docs/assets/zip/mule-migration"
 
 # For images added with html <img src="..." /> tag use the absolute path of the rendered website
 htmlReadmeImagesAbsolutePath: "/assets/img/migration-examples"
-htmlIncludesImagesAbsolutePath: "assets/img/migration-examples/common"
+htmlIncludesImagesAbsolutePath: "/assets/img/migration-examples/common"
+# Used for html download element zip location
+htmlZipAbsolutePath: "/assets/zip/mule-migration"
