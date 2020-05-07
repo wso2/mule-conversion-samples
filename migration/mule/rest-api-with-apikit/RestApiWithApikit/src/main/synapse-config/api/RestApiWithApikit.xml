@@ -33,11 +33,9 @@
                     </payloadFactory>
                 </default>
             </switch>
-            <loopback/>
-        </inSequence>
-        <outSequence>
             <respond/>
-        </outSequence>
+        </inSequence>
+        <outSequence/>
         <faultSequence/>
     </resource>
     <resource methods="PUT GET" uri-template="/customers/{customerId}">
@@ -66,11 +64,9 @@
                     </payloadFactory>
                 </default>
             </switch>
-            <loopback/>
-        </inSequence>
-        <outSequence>
             <respond/>
-        </outSequence>
+        </inSequence>
+        <outSequence/>
         <faultSequence/>
     </resource>
 </api>

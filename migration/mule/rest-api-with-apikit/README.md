@@ -1,6 +1,6 @@
 # REST API with APIkit
 
-This example illustrates an API implementation with Integration Studio which was created using a OAS2 swagger file. A mock backend is used in the implementation, whereas the user is provided the capability of using a backend of choice instead of the one provided.
+This example illustrates an API implementation with Integration Studio which was created using a OAS2.0 swagger file. A mock backend is used in the implementation, whereas the user is provided the capability of using a backend of choice instead of the one provided.
 
 ### Assumptions ###
 
@@ -21,10 +21,11 @@ Follow the procedure below to run and test the functionality in Integration Stud
 (``integration-studio-examples/migration/mule/rest-api-with-apikit``) and click **Finish**.
 5. Open the **RestApiWithApikit.xml** under **rest-api-with-apikit/RestApiWithApikit/src/main/synapse-config/api** 
 directory.
+<p align="center">
+  <img width="70%" src="../../../docs/assets/images/migration-mule/rest-api-with-apikit.png">
+</p>
 
-`image of the design here`
-
-6. The **RestApiWithApikit.xml** is the graphical view of the resources of the used API.
+6. The **RestApiWithApikit.xml** is the graphical view of the resources of the used API. This design is based on a OAS2.0 swagger file. It is provided in **rest-api-with-apikit/RestApiWithApikit/src/main/resources**. You can refer [Creating a REST API](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/creating-artifacts/creating-an-api/) to create the project from scratch using the swagger file.
 7. Run the sample by right click on the **RestApiWithApikitCompositeApplication** under the main **rest-api-with-apikit** project and selecting **Export Project Artifacts and Run**.
 8. Open HTTP Client in Integration Studio. Follow [HTTP Client Guidelines](../../../docs/common/adding-http-client-to-integration-studio.md)
 to open HTTP Client if the window is not visible in the interface.
@@ -34,9 +35,10 @@ You can use a browser extension such as Postman or the curl command line utility
 
 ### How it Works ###
 
-The application is based on a OAS2 swagger file. It is provided in **rest-api-with-apikit/resources/api**. If you have a RAML file for the API specification, you can use a tool such as [OAS RAML Converter](https://mulesoft.github.io/oas-raml-converter/) to convert it to OAS2.0 in order to be used in Integration Studio.
+You can use the [Payload Factory](https://ei.docs.wso2.com/en/latest/micro-integrator/references/mediators/payloadFactory-Mediator/) to alter the mock response payload you receive. Integration Studio supports multiple REST methods for a single resource. Therefore, as **RestApiWithApikit.xml** suggests you can use a switch mediator with multiple cases (HTTP method property of the request can be taken using `get-property('axis2', 'HTTP_METHOD')`) to handle the logic for different REST methods.
 
-You can refer [Creating a REST API](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/creating-artifacts/creating-an-api/) to create the project from scratch using the swagger file. Furthermore, you can use the [Payload Factory](https://ei.docs.wso2.com/en/latest/micro-integrator/references/mediators/payloadFactory-Mediator/) to alter the mock response payload you receive. Integration Studio supports multiple REST methods for a single resource. Therefore, as **RestApiWithApikit.xml** suggests you can use a switch mediator with multiple cases (HTTP method property of the request can be taken using `get-property('axis2', 'HTTP_METHOD')`) to handle the logic for different REST methods.
+>**NOTE**
+If you have a RAML file for the API specification, you can use a tool such as [OAS RAML Converter](https://mulesoft.github.io/oas-raml-converter/) to convert it to OAS2.0 in order to be used in Integration Studio.
 
 ### Go Further 
 
