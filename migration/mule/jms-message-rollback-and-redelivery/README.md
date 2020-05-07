@@ -77,10 +77,19 @@ After a specific number of unsuccessful attempts to commit (4 in this case), it 
    parameter.cache_level = "producer"
   
    ``` 
-10. Now login to activeMQ admin console at *http://localhost:8161/admin/send.jsp* with the default username and password admin. Create a Queue named `in`. Enter a json message (Ex: `{"name":"John"}`) and click **Send**.
-11. The transaction will fail with "Exception" the first four attempts, and then the message will be delivered correctly to the `topic1`.
-12. Search for "topic1" in http://localhost:8161/admin/topics.jsp and notice that the number under the Messages Enqueued column has increased by 1. This verifies that the message has been delivered correctly and the transaction was successful.   
-13. You can see a log entry in WSO2 server console similar to the following.
+
+10. Lets [export composite application](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/exporting-artifacts/) in Micro Integrator. Right click on the **jms-message-rollback-redeliveryCompositeApplication** under the main **jms-message-rollback-and-redelivery** project and select **Export Composite Application Project**. Browse and provide carbonapps location of Micro Integrator(`[MI_HOME]/repository/deployment/server/carbonapps` where `MI_HOME` is the home directory of the distribution you downloaded). 
+
+11. Open a terminal and navigate to the `MI_HOME/bin/` directory and execute the relevant command:
+    * On MacOS/Linux/CentOS:<br/>
+    ``sh micro-integrator.sh``
+    * On Windows:<br/>
+    ``micro-integrator.bat``
+
+12. Now login to activeMQ admin console at *http://localhost:8161/admin/send.jsp* with the default username and password admin. Create a Queue named `in`. Enter a json message (Ex: `{"name":"John"}`) and click **Send**.
+13. The transaction will fail with "Exception" the first four attempts, and then the message will be delivered correctly to the `topic1`.
+14. Search for "topic1" in http://localhost:8161/admin/topics.jsp and notice that the number under the Messages Enqueued column has increased by 1. This verifies that the message has been delivered correctly and the transaction was successful.   
+15. You can see a log entry in WSO2 server console similar to the following.
 
    **The number of JMS message delivery count and generated exception**
     
