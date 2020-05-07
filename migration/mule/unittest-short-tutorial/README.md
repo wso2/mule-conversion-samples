@@ -6,6 +6,8 @@ This tutorial demonstrates the process of creating unit tests to validate the be
 
 This document describes the details of the example within the context of WSO2 Integration Studio, WSO2 EI’s graphical user interface (GUI). This document assumes that you are familiar with WSO2 EI and the [Integration Studio interface](https://ei.docs.wso2.com/en/latest/micro-integrator/overview/quick-start-guide/). To increase your familiarity with Integration Studio, consider completing one or more [WSO2 EI Tutorials](https://ei.docs.wso2.com/en/latest/micro-integrator/use-cases/integration-use-cases/).
 
+## Example Use Case
+
 This example performs the following actions:
 
 1. Get the value of queryParam `url_key` and will be assigned it to the `payload` property.
@@ -18,6 +20,9 @@ This example performs the following actions:
 
 4. Based on the value of `flowValue` property, API will set the payload to the message context and respond it. 
 
+<p align="center">
+  <img width="70%" src="../../../docs/assets/images/migration-mule/unittest-short-tutorial-use-case.png">
+</p>
 
 ### Set Up the Example
 
