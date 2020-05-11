@@ -11,7 +11,7 @@ increase your familiarity with Integration Studio, consider completing one or mo
 
 ### Example Use Case
 
-In this example, Multiple details of an account are stored in a csv file and it will be read using file connector and transform by referring to another sequence(Which invokes a script mediator to change specific region field) and create the sObject in salesforce using salesforcerest connector.
+In this example, We read multiple details of an account which are stored in a csv file and transform them within a seperate sequence((Which invokes a script mediator to change specific region field). We will lookup this seperate sequence(Call it using sequence reference) and set transformed output to a property and use that property to build sObject in salesforce using salesforcerest connector.
 
 ### Set Up and Run the Example
 
