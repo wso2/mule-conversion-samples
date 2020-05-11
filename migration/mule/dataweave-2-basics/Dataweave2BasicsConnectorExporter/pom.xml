@@ -2,12 +2,12 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.example.DataHandlingBasics</groupId>
-  <artifactId>DataHandlingBasicsConnectorExporter</artifactId>
+  <groupId>com.example.Dataweave2Basics</groupId>
+  <artifactId>Dataweave2BasicsConnectorExporter</artifactId>
   <version>1.0.0</version>
   <packaging>pom</packaging>
-  <name>DataHandlingBasicsConnectorExporter</name>
-  <description>DataHandlingBasicsConnectorExporter</description>
+  <name>Dataweave2BasicsConnectorExporter</name>
+  <description>Dataweave2BasicsConnectorExporter</description>
   <properties>
     <CApp.type>synapse/lib</CApp.type>
     <maven.test.skip>false</maven.test.skip>

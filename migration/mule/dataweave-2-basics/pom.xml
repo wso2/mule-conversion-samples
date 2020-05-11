@@ -3,15 +3,15 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.wso2</groupId>
-  <artifactId>data-handling-basics</artifactId>
+  <artifactId>dataweave-2-basics</artifactId>
   <version>1.0.0</version>
   <packaging>pom</packaging>
-  <name>data-handling-basics</name>
-  <description>data-handling-basics</description>
+  <name>dataweave-2-basics</name>
+  <description>dataweave-2-basics</description>
   <modules>
-    <module>DataHandlingBasics</module>
-    <module>DataHandlingBasicsConnectorExporter</module>
-    <module>DataHandlingBasicsCompositeApplication</module>
+    <module>Dataweave2Basics</module>
+    <module>Dataweave2BasicsConnectorExporter</module>
+    <module>Dataweave2BasicsCompositeApplication</module>
   </modules>
   <build>
     <plugins>
