@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="tshirt" groupId="org.wso2.resources-web-service-consumer.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+        <item>
+            <file>tshirt.wsdl</file>
+            <path>/_system/config/webServiceConsumerBEResources</path>
+            <mediaType>application/wsdl+xml</mediaType>
+        </item>
+    </artifact>
+    <artifact name="DMInputMappingConf" groupId="org.wso2.resources-web-service-consumer.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>DMInputMappingConf.dmc</file>
+            <path>/_system/governance/datamapper</path>
+            <mediaType>text/plain</mediaType>
+        </item>
+    </artifact>
+    <artifact name="DMInputMappingConf_inputSchema" groupId="org.wso2.resources-web-service-consumer.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>DMInputMappingConf_inputSchema.json</file>
+            <path>/_system/governance/datamapper</path>
+            <mediaType>text/plain</mediaType>
+        </item>
+    </artifact>
+    <artifact name="DMInputMappingConf_outputSchema" groupId="org.wso2.resources-web-service-consumer.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>DMInputMappingConf_outputSchema.json</file>
+            <path>/_system/governance/datamapper</path>
+            <mediaType>text/plain</mediaType>
+        </item>
+    </artifact>
+    <artifact name="DMInputMappingConf_xsltStyleSheet" groupId="org.wso2.resources-web-service-consumer.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>DMInputMappingConf_xsltStyleSheet.xml</file>
+            <path>/_system/governance/datamapper</path>
+            <mediaType>text/plain</mediaType>
+        </item>
+    </artifact>
+    <artifact name="ResponseMappingDMConfig" groupId="org.wso2.resources-web-service-consumer.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>ResponseMappingDMConfig.dmc</file>
+            <path>/_system/governance/datamapper</path>
+            <mediaType>text/plain</mediaType>
+        </item>
+    </artifact>
+    <artifact name="ResponseMappingDMConfig_inputSchema" groupId="org.wso2.resources-web-service-consumer.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>ResponseMappingDMConfig_inputSchema.json</file>
+            <path>/_system/governance/datamapper</path>
+            <mediaType>text/plain</mediaType>
+        </item>
+    </artifact>
+    <artifact name="ResponseMappingDMConfig_outputSchema" groupId="org.wso2.resources-web-service-consumer.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>ResponseMappingDMConfig_outputSchema.json</file>
+            <path>/_system/governance/datamapper</path>
+            <mediaType>text/plain</mediaType>
+        </item>
+    </artifact>
+    <artifact name="ResponseMappingDMConfig_xsltStyleSheet" groupId="org.wso2.resources-web-service-consumer.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>ResponseMappingDMConfig_xsltStyleSheet.xml</file>
+            <path>/_system/governance/datamapper</path>
+            <mediaType>text/plain</mediaType>
+        </item>
+    </artifact>
+    <artifact name="ListOrdersDMConfig" groupId="org.wso2.resources-web-service-consumer.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>ListOrdersDMConfig.dmc</file>
+            <path>/_system/governance/datamapper</path>
+            <mediaType>text/plain</mediaType>
+        </item>
+    </artifact>
+    <artifact name="ListOrdersDMConfig_inputSchema" groupId="org.wso2.resources-web-service-consumer.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>ListOrdersDMConfig_inputSchema.json</file>
+            <path>/_system/governance/datamapper</path>
+            <mediaType>text/plain</mediaType>
+        </item>
+    </artifact>
+    <artifact name="ListOrdersDMConfig_outputSchema" groupId="org.wso2.resources-web-service-consumer.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>ListOrdersDMConfig_outputSchema.json</file>
+            <path>/_system/governance/datamapper</path>
+            <mediaType>text/plain</mediaType>
+        </item>
+    </artifact>
+    <artifact name="ListOrdersDMConfig_xsltStyleSheet" groupId="org.wso2.resources-web-service-consumer.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>ListOrdersDMConfig_xsltStyleSheet.xml</file>
+            <path>/_system/governance/datamapper</path>
+            <mediaType>text/plain</mediaType>
+        </item>
+    </artifact>
+</artifacts>
