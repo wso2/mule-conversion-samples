@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="describeGlobal" groupId="com.example.salesforce-data-retrive.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/describeGlobal.xml</file>
+    </artifact>
+    <artifact name="salesforceIdRetrievalFlow" groupId="com.example.salesforce-data-retrive.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/salesforceIdRetrievalFlow.xml</file>
+    </artifact>
+    <artifact name="salesforce-data-retrieval" groupId="com.example.salesforce-data-retrive.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/salesforce-data-retrieval.xml</file>
+    </artifact>
+</artifacts>

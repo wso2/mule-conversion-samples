@@ -1,0 +1,37 @@
+map_S_root_S_html = function(){ 
+var outputhtml={};
+
+var count_i_sobjects_70e2321a_cfd7_471d_8f47_f3560f19f2f6 = 0;
+outputhtml =  {};
+outputhtml.body =  {};
+outputhtml.body.form =  {};
+outputhtml.body.form.attr_action = '/listener/retrievalFlowListener';
+outputhtml.body.form.attr_method = 'POST';
+outputhtml.body.form.p = 'Object:';
+outputhtml.body.form.select =  {};
+outputhtml.body.form.select.attr_name = 'objectName';
+outputhtml.body.form.select.option =  [];
+
+for(i_sobjects_70e2321a_cfd7_471d_8f47_f3560f19f2f6 in inputroot.sobjects){
+outputhtml.body.form.select.option[count_i_sobjects_70e2321a_cfd7_471d_8f47_f3560f19f2f6] =  {};
+outputhtml.body.form.select.option[count_i_sobjects_70e2321a_cfd7_471d_8f47_f3560f19f2f6]._ELEMVAL = inputroot.sobjects[i_sobjects_70e2321a_cfd7_471d_8f47_f3560f19f2f6].label;
+outputhtml.body.form.select.option[count_i_sobjects_70e2321a_cfd7_471d_8f47_f3560f19f2f6].attr_value = inputroot.sobjects[i_sobjects_70e2321a_cfd7_471d_8f47_f3560f19f2f6].name;
+
+count_i_sobjects_70e2321a_cfd7_471d_8f47_f3560f19f2f6++;
+}
+return outputhtml;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+

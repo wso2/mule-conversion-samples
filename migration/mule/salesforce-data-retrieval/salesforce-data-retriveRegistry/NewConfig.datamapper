@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datamapper:DataMapperRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:datamapper="http:///org/wso2/developerstudio/eclipse/gmf/datamapper">
+  <input>
+    <treeNode name="root" schemaDataType="OBJECT" level="1">
+      <node name="encoding" schemaDataType="STRING" level="2">
+        <properties key="type" value="string"/>
+        <properties key="id" value="http://wso2jsonschema.org/encoding"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode/>
+      </node>
+      <node name="maxBatchSize" schemaDataType="NUMBER" level="2">
+        <properties key="type" value="number"/>
+        <properties key="id" value="http://wso2jsonschema.org/maxBatchSize"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode/>
+      </node>
+      <node name="sobjects" level="2">
+        <node name="activateable" schemaDataType="BOOLEAN" level="3">
+          <properties key="type" value="boolean"/>
+          <properties key="id" value="http://wso2jsonschema.org/sobjects/0/activateable"/>
+          <properties key="nullable" value="false"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <node name="createable" schemaDataType="BOOLEAN" level="3">
+          <properties key="type" value="boolean"/>
+          <properties key="id" value="http://wso2jsonschema.org/sobjects/0/createable"/>
+          <properties key="nullable" value="false"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <node name="custom" schemaDataType="BOOLEAN" level="3">
+          <properties key="type" value="boolean"/>
+          <properties key="id" value="http://wso2jsonschema.org/sobjects/0/custom"/>
+          <properties key="nullable" value="false"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <node name="customSetting" schemaDataType="BOOLEAN" level="3">
+          <properties key="type" value="boolean"/>
+          <properties key="id" value="http://wso2jsonschema.org/sobjects/0/customSetting"/>
+          <properties key="nullable" value="false"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <node name="deletable" schemaDataType="BOOLEAN" level="3">
+          <properties key="type" value="boolean"/>
+          <properties key="id" value="http://wso2jsonschema.org/sobjects/0/deletable"/>
+          <properties key="nullable" value="false"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <node name="deprecatedAndHidden" schemaDataType="BOOLEAN" level="3">
+          <properties key="type" value="boolean"/>
+          <properties key="id" value="http://wso2jsonschema.org/sobjects/0/deprecatedAndHidden"/>
+          <properties key="nullable" value="false"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <node name="feedEnabled" schemaDataType="BOOLEAN" level="3">
+          <properties key="type" value="boolean"/>
+          <properties key="id" value="http://wso2jsonschema.org/sobjects/0/feedEnabled"/>
+          <properties key="nullable" value="false"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <node name="hasSubtypes" schemaDataType="BOOLEAN" level="3">
+          <properties key="type" value="boolean"/>
+          <properties key="id" value="http://wso2jsonschema.org/sobjects/0/hasSubtypes"/>
+          <properties key="nullable" value="false"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <node name="isSubtype" schemaDataType="BOOLEAN" level="3">
+          <properties key="type" value="boolean"/>
+          <properties key="id" value="http://wso2jsonschema.org/sobjects/0/isSubtype"/>
+          <properties key="nullable" value="false"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <node name="keyPrefix" schemaDataType="NULL" level="3">
+          <properties key="type" value="null"/>
+          <properties key="id" value="http://wso2jsonschema.org/sobjects/0/keyPrefix"/>
+          <properties key="nullable" value="false"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <node name="label" schemaDataType="STRING" level="3">
+          <properties key="type" value="string"/>
+          <properties key="id" value="http://wso2jsonschema.org/sobjects/0/label"/>
+          <properties key="nullable" value="false"/>
+          <outNode>
+            <outgoingLink/>
+            <outgoingLink inNode="//@output/@treeNode.0/@node.0/@node.1/@node.3/@node.2/@inNode"/>
+          </outNode>
+          <inNode/>
+        </node>
+        <node name="labelPlural" schemaDataType="STRING" level="3">
+          <properties key="type" value="string"/>
+          <properties key="id" value="http://wso2jsonschema.org/sobjects/0/labelPlural"/>
+          <properties key="nullable" value="false"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <node name="layoutable" schemaDataType="BOOLEAN" level="3">
+          <properties key="type" value="boolean"/>
+          <properties key="id" value="http://wso2jsonschema.org/sobjects/0/layoutable"/>
+          <properties key="nullable" value="false"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <node name="mergeable" schemaDataType="BOOLEAN" level="3">
+          <properties key="type" value="boolean"/>
+          <properties key="id" value="http://wso2jsonschema.org/sobjects/0/mergeable"/>
+          <properties key="nullable" value="false"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <node name="mruEnabled" schemaDataType="BOOLEAN" level="3">
+          <properties key="type" value="boolean"/>
+          <properties key="id" value="http://wso2jsonschema.org/sobjects/0/mruEnabled"/>
+          <properties key="nullable" value="false"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <node name="name" schemaDataType="STRING" level="3">
+          <properties key="type" value="string"/>
+          <properties key="id" value="http://wso2jsonschema.org/sobjects/0/name"/>
+          <properties key="nullable" value="false"/>
+          <outNode>
+            <outgoingLink/>
+            <outgoingLink inNode="//@output/@treeNode.0/@node.0/@node.1/@node.3/@node.2/@node.0/@inNode"/>
+          </outNode>
+          <inNode/>
+        </node>
+        <node name="queryable" schemaDataType="BOOLEAN" level="3">
+          <properties key="type" value="boolean"/>
+          <properties key="id" value="http://wso2jsonschema.org/sobjects/0/queryable"/>
+          <properties key="nullable" value="false"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <node name="replicateable" schemaDataType="BOOLEAN" level="3">
+          <properties key="type" value="boolean"/>
+          <properties key="id" value="http://wso2jsonschema.org/sobjects/0/replicateable"/>
+          <properties key="nullable" value="false"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <node name="retrieveable" schemaDataType="BOOLEAN" level="3">
+          <properties key="type" value="boolean"/>
+          <properties key="id" value="http://wso2jsonschema.org/sobjects/0/retrieveable"/>
+          <properties key="nullable" value="false"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <node name="searchable" schemaDataType="BOOLEAN" level="3">
+          <properties key="type" value="boolean"/>
+          <properties key="id" value="http://wso2jsonschema.org/sobjects/0/searchable"/>
+          <properties key="nullable" value="false"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <node name="triggerable" schemaDataType="BOOLEAN" level="3">
+          <properties key="type" value="boolean"/>
+          <properties key="id" value="http://wso2jsonschema.org/sobjects/0/triggerable"/>
+          <properties key="nullable" value="false"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <node name="undeletable" schemaDataType="BOOLEAN" level="3">
+          <properties key="type" value="boolean"/>
+          <properties key="id" value="http://wso2jsonschema.org/sobjects/0/undeletable"/>
+          <properties key="nullable" value="false"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <node name="updateable" schemaDataType="BOOLEAN" level="3">
+          <properties key="type" value="boolean"/>
+          <properties key="id" value="http://wso2jsonschema.org/sobjects/0/updateable"/>
+          <properties key="nullable" value="false"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <node name="urls" schemaDataType="OBJECT" level="3">
+          <node name="rowTemplate" schemaDataType="STRING" level="4">
+            <properties key="type" value="string"/>
+            <properties key="id" value="http://wso2jsonschema.org/sobjects/0/urls/rowTemplate"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode/>
+          </node>
+          <node name="defaultValues" schemaDataType="STRING" level="4">
+            <properties key="type" value="string"/>
+            <properties key="id" value="http://wso2jsonschema.org/sobjects/0/urls/defaultValues"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode/>
+          </node>
+          <node name="describe" schemaDataType="STRING" level="4">
+            <properties key="type" value="string"/>
+            <properties key="id" value="http://wso2jsonschema.org/sobjects/0/urls/describe"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode/>
+          </node>
+          <node name="sobject" schemaDataType="STRING" level="4">
+            <properties key="type" value="string"/>
+            <properties key="id" value="http://wso2jsonschema.org/sobjects/0/urls/sobject"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode/>
+          </node>
+          <properties key="type" value="object"/>
+          <properties key="id" value="http://wso2jsonschema.org/sobjects/0/urls"/>
+          <properties key="nullable" value="false"/>
+          <properties key="properties_id" value="{rowTemplate={id=http://wso2jsonschema.org/sobjects/0/urls/rowTemplate, type=string}, defaultValues={id=http://wso2jsonschema.org/sobjects/0/urls/defaultValues, type=string}, describe={id=http://wso2jsonschema.org/sobjects/0/urls/describe, type=string}, sobject={id=http://wso2jsonschema.org/sobjects/0/urls/sobject, type=string}}"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <properties key="type" value="array"/>
+        <properties key="id" value="http://wso2jsonschema.org/sobjects"/>
+        <properties key="items_id" value="http://wso2jsonschema.org/sobjects/0"/>
+        <properties key="items_type" value="object"/>
+        <properties key="nullable" value="false"/>
+        <properties key="properties_id" value="{activateable={id=http://wso2jsonschema.org/sobjects/0/activateable, type=boolean}, createable={id=http://wso2jsonschema.org/sobjects/0/createable, type=boolean}, custom={id=http://wso2jsonschema.org/sobjects/0/custom, type=boolean}, customSetting={id=http://wso2jsonschema.org/sobjects/0/customSetting, type=boolean}, deletable={id=http://wso2jsonschema.org/sobjects/0/deletable, type=boolean}, deprecatedAndHidden={id=http://wso2jsonschema.org/sobjects/0/deprecatedAndHidden, type=boolean}, feedEnabled={id=http://wso2jsonschema.org/sobjects/0/feedEnabled, type=boolean}, hasSubtypes={id=http://wso2jsonschema.org/sobjects/0/hasSubtypes, type=boolean}, isSubtype={id=http://wso2jsonschema.org/sobjects/0/isSubtype, type=boolean}, keyPrefix={id=http://wso2jsonschema.org/sobjects/0/keyPrefix, type=null}, label={id=http://wso2jsonschema.org/sobjects/0/label, type=string}, labelPlural={id=http://wso2jsonschema.org/sobjects/0/labelPlural, type=string}, layoutable={id=http://wso2jsonschema.org/sobjects/0/layoutable, type=boolean}, mergeable={id=http://wso2jsonschema.org/sobjects/0/mergeable, type=boolean}, mruEnabled={id=http://wso2jsonschema.org/sobjects/0/mruEnabled, type=boolean}, name={id=http://wso2jsonschema.org/sobjects/0/name, type=string}, queryable={id=http://wso2jsonschema.org/sobjects/0/queryable, type=boolean}, replicateable={id=http://wso2jsonschema.org/sobjects/0/replicateable, type=boolean}, retrieveable={id=http://wso2jsonschema.org/sobjects/0/retrieveable, type=boolean}, searchable={id=http://wso2jsonschema.org/sobjects/0/searchable, type=boolean}, triggerable={id=http://wso2jsonschema.org/sobjects/0/triggerable, type=boolean}, undeletable={id=http://wso2jsonschema.org/sobjects/0/undeletable, type=boolean}, updateable={id=http://wso2jsonschema.org/sobjects/0/updateable, type=boolean}, urls={id=http://wso2jsonschema.org/sobjects/0/urls, type=object, properties={rowTemplate={id=http://wso2jsonschema.org/sobjects/0/urls/rowTemplate, type=string}, defaultValues={id=http://wso2jsonschema.org/sobjects/0/urls/defaultValues, type=string}, describe={id=http://wso2jsonschema.org/sobjects/0/urls/describe, type=string}, sobject={id=http://wso2jsonschema.org/sobjects/0/urls/sobject, type=string}}}}"/>
+        <outNode/>
+        <inNode/>
+      </node>
+      <properties key="type" value="object"/>
+      <properties key="$schema" value="http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#"/>
+      <properties key="id" value="http://wso2jsonschema.org"/>
+      <properties key="nullable" value="false"/>
+      <outNode/>
+      <inNode/>
+    </treeNode>
+  </input>
+  <output>
+    <treeNode name="html" schemaDataType="OBJECT" level="1">
+      <node name="body" schemaDataType="OBJECT" level="2">
+        <node name="h1" schemaDataType="STRING" level="3">
+          <properties key="type" value="string"/>
+          <properties key="id" value="http://wso2jsonschema.org/body/h1"/>
+          <properties key="nullable" value="false"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <node name="form" schemaDataType="OBJECT" level="3">
+          <node name="@action" schemaDataType="STRING" level="4">
+            <properties key="type" value="string"/>
+            <properties key="id" value="http://wso2jsonschema.org/body/form/action"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode incomingLink="//@operators.1/@basicContainer/@rightContainer/@rightConnectors.0/@outNode/@outgoingLink.0"/>
+          </node>
+          <node name="@method" schemaDataType="STRING" level="4">
+            <properties key="type" value="string"/>
+            <properties key="id" value="http://wso2jsonschema.org/body/form/method"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode incomingLink="//@operators.2/@basicContainer/@rightContainer/@rightConnectors.0/@outNode/@outgoingLink.0"/>
+          </node>
+          <node name="p" schemaDataType="STRING" level="4">
+            <properties key="type" value="string"/>
+            <properties key="id" value="http://wso2jsonschema.org/body/form/p"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode incomingLink="//@operators.0/@basicContainer/@rightContainer/@rightConnectors.0/@outNode/@outgoingLink.0"/>
+          </node>
+          <node name="select" schemaDataType="OBJECT" level="4">
+            <node name="@style" schemaDataType="STRING" level="5">
+              <properties key="type" value="string"/>
+              <properties key="id" value="http://wso2jsonschema.org/body/form/select/style"/>
+              <properties key="nullable" value="false"/>
+              <outNode/>
+              <inNode/>
+            </node>
+            <node name="@name" schemaDataType="STRING" level="5">
+              <properties key="type" value="string"/>
+              <properties key="id" value="http://wso2jsonschema.org/body/form/select/name"/>
+              <properties key="nullable" value="false"/>
+              <outNode/>
+              <inNode incomingLink="//@operators.3/@basicContainer/@rightContainer/@rightConnectors.0/@outNode/@outgoingLink.0"/>
+            </node>
+            <node name="option" level="5">
+              <node name="@value" schemaDataType="STRING" level="6">
+                <properties key="type" value="string"/>
+                <properties key="id" value="http://wso2jsonschema.org/body/form/select/option/value"/>
+                <properties key="nullable" value="false"/>
+                <outNode/>
+                <inNode incomingLink="//@input/@treeNode.0/@node.2/@node.15/@outNode/@outgoingLink.1"/>
+              </node>
+              <properties key="type" value="array"/>
+              <properties key="id" value="http://wso2jsonschema.org/body/form/select/option"/>
+              <properties key="items_id" value="http://wso2jsonschema.org/body/form/select/option/option"/>
+              <properties key="items_type" value="object"/>
+              <properties key="items_value_type" value="string"/>
+              <properties key="nullable" value="false"/>
+              <properties key="attribute_id" value="{attribute_id=[http://wso2jsonschema.org/body/form/select/option/value]}"/>
+              <properties key="attribute_type" value="{attribute_type=[string]}"/>
+              <outNode/>
+              <inNode incomingLink="//@input/@treeNode.0/@node.2/@node.10/@outNode/@outgoingLink.1"/>
+            </node>
+            <properties key="type" value="object"/>
+            <properties key="id" value="http://wso2jsonschema.org/body/form/select"/>
+            <properties key="nullable" value="false"/>
+            <properties key="attribute_id" value="{attribute_id=[http://wso2jsonschema.org/body/form/select/style, http://wso2jsonschema.org/body/form/select/name]}"/>
+            <properties key="attribute_type" value="{attribute_type=[string, string]}"/>
+            <properties key="properties_id" value="{option={id=http://wso2jsonschema.org/body/form/select/option, type=array, items=[{id=http://wso2jsonschema.org/body/form/select/option/option, type=object, value={type=string}, attributes={value={id=http://wso2jsonschema.org/body/form/select/option/value, type=string}}}]}}"/>
+            <outNode/>
+            <inNode/>
+          </node>
+          <node name="content" level="4">
+            <properties key="type" value="array"/>
+            <properties key="id" value="http://wso2jsonschema.org/body/form/content"/>
+            <properties key="items_id" value="http://wso2jsonschema.org/body/form/content/0"/>
+            <properties key="items_type" value="string"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode/>
+          </node>
+          <node name="input" level="4">
+            <node name="@style" schemaDataType="STRING" level="5">
+              <properties key="type" value="string"/>
+              <properties key="id" value="http://wso2jsonschema.org/body/form/input/style"/>
+              <properties key="nullable" value="false"/>
+              <outNode/>
+              <inNode/>
+            </node>
+            <node name="@type" schemaDataType="STRING" level="5">
+              <properties key="type" value="string"/>
+              <properties key="id" value="http://wso2jsonschema.org/body/form/input/type"/>
+              <properties key="nullable" value="false"/>
+              <outNode/>
+              <inNode/>
+            </node>
+            <node name="@name" schemaDataType="STRING" level="5">
+              <properties key="type" value="string"/>
+              <properties key="id" value="http://wso2jsonschema.org/body/form/input/name"/>
+              <properties key="nullable" value="false"/>
+              <outNode/>
+              <inNode/>
+            </node>
+            <node name="@value" schemaDataType="STRING" level="5">
+              <properties key="type" value="string"/>
+              <properties key="id" value="http://wso2jsonschema.org/body/form/input/value"/>
+              <properties key="nullable" value="false"/>
+              <outNode/>
+              <inNode/>
+            </node>
+            <node name="@id" schemaDataType="STRING" level="5">
+              <properties key="type" value="string"/>
+              <properties key="id" value="http://wso2jsonschema.org/body/form/input/id"/>
+              <properties key="nullable" value="false"/>
+              <outNode/>
+              <inNode/>
+            </node>
+            <properties key="type" value="array"/>
+            <properties key="id" value="http://wso2jsonschema.org/body/form/input"/>
+            <properties key="items_id" value="http://wso2jsonschema.org/body/form/input/input"/>
+            <properties key="items_type" value="object"/>
+            <properties key="nullable" value="false"/>
+            <properties key="attribute_id" value="{attribute_id=[http://wso2jsonschema.org/body/form/input/style, http://wso2jsonschema.org/body/form/input/type, http://wso2jsonschema.org/body/form/input/name, http://wso2jsonschema.org/body/form/input/value, http://wso2jsonschema.org/body/form/input/id]}"/>
+            <properties key="attribute_type" value="{attribute_type=[string, string, string, string, string]}"/>
+            <outNode/>
+            <inNode/>
+          </node>
+          <properties key="type" value="object"/>
+          <properties key="id" value="http://wso2jsonschema.org/body/form"/>
+          <properties key="object_value_type" value="string"/>
+          <properties key="nullable" value="false"/>
+          <properties key="attribute_id" value="{attribute_id=[http://wso2jsonschema.org/body/form/action, http://wso2jsonschema.org/body/form/method]}"/>
+          <properties key="attribute_type" value="{attribute_type=[string, string]}"/>
+          <properties key="properties_id" value="{p={id=http://wso2jsonschema.org/body/form/p, type=string}, select={id=http://wso2jsonschema.org/body/form/select, type=object, properties={option={id=http://wso2jsonschema.org/body/form/select/option, type=array, items=[{id=http://wso2jsonschema.org/body/form/select/option/option, type=object, value={type=string}, attributes={value={id=http://wso2jsonschema.org/body/form/select/option/value, type=string}}}]}}, attributes={style={id=http://wso2jsonschema.org/body/form/select/style, type=string}, name={id=http://wso2jsonschema.org/body/form/select/name, type=string}}}, content={id=http://wso2jsonschema.org/body/form/content, type=array, items=[{id=http://wso2jsonschema.org/body/form/content/0, type=string}]}, input={id=http://wso2jsonschema.org/body/form/input, type=array, items=[{id=http://wso2jsonschema.org/body/form/input/input, type=object, attributes={style={id=http://wso2jsonschema.org/body/form/input/style, type=string}, type={id=http://wso2jsonschema.org/body/form/input/type, type=string}, name={id=http://wso2jsonschema.org/body/form/input/name, type=string}, value={id=http://wso2jsonschema.org/body/form/input/value, type=string}, id={id=http://wso2jsonschema.org/body/form/input/id, type=string}}}]}}"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <properties key="type" value="object"/>
+        <properties key="id" value="http://wso2jsonschema.org/body"/>
+        <properties key="nullable" value="false"/>
+        <properties key="properties_id" value="{h1={id=http://wso2jsonschema.org/body/h1, type=string}, form={id=http://wso2jsonschema.org/body/form, type=object, properties={p={id=http://wso2jsonschema.org/body/form/p, type=string}, select={id=http://wso2jsonschema.org/body/form/select, type=object, properties={option={id=http://wso2jsonschema.org/body/form/select/option, type=array, items=[{id=http://wso2jsonschema.org/body/form/select/option/option, type=object, value={type=string}, attributes={value={id=http://wso2jsonschema.org/body/form/select/option/value, type=string}}}]}}, attributes={style={id=http://wso2jsonschema.org/body/form/select/style, type=string}, name={id=http://wso2jsonschema.org/body/form/select/name, type=string}}}, content={id=http://wso2jsonschema.org/body/form/content, type=array, items=[{id=http://wso2jsonschema.org/body/form/content/0, type=string}]}, input={id=http://wso2jsonschema.org/body/form/input, type=array, items=[{id=http://wso2jsonschema.org/body/form/input/input, type=object, attributes={style={id=http://wso2jsonschema.org/body/form/input/style, type=string}, type={id=http://wso2jsonschema.org/body/form/input/type, type=string}, name={id=http://wso2jsonschema.org/body/form/input/name, type=string}, value={id=http://wso2jsonschema.org/body/form/input/value, type=string}, id={id=http://wso2jsonschema.org/body/form/input/id, type=string}}}]}}, value={type=string}, attributes={action={id=http://wso2jsonschema.org/body/form/action, type=string}, method={id=http://wso2jsonschema.org/body/form/method, type=string}}}}"/>
+        <outNode/>
+        <inNode/>
+      </node>
+      <properties key="type" value="object"/>
+      <properties key="$schema" value="http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#"/>
+      <properties key="id" value="http://wso2jsonschema.org"/>
+      <properties key="nullable" value="false"/>
+      <outNode/>
+      <inNode/>
+    </treeNode>
+  </output>
+  <operators xsi:type="datamapper:Constant" defaultOutputConnectors="1" operatorType="CONSTANT" constantValue="Object:">
+    <basicContainer>
+      <leftContainer/>
+      <rightContainer>
+        <rightConnectors>
+          <outNode>
+            <outgoingLink inNode="//@output/@treeNode.0/@node.0/@node.1/@node.2/@inNode"/>
+          </outNode>
+        </rightConnectors>
+      </rightContainer>
+    </basicContainer>
+  </operators>
+  <operators xsi:type="datamapper:Constant" defaultOutputConnectors="1" operatorType="CONSTANT" constantValue="/listener/retrievalFlowListener">
+    <basicContainer>
+      <leftContainer/>
+      <rightContainer>
+        <rightConnectors>
+          <outNode>
+            <outgoingLink inNode="//@output/@treeNode.0/@node.0/@node.1/@node.0/@inNode"/>
+          </outNode>
+        </rightConnectors>
+      </rightContainer>
+    </basicContainer>
+  </operators>
+  <operators xsi:type="datamapper:Constant" defaultOutputConnectors="1" operatorType="CONSTANT" constantValue="POST">
+    <basicContainer>
+      <leftContainer/>
+      <rightContainer>
+        <rightConnectors>
+          <outNode>
+            <outgoingLink inNode="//@output/@treeNode.0/@node.0/@node.1/@node.1/@inNode"/>
+          </outNode>
+        </rightConnectors>
+      </rightContainer>
+    </basicContainer>
+  </operators>
+  <operators xsi:type="datamapper:Constant" defaultOutputConnectors="1" operatorType="CONSTANT" constantValue="objectName">
+    <basicContainer>
+      <leftContainer/>
+      <rightContainer>
+        <rightConnectors>
+          <outNode>
+            <outgoingLink inNode="//@output/@treeNode.0/@node.0/@node.1/@node.3/@node.1/@inNode"/>
+          </outNode>
+        </rightConnectors>
+      </rightContainer>
+    </basicContainer>
+  </operators>
+</datamapper:DataMapperRoot>
