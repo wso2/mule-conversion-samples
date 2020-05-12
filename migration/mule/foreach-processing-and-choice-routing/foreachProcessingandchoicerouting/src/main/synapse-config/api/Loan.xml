@@ -12,7 +12,7 @@
                         <sequence>
                             <switch description="When it iterates through the foreach mediator, as the response we get jsonValue. As we have two cases other than the default case, we refer to these values as case regex." source="$body/jsonValue">
                                 <case regex="1">
-                                    <payloadFactory description="Creates the payload according tothe rate of bank 1. " media-type="json">
+                                    <payloadFactory description="Creates the payload according to the rate of bank 1. " media-type="json">
                                         <format>{
 "name": "Bank 1",
 "amount": $1,
@@ -33,7 +33,7 @@
                                     </log>
                                 </case>
                                 <case regex="2">
-                                    <payloadFactory description="Creates the payload according tothe rate of bank 2. " media-type="json">
+                                    <payloadFactory description="Creates the payload according to the rate of bank 2. " media-type="json">
                                         <format>{
 "name": "Bank 2",
 "amount": $1,
@@ -54,7 +54,7 @@
                                     </log>
                                 </case>
                                 <default>
-                                    <payloadFactory description="Creates the payload according tothe rate of bank 3. " media-type="json">
+                                    <payloadFactory description="Creates the payload according to the rate of bank 3. " media-type="json">
                                         <format>{
 "name": "Bank 3",
 "amount": $1,
