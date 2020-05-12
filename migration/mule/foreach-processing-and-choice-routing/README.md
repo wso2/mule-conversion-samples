@@ -3,10 +3,10 @@
 This example explains how to perform content based routing along with processing per each item in the payload. 
 
 ### Content Based Routing ###
-WSO2 EI has the ability to intelligently route a message through different processing pathways. Using Switch mediator, WSO2 EI uses an expression to evaluate a message's properties, or part of its payload, then routes it to a specific sequence (i.e. series of message mediators). Content-based routing, as this activity is called, dynamically applies routing criteria to a message at runtime.
+WSO2 EI has the ability to intelligently route a message through different processing pathways. Using [Switch mediator](https://ei.docs.wso2.com/en/latest/micro-integrator/references/mediators/switch-Mediator/), WSO2 EI uses an expression to evaluate a message's properties, or part of its payload, then routes it to a specific sequence (i.e. series of message mediators). Content-based routing, as this activity is called, dynamically applies routing criteria to a message at runtime.
 
 ### Foreach Processing ###
-This concept can be achived using the WSO2 Foreach Mediator. It requires an XPath expression and a sequence (inline or referred). It splits the message into a number of different messages derived from the original message by finding matching elements for the XPath expression specified. Based on the matching elements, new messages are created for each iteration and processed sequentially. The processing is carried out based on a specified sequence. The behaviour of ForEach mediator is similar to a generic loop. After mediation, the sub-messages are merged back to their original parent element in the original message.
+This concept can be achieved using the WSO2 [Foreach Mediator](https://ei.docs.wso2.com/en/latest/micro-integrator/references/mediators/forEach-Mediator/). It requires an XPath expression and a sequence (inline or referred). It splits the message into a number of different messages derived from the original message by finding matching elements for the XPath expression specified. Based on the matching elements, new messages are created for each iteration and processed sequentially. The processing is carried out based on a specified sequence. The behaviour of ForEach mediator is similar to a generic loop. After mediation, the sub-messages are merged back to their original parent element in the original message.
 
 ### Assumptions ###
 
@@ -22,7 +22,9 @@ As an example, assume the user provides the following details.
   Loan amount: 2500000
   term: 30
 
-It provides the user a set of banks which can fullfill the request along with the monthly installement amount calculated that user needs to pay to the bank. 
+It provides the user a set of banks which can fulfill the request along with the monthly installment amount calculated that user needs to pay to the bank. 
+
+<img width="80%" src="../../../docs/assets/images/migration-mule/foreach-processing-and-choice-routing-use-case.png">
 
 ### Set Up and Run the Example ###
 
@@ -31,10 +33,10 @@ Follow the steps in this procedure to create and run this example in your own in
 1. Start WSO2 Integration Studio ([Installing WSO2 Integration Studio](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/installing-WSO2-Integration-Studio/)).
 2. In your menu in Studio, click the **File** menu. In the File menu select the **Import...** item.
 3. In the Import window select the **Existing WSO2 Projects into workspace** under **WSO2** folder.
-4. Browse and select the file path to the downloaded sample of this github project ("foreach-processing-and-choice-routing" folder of the 
-downloaded github repository).
+4. Browse and select the file path to the downloaded sample of this Github project (``integration-studio-examples/migration/mule/foreach-processing-and-choice-routing``) and click **Finish**.
 5. Open the **Loan.xml** under **foreach-processing-and-choice-routing/foreachProcessingandchoicerouting/src/main/synapse-config/api** 
 directory. 
+<img width="70%" src="../../../docs/assets/images/migration-mule/foreach-processing-and-choice-routing.png">
 6. The **Loan.xml** is the graphical view of the foreach-processing-and-choice-routing example.
 7. Run the sample by right click on the **foreachProcessingandchoiceroutingCompositeApplication** under the main **foreach-processing-and-choice-routing** 
 project and selecting **Export Project Artifacts and Run**.
