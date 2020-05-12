@@ -17,24 +17,37 @@ This example demonstrates service orchestration(SOAP operations) and content-bas
 2. For an existing patient, get the patient id and locate to existing EHR and create a new episode.
 
 Finally, AdmissionService will respond to the Episode and Billing details as the admitSubjectResponse.
-![AdmitPatientService](../resources/images/xml-only-soap-webservice/mainSequence.png?raw=true "AdmitPatientService")
+<img width="50%" src="../../../docs/assets/images/migration-mule/xml-only-soap-webservice-use-case.png">
 
 ### Set Up and Run the Example with Integration Studio
 
 1. Start WSO2 Integration Studio ([Installing WSO2 Integration Studio](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/installing-WSO2-Integration-Studio/)).
+
 2. In your menu in Studio, click the **File** menu. In the File menu select the **Import...** item.
+
 3. In the Import window select the **Existing WSO2 Projects into workspace** under **WSO2** folder.
+
 4. Browse and select the file path to the downloaded sample of this Github project 
 (`integration-studio-examples/migration/mule/xml-only-soap-webservice`) and click **finish**.
-5. Run the sample by right click on the **XMLonlySOAPserviceCompositeApplication** under the main 
+
+5. Open **xml-only-soap-webservice.xml** located in **xml-only-soap-webservice/XMLonlySOAPservice/src/main/synapse-config/proxy-services** directory. 
+<img width="90%" src="../../../docs/assets/images/migration-mule/xml-only-soap-webservice.png">
+
+6. The **xml-only-soap-webservice.xml** is the graphical view of the service.
+
+7. Run the sample by right click on the **XMLonlySOAPserviceCompositeApplication** under the main 
 **xml-only-soap-webservice** project and selecting **Export Project Artifacts and Run**.
-6. Open HTTP Client in Integration Studio. Follow [HTTP Client Guidelines](../../../docs/common/adding-http-client-to-integration-studio.md)
+
+8. Open HTTP Client in Integration Studio. Follow [HTTP Client Guidelines](../../../docs/common/adding-http-client-to-integration-studio.md)
 to open HTTP Client if the window is not visible in the interface.
-7. Make a POST request to `http://localhost:8290/services/xml-only-soap-webservice`.
-8. Add following `SOAPAction` and `Content-Type` headers.
+
+9. Make a POST request to `http://localhost:8290/services/xml-only-soap-webservice`.
+
+10. Add following `SOAPAction` and `Content-Type` headers.
     - SOAPAction: http://wso2.org/hospital-admission-service/admitSubject
     - Content-Type: text/xml
-9. Add the following input payload.
+
+11. Add the following input payload.
     ```xml
     <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://wso2.org/hospital-admission-service" xmlns:ns1="http://wso2.org/hospital-admission-service/modal">
        <soapenv:Header/>
@@ -63,7 +76,8 @@ to open HTTP Client if the window is not visible in the interface.
        </soapenv:Body>
     </soapenv:Envelope>
     ```
-10. Following response can be observed in the HTTP Response pane.
+
+12. Following response can be observed in the HTTP Response pane.
     ```xml
     <?xml version='1.0' encoding='UTF-8'?>
     <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns0="http://wso2.org/hospital-admission-service" xmlns:ns1="http://wso2.org/hospital-admission-service/modal">

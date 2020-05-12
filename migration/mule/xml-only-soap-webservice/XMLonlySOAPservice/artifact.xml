@@ -20,4 +20,10 @@
     <artifact name="invokeEHRService" groupId="com.example.XMLonlySOAPservice.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/sequences/invokeEHRService.xml</file>
     </artifact>
+    <artifact name="xml-only-soap-webservice" groupId="com.example.XMLonlySOAPservice.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/xml-only-soap-webservice.xml</file>
+    </artifact>
+    <artifact name="getPatient" groupId="com.example.XMLonlySOAPservice.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/getPatient.xml</file>
+    </artifact>
 </artifacts>

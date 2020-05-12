@@ -15,8 +15,8 @@
     <com.example.BackEndServiceRegistry.resource_._AdmissionService_wsdl>capp/EnterpriseIntegrator</com.example.BackEndServiceRegistry.resource_._AdmissionService_wsdl>
     <com.example.XMLonlySOAPservice.sequence_._upsertPatient>capp/EnterpriseServiceBus</com.example.XMLonlySOAPservice.sequence_._upsertPatient>
     <com.example.BackEndServiceRegistry.resource_._EHRService_wsdl>capp/EnterpriseIntegrator</com.example.BackEndServiceRegistry.resource_._EHRService_wsdl>
-    <com.example.XMLonlySOAPservice.endpoint_._invokeEHRServiceEndpoint>capp/EnterpriseServiceBus</com.example.XMLonlySOAPservice.endpoint_._invokeEHRServiceEndpoint>
     <com.example.XMLonlySOAPservice.endpoint_._PatientServiceEndpoint>capp/EnterpriseServiceBus</com.example.XMLonlySOAPservice.endpoint_._PatientServiceEndpoint>
+    <com.example.XMLonlySOAPservice.endpoint_._invokeEHRServiceEndpoint>capp/EnterpriseServiceBus</com.example.XMLonlySOAPservice.endpoint_._invokeEHRServiceEndpoint>
     <com.example.BackEndServiceRegistry.resource_._SOA-Model-1.0_xsd>capp/EnterpriseIntegrator</com.example.BackEndServiceRegistry.resource_._SOA-Model-1.0_xsd>
     <com.example.WSO2HealthServiceBackend.proxy-service_._PatientService>capp/EnterpriseServiceBus</com.example.WSO2HealthServiceBackend.proxy-service_._PatientService>
     <com.example.BackEndServiceRegistry.resource_._PatientService_wsdl>capp/EnterpriseIntegrator</com.example.BackEndServiceRegistry.resource_._PatientService_wsdl>
@@ -25,6 +25,18 @@
     <com.example.WSO2HealthServiceBackend.proxy-service_._EHRService>capp/EnterpriseServiceBus</com.example.WSO2HealthServiceBackend.proxy-service_._EHRService>
   </properties>
   <dependencies>
+    <dependency>
+      <groupId>com.example.WSO2HealthServiceBackend.proxy-service</groupId>
+      <artifactId>EHRService</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.XMLonlySOAPservice.sequence</groupId>
+      <artifactId>getPatient</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
     <dependency>
       <groupId>com.example.BackEndServiceRegistry.resource</groupId>
       <artifactId>AdmissionService_wsdl</artifactId>
@@ -38,26 +50,8 @@
       <type>zip</type>
     </dependency>
     <dependency>
-      <groupId>com.example.BackEndServiceRegistry.resource</groupId>
-      <artifactId>PatientService_wsdl</artifactId>
-      <version>1.0.0</version>
-      <type>zip</type>
-    </dependency>
-    <dependency>
-      <groupId>com.example.BackEndServiceRegistry.resource</groupId>
-      <artifactId>SOA-Message-1.0_xsd</artifactId>
-      <version>1.0.0</version>
-      <type>zip</type>
-    </dependency>
-    <dependency>
-      <groupId>com.example.BackEndServiceRegistry.resource</groupId>
-      <artifactId>SOA-Model-1.0_xsd</artifactId>
-      <version>1.0.0</version>
-      <type>zip</type>
-    </dependency>
-    <dependency>
-      <groupId>com.example.XMLonlySOAPservice.endpoint</groupId>
-      <artifactId>PatientServiceEndpoint</artifactId>
+      <groupId>com.example.WSO2HealthServiceBackend.proxy-service</groupId>
+      <artifactId>PatientService</artifactId>
       <version>1.0.0</version>
       <type>xml</type>
     </dependency>
@@ -68,10 +62,28 @@
       <type>xml</type>
     </dependency>
     <dependency>
+      <groupId>com.example.BackEndServiceRegistry.resource</groupId>
+      <artifactId>SOA-Model-1.0_xsd</artifactId>
+      <version>1.0.0</version>
+      <type>zip</type>
+    </dependency>
+    <dependency>
       <groupId>com.example.XMLonlySOAPservice.proxy-service</groupId>
       <artifactId>xml-only-soap-webservice</artifactId>
       <version>1.0.0</version>
       <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.XMLonlySOAPservice.endpoint</groupId>
+      <artifactId>PatientServiceEndpoint</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.BackEndServiceRegistry.resource</groupId>
+      <artifactId>SOA-Message-1.0_xsd</artifactId>
+      <version>1.0.0</version>
+      <type>zip</type>
     </dependency>
     <dependency>
       <groupId>com.example.XMLonlySOAPservice.sequence</groupId>
@@ -80,26 +92,14 @@
       <type>xml</type>
     </dependency>
     <dependency>
-      <groupId>com.example.XMLonlySOAPservice.sequence</groupId>
-      <artifactId>getPatient</artifactId>
+      <groupId>com.example.BackEndServiceRegistry.resource</groupId>
+      <artifactId>PatientService_wsdl</artifactId>
       <version>1.0.0</version>
-      <type>xml</type>
+      <type>zip</type>
     </dependency>
     <dependency>
       <groupId>com.example.XMLonlySOAPservice.sequence</groupId>
       <artifactId>upsertPatient</artifactId>
-      <version>1.0.0</version>
-      <type>xml</type>
-    </dependency>
-    <dependency>
-      <groupId>com.example.WSO2HealthServiceBackend.proxy-service</groupId>
-      <artifactId>EHRService</artifactId>
-      <version>1.0.0</version>
-      <type>xml</type>
-    </dependency>
-    <dependency>
-      <groupId>com.example.WSO2HealthServiceBackend.proxy-service</groupId>
-      <artifactId>PatientService</artifactId>
       <version>1.0.0</version>
       <type>xml</type>
     </dependency>
