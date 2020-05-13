@@ -2,19 +2,19 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.example.RestApiWithApikit</groupId>
+  <groupId>org.wso2.RestApiWithApikit</groupId>
   <artifactId>RestApiWithApikitCompositeApplication</artifactId>
   <version>1.0.0</version>
   <packaging>carbon/application</packaging>
   <name>RestApiWithApikitCompositeApplication</name>
   <description>RestApiWithApikitCompositeApplication</description>
   <properties>
-    <com.example.RestApiWithApikit.api_._RestApiWithApikit>capp/EnterpriseServiceBus</com.example.RestApiWithApikit.api_._RestApiWithApikit>
+    <org.wso2.RestApiWithApikit.api_._RestApiWithApikit>capp/EnterpriseServiceBus</org.wso2.RestApiWithApikit.api_._RestApiWithApikit>
     <artifact.types>jaggery/app=zip,synapse/priority-executor=xml,synapse/inbound-endpoint=xml,service/rule=aar,synapse/message-store=xml,event/stream=json,service/meta=xml,datasource/datasource=xml,synapse/proxy-service=xml,bpel/workflow=zip,synapse/sequence=xml,synapse/endpointTemplate=xml,carbon/application=car,wso2/gadget=dar,synapse/api=xml,synapse/event-source=xml,synapse/message-processors=xml,event/receiver=xml,lib/dataservice/validator=jar,synapse/template=xml,synapse/endpoint=xml,lib/carbon/ui=jar,lib/synapse/mediator=jar,event/publisher=xml,synapse/local-entry=xml,synapse/task=xml,webapp/jaxws=war,registry/resource=zip,synapse/configuration=xml,service/axis2=aar,synapse/lib=zip,synapse/sequenceTemplate=xml,event/execution-plan=siddhiql,service/dataservice=dbs,web/application=war,lib/library/bundle=jar</artifact.types>
   </properties>
   <dependencies>
     <dependency>
-      <groupId>com.example.RestApiWithApikit.api</groupId>
+      <groupId>org.wso2.RestApiWithApikit.api</groupId>
       <artifactId>RestApiWithApikit</artifactId>
       <version>1.0.0</version>
       <type>xml</type>
