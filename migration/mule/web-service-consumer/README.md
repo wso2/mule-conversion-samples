@@ -1,7 +1,6 @@
 # Web Service Consumer Example #
 
 This application illustrates how to consume a Web service.
-![WebServiceConsumerUseCase](../resources/images/web-service-consumer/web-service-consumer-use-case.png?raw=true "Web Service Consumer Use Case")
 
 ### Assumptions
 
@@ -17,6 +16,8 @@ This example application simulates consuming a Web service that belongs to a T-S
 
 When the application receives a list-inventory request, it forwards the request to the Web service, turns the response into JSON, and builds a final response for the requester.
 
+<img width="80%" src="../../../docs/assets/images/migration-mule/web-service-consumer-use-case.png">
+
 ### Set Up and Run the Example ###
 
 1. Start WSO2 Integration Studio ([Installing WSO2 Integration Studio](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/installing-WSO2-Integration-Studio/)).
@@ -25,7 +26,7 @@ When the application receives a list-inventory request, it forwards the request 
 4. Browse and select the file path to the downloaded sample of this github project ("content-based-routing" folder of the downloaded github repository).
 5. Open the **ContentBasedRoutingAPI.xml** under **web-service-consumer/WebServicesConsumer/src/main/synapse-config/api/WebServiceConsumerAPI.xml** directory. 
 6. The **WebServiceConsumerAPI.xml** is the graphical view of the content based routing sample.
-![WebServiceConsumerScreenshot](../resources/images/web-service-consumer/web-service-consumer.png?raw=true "Web Service Consumer screenshot")
+<img width="70%" src="../../../docs/assets/images/migration-mule/web-service-consumer.png">
 7. Run the sample by right click on the **WebServicesConsumerCompositeApplication** under the main **web-service-consumer** project and selecting **Export Project Artifacts and Run**.  
 **Result:** You can now send posts to your application via a browser extension such as Postman (for Google Chrome), or the `curl` command-line utility.
 8. To get an inventory list for the retailer, send a GET request to http://localhost:8290/tshirt/inventory.
