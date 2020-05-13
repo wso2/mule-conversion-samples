@@ -16,11 +16,9 @@
 
 # This workflow will build the project with Maven
 
-name: CI with Maven workflow
+name: Maven Build - Pull Request
 
 on:
-  push:
-    branches: [ master ]
   pull_request:
     branches: [ master ]
 
