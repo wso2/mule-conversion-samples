@@ -23,7 +23,7 @@
     <dbreport description="Save Order Item to DB">
         <connection>
             <pool>
-                <driver>com.mysql.cj.jdbc.Driver</driver>
+                <driver>com.mysql.jdbc.Driver</driver>
                 <url>jdbc:mysql://localhost:3306/OrderProcess</url>
                 <user>process_manager</user>
                 <password>process123</password>
