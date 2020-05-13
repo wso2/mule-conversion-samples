@@ -18,7 +18,7 @@
         <inSequence>
             <payloadFactory description="Mock Payload Retrieve one " media-type="json">
                 <format>{
-   "personId”:”$1”,
+   "personId":"$1",
    "firstname":"John",
    "lastname":"Doe",
    "address":{
