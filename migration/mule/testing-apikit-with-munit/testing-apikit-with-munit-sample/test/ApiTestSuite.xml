@@ -1,0 +1,85 @@
+<unit-test>
+    <artifacts>
+        <test-artifact>
+            <artifact>/testing-apikit-with-munit-sample/src/main/synapse-config/api/api.xml</artifact>
+        </test-artifact>
+        <supportive-artifacts/>
+        <registry-resources/>
+        <connector-resources/>
+    </artifacts>
+    <test-cases>
+        <test-case name="TestCaseForResource_GET">
+            <input>
+                <request-path>/unittest</request-path>
+                <request-method>GET</request-method>
+            </input>
+            <assertions>
+                <assertEquals>
+                    <actual>$body</actual>
+                    <expected><![CDATA[GET RESPONSE]]></expected>
+                    <message>The response payload is not correct!</message>
+                </assertEquals>
+                <assertEquals>
+                    <actual>$statusCode</actual>
+                    <expected><![CDATA[200]]></expected>
+                    <message>The HTTP Status code is not correct!</message>
+                </assertEquals>
+            </assertions>
+        </test-case>
+        <test-case name="TestCaseForResource_POST">
+            <input>
+                <request-path>/unittest</request-path>
+                <request-method>POST</request-method>
+            </input>
+            <assertions>
+                <assertEquals>
+                    <actual>$body</actual>
+                    <expected><![CDATA[POST RESPONSE]]></expected>
+                    <message>The response payload is not correct!</message>
+                </assertEquals>
+                <assertEquals>
+                    <actual>$statusCode</actual>
+                    <expected><![CDATA[201]]></expected>
+                    <message>The HTTP Status code is not correct!</message>
+                </assertEquals>
+            </assertions>
+        </test-case>
+        <test-case name="TestCaseForResource_PUT">
+            <input>
+                <request-path>/unittest</request-path>
+                <request-method>PUT</request-method>
+            </input>
+            <assertions>
+                <assertEquals>
+                    <actual>$body</actual>
+                    <expected><![CDATA[PUT RESPONSE]]></expected>
+                    <message>The response payload is not correct!</message>
+                </assertEquals>
+                <assertEquals>
+                    <actual>$statusCode</actual>
+                    <expected><![CDATA[201]]></expected>
+                    <message>The HTTP Status code is not correct!</message>
+                </assertEquals>
+            </assertions>
+        </test-case>
+        <test-case name="TestCaseForResource_DELETE">
+            <input>
+                <request-path>/unittest</request-path>
+                <request-method>DELETE</request-method>
+            </input>
+            <assertions>
+                <assertEquals>
+                    <actual>$body</actual>
+                    <expected><![CDATA[DELETE RESPONSE]]></expected>
+                    <message>The response payload is not correct!</message>
+                </assertEquals>
+                <assertEquals>
+                    <actual>$statusCode</actual>
+                    <expected><![CDATA[200]]></expected>
+                    <message>The HTTP Status code is not correct!</message>
+                </assertEquals>
+            </assertions>
+        </test-case>
+    </test-cases>
+    <mock-services/>
+</unit-test>
