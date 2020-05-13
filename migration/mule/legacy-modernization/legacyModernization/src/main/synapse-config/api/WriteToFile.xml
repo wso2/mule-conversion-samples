@@ -10,7 +10,7 @@
                         <property description="Save Mapped Body in Property" expression="$body/int:text/text()" name="csvBody" scope="default" type="STRING" xmlns:int="http://ws.apache.org/commons/ns/payload"/>
                         <property description="Add Newline" expression="fn:concat($ctx:csvBody,'&#xa;')" name="csvBodyWithNewLine" scope="default" type="STRING"/>
                         <fileconnector.append>
-                            <destination>/Users/niruhan/IntegrationStudio/workspace/legacyModernization/src/main/resources/CSVOutput.csv</destination>
+                            <destination>[file path of CSVOutput.csv]</destination>
                             <inputContent>{$ctx:csvBodyWithNewLine}</inputContent>
                         </fileconnector.append>
                     </sequence>

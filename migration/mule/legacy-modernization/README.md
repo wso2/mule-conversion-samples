@@ -31,6 +31,8 @@ wants to begin accepting orders via a SOAP Web service and automatically submitt
 for fulfillment. In order to process orders, the company uses WSO2 EI to convert HTTP requests into a file format that 
 the legacy system accepts. 
 
+<img width="80%" src="../../../docs/assets/images/migration-mule/legacy-modernization-use-case.png">
+
 ### Set Up and Run the Example
 
 #### Setting up the soap request ####
@@ -39,7 +41,7 @@ www.soapui.org. This tool enables you to submit a request to simulate the submis
 use case. If you haven't already done so, download and launch soapUI.
 2. In soapUI, select File > Import Project. Browse to the downloaded sample directory of this github project on your 
 local drive to locate the sample soapUI project file: 
-legacy-modernization/legacyModernization/src/main/resources/LegacyModernizationExample-soapui-project.xml. 
+``legacy-modernization/legacyModernization/src/main/resources/LegacyModernizationExample-soapui-project.xml``. 
 Click Open.
 3. In the new LegacyModernizationExample project in soapUI, expand the folders to reveal Request 1. Double-click 
 Request 1 to open the request-response window.
@@ -49,22 +51,20 @@ Request 1 to open the request-response window.
 ([Installing WSO2 Integration Studio](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/installing-WSO2-Integration-Studio/)).
 2. In your menu in Studio, click the **File** menu. In the File menu select the **Import...** item.
 3. In the Import window select the **Existing WSO2 Projects into workspace** under **WSO2** folder.
-4. Browse and select the file path to the downloaded sample of this github project 
-("legacy-modernization" folder of the downloaded github repository).
+4. Browse and select the file path to the downloaded sample of this Github project (``integration-studio-examples/migration/mule/legacy-modernization``) and click **Finish**.
 5. Lets add the file connector into the workspace. Right click on the **legacyModernization** and select 
 **Add or Remove Connector**. Keep the **Add connector** option selected and click **Next>**. Search for 'file' using the 
 search bar and click the download button located at the bottom right corner of the file connector. Click **Finish**.
 6. Copy the **CSVOutput.csv** file in 
 **legacy-modernization/legacyModernization/src/main/resources/CSVOutput.csv** to a location on your computer.
-7. Update the fileConnector.append/destination parameter in 
+7. Open the **WriteToFile.xml** under **legacy-modernization/legacyModernization/src/main/synapse-config/api** directory.<br>
+    <img width="70%" src="../../../docs/assets/images/migration-mule/legacy-modernization.png">
+8. Update the ``fileConnector.append/destination parameter`` in 
 **legacy-modernization/legacyModernization/src/main/synapse-config/api/WriteToFile.xml** to the new location of the 
-copied file in your computer. (By default it is set as **/Users/WSO2User/CSVOutput.csv**)
-8. Save the modifications by pressing ctrl+s
-9. Run the sample by right clicking on the **legacyModernizationCompositeApplication** project and selecting **Run as -> 
-Run On Micro Integrator**. (Make sure to select legacyModernization, LegacyModernizationFileConnectorExporter, 
-legacyModernizationRegistry while creating the car app during this step prompt wizard)
+copied file in your computer and save.
+9. Run the sample by right click on the **legacyModernizationCompositeApplication** under the main **legacy-modernization** project and selecting **Export Project Artifacts and Run**.
 10. Now go back to the SoapUI to send the soap request
-12. Click the submit request icon (green "play" button at upper left) to submit the request to the EI application 
+11. Click the submit request icon (green "play" button at upper left) to submit the request to the EI application 
 (see below, left). soapUI displays the response from the EI application in the response pane (see below, right).
 12. Review the contents of the SOAP response, to examine the details of your processed request. Note, in particular, 
 the orderReceivedStatus with the value "true". The entire response in raw format will be as follows.
