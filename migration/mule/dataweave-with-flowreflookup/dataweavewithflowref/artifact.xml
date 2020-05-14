@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="LoadCSVFIle" groupId="com.example.dataweavewithflowref.task" version="1.0.0" type="synapse/task" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/tasks/LoadCSVFIle.xml</file>
+    </artifact>
+    <artifact name="LookupSalesRegionSequence" groupId="com.example.dataweavewithflowref.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/LookupSalesRegionSequence.xml</file>
+    </artifact>
+    <artifact name="FlowRefSequence" groupId="com.example.dataweavewithflowref.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/FlowRefSequence.xml</file>
+    </artifact>
+</artifacts>

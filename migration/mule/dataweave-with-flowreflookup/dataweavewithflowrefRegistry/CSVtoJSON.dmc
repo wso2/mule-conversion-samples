@@ -1,0 +1,37 @@
+map_S_root_S_root = function(){ 
+var outputroot={};
+var UPPERCASE_11_0 = '';
+
+var count_i_inputroot_6d28f515_46bd_4d6f_b522_379fd2f8d6f6 = 0;
+outputroot =  {};
+outputroot.records =  [];
+
+for(i_inputroot_6d28f515_46bd_4d6f_b522_379fd2f8d6f6 in inputroot){
+UPPERCASE_11_0 = inputroot[i_inputroot_6d28f515_46bd_4d6f_b522_379fd2f8d6f6].company_state.toString().toUpperCase();
+outputroot.records[count_i_inputroot_6d28f515_46bd_4d6f_b522_379fd2f8d6f6] =  {};
+outputroot.records[count_i_inputroot_6d28f515_46bd_4d6f_b522_379fd2f8d6f6].Name = inputroot[i_inputroot_6d28f515_46bd_4d6f_b522_379fd2f8d6f6].company_name;
+outputroot.records[count_i_inputroot_6d28f515_46bd_4d6f_b522_379fd2f8d6f6].BillingStreet = inputroot[i_inputroot_6d28f515_46bd_4d6f_b522_379fd2f8d6f6].company_address;
+outputroot.records[count_i_inputroot_6d28f515_46bd_4d6f_b522_379fd2f8d6f6].BillingCity = inputroot[i_inputroot_6d28f515_46bd_4d6f_b522_379fd2f8d6f6].company_city;
+outputroot.records[count_i_inputroot_6d28f515_46bd_4d6f_b522_379fd2f8d6f6].BillingState = UPPERCASE_11_0;
+outputroot.records[count_i_inputroot_6d28f515_46bd_4d6f_b522_379fd2f8d6f6].BillingPostalCode = inputroot[i_inputroot_6d28f515_46bd_4d6f_b522_379fd2f8d6f6].company_zip;
+outputroot.records[count_i_inputroot_6d28f515_46bd_4d6f_b522_379fd2f8d6f6].Region__c = inputroot[i_inputroot_6d28f515_46bd_4d6f_b522_379fd2f8d6f6].company_state;
+outputroot.records[count_i_inputroot_6d28f515_46bd_4d6f_b522_379fd2f8d6f6].attributes =  {};
+outputroot.records[count_i_inputroot_6d28f515_46bd_4d6f_b522_379fd2f8d6f6].attributes.type = 'Account';
+outputroot.records[count_i_inputroot_6d28f515_46bd_4d6f_b522_379fd2f8d6f6].attributes.referenceId = inputroot[i_inputroot_6d28f515_46bd_4d6f_b522_379fd2f8d6f6].id;
+
+count_i_inputroot_6d28f515_46bd_4d6f_b522_379fd2f8d6f6++;
+}
+return outputroot;
+};
+
+
+
+
+
+
+
+
+
+
+
+
