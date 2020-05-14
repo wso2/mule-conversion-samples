@@ -2,49 +2,43 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.example.ImplementingAChoiceExceptionStrategy</groupId>
-  <artifactId>ImplementingAChoiceExceptionStrategyCompositeApplication</artifactId>
+  <groupId>com.example.ExceptionStrategyCompositeApplication</groupId>
+  <artifactId>ExceptionStrategyCompositeApplication</artifactId>
   <version>1.0.0</version>
   <packaging>carbon/application</packaging>
-  <name>ImplementingAChoiceExceptionStrategyCompositeApplication</name>
-  <description>ImplementingAChoiceExceptionStrategyCompositeApplication</description>
+  <name>ExceptionStrategyCompositeApplication</name>
+  <description>ExceptionStrategyCompositeApplication</description>
   <properties>
     <com.example.ImplementingAChoiceExceptionStrategy.api_._ReadCSVFileAndResponseJSON>capp/EnterpriseServiceBus</com.example.ImplementingAChoiceExceptionStrategy.api_._ReadCSVFileAndResponseJSON>
-    <com.example.ImplementingAChoiceExceptionStrategy.resource_._CSVToJSONTransformation_outputSchema>capp/EnterpriseServiceBus</com.example.ImplementingAChoiceExceptionStrategy.resource_._CSVToJSONTransformation_outputSchema>
-    <com.example.ImplementingAChoiceExceptionStrategy.resource_._CSVToJSONTransformation_inputSchema>capp/EnterpriseServiceBus</com.example.ImplementingAChoiceExceptionStrategy.resource_._CSVToJSONTransformation_inputSchema>
-    <com.example.ImplementingAChoiceExceptionStrategy.resource_._CSVToJSONTransformation>capp/EnterpriseServiceBus</com.example.ImplementingAChoiceExceptionStrategy.resource_._CSVToJSONTransformation>
-    <com.example.ImplementingAChoiceExceptionStrategy.resource_._CSVToJSONTransformation_xsltStyleSheet>capp/EnterpriseServiceBus</com.example.ImplementingAChoiceExceptionStrategy.resource_._CSVToJSONTransformation_xsltStyleSheet>
+    <com.example.ExceptionStrategyRegProject.resource_._DMConfig>capp/EnterpriseServiceBus</com.example.ExceptionStrategyRegProject.resource_._DMConfig>
+    <com.example.ExceptionStrategyRegProject.resource_._DMConfig_inputSchema>capp/EnterpriseServiceBus</com.example.ExceptionStrategyRegProject.resource_._DMConfig_inputSchema>
+    <com.example.ExceptionStrategyRegProject.resource_._DMConfig_xsltStyleSheet>capp/EnterpriseServiceBus</com.example.ExceptionStrategyRegProject.resource_._DMConfig_xsltStyleSheet>
     <com.example.ImplementingAChoiceExceptionStrategy.lib_._fileconnector-connector>capp/EnterpriseServiceBus</com.example.ImplementingAChoiceExceptionStrategy.lib_._fileconnector-connector>
+    <com.example.ExceptionStrategyRegProject.resource_._DMConfig_outputSchema>capp/EnterpriseServiceBus</com.example.ExceptionStrategyRegProject.resource_._DMConfig_outputSchema>
     <artifact.types>jaggery/app=zip,synapse/priority-executor=xml,synapse/inbound-endpoint=xml,service/rule=aar,synapse/message-store=xml,event/stream=json,service/meta=xml,datasource/datasource=xml,synapse/proxy-service=xml,bpel/workflow=zip,synapse/sequence=xml,synapse/endpointTemplate=xml,carbon/application=car,wso2/gadget=dar,synapse/api=xml,synapse/event-source=xml,synapse/message-processors=xml,event/receiver=xml,lib/dataservice/validator=jar,synapse/template=xml,synapse/endpoint=xml,lib/carbon/ui=jar,lib/synapse/mediator=jar,event/publisher=xml,synapse/local-entry=xml,synapse/task=xml,webapp/jaxws=war,registry/resource=zip,synapse/configuration=xml,service/axis2=aar,synapse/lib=zip,synapse/sequenceTemplate=xml,event/execution-plan=siddhiql,service/dataservice=dbs,web/application=war,lib/library/bundle=jar</artifact.types>
   </properties>
   <dependencies>
     <dependency>
-      <groupId>com.example.ImplementingAChoiceExceptionStrategy.resource</groupId>
-      <artifactId>CSVToJSONTransformation</artifactId>
+      <groupId>com.example.ExceptionStrategyRegProject.resource</groupId>
+      <artifactId>DMConfig_outputSchema</artifactId>
+      <version>1.0.0</version>
+      <type>zip</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.ExceptionStrategyRegProject.resource</groupId>
+      <artifactId>DMConfig_inputSchema</artifactId>
       <version>1.0.0</version>
       <type>zip</type>
     </dependency>
     <dependency>
       <groupId>com.example.ImplementingAChoiceExceptionStrategy.lib</groupId>
       <artifactId>fileconnector-connector</artifactId>
-      <version>2.0.21</version>
+      <version>2.0.22</version>
       <type>zip</type>
     </dependency>
     <dependency>
-      <groupId>com.example.ImplementingAChoiceExceptionStrategy.resource</groupId>
-      <artifactId>CSVToJSONTransformation_xsltStyleSheet</artifactId>
-      <version>1.0.0</version>
-      <type>zip</type>
-    </dependency>
-    <dependency>
-      <groupId>com.example.ImplementingAChoiceExceptionStrategy.resource</groupId>
-      <artifactId>CSVToJSONTransformation_inputSchema</artifactId>
-      <version>1.0.0</version>
-      <type>zip</type>
-    </dependency>
-    <dependency>
-      <groupId>com.example.ImplementingAChoiceExceptionStrategy.resource</groupId>
-      <artifactId>CSVToJSONTransformation_outputSchema</artifactId>
+      <groupId>com.example.ExceptionStrategyRegProject.resource</groupId>
+      <artifactId>DMConfig</artifactId>
       <version>1.0.0</version>
       <type>zip</type>
     </dependency>
@@ -53,6 +47,12 @@
       <artifactId>ReadCSVFileAndResponseJSON</artifactId>
       <version>1.0.0</version>
       <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.ExceptionStrategyRegProject.resource</groupId>
+      <artifactId>DMConfig_xsltStyleSheet</artifactId>
+      <version>1.0.0</version>
+      <type>zip</type>
     </dependency>
   </dependencies>
   <repositories>

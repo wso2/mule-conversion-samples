@@ -6,8 +6,9 @@
             <fileconnector.read>
                 <source>{$ctx:filePath}</source>
                 <contentType>text/plain</contentType>
+                <numberOfLinesToSkip>1</numberOfLinesToSkip>
             </fileconnector.read>
-            <datamapper config="gov:datamapper/CSVToJSONTransformation.dmc" description="TransformCSVtoJSON" inputSchema="gov:datamapper/CSVToJSONTransformation_inputSchema.json" inputType="CSV" outputSchema="gov:datamapper/CSVToJSONTransformation_outputSchema.json" outputType="JSON" xsltStyleSheet="gov:datamapper/CSVToJSONTransformation_xsltStyleSheet.xml"/>
+            <datamapper config="gov:datamapper/DMConfig.dmc" description="TransformCSVtoJSON" inputSchema="gov:datamapper/DMConfig_inputSchema.json" inputType="CSV" outputSchema="gov:datamapper/DMConfig_outputSchema.json" outputType="JSON" xsltStyleSheet="gov:datamapper/DMConfig_xsltStyleSheet.xml"/>
             <property action="remove" description="Enable response body" name="NO_ENTITY_BODY" scope="axis2"/>
             <respond/>
         </inSequence>
