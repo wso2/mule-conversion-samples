@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><resources>
-    <item>
-        <file>test.xsd</file>
-        <path>/_system/governance/connectors/salesforcerest</path>
-        <mediaType>application/x-xsd+xml</mediaType>
-    </item>
-</resources>

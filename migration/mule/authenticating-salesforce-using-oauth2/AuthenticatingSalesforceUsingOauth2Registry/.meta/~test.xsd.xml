@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><resource name="test.xsd" isCollection="false" path="/_system/governance/connectors/salesforcerest/AuthenticatingSalesforceUsingOauth2Registry/test.xsd" registryUrl="https://localhost:9443/registry" status="added">
-    <mediaType>application/x-xsd+xml</mediaType>
-</resource>
