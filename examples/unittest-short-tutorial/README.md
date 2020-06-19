@@ -21,7 +21,7 @@ This example performs the following actions:
 4. Based on the value of `flowValue` property, API will set the payload to the message context and respond it. 
 
 <p align="center">
-  <img width="70%" src="../../../docs/assets/images/migration-mule/unittest-short-tutorial-use-case.png">
+  <img width="70%" src="../../resources/images/unittest-short-tutorial-use-case.png">
 </p>
 
 ### Set Up the Example
@@ -33,17 +33,17 @@ Follow the steps in this procedure to create and run this example in your own in
 2. Create the following scenario on it.
 
     - api/business-logic.xml<br>
-    <img width="60%" src="../../../docs/assets/images/migration-mule/unittest-short-tutorial-main.png">
+    <img width="60%" src="../../resources/images/unittest-short-tutorial-main.png">
 
 
     - sequence/secondaryFlow.xml<br>
-    <img width="30%" src="../../../docs/assets/images/migration-mule/unittest-short-tutorial-secondary.png">
+    <img width="30%" src="../../resources/images/unittest-short-tutorial-secondary.png">
 
     - sequence/firstSubFlow.xml<br>
-    <img width="25%" src="../../../docs/assets/images/migration-mule/unittest-short-tutorial-subFlow.png">
+    <img width="25%" src="../../resources/images/unittest-short-tutorial-subFlow.png">
 
     - sequence/secondSubFlow.xml<br>
-    <img width="25%" src="../../../docs/assets/images/migration-mule/unittest-short-tutorial-subFlow.png">
+    <img width="25%" src="../../resources/images/unittest-short-tutorial-subFlow.png">
 
     - Integration solution source
     ```xml
@@ -273,9 +273,9 @@ You can run the created Unit Test Suites using the unit testing server that is i
 
 Once you run the unit test suites, it will start the unit testing server in the console and prints the summary report for the given unit test suite(s) using the response from the unit testing server.
 
-<img width="50%" src="../../../docs/assets/images/migration-mule/unittest-short-tutorial-run-tests.png">
+<img width="50%" src="../../resources/images/unittest-short-tutorial-run-tests.png">
 
-<!-- INCLUDE_MD: ../../../docs/common/get-the-code.md -->
+
 
 ### Go Further
 

@@ -11,7 +11,7 @@ This document assumes that you are familiar with WSO2 EI and the [Integration St
 This example implementation route the request according the method which was used (GET, POST, PUT, DELETE) and generates dummy message, and a status code. Then we have written a test suite for this API to test the behaviour of each and every resource type in the API.
 
 <p align="center">
-  <img width="70%" src="../../../docs/assets/images/migration-mule/testing-apikit-with-munit.png">
+  <img width="70%" src="../../resources/images/testing-apikit-with-munit.png">
 </p>
 
 
@@ -136,9 +136,9 @@ You can run the created Unit Test Suites using the unit testing server that is i
 
 Once you run the unit test suites, it will start the unit testing server in the console and prints the summary report for the given unit test suite(s) using the response from the unit testing server.
 
-<img width="70%" src="../../../docs/assets/images/migration-mule/testing-apikit-with-munit-run-tests.png">
+<img width="70%" src="../../resources/images/testing-apikit-with-munit-run-tests.png">
 
-<!-- INCLUDE_MD: ../../../docs/common/get-the-code.md -->
+
 
 ### Go Further
 

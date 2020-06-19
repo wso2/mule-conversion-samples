@@ -10,7 +10,7 @@ This document describes the details of the example within the context of WSO2 In
 
 In this example, by hitting an HTTPS endpoint a user will attempt to grant the access to his data at Box Service. For this purpose, OAuth authorization will be triggered. A user will be asked to enter his user name and password. If successful, he can click a button in order to grant the access.
 
-<img width="90%" src="../../../docs/assets/images/migration-mule/oauth2-authorization-code-using-the-http-connector-use-case.png">
+<img width="90%" src="../../resources/images/oauth2-authorization-code-using-the-http-connector-use-case.png">
 
 ### Set Up and Run the Example ###
 
@@ -49,7 +49,7 @@ You can find instructions to configure the WSO2 Micro Integrator in the [officia
 4. Browse and select the file path to the downloaded sample of this project (``integration-studio-examples/migration/mule/oauth2-authorization-code-using-the-http-connector``) and click **Finish**.
 
 5. Open the **OAuth2AuthorizationCodeAPI.xml** under **oauth2-authorization-code-using-the-http-connector/OAuth2AuthorizationCode/src/main/synapse-config/api/OAuth2AuthorizationCodeAPI.xml** directory.<br>
-  	<img width="60%" src="../../../docs/assets/images/migration-mule/oauth2-authorization-code-using-the-http-connector.png">
+  	<img width="60%" src="../../resources/images/oauth2-authorization-code-using-the-http-connector.png">
 
 
 6. The **OAuth2AuthorizationCodeAPI.xml** is the graphical view of the simple hello world service.
@@ -85,7 +85,7 @@ To start an OAuth operation you will need a *clientId*, a *clientSecret* issued 
 
 Once the user is authorized, it is possible to read resources from Box using the recently obtained token, showing the result in the browser.
 
-<!-- INCLUDE_MD: ../../../docs/common/get-the-code.md -->
+
 
 ### Go Further
 

@@ -27,7 +27,7 @@ search bar and click the download button located at the bottom right corner of t
 7. Copy the companies.csv file in **dataweave-with-flowreflookup/dataweavewithflowref/src/main/resources/** directory to location of your choice.
 8. Open the **FlowRefSequence.xml** under 
 **dataweave-with-flowreflookup/dataweavewithflowref/src/main/synapse-config/sequences/** directory. 
-![dataweavewithflowref]( "dataweavewithflowref")
+![dataweavewithflowref](../../resources/images/ "dataweavewithflowref")
 Configure the following properties with the previously obtained values.
     - Access Token
     - Refresh Token

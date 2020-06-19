@@ -31,7 +31,7 @@ wants to begin accepting orders via a SOAP Web service and automatically submitt
 for fulfillment. In order to process orders, the company uses WSO2 EI to convert HTTP requests into a file format that 
 the legacy system accepts. 
 
-<img width="80%" src="../../../docs/assets/images/migration-mule/legacy-modernization-use-case.png">
+<img width="80%" src="../../resources/images/legacy-modernization-use-case.png">
 
 ### Set Up and Run the Example
 
@@ -58,7 +58,7 @@ search bar and click the download button located at the bottom right corner of t
 6. Copy the **CSVOutput.csv** file in 
 **legacy-modernization/legacyModernization/src/main/resources/CSVOutput.csv** to a location on your computer.
 7. Open the **WriteToFile.xml** under **legacy-modernization/legacyModernization/src/main/synapse-config/api** directory.<br>
-    <img width="70%" src="../../../docs/assets/images/migration-mule/legacy-modernization.png">
+    <img width="70%" src="../../resources/images/legacy-modernization.png">
 8. Update the ``fileConnector.append/destination parameter`` in 
 **legacy-modernization/legacyModernization/src/main/synapse-config/api/WriteToFile.xml** to the new location of the 
 copied file in your computer and save.

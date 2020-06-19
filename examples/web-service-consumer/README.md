@@ -16,7 +16,7 @@ This example application simulates consuming a Web service that belongs to a T-S
 
 When the application receives a list-inventory request, it forwards the request to the Web service, turns the response into JSON, and builds a final response for the requester.
 
-<img width="80%" src="../../../docs/assets/images/migration-mule/web-service-consumer-use-case.png">
+<img width="80%" src="../../resources/images/web-service-consumer-use-case.png">
 
 ### Set Up and Run the Example ###
 
@@ -26,7 +26,7 @@ When the application receives a list-inventory request, it forwards the request 
 4. Browse and select the file path to the downloaded sample of this github project ("content-based-routing" folder of the downloaded github repository).
 5. Open the **ContentBasedRoutingAPI.xml** under **web-service-consumer/WebServicesConsumer/src/main/synapse-config/api/WebServiceConsumerAPI.xml** directory. 
 6. The **WebServiceConsumerAPI.xml** is the graphical view of the content based routing sample.
-<img width="70%" src="../../../docs/assets/images/migration-mule/web-service-consumer.png">
+<img width="70%" src="../../resources/images/web-service-consumer.png">
 7. Run the sample by right click on the **WebServicesConsumerCompositeApplication** under the main **web-service-consumer** project and selecting **Export Project Artifacts and Run**.  
 **Result:** You can now send posts to your application via a browser extension such as Postman (for Google Chrome), or the `curl` command-line utility.
 8. To get an inventory list for the retailer, send a GET request to http://localhost:8290/tshirt/inventory.

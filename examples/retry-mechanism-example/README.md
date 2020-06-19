@@ -11,7 +11,7 @@ This document describes the details of the example within the context of WSO2 In
 
 The application consumes HTTP requests and based on the query parameter `fail` either successfully completes the flow or throw an exception inside the message flow causing the retry mechanism to repeat the flow. 
 
-<img width="90%" src="../../../docs/assets/images/migration-mule/retry-mechanism-example-use-case.png">
+<img width="90%" src="../../resources/images/retry-mechanism-example-use-case.png">
 
 > **NOTE**: The example demonstrates how to call a message flow recursively to achieve the requirement. 
 
@@ -29,7 +29,7 @@ Follow the steps in this procedure to create and run this example in your own in
 4. Browse and select the file path to the downloaded sample of this github project (`retry-mechanism-example` folder of the downloaded github repository)
 
 5. Open the **mediationRetryAPI.xml** file in the **retry-mechanism-example/mediationRetryIntegrationProject/src/main/synapse-config/api/** directory. The **mediationRetryAPI.xml** is the graphical view of the retry mechanism sample.<br>
-    <img width="60%" src="../../../docs/assets/images/migration-mule/retry-mechanism-example.png">
+    <img width="60%" src="../../resources/images/retry-mechanism-example.png">
 
 6. In the **Package Explorer**, right-click **Composite Application Project** and select **Export Project Artifacts and Run**. Select all the artifacts in the wizard. Studio runs the application on the embedded server.
 
@@ -77,7 +77,7 @@ Follow the steps in this procedure to create and run this example in your own in
     [2020-04-27 08:39:04,073]  INFO {org.apache.synapse.mediators.builtin.LogMediator} - message = 5.0
     ```
 
-<!-- INCLUDE_MD: ../../../docs/common/get-the-code.md -->
+
 
 ## Go Further
 

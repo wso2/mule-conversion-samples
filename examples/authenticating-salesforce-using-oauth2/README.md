@@ -10,7 +10,7 @@ This document assumes that you are familiar with WSO2 EI and the [Integration St
 
 In this example, Contacts in Salesforce are retrieved using OAuth 2.0 as the authentication mechanism. The retrieved records are then logged for simplicity.
 
-<img width="70%" src="../../../docs/assets/images/migration-mule/authenticating-salesforce-using-oauth2-use-case.png">
+<img width="70%" src="../../resources/images/authenticating-salesforce-using-oauth2-use-case.png">
 
 ### Set Up and Run the Example
 
@@ -27,7 +27,7 @@ In this example, Contacts in Salesforce are retrieved using OAuth 2.0 as the aut
 6. Follow these [steps](https://ei.docs.wso2.com/en/latest/micro-integrator/references/connectors/salesforce-rest-connector/sf-access-token-generation/) to generate the Access Tokens for Salesforce and obtain the Access Token, and Refresh Token.
 
 7. Open the **ContactsAPI.xml** under **authenticating-salesforce-using-oauth2/AuthenticatingSalesforceUsingOauth2/src/main/synapse-config/api/** directory.<br>
-    <img width="70%" src="../../../docs/assets/images/migration-mule/authenticating-salesforce-using-oauth2.png">
+    <img width="70%" src="../../resources/images/authenticating-salesforce-using-oauth2.png">
 
     Configure the following properties with the previously obtained values.
     - Access Token
@@ -64,7 +64,7 @@ In this example, Contacts in Salesforce are retrieved using OAuth 2.0 as the aut
     [2020-04-24 16:28:31,392]  INFO {API_LOGGER.ContactsAPI} - To: http://www.w3.org/2005/08/addressing/anonymous, WSAction: , SOAPAction: , MessageID: urn:uuid:2280a0c3-4ffe-47ca-a727-21424e531b0f, Direction: request, Payload: {"Id": "0032v00002m23hYAAQ", "LastName": "Bond", "LastModifiedDate": "2019-06-19T08:44:05.000+0000"}
     ```
 
-<!-- INCLUDE_MD: ../../../docs/common/get-the-code.md -->
+
 
 ### Go Further
 

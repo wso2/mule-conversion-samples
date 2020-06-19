@@ -10,7 +10,7 @@ This document describes the details of the example within the context of WSO2 In
 
 This example application receives the list of users in JSON format. Every record in the list should contain id, email in correct format, object with information about user connection. Connection info should contains IP address. If all of the mentioned fields are presented and validation process is successful as well, we will see: *User records are valid!* in response of the HTTP call.
 
-<img width="60%" src="../../../docs/assets/images/migration-mule/filtering-a-message-use-case.png">
+<img width="60%" src="../../resources/images/filtering-a-message-use-case.png">
 
 ### Set Up and Run the Example ###
 
@@ -25,7 +25,7 @@ This example application receives the list of users in JSON format. Every record
 5. Open the **FilteringAMessage.xml** under **filtering-a-message/FilteringAMessage/src/main/synapse-config/api** 
 directory.
 	<p align="center">
-  		<img width="70%" src="../../../docs/assets/images/migration-mule/filtering-a-message.png">
+  		<img width="70%" src="../../resources/images/filtering-a-message.png">
 	</p>
 
 6. The **FilteringAMessage.xml** is the graphical view of the filtering message service.
@@ -108,7 +108,7 @@ The following steps outline the process to build an application for validation o
 3. Add required validation criteria.
 4. Export capp and run the sample.
 
-<!-- INCLUDE_MD: ../../../docs/common/get-the-code.md -->
+
 
 ### Go Further ###
 

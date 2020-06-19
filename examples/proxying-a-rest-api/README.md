@@ -11,7 +11,7 @@ This document assumes that you are familiar with the [Integration Studio](https:
 
 To demonstrate the basic procedure of creating a proxy application, this document uses the public Box API as an example REST API to stand in for any REST API that you have that you might want to proxy through an EI application. The specific configuration for Box is summarized here, but you will need to replace this with the corresponding information for your own RESTful services that you wish to proxy.
 
-<img width="60%" src="../../../docs/assets/images/migration-mule/proxying-a-rest-api-use-case.png">
+<img width="60%" src="../../resources/images/proxying-a-rest-api-use-case.png">
 
 ### Set Up and Run the Example ###
 
@@ -66,7 +66,7 @@ The following steps describe how to obtain a token for the Box API and use it to
 5. Open the **proxyingARestApiAPI.xml** under **proxying-a-rest-api/proxyingARestApi/src/main/synapse-config/api/** directory. 
 
 6. The **proxyingARestApiAPI.xml** is the graphical view of the content based routing sample.<br>
-  	<img width="60%" src="../../../docs/assets/images/migration-mule/proxying-a-rest-api.png">
+  	<img width="60%" src="../../resources/images/proxying-a-rest-api.png">
 
 7. Run the sample by right click on the **proxyingARestApiCompositeApplication** under the main **proxying-a-rest-api** project and selecting **Export Project Artifacts and Run**.
 
@@ -127,7 +127,7 @@ Follow the anatomy described here to build a proxy application in Integration St
 4. Capture message headers from your API's response and attach them to the response message.
 5. Route the response to the application that made the service call.
 
-<!-- INCLUDE_MD: ../../../docs/common/get-the-code.md -->
+
 
 ### Go Further 
 

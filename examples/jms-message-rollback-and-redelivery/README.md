@@ -14,7 +14,7 @@ This document describes the details of the example within the context of WSO2 In
 In this example there is a JMS message in transaction inside WSO2 EI mediation flow which throws an exception when processed. This message is then handled by the `OnErrorPropagate` sequence, which rollbacks and retries to deliver the same message. The number of JMS message delivery count and filtering process is handled by `choice` sequence. 
 After a specific number of unsuccessful attempts to commit (4 in this case), it sends the message successfully.
 <p align="center">
-    <img width="70%" src="../../../docs/assets/images/migration-mule/jms-message-rollback-and-redelivery-use-case.png">
+    <img width="70%" src="../../resources/images/jms-message-rollback-and-redelivery-use-case.png">
 </p>
 
 ## Set Up and Run the Example
@@ -27,21 +27,21 @@ After a specific number of unsuccessful attempts to commit (4 in this case), it 
    Here we have defined jms configuration parameters, sequence that the message should be injected, fault sequence that should be invoked in case of failure.
    
    <p align="center">
-     <img width="20%" src="../../../docs/assets/images/migration-mule/jms-message-rollback-and-redelivery-inboundEP.png">
+     <img width="20%" src="../../resources/images/jms-message-rollback-and-redelivery-inboundEP.png">
    </p>
    
    Open **choice.xml** under **jms-message-rollback-and-redelivery/jms-message-rollback-redelivery/src/main/synapse-config/sequences** directory.<br>
    In this sequence we throw an exception for first 4 messages and sends the message in 5th attempt.
     
    <p align="center">
-     <img width="60%" src="../../../docs/assets/images/migration-mule/jms-message-rollback-and-redelivery-choice-seq.png">
+     <img width="60%" src="../../resources/images/jms-message-rollback-and-redelivery-choice-seq.png">
    </p>   
    
    **OnErrorPropagate.xml**
    This sequence will be invoked on an error and will roll back the transaction.
    
    <p align="center">
-     <img width="30%" src="../../../docs/assets/images/migration-mule/jms-message-rollback-and-redelivery-OnErrorPropagate-seq.png">
+     <img width="30%" src="../../resources/images/jms-message-rollback-and-redelivery-OnErrorPropagate-seq.png">
    </p>
 
 6. Download [WSO2 MI](https://wso2.com/integration/micro-integrator/) and Apache [ActiveMQ](http://activemq.apache.org/getting-started.html). 
@@ -148,7 +148,7 @@ After a specific number of unsuccessful attempts to commit (4 in this case), it 
    [2020-05-04 16:11:32,735]  INFO {JMSConnectionFactory} - JMS ConnectionFactory : jms:/topic1?transport.jms.ConnectionFactoryJNDIName=TopicConnectionFactory&java.naming.factory.initial=org.apache.activemq.jndi.ActiveMQInitialContextFactory&java.naming.provider.url=tcp://localhost:61616&transport.jms.DestinationType=topic initialized
    ```
    
-<!-- INCLUDE_MD: ../../../docs/common/get-the-code.md -->
+
 
 ### Go Further 
 

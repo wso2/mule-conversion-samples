@@ -24,7 +24,7 @@ As an example, assume the user provides the following details.
 
 It provides the user a set of banks which can fulfill the request along with the monthly installment amount calculated that user needs to pay to the bank. 
 
-<img width="80%" src="../../../docs/assets/images/migration-mule/foreach-processing-and-choice-routing-use-case.png">
+<img width="80%" src="../../resources/images/foreach-processing-and-choice-routing-use-case.png">
 
 ### Set Up and Run the Example ###
 
@@ -36,7 +36,7 @@ Follow the steps in this procedure to create and run this example in your own in
 4. Browse and select the file path to the downloaded sample of this Github project (``integration-studio-examples/migration/mule/foreach-processing-and-choice-routing``) and click **Finish**.
 5. Open the **Loan.xml** under **foreach-processing-and-choice-routing/foreachProcessingandchoicerouting/src/main/synapse-config/api** 
 directory. 
-<img width="70%" src="../../../docs/assets/images/migration-mule/foreach-processing-and-choice-routing.png">
+<img width="70%" src="../../resources/images/foreach-processing-and-choice-routing.png">
 6. The **Loan.xml** is the graphical view of the foreach-processing-and-choice-routing example.
 7. Run the sample by right click on the **foreachProcessingandchoiceroutingCompositeApplication** under the main **foreach-processing-and-choice-routing** 
 project and selecting **Export Project Artifacts and Run**.

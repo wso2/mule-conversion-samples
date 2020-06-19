@@ -12,7 +12,7 @@ In this example we use two resources : <br>
  * to handle the uploaded file(Multipart request) and write the content of the file to a preferred location by the same file name.
 
 <p align="center">
-  <img width="70%" src="../../../docs/assets/images/migration-mule/http-multipart-request-use-case.png"/>
+  <img width="70%" src="../../resources/images/http-multipart-request-use-case.png"/>
 </p>
 
 ### Set Up and Run the Example
@@ -33,7 +33,7 @@ search bar and click the download button located at the bottom right corner of t
 6. Open the **HTTPMultiPartRequestAPI.xml** under 
 **http-multipart-request/HTTPMultiPartRequest/src/main/synapse-config/api/** directory. 
 <p align="center">
-  <img width="60%" src="../../../docs/assets/images/migration-mule/http-multipart-request.png"/>
+  <img width="60%" src="../../resources/images/http-multipart-request.png"/>
 </p>
 
 7. Copy the uploadFile.html file located in **http-multipart-request/HTTPMultiPartRequest/src/main/resources** directory 
@@ -57,7 +57,7 @@ And in the console log you can see the below log.
 ```
 INFO {org.apache.synapse.mediators.builtin.LogMediator} - File Content-Type = text/xml
 ```
-<!-- INCLUDE_MD: ../../../docs/common/get-the-code.md -->
+
 
 ### Go Further
 

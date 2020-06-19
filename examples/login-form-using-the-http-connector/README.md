@@ -13,7 +13,7 @@ Once user submit the username and password values, WSO2 EI server receives the c
 page with the authentication result.  
 
 <p align="center">
-  <img width="70%" src="../../../docs/assets/images/migration-mule/login-form-using-the-http-connector-use-case.png">
+  <img width="70%" src="../../resources/images/login-form-using-the-http-connector-use-case.png">
 </p>
 
 ### Set Up and Run the Example
@@ -26,17 +26,17 @@ page with the authentication result.
 5. Open **login-form-using-the-http-connector.xml** under **login-form-using-the-http-connector/LoginFormUsingHttpConnector/src/main/synapse-config/api** directory.
 * **Get Login Page** (GET `/api/login`). This resource gets the index.html page from the Registry project and respond back.
 
-    <img width="60%" src="../../../docs/assets/images/migration-mule/login-form-using-the-http-connector-get-login-page-flow.png">
+    <img width="60%" src="../../resources/images/login-form-using-the-http-connector-get-login-page-flow.png">
 
 * **Do Login** (POST `/api/login`). This resource checks whether the username and password are equal to `wso2` and 
 respond the relevant HTML page based on the authentication status.
 
-    <img width="70%" src="../../../docs/assets/images/migration-mule/login-form-using-the-http-connector-do-login-flow.png">
+    <img width="70%" src="../../resources/images/login-form-using-the-http-connector-do-login-flow.png">
 
 * **Requester Login** (GET `/api/requesterLogin`). This resource is responsible to fill in the correct credentials and 
 call `Do Login` resource in order to make a successful login.
 
-    <img width="70%" src="../../../docs/assets/images/migration-mule/login-form-using-the-http-connector-call-login-flow-using-requester.png">
+    <img width="70%" src="../../resources/images/login-form-using-the-http-connector-call-login-flow-using-requester.png">
 
 6. Run the sample by right click on the **LoginFormUsingHttpConnectorCompositeApplication** under the main 
 **login-form-using-the-http-connector** project and select **Export Project Artifacts and Run**.
@@ -53,26 +53,26 @@ class = "org.apache.axis2.transport.http.ApplicationXMLFormatter"
 
 7. Open your browser and hit [http://localhost:8290/api/login](http://localhost:8290/api/login).
     <p align="center">
-        <img width="40%" src="../../../docs/assets/images/migration-mule/login-form-using-the-http-connector-login-page.png">
+        <img width="40%" src="../../resources/images/login-form-using-the-http-connector-login-page.png">
     </p>
     
 8. Enter `wso2` for username and `wso2` for password. Hit submit button.
 
 9. You should receive this response: 
     <p align="center">
-        <img width="40%" src="../../../docs/assets/images/migration-mule/login-form-using-the-http-connector-login-success.png">
+        <img width="40%" src="../../resources/images/login-form-using-the-http-connector-login-success.png">
     </p>
 
    Alternately you will receive the following:
    <p align="center">
-        <img width="40%" src="../../../docs/assets/images/migration-mule/login-form-using-the-http-connector-login-error.png">
+        <img width="40%" src="../../resources/images/login-form-using-the-http-connector-login-error.png">
    </p>
     
 10. Open HTTP Client in Integration Studio. Follow [HTTP Client Guidelines](../../../docs/common/adding-http-client-to-integration-studio.md)
 to open HTTP Client if the window is not visible in the interface.
 11. Make a GET request to *http://localhost:8290/api/requesterLogin*. You should see the successful message because 
 correct credentials are set by the flow and the login is always successful.
-<!-- INCLUDE_MD: ../../../docs/common/get-the-code.md -->
+
 
 ### Go Further
 

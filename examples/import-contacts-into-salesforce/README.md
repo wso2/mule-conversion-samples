@@ -11,7 +11,7 @@ increase your familiarity with Integration Studio, consider completing one or mo
 
 ### Example Use Case
 In this example, contacts in a csv file is being imported to Salesforce using the File Connector and the Salesforce Connector. The response from Salesforce is then logged to track the status of creating each record.   
-<img width="60%" src="../../../docs/assets/images/migration-mule/import-contacts-into-salesforce-use-case.png">
+<img width="60%" src="../../resources/images/import-contacts-into-salesforce-use-case.png">
 
 ### Set Up and Run the Example
 
@@ -26,7 +26,7 @@ search bar and click the download button located at the bottom right corner of t
 7. Follow these [steps](https://ei.docs.wso2.com/en/latest/micro-integrator/references/connectors/salesforce-rest-connector/sf-access-token-generation/) to generate the Access Tokens for Salesforce and obtain the Access Token, and Refresh Token.
 8. Open the **Sequence.xml** under 
 **import-contacts-into-salesforce/ImportContactsIntoSalesforce/src/main/synapse-config/sequences/** directory. 
-<img width="70%" src="../../../docs/assets/images/migration-mule/import-contacts-into-salesforce.png">
+<img width="70%" src="../../resources/images/import-contacts-into-salesforce.png">
 
 Configure the following properties with the previously obtained values under **<salesforcerest.init>**.
     - Access Token

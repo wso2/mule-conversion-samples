@@ -11,7 +11,7 @@ This document describes the details of the example within the context of WSO2 In
 
 In this example you will learn how to work with query parameters, file operations using [File connector](https://store.wso2.com/store/assets/esbconnector/details/5d6de1a4-1fa7-434e-863f-95c8533d3df2), variable assignments, and processing XML and JSON payloads.
 
-<img width="90%" src="../../../docs/assets/images/migration-mule/data-handling-basics-use-case.png">
+<img width="90%" src="../../resources/images/data-handling-basics-use-case.png">
 
 ### Set up and run the example
 
@@ -27,7 +27,7 @@ and click **finish**.
 5. Lets add the file connector into the workspace. Right click on the **DataHandlingBasics** and select **Add or Remove Connector**. Keep the **Add connector** option selected and click **Next>**. Search for 'file' using the search bar and click the download button located at the bottom right corner of the file connector. Click **Finish**.
 
 5. Open the **DataHandlingBasics.xml** under **data-handling-basics/DataHandlingBasics/src/main/synapse-config/api** directory.<br>
-    <img width="60%" src="../../../docs/assets/images/migration-mule/data-handling-basics.png">
+    <img width="60%" src="../../resources/images/data-handling-basics.png">
 
 6. The **DataHandlingBasics.xml** is the graphical view of the simple data handling basics service. Provide .txt file path for resource greet3 and greet5 and .csv file path for greet4 and greet6. An example file connector configuration is given below.
     ```xml
@@ -132,4 +132,4 @@ In this example, you will use DataWeave to:
 * dynamically set the payload
 * create a csv file
 
-<!-- INCLUDE_MD: ../../../docs/common/get-the-code.md -->
+

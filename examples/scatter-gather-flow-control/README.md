@@ -24,7 +24,7 @@ This document describes the details of the example within the context of WSO2 In
 This example read two CSV files and aggregate the two contents into one payload. then the payload is transformed to JSON 
 format before responding back to the client.
 
-<img width="60%" src="../../../docs/assets/images/migration-mule/scatter-gather-flow-control-use-case.png">
+<img width="60%" src="../../resources/images/scatter-gather-flow-control-use-case.png">
 
 #### Set Up and Run this Example
 
@@ -39,7 +39,7 @@ format before responding back to the client.
 5. Lets add the file connector into the workspace. Right click on the **ScatterGatherFlowControl** and select **Add or Remove Connector**. Keep the **Add connector** option selected and click **Next>**. Search for `file` using the search bar and click the download button located at the bottom right corner of the file connector. Click **Finish**.
 
 6. Open the **ScatterGatherFlowControl.xml** under **scatter-gather-flow-control/ScatterGatherFlowControl/src/main/synapse-config/api** directory.<br>
-	<img width="60%" src="../../../docs/assets/images/migration-mule/scatter-gather-flow-control.png">
+	<img width="60%" src="../../resources/images/scatter-gather-flow-control.png">
 
 7. Provide file paths of `contacts-1.csv` and `contacts-2.csv` resides in `integration-studio-examples/migration/mule/scatter-gather-flow-control/resources` location.
 
@@ -49,7 +49,7 @@ format before responding back to the client.
 
 10. Make a GET request to *http://localhost:8290/aggregate*
 
-<!-- INCLUDE_MD: ../../../docs/common/get-the-code.md -->
+
 
 ### Go Further
 

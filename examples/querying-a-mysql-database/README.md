@@ -4,7 +4,7 @@ This example illustrates how to use the a [Data Service](https://docs.wso2.com/d
 to connect to a MySQL database. After reading this document, creating and running the example in Micro Integrator, you 
 should be able to create an application that connects to a MySQL database.
 <p align="center">
-  <img width="70%" src="../../../docs/assets/images/migration-mule/querying-a-mysql-database-use-case.png">
+  <img width="70%" src="../../resources/images/querying-a-mysql-database-use-case.png">
 </p>
 
 ### Assumptions
@@ -91,7 +91,7 @@ converts the result to JSON.
   ]
   ```
 
-<!-- INCLUDE_MD: ../../../docs/common/get-the-code.md -->
+
 
 ### Go Further
 

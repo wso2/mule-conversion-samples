@@ -19,7 +19,7 @@ There are two functions that the HTTP Request-Response with Logger example appli
 1. Receiving HTTP requests and returning HTTP responses
 2. Logging the payload
 
-<img width="60%" src="../../../docs/assets/images/migration-mule/http-request-response-with-logger-use-case.png">
+<img width="60%" src="../../resources/images/http-request-response-with-logger-use-case.png">
 
 ### Set Up and Run the Example
 
@@ -32,7 +32,7 @@ There are two functions that the HTTP Request-Response with Logger example appli
 4. Browse and select the file path to the downloaded sample of this Github project (``integration-studio-examples/migration/mule/http-request-response-with-logger``) and click **Finish**.
 
 5. Open the **HttpRequestResponseWithLogger.xml** under **http-request-response-with-logger/HttpRequestResponseWithLogger/src/main/synapse-config/api/HttpRequestResponseWithLoggerAPI.xml** directory.<br>
-    <img width="60%" src="../../../docs/assets/images/migration-mule/http-request-response-with-logger.png">
+    <img width="60%" src="../../resources/images/http-request-response-with-logger.png">
 
 6. The **HttpRequestResponseWithLoggerAPI.xml** is the graphical view of the simple http-request-response-with-logger service.
 
@@ -52,7 +52,7 @@ After opening the Integration project, there are two projects under the http-req
 
 You can run **Composite Application** using WSO2 Enterprise Integrator server runtime.
 
-<!-- INCLUDE_MD: ../../../docs/common/get-the-code.md -->
+
 
 ### Go Further
 

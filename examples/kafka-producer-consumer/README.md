@@ -10,7 +10,7 @@ This document describes the details of the example within the context of **WSO2 
 
 The example application has two key components. One to produce to a kafka Topic and another to consume from a topic.
 
-<img width="90%" src="../../../docs/assets/images/migration-mule/kafka-producer-consumer-use-case.png">
+<img width="90%" src="../../resources/images/kafka-producer-consumer-use-case.png">
 
 ### Set Up and Run the Example
 
@@ -40,14 +40,14 @@ The example application has two key components. One to produce to a kafka Topic 
 9. Open the **KafkaProducerAPI.xml** under **kafka-producer-consumer/KafkaProducerConsumer/src/main/synapse-config/api** directory in the design view, click on the **Kafka init** connector and specify following values under the _Connector Parameters_ section of the Properties view. You can also provide these values in the source view. You can set many other Kafka relation connection parameters here as well. For a complete reference on service parameters, please follow the [official guide](https://ei.docs.wso2.com/en/next/micro-integrator/references/connectors/kafka-connector/kafka-connector-config/).
     * bootstrapServers: URL to your Kafka server. The default URL is set to _localhost:9092_
     
-    <img width="80%" src="../../../docs/assets/images/migration-mule/kafka-producer-consumer-producer.png">
+    <img width="80%" src="../../resources/images/kafka-producer-consumer-producer.png">
     
 10. Open the **KafkaConsumerIEP.xml** under **kafka-producer-consumer/KafkaProducerConsumer/src/main/synapse-config/inbound-endpoint** directory in the design view, click on the **Inbound EP** and specify following values under the _Service Parameters_ section of the Properties view. You can also provide these values in the source view. You can provide many other service parameters here as well. Make sure to configure the environment to run the consumer by following the [official guide](https://ei.docs.wso2.com/en/next/micro-integrator/references/connectors/kafka-connector/kafka-inbound-endpoint-example/#deployment).
     * bootstrap.servers: URL to your Kafka server. The default URL is set to _localhost:9092_
     * topic.pattern: The pattern to identify topic names to subscribe
     * contentType: Content type of the incoming messages
     
-    <img width="30%" src="../../../docs/assets/images/migration-mule/kafka-producer-consumer-consumer.png">
+    <img width="30%" src="../../resources/images/kafka-producer-consumer-consumer.png">
     
 11. Run the sample by right click on the **KafkaProducerConsumerCompositeApplication** under the main **kafka-producer-consumer** project and selecting **Export Project Artifacts and Run**.
 
@@ -75,7 +75,7 @@ The example application has two key components. One to produce to a kafka Topic 
 
 When the payload arrives, the MI extracts the topic name and the message. Then it sets the current timestamp as the partition key and publish the message to Kafka. The consumer subscribes to all the topics which match the configured topic pattern. It consumes messages and prints a log entry.
 
-<!-- INCLUDE_MD: ../../../docs/common/get-the-code.md -->
+
 
 ### Go Further
 

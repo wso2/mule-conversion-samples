@@ -11,7 +11,7 @@ This document describes the details of the example within the context of WSO2 In
 In this example, we send a JSON message containing two numbers to an HTTP endpoint. The [Script Mediator](https://ei.docs.wso2.com/en/latest/micro-integrator/references/mediators/script-Mediator/) 
 then process the data and add two numbers. 
 
-<img width="70%" src="../../../docs/assets/images/migration-mule/addition-using-javascript-transformer-use-case.png">
+<img width="70%" src="../../resources/images/addition-using-javascript-transformer-use-case.png">
 
 
 ### Set Up and Run the Example
@@ -25,7 +25,7 @@ then process the data and add two numbers.
 4. Browse and select the file path to the downloaded sample of this Github project (``integration-studio-examples/migration/mule/addition-using-javascript-transformer``) and click **Finish**.
 
 5. Open the **AdditionUsingJavascriptTransformer.xml** under **addition-using-javascript-transformer/AdditionUsingJavascriptTransformer/src/main/synapse-config/api/AdditionUsingJavascriptTransformer.xml** directory.<br>
-    <img width="65%" src="../../../docs/assets/images/migration-mule/addition-using-javascript-transformer.png">
+    <img width="65%" src="../../resources/images/addition-using-javascript-transformer.png">
 
 
 6. The **AdditionUsingJavascriptTransformer.xml** is the graphical view of the JavaScript transform mediator.
@@ -61,7 +61,7 @@ First project (named as "AdditionUsingJavascriptTransformer") is the WSO2 Integr
 
 You can run **Composite Application** using WSO2 Enterprise Integrator server runtime.
 
-<!-- INCLUDE_MD: ../../../docs/common/get-the-code.md -->
+
 
 ### Go Further
 

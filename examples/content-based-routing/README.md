@@ -2,7 +2,7 @@
 
 You can look through and run this example application to learn the basics of using Integration Studio to route messages in a flow by using a *Switch* mediator.
 
-<img width="60%" src="../../../docs/assets/images/migration-mule/content-based-routing-use-case.png">
+<img width="60%" src="../../resources/images/content-based-routing-use-case.png">
 
 
 This example application performs the following actions:
@@ -43,7 +43,7 @@ This document describes the details of the example within the context of WSO2 In
 5. Open the **ContentBasedRoutingAPI.xml** under **content-based-routing/ContentBasedRouting/src/main/synapse-config/api/ContentBasedRoutingAPI.xml** directory. 
 
 6. The **ContentBasedRoutingAPI.xml** is the graphical view of the content based routing sample.<br>
-    <img width="60%" src="../../../docs/assets/images/migration-mule/content-based-routing.png">
+    <img width="60%" src="../../resources/images/content-based-routing.png">
 
 7. Run the sample by right click on the **ContentBasedRoutingCompositeApplication** under the main **content-based-routing** project and selecting **Export Project Artifacts and Run**.
 
@@ -76,4 +76,4 @@ This document describes the details of the example within the context of WSO2 In
         [2020-04-01 16:52:39,713]  INFO {org.apache.synapse.mediators.builtin.LogMediator} - To: /hello, MessageID: urn:uuid:fb9ecdb2-21c6-4c4b-9aec-822853b3d5b2, Direction: request, message = No language specified. Using English as a default.
         [2020-04-01 16:52:39,714]  INFO {org.apache.synapse.mediators.builtin.LogMediator} - To: /hello, MessageID: urn:uuid:fb9ecdb2-21c6-4c4b-9aec-822853b3d5b2, Direction: request, message = The reply Hello! means hello in English
 
-<!-- INCLUDE_MD: ../../../docs/common/get-the-code.md -->
+

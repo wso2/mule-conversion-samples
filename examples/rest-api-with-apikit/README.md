@@ -22,7 +22,7 @@ Follow the procedure below to run and test the functionality in Integration Stud
 5. Open the **RestApiWithApikit.xml** under **rest-api-with-apikit/RestApiWithApikit/src/main/synapse-config/api** 
 directory.
 <p align="center">
-  <img width="70%" src="../../../docs/assets/images/migration-mule/rest-api-with-apikit.png">
+  <img width="70%" src="../../resources/images/rest-api-with-apikit.png">
 </p>
 
 6. The **RestApiWithApikit.xml** is the graphical view of the resources of the used API. This design is based on a OAS2.0 swagger file. It is provided in **rest-api-with-apikit/RestApiWithApikit/src/main/resources**. You can refer [Creating a REST API](https://ei.docs.wso2.com/en/latest/micro-integrator/develop/creating-artifacts/creating-an-api/) to create the project from scratch using the swagger file.

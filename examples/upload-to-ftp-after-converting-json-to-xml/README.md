@@ -10,7 +10,7 @@ This document assumes that you are familiar with WSO2 EI and the [Integration St
 ### Example Use Case
 In this example JSON data is sent to the application and then converted to the XML format using the messageType property. Then the message payload is uploaded to the FTP folder.
 
-<img width="60%" src="../../../docs/assets/images/migration-mule/upload-to-ftp-after-converting-json-to-xml-use-case.png">
+<img width="60%" src="../../resources/images/upload-to-ftp-after-converting-json-to-xml-use-case.png">
 
 ### Set Up and Run the Example
 
@@ -25,7 +25,7 @@ In this example JSON data is sent to the application and then converted to the X
 5. Lets add the file connector into the workspace. Right click on the **UploadToFtpAfterConvertingJsonToXml** and select **Add or Remove Connector**. Keep the **Add connector** option selected and click **Next>**. Search for 'file' using the search bar and click the download button located at the bottom right corner of the file connector. Click **Finish**.
 
 6. Open the **UploadToFtpAfterConvertingJsonToXml.xml** under **upload-to-ftp-after-converting-json-to-xml/UploadToFtpAfterConvertingJsonToXml/src/main/synapse-config/api/** directory. Configure destination property accordingly.<br>
-    <img width="60%" src="../../../docs/assets/images/migration-mule/upload-to-ftp-after-converting-json-to-xml.png">
+    <img width="60%" src="../../resources/images/upload-to-ftp-after-converting-json-to-xml.png">
 
 7. Run the sample by right click on the **UploadToFtpAfterConvertingJsonToXmlCompositeApplication** under the main **upload-to-ftp-after-converting-json-to-xml** project and selecting **Export Project Artifacts and Run**.
 
@@ -74,7 +74,7 @@ In this example JSON data is sent to the application and then converted to the X
 
 10. Verify that the file `miExample.xml` was uploaded to the `upload` folder on your FTP server.
 
-<!-- INCLUDE_MD: ../../../docs/common/get-the-code.md -->
+
 
 ### Go Further
 

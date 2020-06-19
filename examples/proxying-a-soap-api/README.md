@@ -14,7 +14,7 @@ This document describes the details of the example within the context of Integra
 
 In this simple example, an application serves as a minimum proxy that can routes request and response to and from a SOAP API. After receiving request, it calls SOAP API of service described in wsdl (resources/tshirt.wsdl) and lists inventories.
 
-<img width="60%" src="../../../docs/assets/images/migration-mule/proxying-a-soap-api-use-case.png">
+<img width="60%" src="../../resources/images/proxying-a-soap-api-use-case.png">
 
 ### Set Up and Run the Example ###
 
@@ -31,7 +31,7 @@ Complete the following procedure to create, then run this example in your own in
 5. Open the **proxyingASoapApiAPI.xml** under **proxying-a-soap-api/proxyingASoapApi/src/main/synapse-config/api/** directory. 
 
 6. The **proxyingASoapApiAPI.xml** is the graphical view of the content based routing sample.<br>
-    <img width="60%" src="../../../docs/assets/images/migration-mule/proxying-a-soap-api.png">
+    <img width="60%" src="../../resources/images/proxying-a-soap-api.png">
 
 7. Run the sample by right click on the **proxyingASoapApiCompositeApplication** under the main **proxying-a-soap-api** project and selecting **Export Project Artifacts and Run**.
 
@@ -48,7 +48,7 @@ Follow the anatomy described here to build a proxy application in Integration St
 1. Accept incoming service call from applications and route them to the URI of your target SOAP API.
 2. Return the response back to the application that made the service call.
 
-<!-- INCLUDE_MD: ../../../docs/common/get-the-code.md -->
+
 
 ### Go Further 
 

@@ -10,7 +10,7 @@ This document describes the details of the example within the context of WSO2 In
 
 In this example a simple Hello World payload will be created using [PayloadFactory Mediator](https://ei.docs.wso2.com/en/latest/micro-integrator/references/mediators/payloadFactory-Mediator/).
 
-<img width="50%" src="../../../docs/assets/images/migration-mule/hello-world-use-case.png">
+<img width="50%" src="../../resources/images/hello-world-use-case.png">
 
 ### Set Up and Run the Example
 
@@ -23,7 +23,7 @@ In this example a simple Hello World payload will be created using [PayloadFacto
 4. Browse and select the file path to the downloaded sample of this Github project (``integration-studio-examples/migration/mule/hello-world``) and click **Finish**.
 
 5. Open the **HelloWorld.xml** under **hello-world/HelloWorld/src/main/synapse-config/api/HelloWorld.xml** directory.<br>
-    <img width="60%" src="../../../docs/assets/images/migration-mule/hello-world.png">
+    <img width="60%" src="../../resources/images/hello-world.png">
 
 6. The **HelloWorld.xml** is the graphical view of the simple hello world service.
 
@@ -43,7 +43,7 @@ After opening the Integration project, there are two projects under the hello-wo
 
 You can run **Composite Application** using WSO2 Enterprise Integrator server runtime.
 
-<!-- INCLUDE_MD: ../../../docs/common/get-the-code.md -->
+
 
 ### Go Further
 

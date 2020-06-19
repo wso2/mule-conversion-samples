@@ -26,7 +26,7 @@ increase your familiarity with Integration Studio, consider completing one or mo
 ### Example Use Case
 
 This application demonstrates the processing of orders in a store. Since an order can contain multiple items, that are processed iteratively. Price and other details of each item are obtained by making web service calls from respective vendors and using them final order details are calculated and a summary is sent back to the customer. Order details are also audited by a separate service and stored for future needs.
-<img width="70%" src="../../../docs/assets/images/migration-mule/service-orchestration-and-choice-routing-use-case.png">
+<img width="70%" src="../../resources/images/service-orchestration-and-choice-routing-use-case.png">
 
 ### Set Up and Run the Example 
 
@@ -107,18 +107,18 @@ When an order is received (by the Orders proxy), first the payload is converted 
 
 #### Orders Proxy Service
 Order service is the point of entry of an order. The service, exposed as a SOAP-based Web service, accepts the order, process items iteratively, and sends an order summary to the customer.
-<img width="80%" src="../../../docs/assets/images/migration-mule/service-orchestration-and-choice-routing-order-proxy.png">
+<img width="80%" src="../../resources/images/service-orchestration-and-choice-routing-order-proxy.png">
 
 #### SamsungOrderService Proxy Service
 The external Web service representing the vendor `Samsung`.
 
 #### SamsungOrder sequence
 When the manufacturer of the item is `Samsung`, the item is passed to this sequence which calls the vendor `SamsungOrderService` to obtain price and other information from the vendor.
-<img width="60%" src="../../../docs/assets/images/migration-mule/service-orchestration-and-choice-routing-samsung-order-sequence.png">
+<img width="60%" src="../../resources/images/service-orchestration-and-choice-routing-samsung-order-sequence.png">
 
 #### InHouseOrder sequnece 
 When the manufacturer of the item is not `Samsung`, the item is passed to this sequence which calls the in house RESTful PriceService API to obtain price and log order data.
-<img width="60%" src="../../../docs/assets/images/migration-mule/service-orchestration-and-choice-routing-in-order-sequence.png">
+<img width="60%" src="../../resources/images/service-orchestration-and-choice-routing-in-order-sequence.png">
 
 #### Audit_service sequence
 Audits the order and logs the results.

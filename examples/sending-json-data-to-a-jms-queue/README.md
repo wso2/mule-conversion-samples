@@ -11,7 +11,7 @@ This document assumes that you are familiar with WSO2 EI and the [Integration St
 In this example, an HTTP request holding JSON sales data reaches an HTTP endpoint. A success message is logged and the data is added to a JMS queue, where you can view it in the ActiveMQ admin console.
 
 <p align="center">
-  <img width="70%" src="../../../docs/assets/images/migration-mule/sending-json-data-to-a-jms-queue-use-case.png">
+  <img width="70%" src="../../resources/images/sending-json-data-to-a-jms-queue-use-case.png">
 </p>
 
 ### Set Up and Run the Example
@@ -25,7 +25,7 @@ In this example, an HTTP request holding JSON sales data reaches an HTTP endpoin
 4. Browse and select the file path to the downloaded sample of this Github project (``integration-studio-examples/migration/mule/sending-json-data-to-a-jms-queue``) and click **Finish**.
 
 5. Open the **SendingJsonDataToAJmsQueue.xml** under **sending-json-data-to-a-jms-queue/SendingJsonDataToAJmsQueue/src/main/synapse-config/api/SendingJsonDataToAJmsQueue.xml** directory.<br>
-    <img width="70%" src="../../../docs/assets/images/migration-mule/sending-json-data-to-a-jms-queue.png">
+    <img width="70%" src="../../resources/images/sending-json-data-to-a-jms-queue.png">
 
 6. Configure WSO2 Micro Integrator to connect with [ActiveMQ](https://ei.docs.wso2.com/en/latest/micro-integrator/setup/brokers/configure-with-ActiveMQ/).
 
@@ -46,7 +46,7 @@ In this example, an HTTP request holding JSON sales data reaches an HTTP endpoin
 
 11. Log in to the ActiveMQ admin page at [http://localhost:8161/admin/queues.jsp](http://localhost:8161/admin/queues.jsp) with the default username and password “admin”. Check whether the message was added to the queue. In the ActiveMQ queue, click the Sales link and then the link under the Message ID column. You'll see the details of the message that was added to the JMS queue.
 
-<!-- INCLUDE_MD: ../../../docs/common/get-the-code.md -->
+
 
 ### Go Further
 

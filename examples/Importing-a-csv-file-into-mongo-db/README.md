@@ -28,12 +28,12 @@ search bar and click the download button located at the bottom right corner of t
 **Importing-a-csv-file-into-mongo-db/ImportACSVFileIntoMongoDB/src/main/synapse-config/sequences/** directory. 
 Copy the input.csv file located in **Importing-a-csv-file-into-mongo-db/ImportACSVFileIntoMongoDB/src/main/resources** directory to a location of your choice. 
 Replace the csvFilePath property value with the copied path to input.csv.ex:- /Users/user/Desktop/sample/input.csv.
-![Alt text]( "ImportACSVFileIntoMongoDB")
+![Alt text](../../resources/images/"ImportACSVFileIntoMongoDB")
 7. Open the **WriteCSVToMongoDB.xml** under 
 **Importing-a-csv-file-into-mongo-db/ImportACSVFileIntoMongoDB/src/main/synapse-config/sequences/** directory. 
 Copy the input.csv file located in **Importing-a-csv-file-into-mongo-db/ImportACSVFileIntoMongoDB/src/main/resources** directory to a location of your choice. 
 Replace the csvFilePath property value with the copied path to input.csv.ex:- /Users/user/Desktop/sample/input.csv.
-![Alt text]( "ImportACSVFileIntoMongoDB")
+![Alt text](../../resources/images/"ImportACSVFileIntoMongoDB")
 8. Open the **ImportingACSVFileIntoMongoDBDataService.dbs** in **Importing-a-csv-file-into-mongo-db/ImportACSVFileINtoMongoDBDataService/dataservice/** directory.
 Go to source tab and change the value of mongoDB_servers property to IP address if you are using a remote mongoDB instance.
 9. Run the sample by right click on the **ImportACSVFileIntoMongoDBCompositeApplication** under the main 

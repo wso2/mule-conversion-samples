@@ -17,7 +17,7 @@ This document describes the details of the example within the context of **WSO2 
 
 The example application connects to an LDAP directory and retrieves a list of LDAP users.
 
-<img width="60%" src="../../../docs/assets/images/migration-mule/extracting-data-from-LDAP-directory-use-case.png">
+<img width="60%" src="../../resources/images/extracting-data-from-LDAP-directory-use-case.png">
 
 ### Set Up and Run the Example 
 
@@ -64,7 +64,7 @@ The example application connects to an LDAP directory and retrieves a list of LD
 	* URL: ldap://localhost:389/dc=my-domain,dc=com
 	* Principal DN: cn=Manager,dc=my-domain,dc=com
 	* Password: root<br>
-    <img width="60%" src="../../../docs/assets/images/migration-mule/extracting-data-from-LDAP-directory.png">
+    <img width="60%" src="../../resources/images/extracting-data-from-LDAP-directory.png">
 
 16. Run the sample by right click on the **ExtractingDataFromLdapDirectoryCompositeApplication** under the main **extracting-data-from-LDAP-directory** project and selecting **Export Project Artifacts and Run**.
 
@@ -107,4 +107,4 @@ You should see three user records in response:
     }
 ]
 ```
-<!-- INCLUDE_MD: ../../../docs/common/get-the-code.md -->
+

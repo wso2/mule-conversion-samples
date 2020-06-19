@@ -9,13 +9,13 @@ The WSO2 Project reads a CSV file and returns exception messages for two types o
 * The request specifies an invalid path.
 * The request specifies a file that read permissions are not granted on.
 
-<img width="70%" src="../../../docs/assets/images/migration-mule/implementing-a-choice-exception-strategy-use-case.png">
+<img width="70%" src="../../resources/images/implementing-a-choice-exception-strategy-use-case.png">
 
 ### Set up and run the example
 
 1. Open the Implementing a Exception Strategy example project in Integration Studio [Clone the GitHub repository and Import Exception Strategy example (File->Import) ] 
 
-<img width="70%" src="../../../docs/assets/images/migration-mule/implementing-a-choice-exception-strategy.png">
+<img width="70%" src="../../resources/images/implementing-a-choice-exception-strategy.png">
 
 2. Run the example project as a Micro-Integrator application(Right click on the project and select Run->Run on Micro-Integrator)
 
@@ -48,7 +48,7 @@ The WSO2 Project reads a CSV file and returns exception messages for two types o
 		  "message": "Access to file denied"
 		}
 
-<!-- INCLUDE_MD: ../../../docs/common/get-the-code.md -->
+
 
 ### Go further
        

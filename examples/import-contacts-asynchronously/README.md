@@ -28,7 +28,7 @@ Though a simple example, this application nonetheless employs complex functional
 The application accepts CSV files that contain contact information – name, phone number, email – and uploads them into 
 a Salesforce account, automatically inserting the correct data into each Salesforce field. 
 
-<img width="95%" src="../../../docs/assets/images/migration-mule/import-contacts-asynchronously-use-case.png"> 
+<img width="95%" src="../../resources/images/import-contacts-asynchronously-use-case.png"> 
 
 ### Set Up and Run the Example
 
@@ -39,7 +39,7 @@ a Salesforce account, automatically inserting the correct data into each Salesfo
 4. Browse and select the file path to the downloaded sample of this github project 
 ("import-contacts-asynchronously" folder of the downloaded github repository).
 
-<img width="90%" src="../../../docs/assets/images/migration-mule/import-contacts-asynchronously.png"> 
+<img width="90%" src="../../resources/images/import-contacts-asynchronously.png"> 
 
 5. Lets add the file connector into the workspace. Right click on the **ImportContactsIntoSalesforce** and select 
 **Add or Remove Connector**. Keep the **Add connector** option selected and click **Next>**. Search for 'file' using the 

@@ -16,7 +16,7 @@ docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-manag
 
 In this example a message containing sample sales data in JSON is received through an HTTP API. This message is then sent to RabbitMQ using the RabbitMQ transport. Once this message reaches the queue, it can be viewed through he RabbitMQ web console.
 
-<img width="80%" src="../../../docs/assets/images/migration-mule/sending-json-data-to-a-amqp-queue-use-case.png">
+<img width="80%" src="../../resources/images/sending-json-data-to-a-amqp-queue-use-case.png">
 
 ## Set Up and Run the Example
 
@@ -50,7 +50,7 @@ In this example a message containing sample sales data in JSON is received throu
     ```
     rabbitmq:/sales_queue?rabbitmq.server.host.name=localhost&rabbitmq.server.port=5672&rabbitmq.queue.name=sales_queue&rabbitmq.queue.route.key=sales_queue&rabbitmq.exchange.name=sales_exchange
     ```
-    <img width="70%" src="../../../docs/assets/images/migration-mule/sending-json-data-to-a-amqp-queue.png">
+    <img width="70%" src="../../resources/images/sending-json-data-to-a-amqp-queue.png">
 
 9. Right click `AMQPIntegrationProjectCompositeApplication` in **project explorer**  and choose **Export Composite Application Project**. Choose all the artifacts in the wizard and export CApp to <Product_HOME>/repository/deployment/server/carbonapps directory. 
 
@@ -69,7 +69,7 @@ In this example a message containing sample sales data in JSON is received throu
 
 12. You will receive an `HTTP 202` response. Now, navigate back to the RabbbitMQ web admin console. You should notice an increase in the number of messages in ***sales_queue***. You may also **view  the message** by clicking on sales_queue in the **Get messages** option.
 
-<!-- INCLUDE_MD: ../../../docs/common/get-the-code.md -->
+
 
 ## Go Further
 

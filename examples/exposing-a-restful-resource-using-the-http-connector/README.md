@@ -9,7 +9,7 @@ This document describes the details of the example within the context of Integra
 ### Example Use Case
 
 In this example, a user calls the WSO2 application by submitting a request via a REST client. The application receives the request and processes it based on the URL. The application is capable of retrieving and inserting person data. <br> 
-<img width="60%" src="../../../docs/assets/images/migration-mule/exposing-a-restful-resource-using-the-http-connector-use-case.png">
+<img width="60%" src="../../resources/images/exposing-a-restful-resource-using-the-http-connector-use-case.png">
 
 ### Set Up and Run the Example
 
@@ -24,7 +24,7 @@ You can tweak the configurations of these use case-based examples to create your
 4. Browse and select the file path to the downloaded sample of this Github project (``integration-studio-examples/migration/mule/exposing-a-restful-resource-using-the-http-connector``) and click **Finish**.
 
 5. Open the **RESTfulService.xml** under **exposing-a-restful-resource-using-the-http-connector/ExposeRESTfulService/src/main/synapse-config/api** directory.<br>
-    <img width="40%" src="../../../docs/assets/images/migration-mule/exposing-a-restful-resource-using-the-http-connector.png">
+    <img width="40%" src="../../resources/images/exposing-a-restful-resource-using-the-http-connector.png">
     
 6. The **RESTfulService.xml** is the graphical view of the service.
 

@@ -52,19 +52,19 @@ Follow the steps in this procedure to create and run this example in your own in
     **salesforce-data-retrieval.xml**
     
     <p align="center">
-          <img width="50%" src="../../../docs/assets/images/migration-mule/salesforce-data-retrive-API.png">
+          <img width="50%" src="../../resources/images/salesforce-data-retrive-API.png">
     </p>
     
     **describeGlobal.xml**
         
     <p align="center">
-          <img width="50%" src="../../../docs/assets/images/migration-mule/salesforce-describeGlobal-sequence.png">
+          <img width="50%" src="../../resources/images/salesforce-describeGlobal-sequence.png">
     </p>
     
     **salesforceIdRetrievalFlow.xml**
             
     <p align="center">
-          <img width="50%" src="../../../docs/assets/images/migration-mule/salesforce-data-retrieval-flow-sequence.png">
+          <img width="50%" src="../../resources/images/salesforce-data-retrieval-flow-sequence.png">
     </p>
    
 11. Run the sample by right clicking on the **salesforce-data-retrive** project and selecting **Run as -> Run On Micro Integrator**.
@@ -73,7 +73,7 @@ Follow the steps in this procedure to create and run this example in your own in
     Open your browser and hit `http://localhost:8290/listener/`.The form will be provided to you, containing following values:
     
     <p align="center">
-      <img width="50%" src="../../../docs/assets/images/migration-mule/salesforce-data-retrive-from.png">
+      <img width="50%" src="../../resources/images/salesforce-data-retrive-from.png">
     </p>
     
       * Object - specify Salesforce object type, e.g. User, Account, Contact, etc.

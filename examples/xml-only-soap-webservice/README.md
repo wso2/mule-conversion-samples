@@ -17,7 +17,7 @@ This example demonstrates service orchestration(SOAP operations) and content-bas
 2. For an existing patient, get the patient id and locate to existing EHR and create a new episode.
 
 Finally, AdmissionService will respond to the Episode and Billing details as the admitSubjectResponse.
-<img width="50%" src="../../../docs/assets/images/migration-mule/xml-only-soap-webservice-use-case.png">
+<img width="50%" src="../../resources/images/xml-only-soap-webservice-use-case.png">
 
 ### Set Up and Run the Example with Integration Studio
 
@@ -31,7 +31,7 @@ Finally, AdmissionService will respond to the Episode and Billing details as the
 (`integration-studio-examples/migration/mule/xml-only-soap-webservice`) and click **finish**.
 
 5. Open **xml-only-soap-webservice.xml** located in **xml-only-soap-webservice/XMLonlySOAPservice/src/main/synapse-config/proxy-services** directory. 
-<img width="90%" src="../../../docs/assets/images/migration-mule/xml-only-soap-webservice.png">
+<img width="90%" src="../../resources/images/xml-only-soap-webservice.png">
 
 6. The **xml-only-soap-webservice.xml** is the graphical view of the service.
 
