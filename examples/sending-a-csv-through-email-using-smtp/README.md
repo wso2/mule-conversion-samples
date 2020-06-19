@@ -42,11 +42,11 @@ Follow the steps in this procedure to create and run this example in your own in
 11. In the **URI** text box, replace the email address after **mailto:** with the email address that you need to receive emails.<br>
     <img width="70%" src="../../resources/images/sending-a-csv-through-email-using-smtp.png">
 
-12. Enable and configure **MailTo Transport** in Micro Integrator as explained [here](https://ei.docs.wso2.com/en/latest/micro-integrator/setup/transport_configurations/configuring-transports/#configuring-the-mailto-transport).
+12. Enable and configure **MailTo Transport** in Micro Integrator as explained in [configuring the mailto transport documentation](https://ei.docs.wso2.com/en/latest/micro-integrator/setup/transport_configurations/configuring-transports/#configuring-the-mailto-transport).
 
 13. Run the sample by right click on the **SendingACsvThroughEmailUsingSmtpCompositeApplication** under the main project and selecting **Export Project Artifacts and Run**.
 
-14. Login to the reciever email you specify to verify if the sales data was received via email. You should get an email that has the following content:
+14. Login to the receiver email you specify to verify if the sales data was received via email. You should get an email that has the following content:
 
         [
 		  {
