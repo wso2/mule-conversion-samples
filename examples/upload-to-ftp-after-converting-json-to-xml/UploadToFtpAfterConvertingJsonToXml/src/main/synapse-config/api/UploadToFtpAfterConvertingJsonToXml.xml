@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/upload" name="UploadToFtpAfterConvertingJsonToXml" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <datamapper config="gov:datamapper/json_to_xml_config.dmc" inputSchema="gov:datamapper/json_to_xml_config_inputSchema.json" inputType="JSON" outputSchema="gov:datamapper/json_to_xml_config_outputSchema.json" outputType="XML" xsltStyleSheet="gov:datamapper/json_to_xml_config_xsltStyleSheet.xml"/>
+            <property expression="$body/employees" name="inputContent" scope="default" type="STRING"/>
+            <fileconnector.create>
+                <filePath>ftp://[username]:[password]@[hostname]:[port]/upload/miExample.xml</filePath>
+                <inputContent>{$ctx:inputContent}</inputContent>
+                <setPassiveMode>true</setPassiveMode>
+            </fileconnector.create>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <log level="custom">
+                <property name="error" value="An unexpected error occurred!"/>
+                <property expression="get-property('ERROR_MESSAGE')" name="error_message"/>
+            </log>
+        </faultSequence>
+    </resource>
+</api>

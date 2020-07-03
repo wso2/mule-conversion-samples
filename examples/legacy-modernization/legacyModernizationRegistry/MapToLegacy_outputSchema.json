@@ -1,0 +1,77 @@
+{
+  "$schema" : "http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#",
+  "outputType" : "CSV",
+  "id" : "http://wso2jsonschema.org",
+  "title" : "root",
+  "type" : "array",
+  "items" : [ {
+    "properties" : {
+      "MSKU" : {
+        "id" : "http://wso2jsonschema.org/0/MSKU",
+        "type" : "number"
+      },
+      "QTY" : {
+        "id" : "null/0",
+        "type" : "number"
+      },
+      "Price" : {
+        "id" : "null/0",
+        "type" : "string"
+      },
+      "BillingAddressName" : {
+        "id" : "null/0",
+        "type" : "string"
+      },
+      "BillingAddressStreet" : {
+        "id" : "null/0",
+        "type" : "string"
+      },
+      "BillingAddrCity" : {
+        "id" : "null/0",
+        "type" : "string"
+      },
+      "BillingAddrState" : {
+        "id" : "null/0",
+        "type" : "string"
+      },
+      "BillingAddrCountry" : {
+        "id" : "null/0",
+        "type" : "string"
+      },
+      "BillingAddrZipCode" : {
+        "id" : "null/0",
+        "type" : "number"
+      },
+      "ShippingAddrName" : {
+        "id" : "null/0",
+        "type" : "string"
+      },
+      "ShippingAddrStreet" : {
+        "id" : "null/0",
+        "type" : "string"
+      },
+      "ShippingAddrCity" : {
+        "id" : "null/0",
+        "type" : "string"
+      },
+      "ShippingAddrState" : {
+        "id" : "null/0",
+        "type" : "string"
+      },
+      "ShippingAddrCountry" : {
+        "id" : "null/0",
+        "type" : "string"
+      },
+      "ShippingAddrZipCode" : {
+        "id" : "null/0",
+        "type" : "number"
+      },
+      "ShippingId" : {
+        "id" : "null/0",
+        "type" : "number"
+      }
+    },
+    "id" : "http://wso2jsonschema.org/0",
+    "type" : "object"
+  } ]
+}

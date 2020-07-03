@@ -1,0 +1,57 @@
+{
+  "$schema" : "http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#",
+  "inputType" : "JSON",
+  "id" : "http://wso2jsonschema.org",
+  "title" : "root",
+  "type" : "object",
+  "properties" : {
+    "employees" : {
+      "id" : "http://wso2jsonschema.org/employees",
+      "type" : "object",
+      "properties" : {
+        "employee" : {
+          "id" : "http://wso2jsonschema.org/employees/employee",
+          "type" : "array",
+          "items" : [ {
+            "id" : "http://wso2jsonschema.org/employees/employee/0",
+            "type" : "object",
+            "properties" : {
+              "name" : {
+                "id" : "http://wso2jsonschema.org/employees/employee/0/name",
+                "type" : "string"
+              },
+              "lastName" : {
+                "id" : "http://wso2jsonschema.org/employees/employee/0/lastName",
+                "type" : "string"
+              },
+              "addresses" : {
+                "id" : "http://wso2jsonschema.org/employees/employee/0/addresses",
+                "type" : "object",
+                "properties" : {
+                  "address" : {
+                    "id" : "http://wso2jsonschema.org/employees/employee/0/addresses/address",
+                    "type" : "array",
+                    "items" : [ {
+                      "id" : "http://wso2jsonschema.org/employees/employee/0/addresses/address/0",
+                      "type" : "object",
+                      "properties" : {
+                        "street" : {
+                          "id" : "http://wso2jsonschema.org/employees/employee/0/addresses/address/0/street",
+                          "type" : "string"
+                        },
+                        "zipCode" : {
+                          "id" : "http://wso2jsonschema.org/employees/employee/0/addresses/address/0/zipCode",
+                          "type" : "string"
+                        }
+                      }
+                    } ]
+                  }
+                }
+              }
+            }
+          } ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "$schema" : "http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#",
+  "outputType" : "XML",
+  "id" : "http://wso2jsonschema.org",
+  "title" : "html",
+  "type" : "object",
+  "properties" : {
+    "body" : {
+      "id" : "http://wso2jsonschema.org/body",
+      "type" : "object",
+      "properties" : {
+        "h1" : {
+          "id" : "http://wso2jsonschema.org/body/h1",
+          "type" : "string"
+        },
+        "form" : {
+          "id" : "http://wso2jsonschema.org/body/form",
+          "type" : "object",
+          "value" : {
+            "type" : "string"
+          },
+          "properties" : {
+            "p" : {
+              "id" : "http://wso2jsonschema.org/body/form/p",
+              "type" : "string"
+            },
+            "select" : {
+              "id" : "http://wso2jsonschema.org/body/form/select",
+              "type" : "object",
+              "properties" : {
+                "option" : {
+                  "id" : "http://wso2jsonschema.org/body/form/select/option",
+                  "type" : "array",
+                  "items" : [ {
+                    "id" : "http://wso2jsonschema.org/body/form/select/option/option",
+                    "type" : "object",
+                    "properties" : { },
+                    "attributes" : {
+                      "value" : {
+                        "id" : "http://wso2jsonschema.org/body/form/select/option/value",
+                        "type" : "string"
+                      }
+                    },
+                    "value" : {
+                      "type" : "string"
+                    }
+                  } ]
+                }
+              },
+              "attributes" : {
+                "style" : {
+                  "id" : "http://wso2jsonschema.org/body/form/select/style",
+                  "type" : "string"
+                },
+                "name" : {
+                  "id" : "http://wso2jsonschema.org/body/form/select/name",
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "id" : "http://wso2jsonschema.org/body/form/content",
+              "type" : "array",
+              "items" : [ {
+                "id" : "http://wso2jsonschema.org/body/form/content/0",
+                "type" : "string"
+              } ]
+            },
+            "input" : {
+              "id" : "http://wso2jsonschema.org/body/form/input",
+              "type" : "array",
+              "items" : [ {
+                "id" : "http://wso2jsonschema.org/body/form/input/input",
+                "type" : "object",
+                "properties" : { },
+                "attributes" : {
+                  "style" : {
+                    "id" : "http://wso2jsonschema.org/body/form/input/style",
+                    "type" : "string"
+                  },
+                  "type" : {
+                    "id" : "http://wso2jsonschema.org/body/form/input/type",
+                    "type" : "string"
+                  },
+                  "name" : {
+                    "id" : "http://wso2jsonschema.org/body/form/input/name",
+                    "type" : "string"
+                  },
+                  "value" : {
+                    "id" : "http://wso2jsonschema.org/body/form/input/value",
+                    "type" : "string"
+                  },
+                  "id" : {
+                    "id" : "http://wso2jsonschema.org/body/form/input/id",
+                    "type" : "string"
+                  }
+                }
+              } ]
+            }
+          },
+          "attributes" : {
+            "action" : {
+              "id" : "http://wso2jsonschema.org/body/form/action",
+              "type" : "string"
+            },
+            "method" : {
+              "id" : "http://wso2jsonschema.org/body/form/method",
+              "type" : "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datamapper:DataMapperRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:datamapper="http:///org/wso2/developerstudio/eclipse/gmf/datamapper">
+  <input>
+    <treeNode name="soapenv:Envelope" schemaDataType="OBJECT" level="1">
+      <node name="soapenv:Header" schemaDataType="NULL" level="2">
+        <properties key="namespaces" value="{prefix=soapenv, url=http://schemas.xmlsoap.org/soap/envelope/}"/>
+        <properties key="type" value="null"/>
+        <properties key="id" value="http://wso2jsonschema.org/soapenv:Header"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode/>
+      </node>
+      <node name="soapenv:Body" schemaDataType="OBJECT" level="2">
+        <node name="ord:putShippingOrder" schemaDataType="OBJECT" level="3">
+          <node name="shippingId" schemaDataType="NUMBER" level="4">
+            <properties key="type" value="number"/>
+            <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/shippingId"/>
+            <properties key="nullable" value="false"/>
+            <outNode>
+              <outgoingLink inNode="//@output/@treeNode.0/@node.15/@inNode"/>
+            </outNode>
+            <inNode/>
+          </node>
+          <node name="billingAddress" schemaDataType="OBJECT" level="4">
+            <node name="name" schemaDataType="STRING" level="5">
+              <properties key="type" value="string"/>
+              <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/billingAddress/name"/>
+              <properties key="nullable" value="false"/>
+              <outNode>
+                <outgoingLink inNode="//@output/@treeNode.0/@node.3/@inNode"/>
+              </outNode>
+              <inNode/>
+            </node>
+            <node name="line1" schemaDataType="STRING" level="5">
+              <properties key="type" value="string"/>
+              <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/billingAddress/line1"/>
+              <properties key="nullable" value="false"/>
+              <outNode>
+                <outgoingLink inNode="//@operators.0/@basicContainer/@leftContainer/@leftConnectors.0/@inNode"/>
+              </outNode>
+              <inNode/>
+            </node>
+            <node name="line2" schemaDataType="STRING" level="5">
+              <properties key="type" value="string"/>
+              <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/billingAddress/line2"/>
+              <properties key="nullable" value="false"/>
+              <outNode>
+                <outgoingLink inNode="//@operators.2/@basicContainer/@leftContainer/@leftConnectors.1/@inNode"/>
+              </outNode>
+              <inNode/>
+            </node>
+            <node name="city" schemaDataType="STRING" level="5">
+              <properties key="type" value="string"/>
+              <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/billingAddress/city"/>
+              <properties key="nullable" value="false"/>
+              <outNode>
+                <outgoingLink inNode="//@output/@treeNode.0/@node.5/@inNode"/>
+              </outNode>
+              <inNode/>
+            </node>
+            <node name="stateOrProvinceCode" schemaDataType="STRING" level="5">
+              <properties key="type" value="string"/>
+              <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/billingAddress/stateOrProvinceCode"/>
+              <properties key="nullable" value="false"/>
+              <outNode>
+                <outgoingLink inNode="//@output/@treeNode.0/@node.6/@inNode"/>
+              </outNode>
+              <inNode/>
+            </node>
+            <node name="countryCode" schemaDataType="STRING" level="5">
+              <properties key="type" value="string"/>
+              <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/billingAddress/countryCode"/>
+              <properties key="nullable" value="false"/>
+              <outNode>
+                <outgoingLink inNode="//@output/@treeNode.0/@node.7/@inNode"/>
+              </outNode>
+              <inNode/>
+            </node>
+            <node name="postalCode" schemaDataType="NUMBER" level="5">
+              <properties key="type" value="number"/>
+              <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/billingAddress/postalCode"/>
+              <properties key="nullable" value="false"/>
+              <outNode>
+                <outgoingLink inNode="//@output/@treeNode.0/@node.8/@inNode"/>
+              </outNode>
+              <inNode/>
+            </node>
+            <properties key="type" value="object"/>
+            <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/billingAddress"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode/>
+          </node>
+          <node name="shippingAddress" schemaDataType="OBJECT" level="4">
+            <node name="name" schemaDataType="STRING" level="5">
+              <properties key="type" value="string"/>
+              <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/shippingAddress/name"/>
+              <properties key="nullable" value="false"/>
+              <outNode>
+                <outgoingLink inNode="//@output/@treeNode.0/@node.9/@inNode"/>
+              </outNode>
+              <inNode/>
+            </node>
+            <node name="line1" schemaDataType="STRING" level="5">
+              <properties key="type" value="string"/>
+              <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/shippingAddress/line1"/>
+              <properties key="nullable" value="false"/>
+              <outNode>
+                <outgoingLink inNode="//@operators.3/@basicContainer/@leftContainer/@leftConnectors.0/@inNode"/>
+              </outNode>
+              <inNode/>
+            </node>
+            <node name="line2" schemaDataType="STRING" level="5">
+              <properties key="type" value="string"/>
+              <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/shippingAddress/line2"/>
+              <properties key="nullable" value="false"/>
+              <outNode>
+                <outgoingLink inNode="//@operators.4/@basicContainer/@leftContainer/@leftConnectors.1/@inNode"/>
+              </outNode>
+              <inNode/>
+            </node>
+            <node name="city" schemaDataType="STRING" level="5">
+              <properties key="type" value="string"/>
+              <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/shippingAddress/city"/>
+              <properties key="nullable" value="false"/>
+              <outNode>
+                <outgoingLink inNode="//@output/@treeNode.0/@node.11/@inNode"/>
+              </outNode>
+              <inNode/>
+            </node>
+            <node name="stateOrProvinceCode" schemaDataType="STRING" level="5">
+              <properties key="type" value="string"/>
+              <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/shippingAddress/stateOrProvinceCode"/>
+              <properties key="nullable" value="false"/>
+              <outNode>
+                <outgoingLink inNode="//@output/@treeNode.0/@node.12/@inNode"/>
+              </outNode>
+              <inNode/>
+            </node>
+            <node name="countryCode" schemaDataType="STRING" level="5">
+              <properties key="type" value="string"/>
+              <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/shippingAddress/countryCode"/>
+              <properties key="nullable" value="false"/>
+              <outNode>
+                <outgoingLink inNode="//@output/@treeNode.0/@node.13/@inNode"/>
+              </outNode>
+              <inNode/>
+            </node>
+            <node name="postalCode" schemaDataType="NUMBER" level="5">
+              <properties key="type" value="number"/>
+              <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/shippingAddress/postalCode"/>
+              <properties key="nullable" value="false"/>
+              <outNode>
+                <outgoingLink inNode="//@output/@treeNode.0/@node.14/@inNode"/>
+              </outNode>
+              <inNode/>
+            </node>
+            <properties key="type" value="object"/>
+            <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/shippingAddress"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode/>
+          </node>
+          <node name="order" schemaDataType="OBJECT" level="4">
+            <node name="orderItem" level="5">
+              <node name="merchantSKU" schemaDataType="NUMBER" level="6">
+                <properties key="type" value="number"/>
+                <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/order/orderItem/0/merchantSKU"/>
+                <properties key="nullable" value="false"/>
+                <outNode>
+                  <outgoingLink inNode="//@output/@treeNode.0/@inNode"/>
+                </outNode>
+                <inNode/>
+              </node>
+              <node name="quantity" schemaDataType="NUMBER" level="6">
+                <properties key="type" value="number"/>
+                <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/order/orderItem/0/quantity"/>
+                <properties key="nullable" value="false"/>
+                <outNode>
+                  <outgoingLink inNode="//@output/@treeNode.0/@node.1/@inNode"/>
+                </outNode>
+                <inNode/>
+              </node>
+              <node name="price" schemaDataType="STRING" level="6">
+                <properties key="type" value="string"/>
+                <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/order/orderItem/0/price"/>
+                <properties key="nullable" value="false"/>
+                <outNode>
+                  <outgoingLink inNode="//@output/@treeNode.0/@node.2/@inNode"/>
+                </outNode>
+                <inNode/>
+              </node>
+              <properties key="type" value="array"/>
+              <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/order/orderItem"/>
+              <properties key="items_id" value="http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/order/orderItem/0"/>
+              <properties key="items_type" value="object"/>
+              <properties key="nullable" value="false"/>
+              <properties key="properties_id" value="{merchantSKU={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/order/orderItem/0/merchantSKU, type=number}, quantity={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/order/orderItem/0/quantity, type=number}, price={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/order/orderItem/0/price, type=string}}"/>
+              <outNode/>
+              <inNode/>
+            </node>
+            <properties key="type" value="object"/>
+            <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/order"/>
+            <properties key="nullable" value="false"/>
+            <properties key="properties_id" value="{name={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/billingAddress/name, type=string}, line1={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/billingAddress/line1, type=string}, line2={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/billingAddress/line2, type=string}, city={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/billingAddress/city, type=string}, stateOrProvinceCode={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/billingAddress/stateOrProvinceCode, type=string}, countryCode={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/billingAddress/countryCode, type=string}, postalCode={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/billingAddress/postalCode, type=number}}"/>
+            <properties key="properties_id" value="{name={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/shippingAddress/name, type=string}, line1={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/shippingAddress/line1, type=string}, line2={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/shippingAddress/line2, type=string}, city={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/shippingAddress/city, type=string}, stateOrProvinceCode={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/shippingAddress/stateOrProvinceCode, type=string}, countryCode={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/shippingAddress/countryCode, type=string}, postalCode={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/shippingAddress/postalCode, type=number}}"/>
+            <properties key="properties_id" value="{orderItem={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/order/orderItem, type=array, items=[{id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/order/orderItem/0, type=object, properties={merchantSKU={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/order/orderItem/0/merchantSKU, type=number}, quantity={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/order/orderItem/0/quantity, type=number}, price={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/order/orderItem/0/price, type=string}}}]}}"/>
+            <outNode/>
+            <inNode/>
+          </node>
+          <properties key="namespaces" value="{prefix=ord, url=http://ordermgmt.org/}"/>
+          <properties key="type" value="object"/>
+          <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder"/>
+          <properties key="nullable" value="false"/>
+          <properties key="properties_id" value="{shippingId={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/shippingId, type=number}, billingAddress={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/billingAddress, type=object, properties={name={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/billingAddress/name, type=string}, line1={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/billingAddress/line1, type=string}, line2={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/billingAddress/line2, type=string}, city={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/billingAddress/city, type=string}, stateOrProvinceCode={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/billingAddress/stateOrProvinceCode, type=string}, countryCode={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/billingAddress/countryCode, type=string}, postalCode={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/billingAddress/postalCode, type=number}}}, shippingAddress={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/shippingAddress, type=object, properties={name={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/shippingAddress/name, type=string}, line1={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/shippingAddress/line1, type=string}, line2={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/shippingAddress/line2, type=string}, city={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/shippingAddress/city, type=string}, stateOrProvinceCode={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/shippingAddress/stateOrProvinceCode, type=string}, countryCode={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/shippingAddress/countryCode, type=string}, postalCode={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/shippingAddress/postalCode, type=number}}}, order={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/order, type=object, properties={orderItem={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/order/orderItem, type=array, items=[{id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/order/orderItem/0, type=object, properties={merchantSKU={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/order/orderItem/0/merchantSKU, type=number}, quantity={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/order/orderItem/0/quantity, type=number}, price={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/order/orderItem/0/price, type=string}}}]}}}}"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <properties key="namespaces" value="{prefix=soapenv, url=http://schemas.xmlsoap.org/soap/envelope/}"/>
+        <properties key="type" value="object"/>
+        <properties key="id" value="http://wso2jsonschema.org/soapenv:Body"/>
+        <properties key="nullable" value="false"/>
+        <properties key="properties_id" value="{ord:putShippingOrder={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder, type=object, properties={shippingId={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/shippingId, type=number}, billingAddress={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/billingAddress, type=object, properties={name={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/billingAddress/name, type=string}, line1={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/billingAddress/line1, type=string}, line2={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/billingAddress/line2, type=string}, city={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/billingAddress/city, type=string}, stateOrProvinceCode={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/billingAddress/stateOrProvinceCode, type=string}, countryCode={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/billingAddress/countryCode, type=string}, postalCode={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/billingAddress/postalCode, type=number}}}, shippingAddress={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/shippingAddress, type=object, properties={name={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/shippingAddress/name, type=string}, line1={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/shippingAddress/line1, type=string}, line2={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/shippingAddress/line2, type=string}, city={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/shippingAddress/city, type=string}, stateOrProvinceCode={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/shippingAddress/stateOrProvinceCode, type=string}, countryCode={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/shippingAddress/countryCode, type=string}, postalCode={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/shippingAddress/postalCode, type=number}}}, order={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/order, type=object, properties={orderItem={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/order/orderItem, type=array, items=[{id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/order/orderItem/0, type=object, properties={merchantSKU={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/order/orderItem/0/merchantSKU, type=number}, quantity={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/order/orderItem/0/quantity, type=number}, price={id=http://wso2jsonschema.org/soapenv:Body/ord:putShippingOrder/order/orderItem/0/price, type=string}}}]}}}}}}"/>
+        <outNode/>
+        <inNode/>
+      </node>
+      <properties key="namespaces" value="{prefix=soapenv, url=http://schemas.xmlsoap.org/soap/envelope/},{prefix=ord, url=http://ordermgmt.org/}"/>
+      <properties key="namespaces" value="{prefix=soapenv, url=http://schemas.xmlsoap.org/soap/envelope/}"/>
+      <properties key="type" value="object"/>
+      <properties key="$schema" value="http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#"/>
+      <properties key="id" value="http://wso2jsonschema.org"/>
+      <properties key="nullable" value="false"/>
+      <outNode/>
+      <inNode/>
+    </treeNode>
+  </input>
+  <output>
+    <treeNode name="root" level="1">
+      <node name="MSKU" level="2">
+        <properties key="$schema" value="http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#"/>
+        <properties key="nullable" value="false"/>
+        <properties key="id" value="http://wso2jsonschema.org/0/MSKU"/>
+        <properties key="type" value="number"/>
+        <outNode/>
+        <inNode/>
+      </node>
+      <node name="QTY" level="2">
+        <properties key="type" value="number"/>
+        <properties key="items_id" value="/0"/>
+        <properties key="items_type" value="number"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode incomingLink="//@input/@treeNode.0/@node.1/@node.0/@node.3/@node.0/@node.1/@outNode/@outgoingLink.0"/>
+      </node>
+      <node name="Price" level="2">
+        <properties key="type" value="string"/>
+        <properties key="items_id" value="/0"/>
+        <properties key="items_type" value="string"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode incomingLink="//@input/@treeNode.0/@node.1/@node.0/@node.3/@node.0/@node.2/@outNode/@outgoingLink.0"/>
+      </node>
+      <node name="BillingAddressName" level="2">
+        <properties key="type" value="string"/>
+        <properties key="items_id" value="/0"/>
+        <properties key="items_type" value="string"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode incomingLink="//@input/@treeNode.0/@node.1/@node.0/@node.1/@node.0/@outNode/@outgoingLink.0"/>
+      </node>
+      <node name="BillingAddressStreet" level="2">
+        <properties key="type" value="string"/>
+        <properties key="items_id" value="/0"/>
+        <properties key="items_type" value="string"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode incomingLink="//@operators.2/@basicContainer/@rightContainer/@rightConnectors.0/@outNode/@outgoingLink.0"/>
+      </node>
+      <node name="BillingAddrCity" level="2">
+        <properties key="type" value="string"/>
+        <properties key="items_id" value="/0"/>
+        <properties key="items_type" value="string"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode incomingLink="//@input/@treeNode.0/@node.1/@node.0/@node.1/@node.3/@outNode/@outgoingLink.0"/>
+      </node>
+      <node name="BillingAddrState" level="2">
+        <properties key="type" value="string"/>
+        <properties key="items_id" value="/0"/>
+        <properties key="items_type" value="string"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode incomingLink="//@input/@treeNode.0/@node.1/@node.0/@node.1/@node.4/@outNode/@outgoingLink.0"/>
+      </node>
+      <node name="BillingAddrCountry" level="2">
+        <properties key="type" value="string"/>
+        <properties key="items_id" value="/0"/>
+        <properties key="items_type" value="string"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode incomingLink="//@input/@treeNode.0/@node.1/@node.0/@node.1/@node.5/@outNode/@outgoingLink.0"/>
+      </node>
+      <node name="BillingAddrZipCode" level="2">
+        <properties key="type" value="number"/>
+        <properties key="items_id" value="/0"/>
+        <properties key="items_type" value="number"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode incomingLink="//@input/@treeNode.0/@node.1/@node.0/@node.1/@node.6/@outNode/@outgoingLink.0"/>
+      </node>
+      <node name="ShippingAddrName" level="2">
+        <properties key="type" value="string"/>
+        <properties key="items_id" value="/0"/>
+        <properties key="items_type" value="string"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode incomingLink="//@input/@treeNode.0/@node.1/@node.0/@node.2/@node.0/@outNode/@outgoingLink.0"/>
+      </node>
+      <node name="ShippingAddrStreet" level="2">
+        <properties key="type" value="string"/>
+        <properties key="items_id" value="/0"/>
+        <properties key="items_type" value="string"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode incomingLink="//@operators.4/@basicContainer/@rightContainer/@rightConnectors.0/@outNode/@outgoingLink.0"/>
+      </node>
+      <node name="ShippingAddrCity" level="2">
+        <properties key="type" value="string"/>
+        <properties key="items_id" value="/0"/>
+        <properties key="items_type" value="string"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode incomingLink="//@input/@treeNode.0/@node.1/@node.0/@node.2/@node.3/@outNode/@outgoingLink.0"/>
+      </node>
+      <node name="ShippingAddrState" level="2">
+        <properties key="type" value="string"/>
+        <properties key="items_id" value="/0"/>
+        <properties key="items_type" value="string"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode incomingLink="//@input/@treeNode.0/@node.1/@node.0/@node.2/@node.4/@outNode/@outgoingLink.0"/>
+      </node>
+      <node name="ShippingAddrCountry" level="2">
+        <properties key="type" value="string"/>
+        <properties key="items_id" value="/0"/>
+        <properties key="items_type" value="string"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode incomingLink="//@input/@treeNode.0/@node.1/@node.0/@node.2/@node.5/@outNode/@outgoingLink.0"/>
+      </node>
+      <node name="ShippingAddrZipCode" level="2">
+        <properties key="type" value="number"/>
+        <properties key="items_id" value="/0"/>
+        <properties key="items_type" value="number"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode incomingLink="//@input/@treeNode.0/@node.1/@node.0/@node.2/@node.6/@outNode/@outgoingLink.0"/>
+      </node>
+      <node name="ShippingId" level="2">
+        <properties key="type" value="number"/>
+        <properties key="items_id" value="/0"/>
+        <properties key="items_type" value="number"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode incomingLink="//@input/@treeNode.0/@node.1/@node.0/@node.0/@outNode/@outgoingLink.0"/>
+      </node>
+      <properties key="type" value="array"/>
+      <properties key="$schema" value="http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#"/>
+      <properties key="id" value="http://wso2jsonschema.org"/>
+      <properties key="nullable" value="false"/>
+      <properties key="items_id" value="http://wso2jsonschema.org/0"/>
+      <properties key="items_type" value="object"/>
+      <outNode/>
+      <inNode incomingLink="//@input/@treeNode.0/@node.1/@node.0/@node.3/@node.0/@node.0/@outNode/@outgoingLink.0"/>
+    </treeNode>
+  </output>
+  <operators xsi:type="datamapper:Concat" defaultInputConnectors="2" defaultOutputConnectors="1" inputSizeFixed="false" operatorType="CONCAT">
+    <basicContainer>
+      <leftContainer>
+        <leftConnectors>
+          <inNode incomingLink="//@input/@treeNode.0/@node.1/@node.0/@node.1/@node.1/@outNode/@outgoingLink.0"/>
+        </leftConnectors>
+        <leftConnectors>
+          <inNode incomingLink="//@operators.1/@basicContainer/@rightContainer/@rightConnectors.0/@outNode/@outgoingLink.0"/>
+        </leftConnectors>
+      </leftContainer>
+      <rightContainer>
+        <rightConnectors>
+          <outNode>
+            <outgoingLink inNode="//@operators.2/@basicContainer/@leftContainer/@leftConnectors.0/@inNode"/>
+          </outNode>
+        </rightConnectors>
+      </rightContainer>
+    </basicContainer>
+  </operators>
+  <operators xsi:type="datamapper:Constant" defaultOutputConnectors="1" operatorType="CONSTANT" constantValue=" ">
+    <basicContainer>
+      <leftContainer/>
+      <rightContainer>
+        <rightConnectors>
+          <outNode>
+            <outgoingLink inNode="//@operators.0/@basicContainer/@leftContainer/@leftConnectors.1/@inNode"/>
+            <outgoingLink inNode="//@operators.3/@basicContainer/@leftContainer/@leftConnectors.1/@inNode"/>
+          </outNode>
+        </rightConnectors>
+      </rightContainer>
+    </basicContainer>
+  </operators>
+  <operators xsi:type="datamapper:Concat" defaultInputConnectors="2" defaultOutputConnectors="1" inputSizeFixed="false" operatorType="CONCAT">
+    <basicContainer>
+      <leftContainer>
+        <leftConnectors>
+          <inNode incomingLink="//@operators.0/@basicContainer/@rightContainer/@rightConnectors.0/@outNode/@outgoingLink.0"/>
+        </leftConnectors>
+        <leftConnectors>
+          <inNode incomingLink="//@input/@treeNode.0/@node.1/@node.0/@node.1/@node.2/@outNode/@outgoingLink.0"/>
+        </leftConnectors>
+      </leftContainer>
+      <rightContainer>
+        <rightConnectors>
+          <outNode>
+            <outgoingLink inNode="//@output/@treeNode.0/@node.4/@inNode"/>
+          </outNode>
+        </rightConnectors>
+      </rightContainer>
+    </basicContainer>
+  </operators>
+  <operators xsi:type="datamapper:Concat" defaultInputConnectors="2" defaultOutputConnectors="1" inputSizeFixed="false" operatorType="CONCAT">
+    <basicContainer>
+      <leftContainer>
+        <leftConnectors>
+          <inNode incomingLink="//@input/@treeNode.0/@node.1/@node.0/@node.2/@node.1/@outNode/@outgoingLink.0"/>
+        </leftConnectors>
+        <leftConnectors>
+          <inNode incomingLink="//@operators.1/@basicContainer/@rightContainer/@rightConnectors.0/@outNode/@outgoingLink.1"/>
+        </leftConnectors>
+      </leftContainer>
+      <rightContainer>
+        <rightConnectors>
+          <outNode>
+            <outgoingLink inNode="//@operators.4/@basicContainer/@leftContainer/@leftConnectors.0/@inNode"/>
+          </outNode>
+        </rightConnectors>
+      </rightContainer>
+    </basicContainer>
+  </operators>
+  <operators xsi:type="datamapper:Concat" defaultInputConnectors="2" defaultOutputConnectors="1" inputSizeFixed="false" operatorType="CONCAT">
+    <basicContainer>
+      <leftContainer>
+        <leftConnectors>
+          <inNode incomingLink="//@operators.3/@basicContainer/@rightContainer/@rightConnectors.0/@outNode/@outgoingLink.0"/>
+        </leftConnectors>
+        <leftConnectors>
+          <inNode incomingLink="//@input/@treeNode.0/@node.1/@node.0/@node.2/@node.2/@outNode/@outgoingLink.0"/>
+        </leftConnectors>
+      </leftContainer>
+      <rightContainer>
+        <rightConnectors>
+          <outNode>
+            <outgoingLink inNode="//@output/@treeNode.0/@node.10/@inNode"/>
+          </outNode>
+        </rightConnectors>
+      </rightContainer>
+    </basicContainer>
+  </operators>
+</datamapper:DataMapperRoot>

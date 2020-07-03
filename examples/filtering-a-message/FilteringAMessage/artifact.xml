@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="FilteringAMessage" groupId="com.example.FilteringAMessage.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/FilteringAMessage.xml</file>
+    </artifact>
+    <artifact name="CreateResponse" groupId="com.example.FilteringAMessage.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CreateResponse.xml</file>
+    </artifact>
+</artifacts>

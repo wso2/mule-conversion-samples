@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datamapper:DataMapperRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:datamapper="http:///org/wso2/developerstudio/eclipse/gmf/datamapper">
+  <input>
+    <treeNode name="root" schemaDataType="OBJECT" level="1">
+      <node name="employees" schemaDataType="OBJECT" level="2">
+        <node name="employee" level="3">
+          <node name="name" schemaDataType="STRING" level="4">
+            <properties key="type" value="string"/>
+            <properties key="id" value="http://wso2jsonschema.org/employees/employee/0/name"/>
+            <properties key="nullable" value="false"/>
+            <outNode>
+              <outgoingLink inNode="//@output/@treeNode.0/@node.0/@node.0/@inNode"/>
+            </outNode>
+            <inNode/>
+          </node>
+          <node name="lastName" schemaDataType="STRING" level="4">
+            <properties key="type" value="string"/>
+            <properties key="id" value="http://wso2jsonschema.org/employees/employee/0/lastName"/>
+            <properties key="nullable" value="false"/>
+            <outNode>
+              <outgoingLink inNode="//@output/@treeNode.0/@node.0/@node.1/@inNode"/>
+            </outNode>
+            <inNode/>
+          </node>
+          <node name="addresses" schemaDataType="OBJECT" level="4">
+            <node name="address" level="5">
+              <node name="street" schemaDataType="STRING" level="6">
+                <properties key="type" value="string"/>
+                <properties key="id" value="http://wso2jsonschema.org/employees/employee/0/addresses/address/0/street"/>
+                <properties key="nullable" value="false"/>
+                <outNode>
+                  <outgoingLink inNode="//@output/@treeNode.0/@node.0/@node.2/@node.0/@node.0/@inNode"/>
+                </outNode>
+                <inNode/>
+              </node>
+              <node name="zipCode" schemaDataType="STRING" level="6">
+                <properties key="type" value="string"/>
+                <properties key="id" value="http://wso2jsonschema.org/employees/employee/0/addresses/address/0/zipCode"/>
+                <properties key="nullable" value="false"/>
+                <outNode>
+                  <outgoingLink inNode="//@output/@treeNode.0/@node.0/@node.2/@node.0/@node.1/@inNode"/>
+                </outNode>
+                <inNode/>
+              </node>
+              <properties key="type" value="array"/>
+              <properties key="id" value="http://wso2jsonschema.org/employees/employee/0/addresses/address"/>
+              <properties key="items_id" value="http://wso2jsonschema.org/employees/employee/0/addresses/address/0"/>
+              <properties key="items_type" value="object"/>
+              <properties key="nullable" value="false"/>
+              <properties key="properties_id" value="{street={id=http://wso2jsonschema.org/employees/employee/0/addresses/address/0/street, type=string}, zipCode={id=http://wso2jsonschema.org/employees/employee/0/addresses/address/0/zipCode, type=string}}"/>
+              <outNode/>
+              <inNode/>
+            </node>
+            <properties key="type" value="object"/>
+            <properties key="id" value="http://wso2jsonschema.org/employees/employee/0/addresses"/>
+            <properties key="nullable" value="false"/>
+            <properties key="properties_id" value="{address={id=http://wso2jsonschema.org/employees/employee/0/addresses/address, type=array, items=[{id=http://wso2jsonschema.org/employees/employee/0/addresses/address/0, type=object, properties={street={id=http://wso2jsonschema.org/employees/employee/0/addresses/address/0/street, type=string}, zipCode={id=http://wso2jsonschema.org/employees/employee/0/addresses/address/0/zipCode, type=string}}}]}}"/>
+            <outNode/>
+            <inNode/>
+          </node>
+          <properties key="type" value="array"/>
+          <properties key="id" value="http://wso2jsonschema.org/employees/employee"/>
+          <properties key="items_id" value="http://wso2jsonschema.org/employees/employee/0"/>
+          <properties key="items_type" value="object"/>
+          <properties key="nullable" value="false"/>
+          <properties key="properties_id" value="{name={id=http://wso2jsonschema.org/employees/employee/0/name, type=string}, lastName={id=http://wso2jsonschema.org/employees/employee/0/lastName, type=string}, addresses={id=http://wso2jsonschema.org/employees/employee/0/addresses, type=object, properties={address={id=http://wso2jsonschema.org/employees/employee/0/addresses/address, type=array, items=[{id=http://wso2jsonschema.org/employees/employee/0/addresses/address/0, type=object, properties={street={id=http://wso2jsonschema.org/employees/employee/0/addresses/address/0/street, type=string}, zipCode={id=http://wso2jsonschema.org/employees/employee/0/addresses/address/0/zipCode, type=string}}}]}}}}"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <properties key="type" value="object"/>
+        <properties key="id" value="http://wso2jsonschema.org/employees"/>
+        <properties key="nullable" value="false"/>
+        <properties key="properties_id" value="{employee={id=http://wso2jsonschema.org/employees/employee, type=array, items=[{id=http://wso2jsonschema.org/employees/employee/0, type=object, properties={name={id=http://wso2jsonschema.org/employees/employee/0/name, type=string}, lastName={id=http://wso2jsonschema.org/employees/employee/0/lastName, type=string}, addresses={id=http://wso2jsonschema.org/employees/employee/0/addresses, type=object, properties={address={id=http://wso2jsonschema.org/employees/employee/0/addresses/address, type=array, items=[{id=http://wso2jsonschema.org/employees/employee/0/addresses/address/0, type=object, properties={street={id=http://wso2jsonschema.org/employees/employee/0/addresses/address/0/street, type=string}, zipCode={id=http://wso2jsonschema.org/employees/employee/0/addresses/address/0/zipCode, type=string}}}]}}}}}]}}"/>
+        <outNode/>
+        <inNode/>
+      </node>
+      <properties key="type" value="object"/>
+      <properties key="$schema" value="http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#"/>
+      <properties key="id" value="http://wso2jsonschema.org"/>
+      <properties key="nullable" value="false"/>
+      <outNode/>
+      <inNode/>
+    </treeNode>
+  </input>
+  <output>
+    <treeNode name="employees" schemaDataType="OBJECT" level="1">
+      <node name="employee" level="2">
+        <node name="name" schemaDataType="STRING" level="3">
+          <properties key="type" value="string"/>
+          <properties key="id" value="http://wso2jsonschema.org/employee/0/name"/>
+          <properties key="nullable" value="false"/>
+          <outNode/>
+          <inNode incomingLink="//@input/@treeNode.0/@node.0/@node.0/@node.0/@outNode/@outgoingLink.0"/>
+        </node>
+        <node name="lastName" schemaDataType="STRING" level="3">
+          <properties key="type" value="string"/>
+          <properties key="id" value="http://wso2jsonschema.org/employee/0/lastName"/>
+          <properties key="nullable" value="false"/>
+          <outNode/>
+          <inNode incomingLink="//@input/@treeNode.0/@node.0/@node.0/@node.1/@outNode/@outgoingLink.0"/>
+        </node>
+        <node name="addresses" schemaDataType="OBJECT" level="3">
+          <node name="address" level="4">
+            <node name="street" schemaDataType="STRING" level="5">
+              <properties key="type" value="string"/>
+              <properties key="id" value="http://wso2jsonschema.org/employee/0/addresses/address/0/street"/>
+              <properties key="nullable" value="false"/>
+              <outNode/>
+              <inNode incomingLink="//@input/@treeNode.0/@node.0/@node.0/@node.2/@node.0/@node.0/@outNode/@outgoingLink.0"/>
+            </node>
+            <node name="zipCode" schemaDataType="NUMBER" level="5">
+              <properties key="type" value="number"/>
+              <properties key="id" value="http://wso2jsonschema.org/employee/0/addresses/address/0/zipCode"/>
+              <properties key="nullable" value="false"/>
+              <outNode/>
+              <inNode incomingLink="//@input/@treeNode.0/@node.0/@node.0/@node.2/@node.0/@node.1/@outNode/@outgoingLink.0"/>
+            </node>
+            <properties key="type" value="array"/>
+            <properties key="id" value="http://wso2jsonschema.org/employee/0/addresses/address"/>
+            <properties key="items_id" value="http://wso2jsonschema.org/employee/0/addresses/address/0"/>
+            <properties key="items_type" value="object"/>
+            <properties key="nullable" value="false"/>
+            <properties key="properties_id" value="{street={id=http://wso2jsonschema.org/employee/0/addresses/address/0/street, type=string}, zipCode={id=http://wso2jsonschema.org/employee/0/addresses/address/0/zipCode, type=number}}"/>
+            <outNode/>
+            <inNode/>
+          </node>
+          <properties key="type" value="object"/>
+          <properties key="id" value="http://wso2jsonschema.org/employee/0/addresses"/>
+          <properties key="nullable" value="false"/>
+          <properties key="properties_id" value="{address={id=http://wso2jsonschema.org/employee/0/addresses/address, type=array, items=[{id=http://wso2jsonschema.org/employee/0/addresses/address/0, type=object, properties={street={id=http://wso2jsonschema.org/employee/0/addresses/address/0/street, type=string}, zipCode={id=http://wso2jsonschema.org/employee/0/addresses/address/0/zipCode, type=number}}}]}}"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <properties key="type" value="array"/>
+        <properties key="id" value="http://wso2jsonschema.org/employee"/>
+        <properties key="items_id" value="http://wso2jsonschema.org/employee/0"/>
+        <properties key="items_type" value="object"/>
+        <properties key="nullable" value="false"/>
+        <properties key="properties_id" value="{name={id=http://wso2jsonschema.org/employee/0/name, type=string}, lastName={id=http://wso2jsonschema.org/employee/0/lastName, type=string}, addresses={id=http://wso2jsonschema.org/employee/0/addresses, type=object, properties={address={id=http://wso2jsonschema.org/employee/0/addresses/address, type=array, items=[{id=http://wso2jsonschema.org/employee/0/addresses/address/0, type=object, properties={street={id=http://wso2jsonschema.org/employee/0/addresses/address/0/street, type=string}, zipCode={id=http://wso2jsonschema.org/employee/0/addresses/address/0/zipCode, type=number}}}]}}}}"/>
+        <outNode/>
+        <inNode/>
+      </node>
+      <properties key="type" value="object"/>
+      <properties key="$schema" value="http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#"/>
+      <properties key="id" value="http://wso2jsonschema.org"/>
+      <properties key="nullable" value="false"/>
+      <outNode/>
+      <inNode/>
+    </treeNode>
+  </output>
+</datamapper:DataMapperRoot>

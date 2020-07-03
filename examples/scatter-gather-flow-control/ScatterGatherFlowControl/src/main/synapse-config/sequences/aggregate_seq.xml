@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="aggregate_seq" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <property name="aggregated" scope="default">
+        <aggregated xmlns=""/>
+    </property>
+    <aggregate id="aggregate_id">
+        <completeCondition>
+            <messageCount max="-1" min="2"/>
+        </completeCondition>
+        <onComplete enclosingElementProperty="aggregated" expression="$body/*[1]">
+            <payloadFactory description="transform payload" media-type="text">
+                <format>
+                    $1
+                </format>
+                <args>
+                    <arg evaluator="xml" expression="fn:concat($body/aggregated/ns:text[1],':&#xa;',$body/aggregated/ns:text[2])" xmlns:ns="http://ws.apache.org/commons/ns/payload"/>
+                </args>
+            </payloadFactory>
+            <datamapper config="gov:datamapper/csv_json_transformation_config.dmc" description="convert to json" inputSchema="gov:datamapper/csv_json_transformation_config_inputSchema.json" inputType="CSV" outputSchema="gov:datamapper/csv_json_transformation_config_outputSchema.json" outputType="JSON" xsltStyleSheet="gov:datamapper/csv_json_transformation_config_xsltStyleSheet.xml"/>
+            <respond/>
+        </onComplete>
+    </aggregate>
+</sequence>

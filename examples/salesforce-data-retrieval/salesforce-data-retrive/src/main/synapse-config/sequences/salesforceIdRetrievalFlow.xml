@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="salesforceIdRetrievalFlow" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <propertyGroup>
+        <property expression="//objectName/text()" name="objectName" scope="default" type="STRING"/>
+        <property expression="//field/text()" name="field" scope="default" type="STRING"/>
+        <property expression="//searchKey/text()" name="searchKey" scope="default" type="STRING"/>
+        <property expression="//searchValue/text()" name="searchValue" scope="default" type="STRING"/>
+    </propertyGroup>
+    <script language="js"><![CDATA[var object = mc.getProperty('objectName');
+var objectField = mc.getProperty('field');
+var objectsearchKey = mc.getProperty('searchKey');
+var objectsearchValue = mc.getProperty('searchValue');
+
+
+var fieldvalue;
+if(objectField.trim() =="") {
+fieldvalue = "";
+} else {
+fieldvalue = ", " + objectField;
+}
+
+
+var query = 'SELECT id, name' + fieldvalue + ' from ' + object +' where ' + objectsearchKey + ' like \'%' + objectsearchValue +'%\'';
+
+mc.setProperty("QueryString",String(query));
+var finalQuery = mc.getProperty("QueryString");
+
+print(finalQuery);]]></script>
+    <salesforcerest.init>
+        <accessToken>00D2x000000pIxA!AR0AQNaVlfaG5ssAMkAnjXpHXVf1iYwOnSj_.kWCox0OoA4OvIscl6tcxvC1PUhNWx87wu8csi6.PvUyuTUAyMQJMrN0ab8n</accessToken>
+        <apiVersion>v44.0</apiVersion>
+        <hostName>https://login.salesforce.com</hostName>
+        <refreshToken>5Aep861Xq7VoDavIt5QG2vWIHGbv.B1Q.4rMXb9o3DFmhvbChMjYOeoont6JI3kTWNrXl43w9RTqLFaM.iCikhu</refreshToken>
+        <clientSecret>37D9E930DEEB0BAF7842124352065F6DB2D90219D9DB06238978590665EDEFEC</clientSecret>
+        <clientId>3MVG97quAmFZJfVyr_k_q7IC1iEc71lap9m4ayJWpUrkVe85mnF0GNjsIu2G4__FGC4NOzS.3o10Eh_H81xX8</clientId>
+        <apiUrl>https://ap17.salesforce.com</apiUrl>
+        <registryPath>connectors/SalesforceRest</registryPath>
+    </salesforcerest.init>
+    <salesforcerest.queryAll>
+        <queryString>{$ctx:QueryString}</queryString>
+    </salesforcerest.queryAll>
+    <property name="messageType" scope="axis2" type="STRING" value="application/json"/>
+    <filter regex="true" source="json-eval($.QueryResult.done)">
+        <then>
+            <log level="custom">
+                <property expression="json-eval($)" name="Result"/>
+            </log>
+            <respond/>
+        </then>
+        <else>
+            <script description="Execute the failing script" language="nashornJs"><![CDATA[throw new java.lang.Exception("Salesforce error has occured.");]]></script>
+        </else>
+    </filter>
+</sequence>

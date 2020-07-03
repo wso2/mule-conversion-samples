@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="CustomerProfile" groupId="com.example.foreachProcessingandchoicerouting.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/CustomerProfile.xml</file>
+    </artifact>
+    <artifact name="Loan" groupId="com.example.foreachProcessingandchoicerouting.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/Loan.xml</file>
+    </artifact>
+    <artifact name="HttpEndpoint" groupId="com.example.foreachProcessingandchoicerouting.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/HttpEndpoint.xml</file>
+    </artifact>
+</artifacts>

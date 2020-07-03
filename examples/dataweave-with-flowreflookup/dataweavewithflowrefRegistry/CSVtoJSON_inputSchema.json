@@ -1,0 +1,41 @@
+{
+  "$schema" : "http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#",
+  "inputType" : "CSV",
+  "id" : "http://wso2jsonschema.org",
+  "title" : "root",
+  "type" : "array",
+  "items" : [ {
+    "properties" : {
+      "id" : {
+        "id" : "http://wso2jsonschema.org/0/id",
+        "type" : "string"
+      },
+      "company_name" : {
+        "id" : "http://wso2jsonschema.org/0/company_name",
+        "type" : "string"
+      },
+      "company_address" : {
+        "id" : "http://wso2jsonschema.org/0/company_address",
+        "type" : "string"
+      },
+      "company_city" : {
+        "id" : "http://wso2jsonschema.org/0/company_city",
+        "type" : "string"
+      },
+      "company_state" : {
+        "id" : "http://wso2jsonschema.org/0/company_state",
+        "type" : "string"
+      },
+      "company_zip" : {
+        "id" : "http://wso2jsonschema.org/0/company_zip",
+        "type" : "string"
+      },
+      "has_given_contact_permission" : {
+        "id" : "http://wso2jsonschema.org/0/has_given_contact_permission",
+        "type" : "null"
+      }
+    },
+    "id" : "http://wso2jsonschema.org/0",
+    "type" : "object"
+  } ]
+}

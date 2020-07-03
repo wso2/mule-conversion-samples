@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/contacts" name="ContactsAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <salesforcerest.init>
+                <accessToken></accessToken>
+                <apiVersion>v44.0</apiVersion>
+                <hostName>https://login.salesforce.com</hostName>
+                <refreshToken></refreshToken>
+                <apiUrl></apiUrl>
+                <registryPath>connectors/SalesforceRest</registryPath>
+            </salesforcerest.init>
+            <salesforcerest.query>
+                <queryString>SELECT id,lastname,lastmodifieddate from contact limit 10</queryString>
+            </salesforcerest.query>
+            <foreach expression="json-eval($.records)">
+                <sequence>
+                    <payloadFactory media-type="json">
+                        <format>{"Id": "$1", "LastName": "$2", "LastModifiedDate": "$3"}</format>
+                        <args>
+                            <arg evaluator="json" expression="$.Id"/>
+                            <arg evaluator="json" expression="$.LastName"/>
+                            <arg evaluator="json" expression="$.LastModifiedDate"/>
+                        </args>
+                    </payloadFactory>
+                    <log description="contacts" level="full"/>
+                </sequence>
+            </foreach>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

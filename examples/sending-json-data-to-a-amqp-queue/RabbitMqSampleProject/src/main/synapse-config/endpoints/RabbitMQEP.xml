@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoint name="RabbitMQEP" xmlns="http://ws.apache.org/ns/synapse">
+    <address uri="rabbitmq:/sales_queue?rabbitmq.server.host.name=localhost&amp;rabbitmq.server.port=5672&amp;rabbitmq.queue.name=sales_queue&amp;rabbitmq.queue.route.key=sales_queue&amp;rabbitmq.exchange.name=sales_exchange">
+        <suspendOnFailure>
+            <initialDuration>-1</initialDuration>
+            <progressionFactor>1.0</progressionFactor>
+        </suspendOnFailure>
+        <markForSuspension>
+            <retriesBeforeSuspension>0</retriesBeforeSuspension>
+        </markForSuspension>
+    </address>
+</endpoint>

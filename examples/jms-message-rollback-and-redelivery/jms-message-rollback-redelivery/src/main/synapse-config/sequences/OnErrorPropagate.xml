@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="OnErrorPropagate" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log description="Logger" level="custom">
+        <property name="Rollback transaction" value="The message rolls back to its original state for reprocessing."/>
+    </log>
+    <property description="Rollback transaction" name="SET_ROLLBACK_ONLY" scope="axis2" type="STRING" value="true"/>
+</sequence>

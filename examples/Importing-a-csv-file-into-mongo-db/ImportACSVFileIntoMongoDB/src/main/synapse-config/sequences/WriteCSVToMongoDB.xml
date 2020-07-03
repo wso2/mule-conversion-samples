@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="WriteCSVToMongoDB" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <property description="set CSV File Path" name="csvFilePath" scope="default" type="STRING" value="/Users/user/ImportACSVFileIntoMongoDB/src/resources/input.csv"/>
+    <fileconnector.read>
+        <source>{$ctx:csvFilePath}</source>
+        <contentType>text/plain</contentType>
+    </fileconnector.read>
+    <datamapper config="gov:datamapper/MapCSVToJson.dmc" description="Map CSV to JSON" inputSchema="gov:datamapper/MapCSVToJson_inputSchema.json" inputType="CSV" outputSchema="gov:datamapper/MapCSVToJson_outputSchema.json" outputType="JSON" xsltStyleSheet="gov:datamapper/MapCSVToJson_xsltStyleSheet.xml"/>
+    <log description="Log objects to save" level="custom">
+        <property expression="json-eval($.customerdetails)" name="Objects to save"/>
+    </log>
+    <enrich description="Save Payload to a Property">
+        <source clone="true" xpath="json-eval($)"/>
+        <target property="csvpayload" type="property"/>
+    </enrich>
+    <header description="Set Accept Type" name="Accept" scope="transport" value="application/json"/>
+    <call description="Check Collection If Exists">
+        <endpoint>
+            <http method="get" uri-template="http://localhost:8290/services/ImportingACSVFileIntoMongoDBDataService/getCustomer">
+                <suspendOnFailure>
+                    <initialDuration>-1</initialDuration>
+                    <progressionFactor>-1</progressionFactor>
+                    <maximumDuration>0</maximumDuration>
+                </suspendOnFailure>
+                <markForSuspension>
+                    <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                </markForSuspension>
+            </http>
+        </endpoint>
+    </call>
+    <filter regex="false" source="json-eval($.Documents.Document[0].exists)">
+        <then>
+            <property description="Set OUT_ONLY" name="OUT_ONLY" scope="default" type="STRING" value="true"/>
+            <call>
+                <endpoint>
+                    <http method="get" uri-template="http://localhost:8290/services/ImportingACSVFileIntoMongoDBDataService/createCustomer">
+                        <suspendOnFailure>
+                            <initialDuration>-1</initialDuration>
+                            <progressionFactor>-1</progressionFactor>
+                            <maximumDuration>0</maximumDuration>
+                        </suspendOnFailure>
+                        <markForSuspension>
+                            <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                        </markForSuspension>
+                    </http>
+                </endpoint>
+            </call>
+        </then>
+        <else>
+            <log description="Log That a collection Exists" level="custom">
+                <property name="Status" value="Customer collection already exists."/>
+            </log>
+        </else>
+    </filter>
+    <enrich description="Reset payload from property">
+        <source clone="true" property="csvpayload" type="property"/>
+        <target type="body"/>
+    </enrich>
+    <iterate attachPath="json-eval($)" expression="json-eval($.customerdetails)" id="jsoniterate" preservePayload="true">
+        <target>
+            <sequence>
+                <enrich description="Save Iterated Payload to a Property">
+                    <source clone="true" xpath="json-eval($.Customer)"/>
+                    <target property="payload" type="property"/>
+                </enrich>
+                <call description="Call MongoDB Data service">
+                    <endpoint>
+                        <http method="post" uri-template="http://localhost:8290/services/ImportingACSVFileIntoMongoDBDataService/addCustomer">
+                            <suspendOnFailure>
+                                <initialDuration>-1</initialDuration>
+                                <progressionFactor>-1</progressionFactor>
+                                <maximumDuration>0</maximumDuration>
+                            </suspendOnFailure>
+                            <markForSuspension>
+                                <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                            </markForSuspension>
+                        </http>
+                    </endpoint>
+                </call>
+                <log description="Log The Customer" level="custom">
+                    <property expression="$ctx:payload" name="Customer has been stored "/>
+                </log>
+            </sequence>
+        </target>
+    </iterate>
+</sequence>

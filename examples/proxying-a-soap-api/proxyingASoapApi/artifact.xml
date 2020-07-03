@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="tshirt-service" groupId="org.wso2.proxyingASoapApi.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/tshirt-service.xml</file>
+    </artifact>
+    <artifact name="proxyingASoapApiAPI" groupId="org.wso2.proxyingASoapApi.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/proxyingASoapApiAPI.xml</file>
+    </artifact>
+</artifacts>

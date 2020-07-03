@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/salesforce" name="SalesforceImportContactAsynchronously" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST" uri-template="/importContactAsynchronously">
+        <inSequence>
+            <propertyGroup description="Capture Request Body Parameters as Properties">
+                <property expression="json-eval($.accessToken)" name="accessToken" scope="default" type="STRING"/>
+                <property expression="json-eval($.apiUrl)" name="apiUrl" scope="default" type="STRING"/>
+                <property expression="json-eval($.sObjectName)" name="sObjectName" scope="default" type="STRING"/>
+                <property expression="json-eval($.refreshToken)" name="refreshToken" scope="default" type="STRING"/>
+                <property expression="json-eval($.hostName)" name="hostName" scope="default" type="STRING"/>
+                <property expression="json-eval($.apiVersion)" name="apiVersion" scope="default" type="STRING"/>
+                <property expression="json-eval($.registryPath)" name="registryPath" scope="default" type="STRING"/>
+                <property expression="json-eval($.intervalTime)" name="intervalTime" scope="default" type="STRING"/>
+                <property expression="json-eval($.blocking)" name="blocking" scope="default" type="STRING"/>
+                <property expression="json-eval($.source)" name="source" scope="default" type="STRING"/>
+                <property expression="json-eval($.filePattern)" name="filePattern" scope="default" type="STRING"/>
+                <property expression="json-eval($.contentType)" name="contentType" scope="default" type="STRING"/>
+                <property expression="json-eval($.contentType)" name="contentType" scope="default" type="STRING"/>
+                <property name="conf:/resource/importContactStatus" scope="registry" type="STRING" value="In Progress"/>
+                <property expression="fn:substring-after(get-property('MessageID'), 'urn:uuid:')" name="MessageID" scope="default" type="STRING"/>
+            </propertyGroup>
+            <clone>
+                <target>
+                    <sequence>
+                        <salesforcerest.init>
+                            <accessToken>{$ctx:accessToken}</accessToken>
+                            <apiVersion>{$ctx:apiVersion}</apiVersion>
+                            <hostName>{$ctx:hostName}</hostName>
+                            <refreshToken>{$ctx:refreshToken}</refreshToken>
+                            <apiUrl>{$ctx:apiUrl}</apiUrl>
+                            <registryPath>{$ctx:registryPath}</registryPath>
+                            <intervalTime>{$ctx:intervalTime}</intervalTime>
+                            <blocking>{$ctx:blocking}</blocking>
+                        </salesforcerest.init>
+                        <fileconnector.read>
+                            <source>{$ctx:source}</source>
+                            <contentType>{$ctx:contentType}</contentType>
+                            <filePattern>{$ctx:filePattern}</filePattern>
+                        </fileconnector.read>
+                        <log level="custom">
+                            <property name="Message" value="File is Read"/>
+                        </log>
+                        <datamapper config="gov:datamapper/MapCSV.dmc" description="Map CSV Data to Salesforce Input Schema" inputSchema="gov:datamapper/MapCSV_inputSchema.json" inputType="CSV" outputSchema="gov:datamapper/MapCSV_outputSchema.json" outputType="JSON" xsltStyleSheet="gov:datamapper/MapCSV_xsltStyleSheet.xml"/>
+                        <property description="Saved Mapped Body into Property" expression="json-eval($.fieldAndValue)" name="fieldAndValue" scope="default" type="STRING"/>
+                        <salesforcerest.createMultipleRecords>
+                            <sObjectName>{$ctx:sObjectName}</sObjectName>
+                            <fieldAndValue>{$ctx:fieldAndValue}</fieldAndValue>
+                        </salesforcerest.createMultipleRecords>
+                        <log level="full">
+                            <property name="Message" value="Contacts have been created in SFDC: "/>
+                        </log>
+                        <script description="Wait for 20 sec" language="js"><![CDATA[java.lang.Thread.sleep(20000);]]></script>
+                        <log level="custom">
+                            <property name="Message" value="Migration has been Completed"/>
+                        </log>
+                        <property description="Set Status as Done" name="conf:/resource/importContactStatus" scope="registry" type="STRING" value="Done"/>
+                    </sequence>
+                </target>
+                <target>
+                    <sequence>
+                        <payloadFactory description="Generate Response with Status" media-type="json">
+                            <format>
+						      	"Job ID" : "$1"
+							</format>
+                            <args>
+                                <arg evaluator="xml" expression="$ctx:MessageID"/>
+                            </args>
+                        </payloadFactory>
+                        <respond description="Send the Response"/>
+                    </sequence>
+                </target>
+            </clone>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/importContactStatus">
+        <inSequence>
+            <property expression="get-property('registry', 'conf:/resource/importContactStatus')" name="importContactStatus" scope="default" type="STRING"/>
+            <payloadFactory media-type="json">
+                <format>{"Import Contact Status" : "$1","Synchronization triggered at" : "$2"}
+			      </format>
+                <args>
+                    <arg evaluator="xml" expression="$ctx:importContactStatus"/>
+                    <arg evaluator="xml" expression="get-property(&quot;SYSTEM_DATE&quot;, &quot;yyyy-MM-dd'T'HH:mm:ss.SSSXXX&quot;)"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

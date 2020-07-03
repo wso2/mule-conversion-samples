@@ -1,0 +1,8 @@
+map_S_Envelope_S_root = function(){ 
+var outputroot={};
+
+outputroot =  {};
+outputroot.orderId = (inputsoapenv_Envelope.soapenv_Body.orderId).toString();
+return outputroot;
+};
+

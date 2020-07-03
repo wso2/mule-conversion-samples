@@ -1,0 +1,54 @@
+<unit-test>
+    <artifacts>
+        <test-artifact>
+            <artifact>/ContentBasedRouting/src/main/synapse-config/api/ContentBasedRoutingAPI.xml</artifact>
+        </test-artifact>
+        <supportive-artifacts>
+            <artifact>/ContentBasedRouting/src/main/synapse-config/sequences/reply-in-default-languageSub_Flow.xml</artifact>
+        </supportive-artifacts>
+        <registry-resources/>
+        <connector-resources/>
+    </artifacts>
+    <test-cases>
+        <test-case name="TestFrench">
+            <input>
+                <request-path>/hello?language=French</request-path>
+                <request-method>GET</request-method>
+            </input>
+            <assertions>
+                <assertEquals>
+                    <actual>$body</actual>
+                    <expected><![CDATA[Bonjour!]]></expected>
+                    <message>French language test failed</message>
+                </assertEquals>
+            </assertions>
+        </test-case>
+        <test-case name="TestSpanish">
+            <input>
+                <request-path>/hello?language=Spanish</request-path>
+                <request-method>GET</request-method>
+            </input>
+            <assertions>
+                <assertEquals>
+                    <actual>$body</actual>
+                    <expected><![CDATA[Hola!]]></expected>
+                    <message>Spanish test case failed</message>
+                </assertEquals>
+            </assertions>
+        </test-case>
+        <test-case name="OtherLanguages">
+            <input>
+                <request-path>/hello?language=en</request-path>
+                <request-method>GET</request-method>
+            </input>
+            <assertions>
+                <assertEquals>
+                    <actual>$body</actual>
+                    <expected><![CDATA[Hello!]]></expected>
+                    <message>Other languages test case failed</message>
+                </assertEquals>
+            </assertions>
+        </test-case>
+    </test-cases>
+    <mock-services/>
+</unit-test>

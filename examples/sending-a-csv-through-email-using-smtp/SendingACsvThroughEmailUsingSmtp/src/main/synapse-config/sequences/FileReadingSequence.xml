@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="FileReadingSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <fileconnector.read>
+        <source>/path/to/input.csv</source>
+        <contentType>text/plain</contentType>
+        <numberOfLinesToSkip>1</numberOfLinesToSkip>
+    </fileconnector.read>
+    <datamapper config="gov:datamapper/jsonmltocsv.dmc" inputSchema="gov:datamapper/jsonmltocsv_inputSchema.json" inputType="CSV" outputSchema="gov:datamapper/jsonmltocsv_outputSchema.json" outputType="JSON" xsltStyleSheet="gov:datamapper/jsonmltocsv_xsltStyleSheet.xml"/>
+    <propertyGroup>
+        <property name="ContentType" scope="axis2" type="STRING" value="text/plain"/>
+        <property name="Subject" scope="transport" type="STRING" value="Order Information"/>
+        <property name="OUT_ONLY" scope="default" type="STRING" value="true"/>
+    </propertyGroup>
+    <send>
+        <endpoint>
+            <address uri="mailto:test@gmail.com">
+                <suspendOnFailure>
+                    <initialDuration>-1</initialDuration>
+                    <progressionFactor>1</progressionFactor>
+                </suspendOnFailure>
+                <markForSuspension>
+                    <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                </markForSuspension>
+            </address>
+        </endpoint>
+    </send>
+</sequence>
