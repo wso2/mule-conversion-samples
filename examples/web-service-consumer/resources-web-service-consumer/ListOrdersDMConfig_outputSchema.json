@@ -1,0 +1,41 @@
+{
+  "$schema" : "http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#",
+  "outputType" : "JSON",
+  "id" : "http://wso2jsonschema.org",
+  "title" : "root",
+  "type" : "object",
+  "properties" : {
+    "Inventory" : {
+      "id" : "http://wso2jsonschema.org/Inventory",
+      "type" : "object",
+      "properties" : {
+        "InventoryItem" : {
+          "id" : "http://wso2jsonschema.org/Inventory/InventoryItem",
+          "type" : "array",
+          "items" : [ {
+            "id" : "http://wso2jsonschema.org/Inventory/InventoryItem/0",
+            "type" : "object",
+            "properties" : {
+              "productCode" : {
+                "id" : "http://wso2jsonschema.org/Inventory/InventoryItem/0/productCode",
+                "type" : "string"
+              },
+              "size" : {
+                "id" : "http://wso2jsonschema.org/Inventory/InventoryItem/0/size",
+                "type" : "string"
+              },
+              "description" : {
+                "id" : "http://wso2jsonschema.org/Inventory/InventoryItem/0/description",
+                "type" : "string"
+              },
+              "count" : {
+                "id" : "http://wso2jsonschema.org/Inventory/InventoryItem/0/count",
+                "type" : "number"
+              }
+            }
+          } ]
+        }
+      }
+    }
+  }
+}

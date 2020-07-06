@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datamapper:DataMapperRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:datamapper="http:///org/wso2/developerstudio/eclipse/gmf/datamapper">
+  <input>
+    <treeNode name="root" schemaDataType="OBJECT" level="1">
+      <node name="email" schemaDataType="STRING" level="2">
+        <properties key="type" value="string"/>
+        <properties key="id" value="http://wso2jsonschema.org/email"/>
+        <properties key="nullable" value="false"/>
+        <outNode>
+          <outgoingLink inNode="//@output/@treeNode.0/@node.1/@node.0/@node.1/@inNode"/>
+        </outNode>
+        <inNode/>
+      </node>
+      <node name="address1" schemaDataType="STRING" level="2">
+        <properties key="type" value="string"/>
+        <properties key="id" value="http://wso2jsonschema.org/address1"/>
+        <properties key="nullable" value="false"/>
+        <outNode>
+          <outgoingLink inNode="//@output/@treeNode.0/@node.1/@node.0/@node.3/@inNode"/>
+        </outNode>
+        <inNode/>
+      </node>
+      <node name="address2" schemaDataType="STRING" level="2">
+        <properties key="type" value="string"/>
+        <properties key="id" value="http://wso2jsonschema.org/address2"/>
+        <properties key="nullable" value="false"/>
+        <outNode>
+          <outgoingLink inNode="//@output/@treeNode.0/@node.1/@node.0/@node.4/@inNode"/>
+        </outNode>
+        <inNode/>
+      </node>
+      <node name="city" schemaDataType="STRING" level="2">
+        <properties key="type" value="string"/>
+        <properties key="id" value="http://wso2jsonschema.org/city"/>
+        <properties key="nullable" value="false"/>
+        <outNode>
+          <outgoingLink inNode="//@output/@treeNode.0/@node.1/@node.0/@node.5/@inNode"/>
+        </outNode>
+        <inNode/>
+      </node>
+      <node name="country" schemaDataType="STRING" level="2">
+        <properties key="type" value="string"/>
+        <properties key="id" value="http://wso2jsonschema.org/country"/>
+        <properties key="nullable" value="false"/>
+        <outNode>
+          <outgoingLink inNode="//@output/@treeNode.0/@node.1/@node.0/@node.8/@inNode"/>
+        </outNode>
+        <inNode/>
+      </node>
+      <node name="name" schemaDataType="STRING" level="2">
+        <properties key="type" value="string"/>
+        <properties key="id" value="http://wso2jsonschema.org/name"/>
+        <properties key="nullable" value="false"/>
+        <outNode>
+          <outgoingLink inNode="//@output/@treeNode.0/@node.1/@node.0/@node.2/@inNode"/>
+        </outNode>
+        <inNode/>
+      </node>
+      <node name="postalCode" schemaDataType="STRING" level="2">
+        <properties key="type" value="string"/>
+        <properties key="id" value="http://wso2jsonschema.org/postalCode"/>
+        <properties key="nullable" value="false"/>
+        <outNode>
+          <outgoingLink inNode="//@output/@treeNode.0/@node.1/@node.0/@node.7/@inNode"/>
+        </outNode>
+        <inNode/>
+      </node>
+      <node name="size" schemaDataType="STRING" level="2">
+        <properties key="type" value="string"/>
+        <properties key="id" value="http://wso2jsonschema.org/size"/>
+        <properties key="nullable" value="false"/>
+        <outNode>
+          <outgoingLink inNode="//@output/@treeNode.0/@node.1/@node.0/@node.0/@inNode"/>
+        </outNode>
+        <inNode/>
+      </node>
+      <node name="stateOrProvince" schemaDataType="STRING" level="2">
+        <properties key="type" value="string"/>
+        <properties key="id" value="http://wso2jsonschema.org/stateOrProvince"/>
+        <properties key="nullable" value="false"/>
+        <outNode>
+          <outgoingLink inNode="//@output/@treeNode.0/@node.1/@node.0/@node.6/@inNode"/>
+        </outNode>
+        <inNode/>
+      </node>
+      <properties key="type" value="object"/>
+      <properties key="$schema" value="http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#"/>
+      <properties key="id" value="http://wso2jsonschema.org"/>
+      <properties key="nullable" value="false"/>
+      <outNode/>
+      <inNode/>
+    </treeNode>
+  </input>
+  <output>
+    <treeNode name="soapenv:Envelope" schemaDataType="OBJECT" level="1">
+      <node name="soapenv:Header" schemaDataType="OBJECT" level="2">
+        <node name="tsh:AuthenticationHeader" schemaDataType="OBJECT" level="3">
+          <node name="apiKey" schemaDataType="NUMBER" level="4">
+            <properties key="type" value="number"/>
+            <properties key="id" value="http://wso2jsonschema.org/soapenv:Header/tsh:AuthenticationHeader/apiKey"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode/>
+          </node>
+          <properties key="namespaces" value="{prefix=tsh, url=http://wso2.org/tshirt-service}"/>
+          <properties key="type" value="object"/>
+          <properties key="id" value="http://wso2jsonschema.org/soapenv:Header/tsh:AuthenticationHeader"/>
+          <properties key="nullable" value="false"/>
+          <properties key="properties_id" value="{apiKey={id=http://wso2jsonschema.org/soapenv:Header/tsh:AuthenticationHeader/apiKey, type=number}}"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <properties key="namespaces" value="{prefix=soapenv, url=http://schemas.xmlsoap.org/soap/envelope/}"/>
+        <properties key="type" value="object"/>
+        <properties key="id" value="http://wso2jsonschema.org/soapenv:Header"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode/>
+      </node>
+      <node name="soapenv:Body" schemaDataType="OBJECT" level="2">
+        <node name="tsh:OrderTshirt" schemaDataType="OBJECT" level="3">
+          <node name="size" schemaDataType="STRING" level="4">
+            <properties key="type" value="string"/>
+            <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt/size"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode incomingLink="//@input/@treeNode.0/@node.7/@outNode/@outgoingLink.0"/>
+          </node>
+          <node name="email" schemaDataType="STRING" level="4">
+            <properties key="type" value="string"/>
+            <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt/email"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode incomingLink="//@input/@treeNode.0/@node.0/@outNode/@outgoingLink.0"/>
+          </node>
+          <node name="name" schemaDataType="STRING" level="4">
+            <properties key="type" value="string"/>
+            <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt/name"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode incomingLink="//@input/@treeNode.0/@node.5/@outNode/@outgoingLink.0"/>
+          </node>
+          <node name="address1" schemaDataType="STRING" level="4">
+            <properties key="type" value="string"/>
+            <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt/address1"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode incomingLink="//@input/@treeNode.0/@node.1/@outNode/@outgoingLink.0"/>
+          </node>
+          <node name="address2" schemaDataType="STRING" level="4">
+            <properties key="type" value="string"/>
+            <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt/address2"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode incomingLink="//@input/@treeNode.0/@node.2/@outNode/@outgoingLink.0"/>
+          </node>
+          <node name="city" schemaDataType="STRING" level="4">
+            <properties key="type" value="string"/>
+            <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt/city"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode incomingLink="//@input/@treeNode.0/@node.3/@outNode/@outgoingLink.0"/>
+          </node>
+          <node name="stateOrProvince" schemaDataType="STRING" level="4">
+            <properties key="type" value="string"/>
+            <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt/stateOrProvince"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode incomingLink="//@input/@treeNode.0/@node.8/@outNode/@outgoingLink.0"/>
+          </node>
+          <node name="postalCode" schemaDataType="STRING" level="4">
+            <properties key="type" value="string"/>
+            <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt/postalCode"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode incomingLink="//@input/@treeNode.0/@node.6/@outNode/@outgoingLink.0"/>
+          </node>
+          <node name="country" schemaDataType="STRING" level="4">
+            <properties key="type" value="string"/>
+            <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt/country"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode incomingLink="//@input/@treeNode.0/@node.4/@outNode/@outgoingLink.0"/>
+          </node>
+          <properties key="namespaces" value="{prefix=tsh, url=http://wso2.org/tshirt-service}"/>
+          <properties key="type" value="object"/>
+          <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt"/>
+          <properties key="nullable" value="false"/>
+          <properties key="properties_id" value="{size={id=http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt/size, type=string}, email={id=http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt/email, type=string}, name={id=http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt/name, type=string}, address1={id=http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt/address1, type=string}, address2={id=http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt/address2, type=string}, city={id=http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt/city, type=string}, stateOrProvince={id=http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt/stateOrProvince, type=string}, postalCode={id=http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt/postalCode, type=string}, country={id=http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt/country, type=string}}"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <properties key="namespaces" value="{prefix=soapenv, url=http://schemas.xmlsoap.org/soap/envelope/}"/>
+        <properties key="type" value="object"/>
+        <properties key="id" value="http://wso2jsonschema.org/soapenv:Body"/>
+        <properties key="nullable" value="false"/>
+        <properties key="properties_id" value="{tsh:AuthenticationHeader={id=http://wso2jsonschema.org/soapenv:Header/tsh:AuthenticationHeader, type=object, properties={apiKey={id=http://wso2jsonschema.org/soapenv:Header/tsh:AuthenticationHeader/apiKey, type=number}}}}"/>
+        <properties key="properties_id" value="{tsh:OrderTshirt={id=http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt, type=object, properties={size={id=http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt/size, type=string}, email={id=http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt/email, type=string}, name={id=http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt/name, type=string}, address1={id=http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt/address1, type=string}, address2={id=http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt/address2, type=string}, city={id=http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt/city, type=string}, stateOrProvince={id=http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt/stateOrProvince, type=string}, postalCode={id=http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt/postalCode, type=string}, country={id=http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt/country, type=string}}}}"/>
+        <outNode/>
+        <inNode/>
+      </node>
+      <properties key="namespaces" value="{prefix=soapenv, url=http://schemas.xmlsoap.org/soap/envelope/},{prefix=tsh, url=http://wso2.org/tshirt-service}"/>
+      <properties key="namespaces" value="{prefix=soapenv, url=http://schemas.xmlsoap.org/soap/envelope/}"/>
+      <properties key="type" value="object"/>
+      <properties key="$schema" value="http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#"/>
+      <properties key="id" value="http://wso2jsonschema.org"/>
+      <properties key="nullable" value="false"/>
+      <outNode/>
+      <inNode/>
+    </treeNode>
+  </output>
+</datamapper:DataMapperRoot>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="csvToJson" groupId="com.example.SendingACsvThroughEmailUsingSmtpResitry.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>csvToJson.dmc</file>
+            <path>/_system/governance/datamapper</path>
+            <mediaType>text/plain</mediaType>
+        </item>
+    </artifact>
+    <artifact name="csvToJson_inputSchema" groupId="com.example.SendingACsvThroughEmailUsingSmtpResitry.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>csvToJson_inputSchema.json</file>
+            <path>/_system/governance/datamapper</path>
+            <mediaType>text/plain</mediaType>
+        </item>
+    </artifact>
+    <artifact name="csvToJson_outputSchema" groupId="com.example.SendingACsvThroughEmailUsingSmtpResitry.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>csvToJson_outputSchema.json</file>
+            <path>/_system/governance/datamapper</path>
+            <mediaType>text/plain</mediaType>
+        </item>
+    </artifact>
+    <artifact name="csvToJson_xsltStyleSheet" groupId="com.example.SendingACsvThroughEmailUsingSmtpResitry.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>csvToJson_xsltStyleSheet.xml</file>
+            <path>/_system/governance/datamapper</path>
+            <mediaType>text/plain</mediaType>
+        </item>
+    </artifact>
+    <artifact name="jsonmltocsv" groupId="com.example.SendingACsvThroughEmailUsingSmtpResitry.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>jsonmltocsv.dmc</file>
+            <path>/_system/governance/datamapper</path>
+            <mediaType>text/plain</mediaType>
+        </item>
+    </artifact>
+    <artifact name="jsonmltocsv_inputSchema" groupId="com.example.SendingACsvThroughEmailUsingSmtpResitry.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>jsonmltocsv_inputSchema.json</file>
+            <path>/_system/governance/datamapper</path>
+            <mediaType>text/plain</mediaType>
+        </item>
+    </artifact>
+    <artifact name="jsonmltocsv_outputSchema" groupId="com.example.SendingACsvThroughEmailUsingSmtpResitry.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>jsonmltocsv_outputSchema.json</file>
+            <path>/_system/governance/datamapper</path>
+            <mediaType>text/plain</mediaType>
+        </item>
+    </artifact>
+    <artifact name="jsonmltocsv_xsltStyleSheet" groupId="com.example.SendingACsvThroughEmailUsingSmtpResitry.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>jsonmltocsv_xsltStyleSheet.xml</file>
+            <path>/_system/governance/datamapper</path>
+            <mediaType>text/plain</mediaType>
+        </item>
+    </artifact>
+</artifacts>

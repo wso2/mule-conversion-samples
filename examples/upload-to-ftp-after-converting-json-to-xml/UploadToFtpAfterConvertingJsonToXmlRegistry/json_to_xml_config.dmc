@@ -1,0 +1,38 @@
+map_S_root_S_employees = function(){ 
+var outputemployees={};
+
+var count_i_employee_fd827ae8_41e4_4a0f_9842_d3b32228dd8e = 0;
+var count_i_address_b9c3e268_f430_472b_bb29_80690e0f79a7_i_employee_fd827ae8_41e4_4a0f_9842_d3b32228dd8e = 0;
+outputemployees =  {};
+outputemployees.employee =  [];
+
+for(i_employee_fd827ae8_41e4_4a0f_9842_d3b32228dd8e in inputroot.employees.employee){
+var count_i_address_b9c3e268_f430_472b_bb29_80690e0f79a7 = 0;
+outputemployees.employee[count_i_employee_fd827ae8_41e4_4a0f_9842_d3b32228dd8e] =  {};
+outputemployees.employee[count_i_employee_fd827ae8_41e4_4a0f_9842_d3b32228dd8e].name = inputroot.employees.employee[i_employee_fd827ae8_41e4_4a0f_9842_d3b32228dd8e].name;
+outputemployees.employee[count_i_employee_fd827ae8_41e4_4a0f_9842_d3b32228dd8e].lastName = inputroot.employees.employee[i_employee_fd827ae8_41e4_4a0f_9842_d3b32228dd8e].lastName;
+outputemployees.employee[count_i_employee_fd827ae8_41e4_4a0f_9842_d3b32228dd8e].addresses =  {};
+outputemployees.employee[count_i_employee_fd827ae8_41e4_4a0f_9842_d3b32228dd8e].addresses.address =  [];
+
+for(i_address_b9c3e268_f430_472b_bb29_80690e0f79a7 in inputroot.employees.employee[i_employee_fd827ae8_41e4_4a0f_9842_d3b32228dd8e].addresses.address){
+outputemployees.employee[count_i_employee_fd827ae8_41e4_4a0f_9842_d3b32228dd8e].addresses.address[count_i_address_b9c3e268_f430_472b_bb29_80690e0f79a7] =  {};
+outputemployees.employee[count_i_employee_fd827ae8_41e4_4a0f_9842_d3b32228dd8e].addresses.address[count_i_address_b9c3e268_f430_472b_bb29_80690e0f79a7].street = inputroot.employees.employee[i_employee_fd827ae8_41e4_4a0f_9842_d3b32228dd8e].addresses.address[i_address_b9c3e268_f430_472b_bb29_80690e0f79a7].street;
+outputemployees.employee[count_i_employee_fd827ae8_41e4_4a0f_9842_d3b32228dd8e].addresses.address[count_i_address_b9c3e268_f430_472b_bb29_80690e0f79a7].zipCode = Number(inputroot.employees.employee[i_employee_fd827ae8_41e4_4a0f_9842_d3b32228dd8e].addresses.address[i_address_b9c3e268_f430_472b_bb29_80690e0f79a7].zipCode);
+
+count_i_address_b9c3e268_f430_472b_bb29_80690e0f79a7++;
+count_i_address_b9c3e268_f430_472b_bb29_80690e0f79a7_i_employee_fd827ae8_41e4_4a0f_9842_d3b32228dd8e++;
+}
+
+count_i_employee_fd827ae8_41e4_4a0f_9842_d3b32228dd8e++;
+}
+return outputemployees;
+};
+
+
+
+
+
+
+
+
+

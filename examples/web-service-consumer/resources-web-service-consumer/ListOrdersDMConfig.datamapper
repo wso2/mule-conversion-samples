@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datamapper:DataMapperRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:datamapper="http:///org/wso2/developerstudio/eclipse/gmf/datamapper">
+  <input>
+    <treeNode name="soapenv:Envelope" schemaDataType="OBJECT" level="1">
+      <node name="soapenv:Header" schemaDataType="NULL" level="2">
+        <properties key="namespaces" value="{prefix=soapenv, url=http://schemas.xmlsoap.org/soap/envelope/}"/>
+        <properties key="type" value="null"/>
+        <properties key="id" value="http://wso2jsonschema.org/soapenv:Header"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode/>
+      </node>
+      <node name="soapenv:Body" schemaDataType="OBJECT" level="2">
+        <node name="Inventory" schemaDataType="OBJECT" level="3">
+          <node name="InventoryItem" level="4">
+            <node name="productCode" schemaDataType="STRING" level="5">
+              <properties key="type" value="string"/>
+              <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/Inventory/InventoryItem/0/productCode"/>
+              <properties key="nullable" value="false"/>
+              <outNode>
+                <outgoingLink inNode="//@output/@treeNode.0/@node.0/@node.0/@node.0/@inNode"/>
+              </outNode>
+              <inNode/>
+            </node>
+            <node name="size" schemaDataType="STRING" level="5">
+              <properties key="type" value="string"/>
+              <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/Inventory/InventoryItem/0/size"/>
+              <properties key="nullable" value="false"/>
+              <outNode>
+                <outgoingLink inNode="//@output/@treeNode.0/@node.0/@node.0/@node.1/@inNode"/>
+              </outNode>
+              <inNode/>
+            </node>
+            <node name="description" schemaDataType="STRING" level="5">
+              <properties key="type" value="string"/>
+              <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/Inventory/InventoryItem/0/description"/>
+              <properties key="nullable" value="false"/>
+              <outNode>
+                <outgoingLink inNode="//@output/@treeNode.0/@node.0/@node.0/@node.2/@inNode"/>
+              </outNode>
+              <inNode/>
+            </node>
+            <node name="count" schemaDataType="NUMBER" level="5">
+              <properties key="type" value="number"/>
+              <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/Inventory/InventoryItem/0/count"/>
+              <properties key="nullable" value="false"/>
+              <outNode>
+                <outgoingLink inNode="//@output/@treeNode.0/@node.0/@node.0/@node.3/@inNode"/>
+              </outNode>
+              <inNode/>
+            </node>
+            <properties key="type" value="array"/>
+            <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/Inventory/InventoryItem"/>
+            <properties key="items_id" value="http://wso2jsonschema.org/soapenv:Body/Inventory/InventoryItem/0"/>
+            <properties key="items_type" value="object"/>
+            <properties key="nullable" value="false"/>
+            <properties key="properties_id" value="{productCode={id=http://wso2jsonschema.org/soapenv:Body/Inventory/InventoryItem/0/productCode, type=string}, size={id=http://wso2jsonschema.org/soapenv:Body/Inventory/InventoryItem/0/size, type=string}, description={id=http://wso2jsonschema.org/soapenv:Body/Inventory/InventoryItem/0/description, type=string}, count={id=http://wso2jsonschema.org/soapenv:Body/Inventory/InventoryItem/0/count, type=number}}"/>
+            <outNode/>
+            <inNode/>
+          </node>
+          <properties key="type" value="object"/>
+          <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/Inventory"/>
+          <properties key="nullable" value="false"/>
+          <properties key="properties_id" value="{InventoryItem={id=http://wso2jsonschema.org/soapenv:Body/Inventory/InventoryItem, type=array, items=[{id=http://wso2jsonschema.org/soapenv:Body/Inventory/InventoryItem/0, type=object, properties={productCode={id=http://wso2jsonschema.org/soapenv:Body/Inventory/InventoryItem/0/productCode, type=string}, size={id=http://wso2jsonschema.org/soapenv:Body/Inventory/InventoryItem/0/size, type=string}, description={id=http://wso2jsonschema.org/soapenv:Body/Inventory/InventoryItem/0/description, type=string}, count={id=http://wso2jsonschema.org/soapenv:Body/Inventory/InventoryItem/0/count, type=number}}}]}}"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <properties key="namespaces" value="{prefix=soapenv, url=http://schemas.xmlsoap.org/soap/envelope/}"/>
+        <properties key="type" value="object"/>
+        <properties key="id" value="http://wso2jsonschema.org/soapenv:Body"/>
+        <properties key="nullable" value="false"/>
+        <properties key="properties_id" value="{Inventory={id=http://wso2jsonschema.org/soapenv:Body/Inventory, type=object, properties={InventoryItem={id=http://wso2jsonschema.org/soapenv:Body/Inventory/InventoryItem, type=array, items=[{id=http://wso2jsonschema.org/soapenv:Body/Inventory/InventoryItem/0, type=object, properties={productCode={id=http://wso2jsonschema.org/soapenv:Body/Inventory/InventoryItem/0/productCode, type=string}, size={id=http://wso2jsonschema.org/soapenv:Body/Inventory/InventoryItem/0/size, type=string}, description={id=http://wso2jsonschema.org/soapenv:Body/Inventory/InventoryItem/0/description, type=string}, count={id=http://wso2jsonschema.org/soapenv:Body/Inventory/InventoryItem/0/count, type=number}}}]}}}}"/>
+        <outNode/>
+        <inNode/>
+      </node>
+      <properties key="namespaces" value="{prefix=soapenv, url=http://schemas.xmlsoap.org/soap/envelope/},{prefix=tsh, url=http://wso2.org/tshirt-service}"/>
+      <properties key="namespaces" value="{prefix=soapenv, url=http://schemas.xmlsoap.org/soap/envelope/}"/>
+      <properties key="type" value="object"/>
+      <properties key="$schema" value="http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#"/>
+      <properties key="id" value="http://wso2jsonschema.org"/>
+      <properties key="nullable" value="false"/>
+      <outNode/>
+      <inNode/>
+    </treeNode>
+  </input>
+  <output>
+    <treeNode name="root" schemaDataType="OBJECT" level="1">
+      <node name="Inventory" schemaDataType="OBJECT" level="2">
+        <node name="InventoryItem" level="3">
+          <node name="productCode" schemaDataType="STRING" level="4">
+            <properties key="type" value="string"/>
+            <properties key="id" value="http://wso2jsonschema.org/Inventory/InventoryItem/0/productCode"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode incomingLink="//@input/@treeNode.0/@node.1/@node.0/@node.0/@node.0/@outNode/@outgoingLink.0"/>
+          </node>
+          <node name="size" schemaDataType="STRING" level="4">
+            <properties key="type" value="string"/>
+            <properties key="id" value="http://wso2jsonschema.org/Inventory/InventoryItem/0/size"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode incomingLink="//@input/@treeNode.0/@node.1/@node.0/@node.0/@node.1/@outNode/@outgoingLink.0"/>
+          </node>
+          <node name="description" schemaDataType="STRING" level="4">
+            <properties key="type" value="string"/>
+            <properties key="id" value="http://wso2jsonschema.org/Inventory/InventoryItem/0/description"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode incomingLink="//@input/@treeNode.0/@node.1/@node.0/@node.0/@node.2/@outNode/@outgoingLink.0"/>
+          </node>
+          <node name="count" schemaDataType="NUMBER" level="4">
+            <properties key="type" value="number"/>
+            <properties key="id" value="http://wso2jsonschema.org/Inventory/InventoryItem/0/count"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode incomingLink="//@input/@treeNode.0/@node.1/@node.0/@node.0/@node.3/@outNode/@outgoingLink.0"/>
+          </node>
+          <properties key="type" value="array"/>
+          <properties key="id" value="http://wso2jsonschema.org/Inventory/InventoryItem"/>
+          <properties key="items_id" value="http://wso2jsonschema.org/Inventory/InventoryItem/0"/>
+          <properties key="items_type" value="object"/>
+          <properties key="nullable" value="false"/>
+          <properties key="properties_id" value="{productCode={id=http://wso2jsonschema.org/Inventory/InventoryItem/0/productCode, type=string}, size={id=http://wso2jsonschema.org/Inventory/InventoryItem/0/size, type=string}, description={id=http://wso2jsonschema.org/Inventory/InventoryItem/0/description, type=string}, count={id=http://wso2jsonschema.org/Inventory/InventoryItem/0/count, type=number}}"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <properties key="type" value="object"/>
+        <properties key="id" value="http://wso2jsonschema.org/Inventory"/>
+        <properties key="nullable" value="false"/>
+        <properties key="properties_id" value="{InventoryItem={id=http://wso2jsonschema.org/Inventory/InventoryItem, type=array, items=[{id=http://wso2jsonschema.org/Inventory/InventoryItem/0, type=object, properties={productCode={id=http://wso2jsonschema.org/Inventory/InventoryItem/0/productCode, type=string}, size={id=http://wso2jsonschema.org/Inventory/InventoryItem/0/size, type=string}, description={id=http://wso2jsonschema.org/Inventory/InventoryItem/0/description, type=string}, count={id=http://wso2jsonschema.org/Inventory/InventoryItem/0/count, type=number}}}]}}"/>
+        <outNode/>
+        <inNode/>
+      </node>
+      <properties key="type" value="object"/>
+      <properties key="$schema" value="http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#"/>
+      <properties key="id" value="http://wso2jsonschema.org"/>
+      <properties key="nullable" value="false"/>
+      <outNode/>
+      <inNode/>
+    </treeNode>
+  </output>
+</datamapper:DataMapperRoot>

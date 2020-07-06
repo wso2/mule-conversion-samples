@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datamapper:DataMapperRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:datamapper="http:///org/wso2/developerstudio/eclipse/gmf/datamapper">
+  <input>
+    <treeNode name="root" level="1">
+      <node name="orderId" level="2">
+        <properties key="type" value="string"/>
+        <properties key="items_id" value="/0"/>
+        <properties key="items_type" value="string"/>
+        <properties key="nullable" value="false"/>
+        <outNode>
+          <outgoingLink inNode="//@output/@treeNode.0/@node.1/@inNode"/>
+        </outNode>
+        <inNode/>
+      </node>
+      <node name="name" level="2">
+        <properties key="type" value="string"/>
+        <properties key="items_id" value="/0"/>
+        <properties key="items_type" value="string"/>
+        <properties key="nullable" value="false"/>
+        <outNode>
+          <outgoingLink inNode="//@output/@treeNode.0/@node.0/@inNode"/>
+        </outNode>
+        <inNode/>
+      </node>
+      <node name="units" level="2">
+        <properties key="$schema" value="http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#"/>
+        <properties key="nullable" value="false"/>
+        <properties key="type" value="number"/>
+        <outNode>
+          <outgoingLink inNode="//@output/@treeNode.0/@node.3/@inNode"/>
+          <outgoingLink inNode="//@operators.0/@basicContainer/@leftContainer/@leftConnectors.0/@inNode"/>
+        </outNode>
+        <inNode/>
+      </node>
+      <node name="pricePerUnit" level="2">
+        <properties key="$schema" value="http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#"/>
+        <properties key="nullable" value="false"/>
+        <properties key="type" value="number"/>
+        <outNode>
+          <outgoingLink inNode="//@output/@treeNode.0/@node.2/@inNode"/>
+          <outgoingLink inNode="//@operators.0/@basicContainer/@leftContainer/@leftConnectors.1/@inNode"/>
+        </outNode>
+        <inNode/>
+      </node>
+      <properties key="added_properties_id" value="hasProperties"/>
+      <properties key="$schema" value="http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#"/>
+      <properties key="nullable" value="false"/>
+      <properties key="items_id" value="/0"/>
+      <properties key="items_type" value="object"/>
+      <properties key="type" value="array"/>
+      <outNode/>
+      <inNode/>
+    </treeNode>
+  </input>
+  <output>
+    <treeNode name="root" level="1">
+      <node name="name" level="2">
+        <properties key="type" value="string"/>
+        <properties key="items_id" value="/0"/>
+        <properties key="items_type" value="string"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode incomingLink="//@input/@treeNode.0/@node.1/@outNode/@outgoingLink.0"/>
+      </node>
+      <node name="orderId" level="2">
+        <properties key="type" value="string"/>
+        <properties key="items_id" value="/0"/>
+        <properties key="items_type" value="string"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode incomingLink="//@input/@treeNode.0/@node.0/@outNode/@outgoingLink.0"/>
+      </node>
+      <node name="pricePerUnit" level="2">
+        <properties key="type" value="string"/>
+        <properties key="items_id" value="/0"/>
+        <properties key="items_type" value="string"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode incomingLink="//@input/@treeNode.0/@node.3/@outNode/@outgoingLink.0"/>
+      </node>
+      <node name="units" level="2">
+        <properties key="type" value="string"/>
+        <properties key="items_id" value="/0"/>
+        <properties key="items_type" value="string"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode incomingLink="//@input/@treeNode.0/@node.2/@outNode/@outgoingLink.0"/>
+      </node>
+      <node name="totalPrice" level="2">
+        <properties key="type" value="string"/>
+        <properties key="items_id" value="/0"/>
+        <properties key="items_type" value="string"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode incomingLink="//@operators.0/@basicContainer/@rightContainer/@rightConnectors.0/@outNode/@outgoingLink.0"/>
+      </node>
+      <properties key="added_properties_id" value="hasProperties"/>
+      <properties key="$schema" value="http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#"/>
+      <properties key="nullable" value="false"/>
+      <properties key="items_id" value="/0"/>
+      <properties key="items_type" value="object"/>
+      <properties key="type" value="array"/>
+      <outNode/>
+      <inNode/>
+    </treeNode>
+  </output>
+  <operators xsi:type="datamapper:Multiply" defaultInputConnectors="2" defaultOutputConnectors="1" inputSizeFixed="false" operatorType="MULTIPLY">
+    <basicContainer>
+      <leftContainer>
+        <leftConnectors>
+          <inNode incomingLink="//@input/@treeNode.0/@node.2/@outNode/@outgoingLink.1"/>
+        </leftConnectors>
+        <leftConnectors>
+          <inNode incomingLink="//@input/@treeNode.0/@node.3/@outNode/@outgoingLink.1"/>
+        </leftConnectors>
+      </leftContainer>
+      <rightContainer>
+        <rightConnectors>
+          <outNode>
+            <outgoingLink inNode="//@output/@treeNode.0/@node.4/@inNode"/>
+          </outNode>
+        </rightConnectors>
+      </rightContainer>
+    </basicContainer>
+  </operators>
+</datamapper:DataMapperRoot>

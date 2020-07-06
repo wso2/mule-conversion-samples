@@ -1,0 +1,26 @@
+<unit-test>
+    <artifacts>
+        <test-artifact>
+            <artifact>/HttpRequestResponseWithLogger/src/main/synapse-config/api/HttpRequestResponseWithLoggerAPI.xml</artifact>
+        </test-artifact>
+        <supportive-artifacts/>
+        <registry-resources/>
+        <connector-resources/>
+    </artifacts>
+    <test-cases>
+        <test-case name="HttpRequestResponseWithLoggerTestcase">
+            <input>
+                <request-path>/moon</request-path>
+                <request-method>GET</request-method>
+            </input>
+            <assertions>
+                <assertEquals>
+                    <actual>$body</actual>
+                    <expected><![CDATA[/moon]]></expected>
+                    <message>Response content mismatch</message>
+                </assertEquals>
+            </assertions>
+        </test-case>
+    </test-cases>
+    <mock-services/>
+</unit-test>

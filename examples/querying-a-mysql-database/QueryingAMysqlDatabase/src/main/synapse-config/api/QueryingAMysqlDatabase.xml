@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/employee" name="QueryingAMysqlDatabase" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <call>
+                <endpoint>
+                    <http method="get" uri-template="http://localhost:8290/services/RDBMSDataService/employee/{query.param.lastname}">
+                        <suspendOnFailure>
+                            <initialDuration>-1</initialDuration>
+                            <progressionFactor>1</progressionFactor>
+                        </suspendOnFailure>
+                        <markForSuspension>
+                            <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                        </markForSuspension>
+                    </http>
+                </endpoint>
+            </call>
+            <datamapper config="gov:datamapper/transformation_config.dmc" inputSchema="gov:datamapper/transformation_config_inputSchema.json" inputType="JSON" outputSchema="gov:datamapper/transformation_config_outputSchema.json" outputType="JSON" xsltStyleSheet="gov:datamapper/transformation_config_xsltStyleSheet.xml"/>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

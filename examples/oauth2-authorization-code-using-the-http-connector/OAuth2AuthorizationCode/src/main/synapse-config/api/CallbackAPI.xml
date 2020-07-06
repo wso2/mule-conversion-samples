@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/oauth" name="CallbackAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" uri-template="/callback?code={authCode}">
+        <inSequence>
+            <propertyGroup>
+                <property expression="$url:code" name="authCode" scope="default" type="STRING"/>
+                <property name="DISABLE_CHUNKING" scope="axis2" type="STRING" value="true"/>
+                <property expression="get-property('registry','conf:/oauthConfigs/config.xml')" name="appConfig" scope="default" type="OM"/>
+                <property expression="$ctx:appConfig//clientId/text()" name="clientId" scope="default" type="STRING"/>
+                <property expression="$ctx:appConfig//clientSecret/text()" name="clientSecret" scope="default" type="STRING"/>
+            </propertyGroup>
+            <payloadFactory media-type="xml">
+                <format>
+                    <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+                        <soapenv:Body>
+                            <root xmlns="">
+                                <grant_type>$1</grant_type>
+                                <code>$2</code>
+                                <client_id>$3</client_id>
+                                <client_secret>$4</client_secret>
+                            </root>
+                        </soapenv:Body>
+                    </soapenv:Envelope>
+                </format>
+                <args>
+                    <arg value="authorization_code"/>
+                    <arg evaluator="xml" expression="$ctx:authCode"/>
+                    <arg evaluator="xml" expression="$ctx:clientId"/>
+                    <arg evaluator="xml" expression="$ctx:clientSecret"/>
+                </args>
+            </payloadFactory>
+            <header name="Content-Type" scope="transport" value="application/x-www-form-urlencoded"/>
+            <property name="messageType" scope="axis2" type="STRING" value="application/x-www-form-urlencoded"/>
+            <call>
+                <endpoint>
+                    <http method="post" uri-template="https://api.box.com/oauth2/token">
+                        <suspendOnFailure>
+                            <initialDuration>-1</initialDuration>
+                            <progressionFactor>-1</progressionFactor>
+                            <maximumDuration>0</maximumDuration>
+                        </suspendOnFailure>
+                        <markForSuspension>
+                            <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                        </markForSuspension>
+                    </http>
+                </endpoint>
+            </call>
+            <filter regex="2[0-9][0-9]" source="$axis2:HTTP_SC">
+                <then>
+                    <property expression="json-eval($.access_token)" name="accessToken" scope="default" type="STRING"/>
+                    <property expression="$ctx:accessToken" name="conf:/oauthConfigs/accessToken" scope="registry" type="STRING"/>
+                    <payloadFactory media-type="xml">
+                        <format>
+                            <ms11:text xmlns:ms11="http://ws.apache.org/commons/ns/payload">Successfully retrieved access token</ms11:text>
+                        </format>
+                        <args/>
+                    </payloadFactory>
+                </then>
+                <else>
+                    <payloadFactory media-type="xml">
+                        <format>
+                            <ms11:text xmlns:ms11="http://ws.apache.org/commons/ns/payload">Could not retrieve access token</ms11:text>
+                        </format>
+                        <args/>
+                    </payloadFactory>
+                </else>
+            </filter>
+            <property name="messageType" scope="axis2" type="STRING" value="text/plain"/>
+            <header name="Content-Type" scope="transport" value="text/plain"/>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

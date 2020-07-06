@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="retry-mechanism-exampleFlow" onError="onErrorSeq" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log description="Log processing triggered" level="custom">
+        <property name="Log processing triggered" value="Attempt to trigger processing"/>
+    </log>
+    <switch source="$ctx:query.param.fail">
+        <case regex="true">
+            <script description="execute failing script" language="js"><![CDATA[throw new Exception("This is the reason why the processing has failed.");]]></script>
+        </case>
+        <default>
+            <log description="Log successful" level="custom">
+                <property name="message" value="Processing successfully completed."/>
+            </log>
+            <payloadFactory description="set response" media-type="xml">
+                <format>
+                    <response xmlns="">Processing successfully completed.</response>
+                </format>
+                <args/>
+            </payloadFactory>
+            <respond description="respond"/>
+        </default>
+    </switch>
+</sequence>

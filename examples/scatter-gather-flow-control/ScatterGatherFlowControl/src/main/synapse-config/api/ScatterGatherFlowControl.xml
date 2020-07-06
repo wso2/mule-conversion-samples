@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/aggregate" name="ScatterGatherFlowControl" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <property action="remove" name="NO_ENTITY_BODY" scope="axis2"/>
+            <clone id="aggregate_id">
+                <target>
+                    <sequence>
+                        <fileconnector.read>
+                            <source>[file path of contacts-1.csv]</source>
+                            <contentType>text/plain</contentType>
+                            <numberOfLinesToSkip>1</numberOfLinesToSkip>
+                        </fileconnector.read>
+                        <sequence key="aggregate_seq"/>
+                    </sequence>
+                </target>
+                <target>
+                    <sequence>
+                        <fileconnector.read>
+                            <source>[file path of contacts-2.csv]</source>
+                            <contentType>text/plain</contentType>
+                            <numberOfLinesToSkip>1</numberOfLinesToSkip>
+                        </fileconnector.read>
+                        <sequence key="aggregate_seq"/>
+                    </sequence>
+                </target>
+            </clone>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

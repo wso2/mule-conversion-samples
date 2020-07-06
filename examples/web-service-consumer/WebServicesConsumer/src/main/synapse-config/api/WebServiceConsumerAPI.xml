@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/tshirt" name="WebServiceConsumerAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="PUT" url-mapping="/orders">
+        <inSequence>
+            <property name="messageType" scope="axis2" type="STRING" value="text/xml"/>
+            <datamapper config="gov:datamapper/DMInputMappingConf.dmc" description="JSON to XML" inputSchema="gov:datamapper/DMInputMappingConf_inputSchema.json" inputType="JSON" outputSchema="gov:datamapper/DMInputMappingConf_outputSchema.json" outputType="XML" xsltStyleSheet="gov:datamapper/DMInputMappingConf_xsltStyleSheet.xml"/>
+            <header description="Set SOAPAction header" name="Action" scope="default" value="http://wso2.org/tshirt-service/list-inventory"/>
+            <call>
+                <endpoint>
+                    <wsdl port="TshirtServiceHttpEndpoint" service="TshirtService" uri="file:registry/config/webServiceConsumerBEResources/tshirt.wsdl">
+                        <suspendOnFailure>
+                            <initialDuration>-1</initialDuration>
+                            <progressionFactor>-1</progressionFactor>
+                            <maximumDuration>0</maximumDuration>
+                        </suspendOnFailure>
+                        <markForSuspension>
+                            <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                        </markForSuspension>
+                    </wsdl>
+                </endpoint>
+            </call>
+            <datamapper config="gov:datamapper/ResponseMappingDMConfig.dmc" description="XML to JSON" inputSchema="gov:datamapper/ResponseMappingDMConfig_inputSchema.json" inputType="XML" outputSchema="gov:datamapper/ResponseMappingDMConfig_outputSchema.json" outputType="JSON" xsltStyleSheet="gov:datamapper/ResponseMappingDMConfig_xsltStyleSheet.xml"/>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" url-mapping="/inventory">
+        <inSequence>
+            <call>
+                <endpoint>
+                    <wsdl port="TshirtServiceHttpEndpoint" service="TshirtService" uri="file:registry/config/webServiceConsumerBEResources/tshirt.wsdl">
+                        <suspendOnFailure>
+                            <initialDuration>-1</initialDuration>
+                            <progressionFactor>-1</progressionFactor>
+                            <maximumDuration>0</maximumDuration>
+                        </suspendOnFailure>
+                        <markForSuspension>
+                            <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                        </markForSuspension>
+                    </wsdl>
+                </endpoint>
+            </call>
+            <datamapper config="gov:datamapper/ListOrdersDMConfig.dmc" description="XML to JSON" inputSchema="gov:datamapper/ListOrdersDMConfig_inputSchema.json" inputType="XML" outputSchema="gov:datamapper/ListOrdersDMConfig_outputSchema.json" outputType="JSON" xsltStyleSheet="gov:datamapper/ListOrdersDMConfig_xsltStyleSheet.xml"/>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

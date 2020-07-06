@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/api" name="RestApiWithApikit" publishSwagger="/_system/governance/swagger_files/rest-api-swagger.json" version="v1.0" version-type="context" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST GET" url-mapping="/customers">
+        <inSequence>
+            <!--This is generated API skeleton.-->
+            <!--Business Logic Goes Here-->
+            <switch source="get-property('axis2', 'HTTP_METHOD')">
+                <case regex="GET">
+                    <payloadFactory media-type="json">
+                        <format>[
+	{
+		"firstName": "John",
+		"lastName": "Doe",
+		"phone": "123456789",
+		"email": "john.doe@email.com"
+	},
+	{
+		"firstName": "Jane",
+		"lastName": "Doe",
+		"phone": "123456789",
+		"email": "jane.doe@email.com"
+	}
+]</format>
+                        <args/>
+                    </payloadFactory>
+                </case>
+                <default>
+                    <payloadFactory media-type="json">
+                        <format>{
+	message: "successfully created!"
+}</format>
+                        <args/>
+                    </payloadFactory>
+                </default>
+            </switch>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="PUT GET" uri-template="/customers/{customerId}">
+        <inSequence>
+            <!--This is generated API skeleton.-->
+            <property expression="get-property('uri.var.customerId')" name="customerId" scope="default" type="STRING"/>
+            <!--Business Logic Goes Here-->
+            <switch source="get-property('axis2', 'HTTP_METHOD')">
+                <case regex="GET">
+                    <payloadFactory media-type="json">
+                        <format>{
+	"firstName": "John",
+	"lastName": "Doe",
+	"phone": "123456789",
+	"email": "john.doe@email.com"
+}</format>
+                        <args/>
+                    </payloadFactory>
+                </case>
+                <default>
+                    <payloadFactory media-type="json">
+                        <format>{
+	message: "successfully updated!"
+}</format>
+                        <args/>
+                    </payloadFactory>
+                </default>
+            </switch>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

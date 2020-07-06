@@ -1,0 +1,22 @@
+map_S_root_S_root = function(){ 
+var outputroot={};
+
+var count_i_inputroot_df2c83ca_0b47_40f2_ab9d_ba050fa3c38d = 0;
+outputroot =  [];
+
+for(i_inputroot_df2c83ca_0b47_40f2_ab9d_ba050fa3c38d in inputroot){
+outputroot[count_i_inputroot_df2c83ca_0b47_40f2_ab9d_ba050fa3c38d] =  {};
+outputroot[count_i_inputroot_df2c83ca_0b47_40f2_ab9d_ba050fa3c38d].firstname = inputroot[i_inputroot_df2c83ca_0b47_40f2_ab9d_ba050fa3c38d].firstname;
+outputroot[count_i_inputroot_df2c83ca_0b47_40f2_ab9d_ba050fa3c38d].surname = inputroot[i_inputroot_df2c83ca_0b47_40f2_ab9d_ba050fa3c38d].surname;
+outputroot[count_i_inputroot_df2c83ca_0b47_40f2_ab9d_ba050fa3c38d].phone = inputroot[i_inputroot_df2c83ca_0b47_40f2_ab9d_ba050fa3c38d].phone;
+outputroot[count_i_inputroot_df2c83ca_0b47_40f2_ab9d_ba050fa3c38d].email = inputroot[i_inputroot_df2c83ca_0b47_40f2_ab9d_ba050fa3c38d].email;
+
+count_i_inputroot_df2c83ca_0b47_40f2_ab9d_ba050fa3c38d++;
+}
+return outputroot;
+};
+
+
+
+
+

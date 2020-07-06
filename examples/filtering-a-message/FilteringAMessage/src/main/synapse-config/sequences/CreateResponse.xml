@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="CreateResponse" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <payloadFactory media-type="text">
+        <format>
+                    $1 : $2 $3
+                </format>
+        <args>
+            <arg evaluator="xml" expression="$ctx:validation"/>
+            <arg evaluator="xml" expression="$ctx:record"/>
+            <arg evaluator="xml" expression="$ctx:error"/>
+        </args>
+    </payloadFactory>
+    <property name="HTTP_SC" scope="axis2" type="INTEGER" value="400"/>
+    <respond/>
+</sequence>

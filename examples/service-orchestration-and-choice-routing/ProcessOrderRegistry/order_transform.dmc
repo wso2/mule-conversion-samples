@@ -1,0 +1,34 @@
+map_S_processOrder_S_root = function(){ 
+var outputroot={};
+
+var count_i_item_b234926e_341a_4abd_8c1a_59c8c0d28b16 = 0;
+outputroot =  {};
+outputroot.orderId = inputprocessOrder.order.orderId;
+outputroot.customer =  {};
+outputroot.customer.address = inputprocessOrder.order.customer.address;
+outputroot.customer.firstName = inputprocessOrder.order.customer.firstName;
+outputroot.customer.lastName = inputprocessOrder.order.customer.lastName;
+outputroot.orderItems =  [];
+
+for(i_item_b234926e_341a_4abd_8c1a_59c8c0d28b16 in inputprocessOrder.order.item){
+outputroot.orderItems[count_i_item_b234926e_341a_4abd_8c1a_59c8c0d28b16] =  {};
+outputroot.orderItems[count_i_item_b234926e_341a_4abd_8c1a_59c8c0d28b16].manufacturer = inputprocessOrder.order.item[i_item_b234926e_341a_4abd_8c1a_59c8c0d28b16].manufacturer;
+outputroot.orderItems[count_i_item_b234926e_341a_4abd_8c1a_59c8c0d28b16].name = inputprocessOrder.order.item[i_item_b234926e_341a_4abd_8c1a_59c8c0d28b16].name;
+outputroot.orderItems[count_i_item_b234926e_341a_4abd_8c1a_59c8c0d28b16].productId = inputprocessOrder.order.item[i_item_b234926e_341a_4abd_8c1a_59c8c0d28b16].productId;
+outputroot.orderItems[count_i_item_b234926e_341a_4abd_8c1a_59c8c0d28b16].quantity = inputprocessOrder.order.item[i_item_b234926e_341a_4abd_8c1a_59c8c0d28b16].quantity;
+
+count_i_item_b234926e_341a_4abd_8c1a_59c8c0d28b16++;
+}
+return outputroot;
+};
+
+
+
+
+
+
+
+
+
+
+

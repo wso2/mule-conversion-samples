@@ -1,0 +1,23 @@
+map_S_root_S_root = function(){ 
+var outputroot={};
+var SPLIT_3_0 = '';
+
+var count_i_employee_644cf51d_132c_4633_b4c0_13567530831b = 0;
+outputroot =  {};
+outputroot.employees =  [];
+
+for(i_employee_644cf51d_132c_4633_b4c0_13567530831b in inputroot.employees.employee){
+SPLIT_3_0 = inputroot.employees.employee[i_employee_644cf51d_132c_4633_b4c0_13567530831b].split(' ');
+outputroot.employees[count_i_employee_644cf51d_132c_4633_b4c0_13567530831b] =  {};
+outputroot.employees[count_i_employee_644cf51d_132c_4633_b4c0_13567530831b].firstName = SPLIT_3_0[0];
+outputroot.employees[count_i_employee_644cf51d_132c_4633_b4c0_13567530831b].lastName = SPLIT_3_0[1];
+
+count_i_employee_644cf51d_132c_4633_b4c0_13567530831b++;
+}
+return outputroot;
+};
+
+
+
+
+

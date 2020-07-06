@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/basic" name="Dataweave2Basics" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" uri-template="/greet1">
+        <inSequence>
+            <payloadFactory media-type="text">
+                <format>Hello $1</format>
+                <args>
+                    <arg evaluator="xml" expression="get-property('query.param.username')"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/greet2">
+        <inSequence>
+            <property expression="get-property('query.param.username')" name="username" scope="default" type="STRING"/>
+            <filter regex="true" source="boolean(get-property('username'))">
+                <then>
+                    <property expression="concat('Hello ', $ctx:username)" name="greetingMessage" scope="default" type="STRING"/>
+                </then>
+                <else>
+                    <property name="greetingMessage" scope="default" type="STRING" value="No username provided!"/>
+                </else>
+            </filter>
+            <payloadFactory media-type="text">
+                <format>$1</format>
+                <args>
+                    <arg evaluator="xml" expression="$ctx:greetingMessage"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/greet3">
+        <inSequence>
+            <property expression="get-property('query.param.username')" name="username" scope="default" type="STRING"/>
+            <property expression="get-property('query.param.age')" name="age" scope="default" type="STRING"/>
+            <property expression="concat('Username: ', $ctx:username, ' Age: ', $ctx:age)" name="inputContent" scope="default" type="STRING"/>
+            <fileconnector.create>
+                <filePath>{text file path}</filePath>
+                <inputContent>{$ctx:inputContent}</inputContent>
+            </fileconnector.create>
+            <payloadFactory media-type="text">
+                <format>Hello $1</format>
+                <args>
+                    <arg evaluator="xml" expression="get-property('query.param.username')"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/greet4">
+        <inSequence>
+            <property expression="get-property('query.param.username')" name="username" scope="default" type="STRING"/>
+            <property expression="get-property('query.param.age')" name="age" scope="default" type="STRING"/>
+            <property expression="concat($ctx:username, ',', $ctx:age)" name="inputContent" scope="default" type="STRING"/>
+            <fileconnector.create>
+                <filePath>{csv file path}</filePath>
+                <inputContent>{$ctx:inputContent}</inputContent>
+            </fileconnector.create>
+            <payloadFactory media-type="text">
+                <format>Hello $1</format>
+                <args>
+                    <arg evaluator="xml" expression="get-property('query.param.username')"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/greet5">
+        <inSequence>
+            <propertyGroup>
+                <property expression="$body//username" name="username" scope="default" type="STRING"/>
+                <property expression="$body//age" name="age" scope="default" type="STRING"/>
+                <property expression="concat('Username: ', $ctx:username, ' Age: ', $ctx:age)" name="inputContent" scope="default" type="STRING"/>
+            </propertyGroup>
+            <fileconnector.create>
+                <filePath>{text file path}</filePath>
+                <inputContent>{$ctx:inputContent}</inputContent>
+            </fileconnector.create>
+            <payloadFactory media-type="text">
+                <format>Hello $1</format>
+                <args>
+                    <arg evaluator="xml" expression="$ctx:username"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/greet6">
+        <inSequence>
+            <propertyGroup>
+                <property expression="json-eval($.username)" name="username" scope="default" type="STRING"/>
+                <property expression="json-eval($.age)" name="age" scope="default" type="STRING"/>
+                <property expression="concat($ctx:username, ',', $ctx:age)" name="inputContent" scope="default" type="STRING"/>
+            </propertyGroup>
+            <fileconnector.create>
+                <filePath>{csv file path}</filePath>
+                <inputContent>{$ctx:inputContent}</inputContent>
+            </fileconnector.create>
+            <payloadFactory media-type="text">
+                <format>Hello $1</format>
+                <args>
+                    <arg evaluator="xml" expression="$ctx:username"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

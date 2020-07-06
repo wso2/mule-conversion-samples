@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/listener" name="salesforce-data-retrieval" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <header name="Accept" scope="transport" value="*/*"/>
+            <sequence key="describeGlobal"/>
+            <datamapper config="gov:datamapper/NewConfig.dmc" inputSchema="gov:datamapper/NewConfig_inputSchema.json" inputType="JSON" outputSchema="gov:datamapper/NewConfig_outputSchema.json" outputType="XML" xsltStyleSheet="gov:datamapper/NewConfig_xsltStyleSheet.xml"/>
+            <enrich>
+                <source clone="true" type="inline">
+                    <p xmlns="">
+                        <p>Field:</p>
+                        <input name="field" style="display:block;" type="text"/>
+                        <p>Search Key:</p>
+                        <input name="searchKey" style="display:block;" type="text"/>
+                        <p>Search Value:</p>
+                        <input name="searchValue" style="display:block;" type="text"/>
+                        <input id="submit" name="Submit" style="display:block;" type="submit" value="Submit"/>
+                    </p>
+                </source>
+                <target action="child" xpath="//body/form"/>
+            </enrich>
+            <property description="Set Response Content Type" name="ContentType" scope="axis2" type="STRING" value="text/html"/>
+            <property action="remove" description="Enable Response Message Body" name="NO_ENTITY_BODY" scope="axis2"/>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" url-mapping="/retrievalFlowListener">
+        <inSequence>
+            <sequence key="salesforceIdRetrievalFlow"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <filter regex="MALFORMED_QUERY" source="json-eval($.Errors.Error.errorCode)">
+                <then>
+                    <log level="custom">
+                        <property name="Error" value="Malformed Error Occured"/>
+                    </log>
+                    <payloadFactory media-type="json">
+                        <format>{"Error":"Invalid Salesforce query."}</format>
+                        <args/>
+                    </payloadFactory>
+                    <property name="HTTP_SC" scope="axis2" type="STRING" value="400"/>
+                    <respond/>
+                </then>
+                <else>
+                    <log level="custom">
+                        <property name="Error" value="General Error Occured"/>
+                    </log>
+                    <payloadFactory media-type="json">
+                        <format>{"Error":"Internal server error occured when processing request."}</format>
+                        <args/>
+                    </payloadFactory>
+                    <respond/>
+                </else>
+            </filter>
+        </faultSequence>
+    </resource>
+</api>

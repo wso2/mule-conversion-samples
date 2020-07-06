@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="choice" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log description="Logger" level="custom">
+        <property expression="get-property('default','jms.message.delivery.count')" name="DeliveryCount"/>
+    </log>
+    <filter regex="5" source="get-property('default','jms.message.delivery.count')">
+        <then>
+            <log description="No exception thrown" level="custom">
+                <property name="No exception thrown" value="Transaction without error"/>
+            </log>
+        </then>
+        <else>
+            <script description="Execute the failing script" language="nashornJs"><![CDATA[throw new java.lang.Exception("This is the reason why the processing has failed");]]></script>
+        </else>
+    </filter>
+    <property description="Config" name="OUT_ONLY" scope="default" type="STRING" value="true"/>
+    <call>
+        <endpoint>
+            <address uri="jms:/topic1?transport.jms.ConnectionFactoryJNDIName=TopicConnectionFactory&amp;java.naming.factory.initial=org.apache.activemq.jndi.ActiveMQInitialContextFactory&amp;java.naming.provider.url=tcp://localhost:61616&amp;transport.jms.DestinationType=topic">
+                <suspendOnFailure>
+                    <initialDuration>-1</initialDuration>
+                    <progressionFactor>1</progressionFactor>
+                </suspendOnFailure>
+                <markForSuspension>
+                    <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                </markForSuspension>
+            </address>
+            <description>Send to JMS topic</description>
+        </endpoint>
+    </call>
+</sequence>

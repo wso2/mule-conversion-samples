@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/amqp" name="MessageReceiveAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <property description="202 accept" name="FORCE_SC_ACCEPTED" scope="axis2" type="STRING" value="true"/>
+            <property description="mark as out only" name="OUT_ONLY" scope="default" type="STRING" value="true"/>
+            <call>
+                <endpoint key="RabbitMQEP"/>
+            </call>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

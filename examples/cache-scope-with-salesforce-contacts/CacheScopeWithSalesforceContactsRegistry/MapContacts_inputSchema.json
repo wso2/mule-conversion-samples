@@ -1,0 +1,61 @@
+{
+  "$schema" : "http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#",
+  "inputType" : "JSON",
+  "id" : "http://wso2jsonschema.org",
+  "title" : "root",
+  "type" : "object",
+  "properties" : {
+    "totalSize" : {
+      "id" : "http://wso2jsonschema.org/totalSize",
+      "type" : "number"
+    },
+    "done" : {
+      "id" : "http://wso2jsonschema.org/done",
+      "type" : "boolean"
+    },
+    "records" : {
+      "id" : "http://wso2jsonschema.org/records",
+      "type" : "array",
+      "items" : [ {
+        "id" : "http://wso2jsonschema.org/records/0",
+        "type" : "object",
+        "properties" : {
+          "attributes" : {
+            "id" : "http://wso2jsonschema.org/records/0/attributes",
+            "type" : "object",
+            "properties" : {
+              "type" : {
+                "id" : "http://wso2jsonschema.org/records/0/attributes/type",
+                "type" : "string"
+              },
+              "url" : {
+                "id" : "http://wso2jsonschema.org/records/0/attributes/url",
+                "type" : "string"
+              }
+            }
+          },
+          "Id" : {
+            "id" : "http://wso2jsonschema.org/records/0/Id",
+            "type" : "string"
+          },
+          "FirstName" : {
+            "id" : "http://wso2jsonschema.org/records/0/FirstName",
+            "type" : "string"
+          },
+          "LastName" : {
+            "id" : "http://wso2jsonschema.org/records/0/LastName",
+            "type" : "string"
+          },
+          "Email" : {
+            "id" : "http://wso2jsonschema.org/records/0/Email",
+            "type" : "string"
+          },
+          "Phone" : {
+            "id" : "http://wso2jsonschema.org/records/0/Phone",
+            "type" : "string"
+          }
+        }
+      } ]
+    }
+  }
+}

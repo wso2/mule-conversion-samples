@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy name="EHRService" startOnLoad="true" transports="http https" xmlns="http://ws.apache.org/ns/synapse">
+    <target>
+        <inSequence>
+            <switch source="local-name($body/*[1])">
+                <case regex="findEpisodes">
+                    <payloadFactory media-type="xml">
+                        <format>
+                            <soapenv:Envelope xmlns:ns0="http://wso2.org/hospital-admission-service" xmlns:ns1="http://wso2.org/hospital-admission-service/modal" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+                                <soapenv:Header/>
+                                <soapenv:Body>
+                                    <ns0:findEpisodesResponse>
+                                        <ns1:Episode>
+                                            <ns1:PatientId>$1</ns1:PatientId>
+                                        </ns1:Episode>
+                                    </ns0:findEpisodesResponse>
+                                </soapenv:Body>
+                            </soapenv:Envelope>
+                        </format>
+                        <args>
+                            <arg evaluator="xml" expression="//ns0:findEpisodes/ns1:PatientId" xmlns:ns0="http://wso2.org/hospital-admission-service" xmlns:ns1="http://wso2.org/hospital-admission-service/modal"/>
+                        </args>
+                    </payloadFactory>
+                </case>
+                <case regex="createEpisode">
+                    <payloadFactory media-type="xml">
+                        <format>
+                            <soapenv:Envelope xmlns:ns0="http://wso2.org/hospital-admission-service" xmlns:ns1="http://wso2.org/hospital-admission-service/modal" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+                                <soapenv:Header/>
+                                <soapenv:Body>
+                                    <ns0:createEpisodeResponse>
+                                        <ns1:Episode>
+                                            <episodeId>$1</episodeId>
+                                            <ns1:PatientId>$2</ns1:PatientId>
+                                            <admission>Elective</admission>
+                                            <startDate>$3</startDate>
+                                            <endDate>$4</endDate>
+                                            <care>Duck</care>
+                                        </ns1:Episode>
+                                    </ns0:createEpisodeResponse>
+                                </soapenv:Body>
+                            </soapenv:Envelope>
+                        </format>
+                        <args>
+                            <arg evaluator="xml" expression="get-property('SYSTEM_DATE')"/>
+                            <arg evaluator="xml" expression="//ns0:createEpisode/ns1:PatientId" xmlns:ns0="http://wso2.org/hospital-admission-service" xmlns:ns1="http://wso2.org/hospital-admission-service/modal"/>
+                            <arg evaluator="xml" expression="get-property('SYSTEM_DATE')"/>
+                            <arg evaluator="xml" expression="get-property('SYSTEM_DATE')"/>
+                        </args>
+                    </payloadFactory>
+                </case>
+                <default>
+                    <makefault version="soap11">
+                        <code value="soap11Env:Server" xmlns:soap11Env="http://schemas.xmlsoap.org/soap/envelope/"/>
+                        <reason value="The endpoint reference for the Operation not found"/>
+                    </makefault>
+                </default>
+            </switch>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </target>
+    <publishWSDL key="gov:backend/EHRService.wsdl" preservePolicy="true">
+        <resource key="gov:backend/xsd/SOA-Message-1.0.xsd" location="xsd/SOA-Message-1.0.xsd"/>
+        <resource key="gov:backend/xsd/SOA-Model-1.0.xsd" location="SOA-Model-1.0.xsd"/>
+    </publishWSDL>
+</proxy>

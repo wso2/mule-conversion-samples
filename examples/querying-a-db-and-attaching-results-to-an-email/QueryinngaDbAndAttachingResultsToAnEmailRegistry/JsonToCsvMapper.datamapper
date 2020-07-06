@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datamapper:DataMapperRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:datamapper="http:///org/wso2/developerstudio/eclipse/gmf/datamapper">
+  <input>
+    <treeNode name="root" schemaDataType="OBJECT" level="1">
+      <node name="employees" level="2">
+        <node name="firstName" schemaDataType="STRING" level="3">
+          <properties key="type" value="string"/>
+          <properties key="id" value="http://wso2jsonschema.org/employees/0/firstName"/>
+          <properties key="nullable" value="false"/>
+          <outNode>
+            <outgoingLink inNode="//@output/@treeNode.0/@node.0/@inNode"/>
+          </outNode>
+          <inNode/>
+        </node>
+        <node name="lastName" schemaDataType="STRING" level="3">
+          <properties key="type" value="string"/>
+          <properties key="id" value="http://wso2jsonschema.org/employees/0/lastName"/>
+          <properties key="nullable" value="false"/>
+          <outNode>
+            <outgoingLink inNode="//@output/@treeNode.0/@node.1/@inNode"/>
+          </outNode>
+          <inNode/>
+        </node>
+        <node name="gender" schemaDataType="STRING" level="3">
+          <properties key="type" value="string"/>
+          <properties key="id" value="http://wso2jsonschema.org/employees/0/gender"/>
+          <properties key="nullable" value="false"/>
+          <outNode>
+            <outgoingLink inNode="//@output/@treeNode.0/@node.2/@inNode"/>
+          </outNode>
+          <inNode/>
+        </node>
+        <node name="dob" schemaDataType="STRING" level="3">
+          <properties key="type" value="string"/>
+          <properties key="id" value="http://wso2jsonschema.org/employees/0/dob"/>
+          <properties key="nullable" value="false"/>
+          <outNode>
+            <outgoingLink inNode="//@output/@treeNode.0/@node.3/@inNode"/>
+          </outNode>
+          <inNode/>
+        </node>
+        <node name="hire_date" schemaDataType="STRING" level="3">
+          <properties key="type" value="string"/>
+          <properties key="id" value="http://wso2jsonschema.org/employees/0/hire_date"/>
+          <properties key="nullable" value="false"/>
+          <outNode>
+            <outgoingLink inNode="//@output/@treeNode.0/@node.4/@inNode"/>
+          </outNode>
+          <inNode/>
+        </node>
+        <properties key="type" value="array"/>
+        <properties key="id" value="http://wso2jsonschema.org/employees"/>
+        <properties key="items_id" value="http://wso2jsonschema.org/employees/0"/>
+        <properties key="items_type" value="object"/>
+        <properties key="nullable" value="false"/>
+        <properties key="properties_id" value="{firstName={id=http://wso2jsonschema.org/employees/0/firstName, type=string}, lastName={id=http://wso2jsonschema.org/employees/0/lastName, type=string}, gender={id=http://wso2jsonschema.org/employees/0/gender, type=string}, dob={id=http://wso2jsonschema.org/employees/0/dob, type=string}, hire_date={id=http://wso2jsonschema.org/employees/0/hire_date, type=string}}"/>
+        <outNode/>
+        <inNode/>
+      </node>
+      <properties key="type" value="object"/>
+      <properties key="$schema" value="http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#"/>
+      <properties key="id" value="http://wso2jsonschema.org"/>
+      <properties key="nullable" value="false"/>
+      <outNode/>
+      <inNode/>
+    </treeNode>
+  </input>
+  <output>
+    <treeNode name="root" level="1">
+      <node name="first_name" level="2">
+        <properties key="type" value="string"/>
+        <properties key="id" value="first_name"/>
+        <properties key="items_id" value="first_name/0"/>
+        <properties key="items_type" value="string"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode incomingLink="//@input/@treeNode.0/@node.0/@node.0/@outNode/@outgoingLink.0"/>
+      </node>
+      <node name="last_name" level="2">
+        <properties key="type" value="string"/>
+        <properties key="id" value="last_name"/>
+        <properties key="items_id" value="last_name/0"/>
+        <properties key="items_type" value="string"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode incomingLink="//@input/@treeNode.0/@node.0/@node.1/@outNode/@outgoingLink.0"/>
+      </node>
+      <node name="gender" level="2">
+        <properties key="type" value="string"/>
+        <properties key="id" value="gender"/>
+        <properties key="items_id" value="gender/0"/>
+        <properties key="items_type" value="string"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode incomingLink="//@input/@treeNode.0/@node.0/@node.2/@outNode/@outgoingLink.0"/>
+      </node>
+      <node name="dob" level="2">
+        <properties key="type" value="string"/>
+        <properties key="id" value="dob"/>
+        <properties key="items_id" value="dob/0"/>
+        <properties key="items_type" value="string"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode incomingLink="//@input/@treeNode.0/@node.0/@node.3/@outNode/@outgoingLink.0"/>
+      </node>
+      <node name="hire_date" level="2">
+        <properties key="type" value="string"/>
+        <properties key="id" value="hire_date"/>
+        <properties key="items_id" value="hire_date/0"/>
+        <properties key="items_type" value="string"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode incomingLink="//@input/@treeNode.0/@node.0/@node.4/@outNode/@outgoingLink.0"/>
+      </node>
+      <properties key="type" value="array"/>
+      <properties key="$schema" value="http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#"/>
+      <properties key="id" value="root"/>
+      <properties key="nullable" value="false"/>
+      <properties key="items_id" value="root/0"/>
+      <properties key="items_type" value="object"/>
+      <outNode/>
+      <inNode/>
+    </treeNode>
+  </output>
+</datamapper:DataMapperRoot>

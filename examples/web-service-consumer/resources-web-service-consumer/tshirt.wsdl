@@ -1,0 +1,275 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:ms="http://wso2.org/tshirt-service" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://wso2.org/tshirt-service">
+   <wsdl:types>
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://wso2.org/tshirt-service">
+         <xsd:element name="ListInventory">
+            <xsd:complexType>
+               <xsd:sequence/>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element name="ListInventoryResponse">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element maxOccurs="unbounded" name="inventory" type="ms:InventoryItem"/>
+               </xsd:sequence>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:complexType name="InventoryItem">
+            <xsd:sequence>
+               <xsd:element name="productCode" type="xsd:string"/>
+               <xsd:element name="size" type="ms:Size"/>
+               <xsd:element name="description" type="xsd:string"/>
+               <xsd:element name="count" type="xsd:integer"/>
+            </xsd:sequence>
+         </xsd:complexType>
+         <xsd:simpleType name="Size">
+            <xsd:restriction base="xsd:string">
+               <xsd:enumeration value="S"/>
+               <xsd:enumeration value="M"/>
+               <xsd:enumeration value="L"/>
+               <xsd:enumeration value="XL"/>
+               <xsd:enumeration value="XXL"/>
+            </xsd:restriction>
+         </xsd:simpleType>
+         <xsd:element name="OrderTshirt">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element name="size" type="ms:Size"/>
+                  <xsd:element name="email" type="xsd:string"/>
+                  <xsd:element name="name" type="xsd:string"/>
+                  <xsd:element name="address1" type="xsd:string"/>
+                  <xsd:element name="address2" type="xsd:string"/>
+                  <xsd:element name="city" type="xsd:string"/>
+                  <xsd:element name="stateOrProvince" type="xsd:string"/>
+                  <xsd:element name="postalCode" type="xsd:string"/>
+                  <xsd:element name="country" type="xsd:string"/>
+               </xsd:sequence>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element name="OrderTshirtResponse">
+            <xsd:complexType>
+               <xsd:all>
+                  <xsd:element name="orderId" type="xsd:string"/>
+               </xsd:all>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element name="TrackOrder">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element name="email" type="xsd:string"/>
+                  <xsd:element name="orderId" type="xsd:string"/>
+               </xsd:sequence>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element name="TrackOrderResponse">
+            <xsd:complexType>
+               <xsd:all>
+                  <xsd:element name="orderId" type="xsd:string"/>
+                  <xsd:element name="status" type="xsd:string"/>
+                  <xsd:element name="size" type="ms:Size"/>
+               </xsd:all>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element name="AuthenticationHeader">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element name="apiKey" type="xsd:string"/>
+               </xsd:sequence>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element name="APIUsageInformation">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element name="apiCallsRemaining" type="xsd:integer"/>
+               </xsd:sequence>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element name="TshirtFault">
+            <xsd:complexType>
+               <xsd:all>
+                  <xsd:element name="errorMessage" type="xsd:string"/>
+               </xsd:all>
+            </xsd:complexType>
+         </xsd:element>
+      </xsd:schema>
+   </wsdl:types>
+   <wsdl:message name="TrackOrder">
+      <wsdl:part name="body" element="ms:TrackOrder"/>
+   </wsdl:message>
+   <wsdl:message name="AuthenticationHeader">
+      <wsdl:part name="header" element="ms:AuthenticationHeader"/>
+   </wsdl:message>
+   <wsdl:message name="TrackOrderResponse">
+      <wsdl:part name="body" element="ms:TrackOrderResponse"/>
+   </wsdl:message>
+   <wsdl:message name="APIUsageInformation">
+      <wsdl:part name="header" element="ms:APIUsageInformation"/>
+   </wsdl:message>
+   <wsdl:message name="TshirtFault">
+      <wsdl:part name="fault" element="ms:TshirtFault"/>
+   </wsdl:message>
+   <wsdl:message name="ListInventory">
+      <wsdl:part name="body" element="ms:ListInventory"/>
+   </wsdl:message>
+   <wsdl:message name="ListInventoryResponse">
+      <wsdl:part name="body" element="ms:ListInventoryResponse"/>
+   </wsdl:message>
+   <wsdl:message name="OrderTshirt">
+      <wsdl:part name="body" element="ms:OrderTshirt"/>
+   </wsdl:message>
+   <wsdl:message name="OrderTshirtResponse">
+      <wsdl:part name="body" element="ms:OrderTshirtResponse"/>
+   </wsdl:message>
+   <wsdl:portType name="TshirtServicePortType">
+      <wsdl:operation name="TrackOrder">
+         <wsdl:input message="ms:TrackOrder" wsaw:Action="http://wso2.org/tshirt-service/track-order"/>
+         <wsdl:output message="ms:TrackOrderResponse" wsaw:Action="http://wso2.org/tshirt-service/TshirtServicePortType/TrackOrderResponse"/>
+         <wsdl:fault message="ms:TshirtFault" name="TshirtFault" wsaw:Action="http://wso2.org/tshirt-service/TshirtServicePortType/TrackOrder/Fault/TshirtFault"/>
+      </wsdl:operation>
+      <wsdl:operation name="ListInventory">
+         <wsdl:input message="ms:ListInventory" wsaw:Action="http://wso2.org/tshirt-service/list-inventory"/>
+         <wsdl:output message="ms:ListInventoryResponse" wsaw:Action="http://wso2.org/tshirt-service/TshirtServicePortType/ListInventoryResponse"/>
+         <wsdl:fault message="ms:TshirtFault" name="TshirtFault" wsaw:Action="http://wso2.org/tshirt-service/TshirtServicePortType/ListInventory/Fault/TshirtFault"/>
+      </wsdl:operation>
+      <wsdl:operation name="OrderTshirt">
+         <wsdl:input message="ms:OrderTshirt" wsaw:Action="http://wso2.org/tshirt-service/order-tshirt"/>
+         <wsdl:output message="ms:OrderTshirtResponse" wsaw:Action="http://wso2.org/tshirt-service/TshirtServicePortType/OrderTshirtResponse"/>
+         <wsdl:fault message="ms:TshirtFault" name="TshirtFault" wsaw:Action="http://wso2.org/tshirt-service/TshirtServicePortType/OrderTshirt/Fault/TshirtFault"/>
+      </wsdl:operation>
+   </wsdl:portType>
+   <wsdl:binding name="TshirtServiceSoap11Binding" type="ms:TshirtServicePortType">
+      <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+      <wsdl:operation name="TrackOrder">
+         <soap:operation soapAction="http://wso2.org/tshirt-service/track-order" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+            <soap12:header use="literal" part="header" message="ms:AuthenticationHeader"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+            <soap12:header use="literal" part="header" message="ms:APIUsageInformation"/>
+         </wsdl:output>
+         <wsdl:fault name="TshirtFault">
+            <soap:fault use="literal" name="TshirtFault"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="ListInventory">
+         <soap:operation soapAction="http://wso2.org/tshirt-service/list-inventory" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="TshirtFault">
+            <soap:fault use="literal" name="TshirtFault"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="OrderTshirt">
+         <soap:operation soapAction="http://wso2.org/tshirt-service/order-tshirt" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+            <soap12:header use="literal" part="header" message="ms:AuthenticationHeader"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+            <soap12:header use="literal" part="header" message="ms:APIUsageInformation"/>
+         </wsdl:output>
+         <wsdl:fault name="TshirtFault">
+            <soap:fault use="literal" name="TshirtFault"/>
+         </wsdl:fault>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:binding name="TshirtServiceSoap12Binding" type="ms:TshirtServicePortType">
+      <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+      <wsdl:operation name="TrackOrder">
+         <soap12:operation soapAction="http://wso2.org/tshirt-service/track-order" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+            <soap12:header use="literal" part="header" message="ms:AuthenticationHeader"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+            <soap12:header use="literal" part="header" message="ms:APIUsageInformation"/>
+         </wsdl:output>
+         <wsdl:fault name="TshirtFault">
+            <soap12:fault use="literal" name="TshirtFault"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="ListInventory">
+         <soap12:operation soapAction="http://wso2.org/tshirt-service/list-inventory" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="TshirtFault">
+            <soap12:fault use="literal" name="TshirtFault"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="OrderTshirt">
+         <soap12:operation soapAction="http://wso2.org/tshirt-service/order-tshirt" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+            <soap12:header use="literal" part="header" message="ms:AuthenticationHeader"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+            <soap12:header use="literal" part="header" message="ms:APIUsageInformation"/>
+         </wsdl:output>
+         <wsdl:fault name="TshirtFault">
+            <soap12:fault use="literal" name="TshirtFault"/>
+         </wsdl:fault>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:binding name="TshirtServiceHttpBinding" type="ms:TshirtServicePortType">
+      <http:binding verb="POST"/>
+      <wsdl:operation name="TrackOrder">
+         <http:operation location="TrackOrder"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="ListInventory">
+         <http:operation location="ListInventory"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="OrderTshirt">
+         <http:operation location="OrderTshirt"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:service name="TshirtService">
+      <wsdl:port name="TshirtServiceHttpSoap11Endpoint" binding="ms:TshirtServiceSoap11Binding">
+         <soap:address location="http://localhost:8290/services/TshirtService.TshirtServiceHttpSoap11Endpoint"/>
+      </wsdl:port>
+      <wsdl:port name="TshirtServiceHttpsSoap11Endpoint" binding="ms:TshirtServiceSoap11Binding">
+         <soap:address location="https://localhost:8253/services/TshirtService.TshirtServiceHttpsSoap11Endpoint"/>
+      </wsdl:port>
+      <wsdl:port name="TshirtServiceHttpSoap12Endpoint" binding="ms:TshirtServiceSoap12Binding">
+         <soap12:address location="http://localhost:8290/services/TshirtService.TshirtServiceHttpSoap12Endpoint"/>
+      </wsdl:port>
+      <wsdl:port name="TshirtServiceHttpsSoap12Endpoint" binding="ms:TshirtServiceSoap12Binding">
+         <soap12:address location="https://localhost:8253/services/TshirtService.TshirtServiceHttpsSoap12Endpoint"/>
+      </wsdl:port>
+      <wsdl:port name="TshirtServiceHttpEndpoint" binding="ms:TshirtServiceHttpBinding">
+         <http:address location="http://localhost:8290/services/TshirtService.TshirtServiceHttpEndpoint"/>
+      </wsdl:port>
+      <wsdl:port name="TshirtServiceHttpsEndpoint" binding="ms:TshirtServiceHttpBinding">
+         <http:address location="https://localhost:8253/services/TshirtService.TshirtServiceHttpsEndpoint"/>
+      </wsdl:port>
+   </wsdl:service>
+</wsdl:definitions>

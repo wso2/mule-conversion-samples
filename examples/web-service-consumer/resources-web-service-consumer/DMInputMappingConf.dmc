@@ -1,0 +1,32 @@
+map_S_root_S_Envelope = function(){ 
+var outputsoapenv_Envelope={};
+
+outputsoapenv_Envelope =  {};
+outputsoapenv_Envelope.soapenv_Header =  {};
+outputsoapenv_Envelope.soapenv_Header.tsh_AuthenticationHeader =  {};
+outputsoapenv_Envelope.soapenv_Body =  {};
+outputsoapenv_Envelope.soapenv_Body.tsh_OrderTshirt =  {};
+outputsoapenv_Envelope.soapenv_Body.tsh_OrderTshirt.size = inputroot.size;
+outputsoapenv_Envelope.soapenv_Body.tsh_OrderTshirt.email = inputroot.email;
+outputsoapenv_Envelope.soapenv_Body.tsh_OrderTshirt.name = inputroot.name;
+outputsoapenv_Envelope.soapenv_Body.tsh_OrderTshirt.address1 = inputroot.address1;
+outputsoapenv_Envelope.soapenv_Body.tsh_OrderTshirt.address2 = inputroot.address2;
+outputsoapenv_Envelope.soapenv_Body.tsh_OrderTshirt.city = inputroot.city;
+outputsoapenv_Envelope.soapenv_Body.tsh_OrderTshirt.stateOrProvince = inputroot.stateOrProvince;
+outputsoapenv_Envelope.soapenv_Body.tsh_OrderTshirt.postalCode = inputroot.postalCode;
+outputsoapenv_Envelope.soapenv_Body.tsh_OrderTshirt.country = inputroot.country;
+return outputsoapenv_Envelope;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+

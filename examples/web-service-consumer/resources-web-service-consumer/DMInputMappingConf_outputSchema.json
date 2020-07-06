@@ -1,0 +1,80 @@
+{
+  "$schema" : "http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#",
+  "outputType" : "XML",
+  "id" : "http://wso2jsonschema.org",
+  "title" : "soapenv:Envelope",
+  "type" : "object",
+  "properties" : {
+    "soapenv:Header" : {
+      "id" : "http://wso2jsonschema.org/soapenv:Header",
+      "type" : "object",
+      "properties" : {
+        "tsh:AuthenticationHeader" : {
+          "id" : "http://wso2jsonschema.org/soapenv:Header/tsh:AuthenticationHeader",
+          "type" : "object",
+          "properties" : {
+            "apiKey" : {
+              "id" : "http://wso2jsonschema.org/soapenv:Header/tsh:AuthenticationHeader/apiKey",
+              "type" : "number"
+            }
+          }
+        }
+      }
+    },
+    "soapenv:Body" : {
+      "id" : "http://wso2jsonschema.org/soapenv:Body",
+      "type" : "object",
+      "properties" : {
+        "tsh:OrderTshirt" : {
+          "id" : "http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt",
+          "type" : "object",
+          "properties" : {
+            "size" : {
+              "id" : "http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt/size",
+              "type" : "string"
+            },
+            "email" : {
+              "id" : "http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt/email",
+              "type" : "string"
+            },
+            "name" : {
+              "id" : "http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt/name",
+              "type" : "string"
+            },
+            "address1" : {
+              "id" : "http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt/address1",
+              "type" : "string"
+            },
+            "address2" : {
+              "id" : "http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt/address2",
+              "type" : "string"
+            },
+            "city" : {
+              "id" : "http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt/city",
+              "type" : "string"
+            },
+            "stateOrProvince" : {
+              "id" : "http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt/stateOrProvince",
+              "type" : "string"
+            },
+            "postalCode" : {
+              "id" : "http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt/postalCode",
+              "type" : "string"
+            },
+            "country" : {
+              "id" : "http://wso2jsonschema.org/soapenv:Body/tsh:OrderTshirt/country",
+              "type" : "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "namespaces" : [ {
+    "prefix" : "soapenv",
+    "url" : "http://schemas.xmlsoap.org/soap/envelope/"
+  }, {
+    "prefix" : "tsh",
+    "url" : "http://wso2.org/tshirt-service"
+  } ]
+}

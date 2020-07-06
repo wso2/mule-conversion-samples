@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/api" name="HttpRequestResponseWithLoggerAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <log description="Log the URL postfix" level="custom">
+                <property expression="$axis2:REST_URL_POSTFIX" name="Path"/>
+            </log>
+            <payloadFactory description="Set payload to respond" media-type="text">
+                <format>$1</format>
+                <args>
+                    <arg evaluator="xml" expression="$axis2:REST_URL_POSTFIX" literal="true"/>
+                </args>
+            </payloadFactory>
+            <respond description="Respond result back"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

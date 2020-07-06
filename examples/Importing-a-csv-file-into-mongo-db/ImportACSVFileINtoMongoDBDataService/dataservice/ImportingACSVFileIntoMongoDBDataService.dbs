@@ -1,0 +1,41 @@
+<data name="ImportingACSVFileIntoMongoDBDataService" serviceNamespace="" serviceGroup="" transports="http https">
+  <description />
+  <query id="addCustomer" useConfig="mongodb">
+    <expression>customers.insert("{firstname:#, surname:#, phone:#, state:#}")</expression>
+    <param name="firstname" paramType="SCALAR" sqlType="STRING" defaultValue="firstname" type="IN" />
+    <param name="surname" paramType="SCALAR" sqlType="STRING" defaultValue="surname" type="IN" />
+    <param name="phone" paramType="SCALAR" sqlType="STRING" type="IN" />
+    <param name="email" paramType="SCALAR" sqlType="STRING" type="IN" />
+  </query>
+  <query id="getCustomer" useConfig="mongodb">
+    <expression>customers.exists()</expression>
+    <result element="Documents" rowName="Document">
+      <element name="exists" column="document" xsdType="string" requiredRoles="" />
+    </result>
+  </query>
+  <query id="createCustomer" useConfig="mongodb">
+    <expression>customers.create()</expression>
+  </query>
+  <resource method="POST" path="addCustomer">
+    <description />
+    <call-query href="addCustomer">
+      <with-param name="firstname" query-param="firstname" />
+      <with-param name="surname" query-param="surname" />
+      <with-param name="phone" query-param="phone" />
+      <with-param name="email" query-param="email" />
+    </call-query>
+  </resource>
+  <resource method="GET" path="getCustomer">
+    <description />
+    <call-query href="getCustomer" />
+  </resource>
+    <resource method="GET" path="createCustomer">
+    <description />
+    <call-query href="createCustomer" />
+  </resource>
+  <config id="mongodb">
+    <property name="mongoDB_servers">localhost</property>
+    <property name="mongoDB_database">Customers</property>
+    <property name="mongoDB_write_concern">MAJORITY</property>
+  </config>
+</data>

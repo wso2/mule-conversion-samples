@@ -1,0 +1,53 @@
+map_S_Envelope_S_root = function(){ 
+var outputroot={};
+var CONCAT_18_0 = '';
+var CONCAT_20_0 = '';
+
+var count_i_orderItem_bb945db3_27be_4803_9241_a91503729032 = 0;
+CONCAT_18_0 = inputsoapenv_Envelope.soapenv_Body.ord_putShippingOrder.shippingAddress.line1.toString().concat('',' ');
+CONCAT_20_0 = inputsoapenv_Envelope.soapenv_Body.ord_putShippingOrder.billingAddress.line1.toString().concat('',' ');
+outputroot =  [];
+
+for(i_orderItem_bb945db3_27be_4803_9241_a91503729032 in inputsoapenv_Envelope.soapenv_Body.ord_putShippingOrder.order.orderItem){
+outputroot[count_i_orderItem_bb945db3_27be_4803_9241_a91503729032] =  {};
+outputroot[count_i_orderItem_bb945db3_27be_4803_9241_a91503729032]._ELEMVAL = inputsoapenv_Envelope.soapenv_Body.ord_putShippingOrder.order.orderItem[i_orderItem_bb945db3_27be_4803_9241_a91503729032].merchantSKU;
+outputroot[count_i_orderItem_bb945db3_27be_4803_9241_a91503729032].QTY = inputsoapenv_Envelope.soapenv_Body.ord_putShippingOrder.order.orderItem[i_orderItem_bb945db3_27be_4803_9241_a91503729032].quantity;
+outputroot[count_i_orderItem_bb945db3_27be_4803_9241_a91503729032].Price = inputsoapenv_Envelope.soapenv_Body.ord_putShippingOrder.order.orderItem[i_orderItem_bb945db3_27be_4803_9241_a91503729032].price;
+outputroot[count_i_orderItem_bb945db3_27be_4803_9241_a91503729032].BillingAddressName = inputsoapenv_Envelope.soapenv_Body.ord_putShippingOrder.billingAddress.name;
+outputroot[count_i_orderItem_bb945db3_27be_4803_9241_a91503729032].BillingAddressStreet = CONCAT_20_0.toString().concat('',inputsoapenv_Envelope.soapenv_Body.ord_putShippingOrder.billingAddress.line2);
+outputroot[count_i_orderItem_bb945db3_27be_4803_9241_a91503729032].BillingAddrCity = inputsoapenv_Envelope.soapenv_Body.ord_putShippingOrder.billingAddress.city;
+outputroot[count_i_orderItem_bb945db3_27be_4803_9241_a91503729032].BillingAddrState = inputsoapenv_Envelope.soapenv_Body.ord_putShippingOrder.billingAddress.stateOrProvinceCode;
+outputroot[count_i_orderItem_bb945db3_27be_4803_9241_a91503729032].BillingAddrCountry = inputsoapenv_Envelope.soapenv_Body.ord_putShippingOrder.billingAddress.countryCode;
+outputroot[count_i_orderItem_bb945db3_27be_4803_9241_a91503729032].BillingAddrZipCode = inputsoapenv_Envelope.soapenv_Body.ord_putShippingOrder.billingAddress.postalCode;
+outputroot[count_i_orderItem_bb945db3_27be_4803_9241_a91503729032].ShippingAddrName = inputsoapenv_Envelope.soapenv_Body.ord_putShippingOrder.shippingAddress.name;
+outputroot[count_i_orderItem_bb945db3_27be_4803_9241_a91503729032].ShippingAddrStreet = CONCAT_18_0.toString().concat('',inputsoapenv_Envelope.soapenv_Body.ord_putShippingOrder.shippingAddress.line2);
+outputroot[count_i_orderItem_bb945db3_27be_4803_9241_a91503729032].ShippingAddrCity = inputsoapenv_Envelope.soapenv_Body.ord_putShippingOrder.shippingAddress.city;
+outputroot[count_i_orderItem_bb945db3_27be_4803_9241_a91503729032].ShippingAddrState = inputsoapenv_Envelope.soapenv_Body.ord_putShippingOrder.shippingAddress.stateOrProvinceCode;
+outputroot[count_i_orderItem_bb945db3_27be_4803_9241_a91503729032].ShippingAddrCountry = inputsoapenv_Envelope.soapenv_Body.ord_putShippingOrder.shippingAddress.countryCode;
+outputroot[count_i_orderItem_bb945db3_27be_4803_9241_a91503729032].ShippingAddrZipCode = inputsoapenv_Envelope.soapenv_Body.ord_putShippingOrder.shippingAddress.postalCode;
+outputroot[count_i_orderItem_bb945db3_27be_4803_9241_a91503729032].ShippingId = inputsoapenv_Envelope.soapenv_Body.ord_putShippingOrder.shippingId;
+
+count_i_orderItem_bb945db3_27be_4803_9241_a91503729032++;
+}
+return outputroot;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,119 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "RestApiWithApikit",
+    "version": "v1.0"
+  },
+  "host": "localhost:8081",
+  "basePath": "/api",
+  "schemes": [
+    "https"
+  ],
+  "definitions": {
+    "customer": {
+      "type": "object",
+      "properties": {
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "paths": {
+    "/customers": {
+      "get": {
+        "description": "Get list of Customers",
+        "operationId": "GET_customers",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      },
+      "post": {
+        "description": "Create customer contact",
+        "operationId": "POST_customers",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "example": {
+                "firstName": "John",
+                "lastName": "Doe",
+                "phone": "123456789",
+                "email": "john.doe@email.com"
+              },
+              "$ref": "#/definitions/customer"
+            },
+            "in": "body",
+            "name": "body",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/customers/{customerId}": {
+      "get": {
+        "description": "Return customer information by customerId",
+        "operationId": "GET_customers-customerId",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      },
+      "put": {
+        "description": "Update customer by customerId",
+        "operationId": "PUT_customers-customerId",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "example": {
+                "firstName": "John",
+                "lastName": "Doe",
+                "phone": "123456789",
+                "email": "john.doe@email.com"
+              },
+              "$ref": "#/definitions/customer"
+            },
+            "in": "body",
+            "name": "body",
+            "required": true
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "type": "string",
+          "in": "path",
+          "name": "customerId",
+          "required": true
+        }
+      ]
+    }
+  }
+}

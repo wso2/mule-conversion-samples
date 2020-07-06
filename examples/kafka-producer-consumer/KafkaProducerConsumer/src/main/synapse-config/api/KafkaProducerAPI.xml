@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/pushMessage" name="KafkaProducerAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <propertyGroup>
+                <property expression="$body//topic" name="topic" scope="default" type="STRING"/>
+                <property expression="get-property('SYSTEM_TIME')" name="key" scope="default" type="STRING"/>
+            </propertyGroup>
+            <log level="custom">
+                <property expression="fn:concat('Message: ', '&quot;', $body//message, '&quot;', ' is going to be published to topic:', $body//topic)" name="Log Message" xmlns:ns="http://org.apache.synapse/xsd"/>
+            </log>
+            <payloadFactory media-type="text">
+                <format>$1</format>
+                <args>
+                    <arg evaluator="xml" expression="$body//message"/>
+                </args>
+            </payloadFactory>
+            <kafkaTransport.init>
+                <bootstrapServers>localhost:9092</bootstrapServers>
+                <keySerializerClass>org.apache.kafka.common.serialization.StringSerializer</keySerializerClass>
+                <valueSerializerClass>org.apache.kafka.common.serialization.StringSerializer</valueSerializerClass>
+                <maxPoolSize>100</maxPoolSize>
+            </kafkaTransport.init>
+            <kafkaTransport.publishMessages>
+                <topic>{$ctx:topic}</topic>
+                <key>{$ctx:key}</key>
+            </kafkaTransport.publishMessages>
+            <payloadFactory media-type="text">
+                <format>Message successfully sent to Apache Kafka topic.</format>
+                <args/>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

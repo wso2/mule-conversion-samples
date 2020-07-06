@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/uploadFile" name="HTTPMultiPartRequestAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <propertyGroup>
+                <property description="Set HTML Location" name="htmlLocation" scope="default" type="STRING" value="/{htmllocation}/uploadFile.html"/>
+                <property action="remove" description="Enable Response Message Body" name="NO_ENTITY_BODY" scope="axis2"/>
+                <property description="Engage Binary Message Formatter" name="messageType" scope="axis2" type="STRING" value="application/octet-stream"/>
+                <property description="Set Response Content Type" name="ContentType" scope="axis2" type="STRING" value="text/html"/>
+            </propertyGroup>
+            <fileconnector.read>
+                <source>{$ctx:htmlLocation}</source>
+                <contentType>text/html</contentType>
+            </fileconnector.read>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" url-mapping="/payload">
+        <inSequence>
+            <property description="Set Destination Directory Path" name="destinationDir" scope="default" type="STRING" value="{destinationDir}"/>
+            <property description="Set Variable FileName of the uploaded file" expression="//mediate/file/@filename" name="fileName" scope="default" type="STRING"/>
+            <log description="Log File Content-Type" level="custom">
+                <property expression="//mediate/file/@content-type" name="File Content-Type"/>
+            </log>
+            <fileconnector.create>
+                <filePath>{fn:concat('file://',$ctx:destinationDir,$ctx:fileName)}</filePath>
+                <inputContent>{//mediate/file/text()}</inputContent>
+                <isBinaryContent>true</isBinaryContent>
+            </fileconnector.create>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

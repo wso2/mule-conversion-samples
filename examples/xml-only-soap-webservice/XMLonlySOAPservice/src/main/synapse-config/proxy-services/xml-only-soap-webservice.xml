@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy name="xml-only-soap-webservice" startOnLoad="true" transports="http https" xmlns="http://ws.apache.org/ns/synapse">
+    <target>
+        <inSequence>
+            <switch source="local-name($body/*[1])">
+                <case regex="admitSubject">
+                    <enrich description="save payload">
+                        <source clone="false" type="body"/>
+                        <target property="ORIGINAL_PAYLOAD" type="property"/>
+                    </enrich>
+                    <sequence key="getPatient"/>
+                    <filter xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xpath="boolean(//soapenv:Body/*[1])">
+                        <then>
+                            <log description="Patient already exists" level="custom">
+                                <property name="Log patient already exists" value="Patient already exists"/>
+                            </log>
+                        </then>
+                        <else>
+                            <enrich description="load payload">
+                                <source clone="false" property="ORIGINAL_PAYLOAD" type="property"/>
+                                <target type="body"/>
+                            </enrich>
+                            <sequence key="upsertPatient"/>
+                        </else>
+                    </filter>
+                    <sequence key="createEpisode"/>
+                    <payloadFactory description="createEpisodeResponse to admitSubjectResponse" media-type="xml">
+                        <format>
+                            <soapenv:Envelope xmlns:ns0="http://wso2.org/hospital-admission-service" xmlns:ns1="http://wso2.org/hospital-admission-service/modal" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+                                <soapenv:Header/>
+                                <soapenv:Body>
+                                    <ns0:admitSubjectResponse>
+                                        <ns1:Episode>
+                                            <episodeId>$1</episodeId>
+                                            <ns1:PatientId>$2</ns1:PatientId>
+                                            <admission>$3</admission>
+                                            <startDate>$4</startDate>
+                                            <endDate>$5</endDate>
+                                            <care>$6</care>
+                                        </ns1:Episode>
+                                        <ns1:Bill>
+                                            <costPerNight>100</costPerNight>
+                                            <initialStateEstimate>5</initialStateEstimate>
+                                            <runningTotal>500</runningTotal>
+                                            <status>ADMITTED</status>
+                                        </ns1:Bill>
+                                    </ns0:admitSubjectResponse>
+                                </soapenv:Body>
+                            </soapenv:Envelope>
+                        </format>
+                        <args>
+                            <arg evaluator="xml" expression="//ns0:createEpisodeResponse/ns1:Episode/*[name()='episodeId']" xmlns:ns0="http://wso2.org/hospital-admission-service" xmlns:ns1="http://wso2.org/hospital-admission-service/modal"/>
+                            <arg evaluator="xml" expression="//ns0:createEpisodeResponse/ns1:Episode/ns1:PatientId" xmlns:ns0="http://wso2.org/hospital-admission-service" xmlns:ns1="http://wso2.org/hospital-admission-service/modal"/>
+                            <arg evaluator="xml" expression="//ns0:createEpisodeResponse/ns1:Episode/*[name()='admission']" xmlns:ns0="http://wso2.org/hospital-admission-service" xmlns:ns1="http://wso2.org/hospital-admission-service/modal"/>
+                            <arg evaluator="xml" expression="//ns0:createEpisodeResponse/ns1:Episode/*[name()='startDate']" xmlns:ns0="http://wso2.org/hospital-admission-service" xmlns:ns1="http://wso2.org/hospital-admission-service/modal"/>
+                            <arg evaluator="xml" expression="//ns0:createEpisodeResponse/ns1:Episode/*[name()='endDate']" xmlns:ns0="http://wso2.org/hospital-admission-service" xmlns:ns1="http://wso2.org/hospital-admission-service/modal"/>
+                            <arg evaluator="xml" expression="//ns0:createEpisodeResponse/ns1:Episode/*[name()='care']" xmlns:ns0="http://wso2.org/hospital-admission-service" xmlns:ns1="http://wso2.org/hospital-admission-service/modal"/>
+                        </args>
+                    </payloadFactory>
+                </case>
+                <default>
+                    <makefault description="respond soap fault" version="soap11">
+                        <code value="soap11Env:Server" xmlns:soap11Env="http://schemas.xmlsoap.org/soap/envelope/"/>
+                        <reason value="The endpoint reference for the Operation not found"/>
+                    </makefault>
+                </default>
+            </switch>
+            <log description="log message" level="custom">
+                <property expression="$body" name="Log response"/>
+            </log>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </target>
+    <publishWSDL key="gov:backend/AdmissionService.wsdl" preservePolicy="true">
+        <resource key="gov:backend/xsd/SOA-Message-1.0.xsd" location="xsd/SOA-Message-1.0.xsd"/>
+        <resource key="gov:backend/xsd/SOA-Model-1.0.xsd" location="SOA-Model-1.0.xsd"/>
+    </publishWSDL>
+</proxy>

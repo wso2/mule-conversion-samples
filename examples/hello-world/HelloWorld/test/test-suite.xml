@@ -1,0 +1,26 @@
+<unit-test>
+    <artifacts>
+        <test-artifact>
+            <artifact>/HelloWorld/src/main/synapse-config/api/HelloWorld.xml</artifact>
+        </test-artifact>
+        <supportive-artifacts/>
+        <registry-resources/>
+        <connector-resources/>
+    </artifacts>
+    <test-cases>
+        <test-case name="HelloWorldTestCase">
+            <input>
+                <request-path>/helloworld</request-path>
+                <request-method>GET</request-method>
+            </input>
+            <assertions>
+                <assertEquals>
+                    <actual>$body</actual>
+                    <expected><![CDATA[{"Hello":"World"}]]></expected>
+                    <message>Hello World Body did not match</message>
+                </assertEquals>
+            </assertions>
+        </test-case>
+    </test-cases>
+    <mock-services/>
+</unit-test>

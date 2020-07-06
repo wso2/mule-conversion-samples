@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="token-retrieval-seq" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <propertyGroup>
+        <property name="ContentType" scope="axis2" type="STRING" value="application/json"/>
+        <property expression="get-property('clientSecret')" name="uri.var.clientSecret" scope="default" type="STRING"/>
+        <property expression="get-property('clientId')" name="uri.var.clientId" scope="default" type="STRING"/>
+        <property action="remove" name="NO_ENTITY_BODY" scope="axis2"/>
+    </propertyGroup>
+    <send>
+        <endpoint>
+            <http method="get" uri-template="https://account.box.com/api/oauth2/authorize?client_id={uri.var.clientId}&amp;client_secret={uri.var.clientSecret}&amp;response_type=code&amp;redirect_uri=https://localhost:8253/oauth/callback">
+                <suspendOnFailure>
+                    <initialDuration>-1</initialDuration>
+                    <progressionFactor>1</progressionFactor>
+                </suspendOnFailure>
+                <markForSuspension>
+                    <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                </markForSuspension>
+            </http>
+        </endpoint>
+    </send>
+</sequence>
