@@ -1,6 +1,6 @@
 # Mule Conversion Samples
 
-This repository contains a set of WSO2 Integration Samples for developers with prior experience in MuleSoft products. To make things easier we have created a set of samples similar to what you see in [Mulesoft Anypoint Examples]((https://github.com/mulesoft/anypoint-examples)) repository.
+This repository contains a set of WSO2 Integration Samples for developers with prior experience in MuleSoft products. To make things easier we have created a set of samples similar to what you see in [Mulesoft Anypoint Examples](https://github.com/mulesoft/anypoint-examples) repository.
 
 In addition, we have integration samples covering the API management as well as streaming integration capabilities in [WSO2 Integration Samples](https://github.com/wso2/integration-studio-examples) repository.
 
@@ -12,13 +12,13 @@ In addition, we have integration samples covering the API management as well as 
     ```
 - Download [WSO2 Integration Studio](https://wso2.com/integration/integration-studio/). We will be using WSO2 Integration studio to develop our integration use cases.
 
-> :triangular_flag_on_post: __NOTE__: Each sample resides in its own directory with a README.md file with sample description and supporting material to follow along each example.
+> __NOTE__: Each sample resides in its own directory with a README.md file with sample description and supporting material to follow along each example.
 
 ## Samples Overview
 
 Following are the examples covered in this repository. You can try out these examples in any order you prefer.
 
-> :triangular_flag_on_post: __NOTE__: In this set of examples we showcase implementation of MuleSoft Anypoint examples using WSO2 technologies without any major deviations from the original samples. In some cases this might not be the best approach doing the same thing with WSO2 technologies. Once you go through this samples we highly recommend you to refer WSO2 Documentation as well as [WSO2 Integration Samples](https://github.com/wso2/integration-studio-examples) repository for more in depth tutorials to get familiarize with the WSO2 approach to integration use cases.
+> __NOTE__: In this set of examples we showcase implementation of MuleSoft Anypoint examples using WSO2 technologies without any major deviations from the original samples. In some cases this might not be the best approach doing the same thing with WSO2 technologies. Once you go through this samples we highly recommend you to refer WSO2 Documentation as well as [WSO2 Integration Samples](https://github.com/wso2/integration-studio-examples) repository for more in depth tutorials to get familiarize with the WSO2 approach to integration use cases.
 
 - [Hello World](examples/hello-world/README.md)
 
