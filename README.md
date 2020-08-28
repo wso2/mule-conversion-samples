@@ -100,3 +100,7 @@ To learn about full lifecycle API Management with WSO2 API manager follow the tu
 ### ETL, CDC, and Streaming Integration
 
 To learn about ETL, CDC and Streaming integration capabilities of WSO2 Streaming Integrator runtime try out  the samples in [WSO2 Integration Samples](https://github.com/wso2/integration-studio-examples/blob/master/streaming-integration/README.md) repository
+
+----
+
+> __NOTICE:__ "MuleSoft" and Mulesoft's "Anypoint Platform" are trademarks of MuleSoft, Inc. All product, company names and marks mentioned herein are the property of their respective owners and are mentioned for identification purposes only.
