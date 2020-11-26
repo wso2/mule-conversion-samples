@@ -18,7 +18,7 @@ Follow the procedure below to run and test the functionality in Integration Stud
 2. In your menu in Studio, click the **File** menu. In the File menu select the **Import...** item.
 3. In the Import window select the **Existing WSO2 Projects into workspace** under **WSO2** folder.
 4. Browse and select the file path to the downloaded sample of this Github project
-(``integration-studio-examples/migration/mule/rest-api-with-apikit``) and click **Finish**.
+(``mule-conversion-samples/examples/rest-api-with-apikit``) and click **Finish**.
 5. Open the **RestApiWithApikit.xml** under **rest-api-with-apikit/RestApiWithApikit/src/main/synapse-config/api** 
 directory.
 <p align="center">
