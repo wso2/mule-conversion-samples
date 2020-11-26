@@ -19,13 +19,13 @@ The WSO2 Project reads a CSV file and returns exception messages for two types o
 
 2. Run the example project as a Micro-Integrator application(Right click on the project and select Run->Run on Micro-Integrator)
 
-3. In your browser, access the URL `http://localhost:8090/file?filePath=invalidPath`. This message specifies an invalid path, and the application returns this error message:
+3. In your browser, access the URL `http://localhost:8290/file?filePath=invalidPath`. This message specifies an invalid path, and the application returns this error message:
 		
 		{
 		  "message": "Your path is invalid"
 		}
 
-5. In your browser, access the URL `http://localhost:8090/file?filePath=path`, substituing the path to the file `input.csv`(which is in the Resource directory in this GitHub repository) for the `path` variable. The application returns the following payload:
+5. In your browser, access the URL `http://localhost:8290/file?filePath=path`, substituing the path to the file `input.csv`(which is in the Resource directory in this GitHub repository) for the `path` variable. The application returns the following payload:
 
 		[
 		  {
@@ -42,7 +42,7 @@ The WSO2 Project reads a CSV file and returns exception messages for two types o
 		  }
 		]
 
-6. In your browser, access the URL `http://localhost:8090/file?filePath=path`, replacing the `path` variable this time with the path to a file that does not allow read access. The application returns the following error message:
+6. In your browser, access the URL `http://localhost:8290/file?filePath=path`, replacing the `path` variable this time with the path to a file that does not allow read access. The application returns the following error message:
        
 		{
 		  "message": "Access to file denied"
