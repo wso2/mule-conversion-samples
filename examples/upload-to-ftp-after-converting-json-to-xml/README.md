@@ -22,7 +22,7 @@ In this example JSON data is sent to the application and then converted to the X
 
 4. Browse and select the file path to the downloaded sample of this Github project (``integration-studio-examples/migration/mule/upload-to-ftp-after-converting-json-to-xml``) and click **Finish**.
 
-5. Lets add the file connector into the workspace. Right click on the **UploadToFtpAfterConvertingJsonToXml** and select **Add or Remove Connector**. Keep the **Add connector** option selected and click **Next>**. Search for 'file' using the search bar and click the download button located at the bottom right corner of the file connector. Click **Finish**.
+5. Lets add the file connector into the workspace. Right click on the **UploadToFtpAfterConvertingJsonToXml** and select **Add or Remove Connector/Module**. Keep the **Add connector/module** option selected and click **Next>**. Search for 'file' using the search bar and click the download button located at the bottom right corner of the file connector. Click **Finish**.
 
 6. Open the **UploadToFtpAfterConvertingJsonToXml.xml** under **upload-to-ftp-after-converting-json-to-xml/UploadToFtpAfterConvertingJsonToXml/src/main/synapse-config/api/** directory. Configure destination property accordingly.<br>
     <img width="60%" src="../../resources/images/upload-to-ftp-after-converting-json-to-xml.png">
@@ -34,41 +34,39 @@ In this example JSON data is sent to the application and then converted to the X
 9. Make a POST request to *http://localhost:8290/upload* with following JSON message body, and setting the `Content-Type` header to `application/json`:
     ```json
     {
-        "employees": {
-            "employee": [
-                {
-                    "name": "John",
-                    "lastName": "Doe",
-                    "addresses": {
-                        "address": [
-                            {
-                                "street": "123 Main Street",
-                                "zipCode": "111"
-                            },
-                            {
-                                "street": "987 Cypress Avenue",
-                                "zipCode": "222"
-                            }
-                        ]
-                    }
-                },
-                {
-                    "name": "Jane",
-                    "lastName": "Doe",
-                    "addresses": {
-                        "address": [
-                            {
-                                "street": "345 Main Street",
-                                "zipCode": "111"
-                            },
-                            {
-                                "street": "654 Sunset Boulevard",
-                                "zipCode": "333"
-                            }
-                        ]
-                }
-            ]
-        }
+    	"employees": {
+    		"employee": [{
+    				"name": "John",
+    				"lastName": "Doe",
+    				"addresses": {
+    					"address": [{
+    							"street": "123 Main Street",
+    							"zipCode": "111"
+    						},
+    						{
+    							"street": "987 Cypress Avenue",
+    							"zipCode": "222"
+    						}
+    					]
+    				}
+    			},
+    			{
+    				"name": "Jane",
+    				"lastName": "Doe",
+    				"addresses": {
+    					"address": [{
+    							"street": "345 Main Street",
+    							"zipCode": "111"
+    						},
+    						{
+    							"street": "654 Sunset Boulevard",
+    							"zipCode": "333"
+    						}
+    					]
+    				}
+    			}
+    		]
+    	}
     }
     ```
 
